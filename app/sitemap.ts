@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listLocations } from "@/lib/locations/catalog";
+import { listUtilities } from "@/lib/utilities/catalog";
 
 function siteOrigin(): string {
   return (
@@ -8,6 +9,16 @@ function siteOrigin(): string {
     "https://solarflow.app"
   );
 }
+
+/** Static permit/interconnection slugs (DB may add more; keep crawlable core here). */
+const PERMIT_SLUGS = [
+  "contra-costa",
+  "walnut-creek",
+  "pge",
+  "los-angeles",
+  "sce-interconnection",
+  "san-diego",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = siteOrigin();
@@ -25,6 +36,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${origin}/solar-for`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${origin}/solar-permits`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${origin}/tools/quote-check`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${origin}/signup`,
@@ -47,5 +76,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: loc.type === "city" ? 0.75 : 0.7,
   }));
 
-  return [...staticRoutes, ...locationRoutes];
+  const utilityRoutes: MetadataRoute.Sitemap = listUtilities().map((u) => ({
+    url: `${origin}/solar-for/${u.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const permitRoutes: MetadataRoute.Sitemap = PERMIT_SLUGS.map((slug) => ({
+    url: `${origin}/solar-permits/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...utilityRoutes,
+    ...permitRoutes,
+    ...locationRoutes,
+  ];
 }

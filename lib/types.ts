@@ -29,6 +29,10 @@ export type Project = {
   rate_usd_per_kwh: number;
   /** Annual energy cost inflation as a percent (e.g. 5 = 5%/yr) */
   energy_inflation_pct: number;
+  /** Opaque token for public spouse-ready report when share_enabled */
+  share_token?: string | null;
+  share_enabled?: boolean;
+  share_enabled_at?: string | null;
   created_at: string;
   updated_at: string;
 };

@@ -20,10 +20,21 @@ export default function HomePage() {
           <Link href="/signup" className="btn-secondary">
             Create account
           </Link>
-          <Link href="/solar-in" className="text-sm font-medium text-canopy hover:underline">
-            Solar by city & county
-          </Link>
         </div>
+        <nav className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-canopy">
+          <Link href="/solar-for" className="hover:underline">
+            By utility bill
+          </Link>
+          <Link href="/solar-in" className="hover:underline">
+            By city & county
+          </Link>
+          <Link href="/solar-permits" className="hover:underline">
+            Permits
+          </Link>
+          <Link href="/tools/quote-check" className="hover:underline">
+            Quote check
+          </Link>
+        </nav>
       </div>
     </main>
   );

@@ -1,0 +1,268 @@
+{
+  "utilities": [
+    {
+      "slug": "pge",
+      "name": "PG&E",
+      "full_name": "Pacific Gas and Electric",
+      "state": "CA",
+      "state_name": "California",
+      "region": "Northern & Central California",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.42,
+      "rate_note": "Illustrative blended residential ballpark for high-usage PG&E homes after recent rate cycles — verify with your bill and rate schedule (E-TOU, EV2-A, etc.).",
+      "rate_as_of": "2025",
+      "headline": "Is solar worth it on a PG&E bill?",
+      "summary": "PG&E customers often start solar research after a summer bill spike — not because they love panels. Model payback with your rate and roof, then compare quotes without trusting a salesperson’s black-box savings claim.",
+      "sections": [
+        {
+          "heading": "Why PG&E bills push people to research solar",
+          "body": "Homeowners in PG&E territory usually open a solar tab after a concrete month — a July/August bill, a rate notice, or a neighbor’s install. Past behavior looks the same: two installer websites, one “free savings estimate,” then stalled confusion because every quote assumes a different rate and system size. Your decision is less about whether solar “works in California” and more about whether the numbers on your bill and roof match the pitch."
+        },
+        {
+          "heading": "Net Billing vs. the savings story you’ll hear",
+          "body": "California’s Net Billing Tariff credits exports differently than classic NEM. Export-heavy designs can look worse on paper than self-consumption + battery. When you decode a quote, ask what export credit and self-consumption assumptions they used — and whether battery is required for their savings claim. SolarFlow separates bill offset from backup so you can see both jobs clearly."
+        },
+        {
+          "heading": "What to do before the sales appointment",
+          "body": "Pull your last 12 months of usage if you have them, note your rate schedule from the bill, and model your address with Google Solar roof data. That gives you a spouse-ready baseline before anyone asks for a deposit. Also skim local permit timelines so soft costs don’t ambush you after you say yes."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What rate should I use for a PG&E solar ROI model?",
+          "answer": "Use your blended effective rate from recent bills (total $ ÷ kWh), not a marketing “average California rate.” Time-of-use schedules change the $/kWh you avoid. SolarFlow lets you enter bill, usage, and $/kWh so they stay in sync."
+        },
+        {
+          "question": "Do I need a battery with solar on PG&E?",
+          "answer": "Not always, but Net Billing often makes self-consumption and evening use more important. Batteries also matter for wildfire / PSPS backup — a different job than bill savings. Toggle battery in the ROI model to compare both paths."
+        },
+        {
+          "question": "How do I know if a PG&E-area solar quote is fair?",
+          "answer": "Normalize to dollars per watt before incentives, system size (kW), and whether battery is included. Then run our free quote market check and compare against your address-level model — not against another installer’s spreadsheet."
+        }
+      ]
+    },
+    {
+      "slug": "sce",
+      "name": "SCE",
+      "full_name": "Southern California Edison",
+      "state": "CA",
+      "state_name": "California",
+      "region": "Southern California",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.38,
+      "rate_note": "Illustrative blended residential ballpark — confirm from your SCE bill and schedule.",
+      "rate_as_of": "2025",
+      "headline": "Solar bill calculator thinking for SCE customers",
+      "summary": "If your Southern California Edison bill jumped and you’re comparing quotes, start with your roof and rate — not county averages. Build a neutral model you can share with a spouse before you sit through a pitch.",
+      "sections": [
+        {
+          "heading": "Bill shock is the real trigger",
+          "body": "SCE customers rarely “decide to go green” in the abstract. They react to a bill, a heat wave, or a rate change, then collect quotes that disagree with each other. The pain is distrust: different kW sizes, different assumed rates, and savings graphs nobody can audit."
+        },
+        {
+          "heading": "Net Billing still applies",
+          "body": "Like other California IOUs, export credits under Net Billing are not 1:1 retail. Ask every quote to break out self-consumed kWh vs. exported kWh. If they won’t, treat the savings number as soft."
+        },
+        {
+          "heading": "Permits and HOAs kill momentum",
+          "body": "Many SCE-area deals stall after a quote when HOA architectural review or city fire setbacks appear. Check process reality for your ZIP before you emotionally commit — SolarFlow’s permit tools and local guides help surface those steps early."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is solar worth it with SCE rates?",
+          "answer": "It depends on your usage, roof production, and rate schedule — not a statewide slogan. Model your address, then pressure-test installer quotes against that baseline."
+        },
+        {
+          "question": "What should I bring to an SCE solar appointment?",
+          "answer": "Recent bills (or usage chart), your roof readiness notes, and a short list of questions about $/W, warranties, and Net Billing assumptions. A shareable SolarFlow report helps keep the conversation specific."
+        }
+      ]
+    },
+    {
+      "slug": "sdge",
+      "name": "SDG&E",
+      "full_name": "San Diego Gas & Electric",
+      "state": "CA",
+      "state_name": "California",
+      "region": "San Diego County",
+      "default_city": "San Diego",
+      "illustrative_rate_usd_per_kwh": 0.45,
+      "rate_note": "SDG&E often ranks among the highest U.S. residential rates; this is an illustrative blend — use your bill.",
+      "rate_as_of": "2025",
+      "headline": "High SDG&E bills and whether solar pays back",
+      "summary": "San Diego–area homeowners search solar because rates hurt. Get an address-level model with transparent assumptions so you can compare quotes without another high-pressure appointment.",
+      "sections": [
+        {
+          "heading": "High rates change the math — if the quote is honest",
+          "body": "Elevated $/kWh improves payback when you displace your own usage. It does not fix a bad roof, bad pricing, or opaque financing. Your job is to separate rate-driven opportunity from salesperson optimism."
+        },
+        {
+          "heading": "Coast vs inland production",
+          "body": "San Diego County roofs vary — marine layer, orientation, and shade matter. Google Solar–based layouts beat hand-wavy “homes in your ZIP save $X” claims."
+        },
+        {
+          "heading": "Compare quotes like a buyer, not a lead",
+          "body": "Normalize each proposal to $/W, equipment brands, battery inclusion, and timeline to PTO. Use the quote market-check tool, then share one spouse-ready PDF so decisions happen in your kitchen, not on a driveway pitch."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Why are solar quotes in San Diego all over the map?",
+          "answer": "Different system sizes, battery packages, financing (loan vs cash), and Net Billing assumptions. Always convert to cash $/W and model your roof separately."
+        }
+      ]
+    },
+    {
+      "slug": "coned",
+      "name": "Con Edison",
+      "full_name": "Consolidated Edison",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York City metro",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.32,
+      "rate_note": "Illustrative NYC-area residential blend — delivery + supply vary; confirm on your Con Edison bill.",
+      "rate_as_of": "2025",
+      "headline": "Solar on a Con Edison bill: what to model first",
+      "summary": "NYC-area bills stack supply and delivery. Before you chase a rooftop or community-solar sales call, understand your usage and whether your building/roof can host a system at all.",
+      "sections": [
+        {
+          "heading": "Dense housing changes the job",
+          "body": "Many Con Edison customers hit co-op boards, roof rights, or shading from neighboring buildings. Feasibility and process pain show up before ROI spreadsheets do. Start with roof readiness, then economics."
+        },
+        {
+          "heading": "Incentives change — don’t memorize last year’s ad",
+          "body": "Federal credits and state/NYSERDA-era programs evolve. Ask for current eligibility in writing and keep a neutral model so you’re not dependent on a flyer."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can apartment dwellers use SolarFlow?",
+          "answer": "SolarFlow models rooftop systems at an address. If you lack roof rights, community solar or other products may fit better — still start by understanding your bill and usage."
+        }
+      ]
+    },
+    {
+      "slug": "duke-energy",
+      "name": "Duke Energy",
+      "full_name": "Duke Energy",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "Carolinas & overlapping territories",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.15,
+      "rate_note": "Illustrative — Duke territories differ by state; always use your bill’s effective rate.",
+      "rate_as_of": "2025",
+      "headline": "Solar with Duke Energy: bill math without the pitch",
+      "summary": "Lower average rates than coastal California mean payback hinges on system cost, production, and incentives. Model your address so a low $/kWh doesn’t get buried under an aggressive loan payment.",
+      "sections": [
+        {
+          "heading": "When rates are moderate, price discipline matters more",
+          "body": "If you’re not escaping 40¢/kWh bills, an overpriced system takes longer to break even. Quote comparison and $/W checks matter even more than in high-rate utilities."
+        },
+        {
+          "heading": "Interconnection still has a process",
+          "body": "Utility interconnection and local building permits still gate Permission to Operate. Know the steps so timeline surprises don’t erode trust after you sign."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is solar worth it if my Duke rate is “only” 12–16¢/kWh?",
+          "answer": "Possibly — especially with incentives, rising rates, or long ownership horizon — but the margin for quote padding is thinner. Run the numbers with your roof and compare installed $/W carefully."
+        }
+      ]
+    },
+    {
+      "slug": "fpl",
+      "name": "FPL",
+      "full_name": "Florida Power & Light",
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Much of Florida",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.15,
+      "rate_note": "Illustrative residential blend — Florida rates and net metering rules vary; verify locally.",
+      "rate_as_of": "2025",
+      "headline": "FPL bills, Florida sun, and realistic solar payback",
+      "summary": "Florida has strong sun and frequent sales pressure. Anchor on your roof production and all-in system cost before you accept a “$0 down” payment that hides the economics.",
+      "sections": [
+        {
+          "heading": "Sunlight is not the same as a good deal",
+          "body": "Great irradiance helps production; it does not justify every financed package. Homeowners who get stuck usually skipped normalizing quotes to cash economics."
+        },
+        {
+          "heading": "Hurricane and roof age questions",
+          "body": "Ask about roof condition, mounting, and warranty interactions with storm risk. Production models assume the array stays installed and performing."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Should I replace my roof before solar in Florida?",
+          "answer": "If the roof is near end of life, installers often recommend reroofing first. Factor that cost into true payback — SolarFlow’s planning tools help you keep assumptions visible."
+        }
+      ]
+    },
+    {
+      "slug": "aps",
+      "name": "APS",
+      "full_name": "Arizona Public Service",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "Central Arizona",
+      "default_city": "Phoenix",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative — desert TOU and demand components vary; pull numbers from your APS bill.",
+      "rate_as_of": "2025",
+      "headline": "APS + Arizona sun: model before you buy",
+      "summary": "Phoenix-area roofs produce strong output, but rate design (TOU, demand) shapes savings. Enter your real bill and usage so a quote can’t hide behind “Arizona averages.”",
+      "sections": [
+        {
+          "heading": "TOU and demand change the savings story",
+          "body": "Ask which rate schedule the quote assumes after solar. A model that ignores demand charges or TOU shifts can overstate monthly savings."
+        },
+        {
+          "heading": "Heat, HVAC, and system sizing",
+          "body": "High AC load is often why people look at solar. If you’re also considering heat-pump HVAC later, SolarFlow’s toggles help you see stacked scenarios."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is a battery worth it with APS?",
+          "answer": "Backup and rate arbitrage are different jobs. Toggle battery in the ROI dashboard and decide based on outages and your rate — not a bundled “package discount” alone."
+        }
+      ]
+    },
+    {
+      "slug": "xcel",
+      "name": "Xcel Energy",
+      "full_name": "Xcel Energy",
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Colorado & other Xcel territories",
+      "default_city": "Denver",
+      "illustrative_rate_usd_per_kwh": 0.14,
+      "rate_note": "Illustrative Colorado-oriented blend — Xcel territories differ; use your bill.",
+      "rate_as_of": "2025",
+      "headline": "Xcel Energy solar: payback without county averages",
+      "summary": "Front Range homeowners often hear conflicting stories about net metering and incentives. Build an address-level baseline, then pressure-test installer math.",
+      "sections": [
+        {
+          "heading": "Snow, orientation, and production honesty",
+          "body": "Ask how the proposal handles winter production and roof pitch. Google Solar insights plus a clear production figure beat vague “offset 100% of your bill” language."
+        },
+        {
+          "heading": "Get the assumptions in writing",
+          "body": "Export or share a SolarFlow report with rate, inflation, system size, and ITC assumptions labeled. That document is what spouses and skeptical partners actually need."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I compare Xcel solar quotes quickly?",
+          "answer": "Convert to $/W, confirm battery inclusion, and check whether savings use your bill’s rate. Our quote checker flags quotes that sit far above planning benchmarks."
+        }
+      ]
+    }
+  ]
+}

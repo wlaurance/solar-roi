@@ -26,6 +26,7 @@ import {
   resolveRate,
   solarDriveFromInsights,
 } from "@/lib/roi/calculate";
+import { ShareReportButton } from "@/components/dashboard/share-report-button";
 import { exportProjectPdf } from "@/lib/report/export-project-pdf";
 import {
   ensureCountyForProject,
@@ -364,7 +365,7 @@ export function RoiDashboard({ project }: { project: Project }) {
             )}
           </p>
         </div>
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-end gap-3">
           <button
             type="button"
             className="btn-secondary"
@@ -382,6 +383,7 @@ export function RoiDashboard({ project }: { project: Project }) {
           {exportError ? (
             <p className="max-w-xs text-right text-xs text-danger">{exportError}</p>
           ) : null}
+          <ShareReportButton project={project} />
         </div>
       </div>
 

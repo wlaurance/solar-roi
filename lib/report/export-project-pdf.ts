@@ -1,6 +1,13 @@
 import type { jsPDF } from "jspdf";
 import type { InstallerPlace } from "@/lib/google/places";
-import type { RoiResult } from "@/lib/roi/calculate";
+import {
+  BATTERY_COST,
+  BATTERY_REPLACEMENT_COST,
+  BATTERY_REPLACEMENT_YEAR,
+  COST_PER_KW,
+  ITC_NET_FACTOR,
+  type RoiResult,
+} from "@/lib/roi/calculate";
 import type { SolarCandidateAssessment } from "@/lib/solar/candidate";
 import type { CountyLinksPayload, Project } from "@/lib/types";
 
@@ -207,6 +214,36 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
     );
     y += 14;
   }
+
+  y = sectionTitle(doc, "Assumptions (show your work)", y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.setTextColor(...MUTED);
+  const assumptionLines = [
+    `Planning PV cost: $${COST_PER_KW.toLocaleString("en-US")}/kW before incentives${
+      result.solarDriven
+        ? " · size/energy from Google Solar roof config"
+        : " · fallback system size until Roof Designer is set"
+    }.`,
+    `ITC illustration: ×${ITC_NET_FACTOR} net factor (~${Math.round((1 - ITC_NET_FACTOR) * 100)}% credit) — not tax advice.`,
+    `Energy inflation: ${result.energyInflationPct}% / year · blended rate $${result.rateUsdPerKwh.toFixed(2)}/kWh.`,
+  ];
+  if (toggles.battery) {
+    assumptionLines.push(
+      `Battery planning: $${BATTERY_COST.toLocaleString("en-US")} + $${BATTERY_REPLACEMENT_COST.toLocaleString("en-US")} replacement in year ${BATTERY_REPLACEMENT_YEAR}.`,
+    );
+  }
+  assumptionLines.push(
+    "For household planning only — not an engineering or financial offer. Share this PDF so decisions happen with labeled assumptions.",
+  );
+  for (const line of assumptionLines) {
+    y = ensureSpace(doc, y, 12);
+    const wrapped = doc.splitTextToSize(line, 180);
+    doc.text(wrapped, 14, y);
+    y += wrapped.length * 4.2 + 2;
+  }
+  doc.setTextColor(...INK);
+  y += 4;
 
   if (candidate) {
     y = sectionTitle(doc, "Solar candidate (sunshine heuristic)", y);
