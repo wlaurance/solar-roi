@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { fetchBuildingInsights } from "@/lib/google/solar";
 import { systemKwFromPanels } from "@/lib/roi/calculate";
 import { createClient } from "@/lib/supabase/server";
+import {
+  captureServerEvent,
+  distinctIdFromRequest,
+} from "@/lib/posthog-server";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -15,12 +19,14 @@ export async function GET(request: Request) {
 
   try {
     const insights = await fetchBuildingInsights(lat, lng);
+    let distinctId = distinctIdFromRequest(request);
 
     if (projectId) {
       const supabase = await createClient();
       const {
         data: { user },
       } = await supabase.auth.getUser();
+      distinctId = distinctIdFromRequest(request, user?.id);
       if (user) {
         const configs = insights.solarPotential?.solarPanelConfigs ?? [];
         const watts = insights.solarPotential?.panelCapacityWatts ?? 400;
@@ -66,8 +72,25 @@ export async function GET(request: Request) {
       }
     }
 
+    await captureServerEvent({
+      distinctId,
+      event: "server_solar_insights_fetched",
+      properties: {
+        project_id: projectId,
+        config_count: insights.solarPotential?.solarPanelConfigs?.length ?? 0,
+      },
+    });
+
     return NextResponse.json({ insights });
   } catch (err) {
+    await captureServerEvent({
+      distinctId: distinctIdFromRequest(request),
+      event: "server_solar_insights_failed",
+      properties: {
+        project_id: projectId,
+        error: err instanceof Error ? err.message : "Solar API failed",
+      },
+    });
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Solar API failed" },
       { status: 502 },

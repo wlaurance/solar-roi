@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CountyLinksPayload, Project } from "@/lib/types";
+import { posthogRequestHeaders, track, trackException } from "@/lib/analytics";
 
 const CATEGORY_LABEL: Record<string, string> = {
   building_permit: "Building permit",
@@ -26,18 +27,40 @@ export function PermitsView({ project }: { project: Project }) {
     async (force = false) => {
       setLoading(true);
       setError(null);
+      track("county_resources_requested", {
+        project_id: project.id,
+        force,
+      });
       try {
         const res = await fetch("/api/county/resources", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            ...posthogRequestHeaders(),
+          },
           body: JSON.stringify({ projectId: project.id, force }),
         });
         const body = await res.json();
         if (!res.ok) throw new Error(body.error ?? "Lookup failed");
         setCounty(body.county ?? null);
         setPack(body.links ?? null);
+        track("county_resources_loaded", {
+          project_id: project.id,
+          force,
+          cached: Boolean(body.cached),
+          county: body.county ?? null,
+        });
         router.refresh();
       } catch (err) {
+        track("county_resources_failed", {
+          project_id: project.id,
+          force,
+          error: err instanceof Error ? err.message : "Lookup failed",
+        });
+        trackException(err, {
+          context: "county_resources",
+          project_id: project.id,
+        });
         setError(err instanceof Error ? err.message : "Lookup failed");
       } finally {
         setLoading(false);

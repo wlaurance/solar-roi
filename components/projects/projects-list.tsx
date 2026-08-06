@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import type { Project } from "@/lib/types";
+import { track } from "@/lib/analytics";
 
 export function ProjectsList({ projects }: { projects: Project[] }) {
   if (projects.length === 0) {
@@ -27,6 +28,12 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
           <Link
             href={`/projects/${project.id}/dashboard`}
             className="group block rounded-2xl border border-stone-2/80 bg-surface/90 p-5 shadow-sm transition hover:border-canopy/40 hover:shadow-md"
+            onClick={() =>
+              track("project_opened", {
+                project_id: project.id,
+                has_insights: Boolean(project.solar_insights),
+              })
+            }
           >
             <div className="flex items-start justify-between gap-3">
               <div>

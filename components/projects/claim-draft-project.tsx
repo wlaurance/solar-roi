@@ -7,6 +7,7 @@ import {
   clearDraftProject,
   readDraftProject,
 } from "@/lib/draft-project";
+import { track, trackException } from "@/lib/analytics";
 
 /**
  * After signup/login, turn a sessionStorage teaser address into the user's first project.
@@ -40,6 +41,7 @@ export function ClaimDraftProject() {
       // Only auto-create when the portfolio is empty (first project)
       if ((count ?? 0) > 0) {
         clearDraftProject();
+        track("draft_project_skipped", { reason: "portfolio_not_empty" });
         setStatus(null);
         return;
       }
@@ -67,12 +69,21 @@ export function ClaimDraftProject() {
       if (cancelled) return;
 
       if (error || !data) {
+        track("draft_project_claim_failed", {
+          error: error?.message ?? "unknown",
+        });
+        trackException(error ?? new Error("draft claim failed"));
         setStatus(
           error?.message ?? "Could not create your draft project. Use New design.",
         );
         return;
       }
 
+      track("draft_project_claimed", {
+        project_id: data.id,
+        source_slug: draft.sourceSlug ?? null,
+        state: draft.state,
+      });
       clearDraftProject();
       router.replace(`/projects/${data.id}/dashboard`);
       router.refresh();

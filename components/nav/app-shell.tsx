@@ -5,6 +5,7 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icons } from "@/components/icons";
 import { createClient } from "@/lib/supabase/client";
+import { resetAnalytics, track } from "@/lib/analytics";
 
 type NavItem = {
   href: string;
@@ -76,8 +77,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const items = projectId ? [...topNav, ...projectNav(projectId)] : topNav;
 
   async function signOut() {
+    track("user_logged_out");
     const supabase = createClient();
     await supabase.auth.signOut();
+    resetAnalytics();
     router.push("/login");
     router.refresh();
   }

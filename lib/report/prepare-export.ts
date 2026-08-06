@@ -1,6 +1,7 @@
 import type { InstallerPlace } from "@/lib/google/places";
 import { solarDriveFromInsights } from "@/lib/roi/calculate";
 import type { CountyLinksPayload, Project } from "@/lib/types";
+import { posthogRequestHeaders } from "@/lib/analytics";
 
 function projectFullAddress(project: Project) {
   return [project.address, project.city, `${project.state} ${project.zip}`]
@@ -86,7 +87,9 @@ export async function fetchInstallersForProject(
     params.set("lng", String(project.lng));
   }
 
-  const res = await fetch(`/api/installers?${params.toString()}`);
+  const res = await fetch(`/api/installers?${params.toString()}`, {
+    headers: posthogRequestHeaders(),
+  });
   const body = await res.json();
   if (!res.ok) {
     throw new Error(body.error ?? "Could not load installers for PDF");
@@ -117,7 +120,10 @@ export async function ensureCountyForProject(project: Project): Promise<{
   try {
     const res = await fetch("/api/county/resources", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...posthogRequestHeaders(),
+      },
       body: JSON.stringify({ projectId: project.id, force: false }),
     });
     const body = await res.json();

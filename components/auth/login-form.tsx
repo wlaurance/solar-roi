@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Icons } from "@/components/icons";
+import { identifyUser, track, trackException } from "@/lib/analytics";
 
 export function LoginForm() {
   const router = useRouter();
@@ -33,17 +34,27 @@ export function LoginForm() {
           },
         });
         if (magicError) throw magicError;
+        track("magic_link_requested", { email });
         setMessage("Check your email for the magic link.");
       } else {
-        const { error: signInError } = await supabase.auth.signInWithPassword({
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({
           email,
           password,
         });
         if (signInError) throw signInError;
+        if (data.user) {
+          identifyUser(data.user.id, { email: data.user.email });
+        }
+        track("user_logged_in", { method: "password" });
         router.push(next);
         router.refresh();
       }
     } catch (err) {
+      track("login_failed", {
+        method: mode,
+        error: err instanceof Error ? err.message : "Sign-in failed",
+      });
+      trackException(err, { context: "login" });
       setError(err instanceof Error ? err.message : "Sign-in failed");
     } finally {
       setLoading(false);
@@ -68,14 +79,20 @@ export function LoginForm() {
           <button
             type="button"
             className={`flex-1 rounded-md py-2 ${mode === "password" ? "bg-surface text-ink shadow-sm" : "text-ink-muted"}`}
-            onClick={() => setMode("password")}
+            onClick={() => {
+              setMode("password");
+              track("login_mode_selected", { mode: "password" });
+            }}
           >
             Password
           </button>
           <button
             type="button"
             className={`flex-1 rounded-md py-2 ${mode === "magic" ? "bg-surface text-ink shadow-sm" : "text-ink-muted"}`}
-            onClick={() => setMode("magic")}
+            onClick={() => {
+              setMode("magic");
+              track("login_mode_selected", { mode: "magic" });
+            }}
           >
             Magic link
           </button>

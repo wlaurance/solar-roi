@@ -3,6 +3,10 @@ import { createClient } from "@/lib/supabase/server";
 import { geocodeAddress } from "@/lib/google/geocode";
 import { lookupCountySolarResources } from "@/lib/llm/county-lookup";
 import type { CountyLinksPayload } from "@/lib/types";
+import {
+  captureServerEvent,
+  distinctIdFromRequest,
+} from "@/lib/posthog-server";
 
 function needsFreshLookup(pack: CountyLinksPayload | null | undefined): boolean {
   if (!pack) return true;
@@ -33,6 +37,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    const distinctId = distinctIdFromRequest(request, user.id);
+
     const { data: project, error: loadError } = await supabase
       .from("projects")
       .select("*")
@@ -59,6 +65,11 @@ export async function POST(request: Request) {
     if (!county || force) {
       const geo = await geocodeAddress(fullAddress);
       if (!geo?.county) {
+        await captureServerEvent({
+          distinctId,
+          event: "server_county_resources_failed",
+          properties: { project_id: projectId, reason: "no_county" },
+        });
         return NextResponse.json(
           {
             error:
@@ -87,6 +98,11 @@ export async function POST(request: Request) {
     }
 
     if (!force && !needsFreshLookup(existingPack)) {
+      await captureServerEvent({
+        distinctId,
+        event: "server_county_resources_served",
+        properties: { project_id: projectId, cached: true, county },
+      });
       return NextResponse.json({
         county,
         state,
@@ -112,6 +128,18 @@ export async function POST(request: Request) {
       throw new Error(`Failed to save permitting content: ${saveError.message}`);
     }
 
+    await captureServerEvent({
+      distinctId,
+      event: "server_county_resources_served",
+      properties: {
+        project_id: projectId,
+        cached: false,
+        county,
+        force,
+        step_count: lookup.steps?.length ?? 0,
+      },
+    });
+
     return NextResponse.json({
       county,
       state,
@@ -120,6 +148,13 @@ export async function POST(request: Request) {
       cached: false,
     });
   } catch (err) {
+    await captureServerEvent({
+      distinctId: distinctIdFromRequest(request),
+      event: "server_county_resources_failed",
+      properties: {
+        error: err instanceof Error ? err.message : "County lookup failed",
+      },
+    });
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "County lookup failed" },
       { status: 502 },

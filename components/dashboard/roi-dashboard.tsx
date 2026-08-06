@@ -35,6 +35,7 @@ import {
 import { assessSolarCandidate } from "@/lib/solar/candidate";
 import { createClient } from "@/lib/supabase/client";
 import type { Project } from "@/lib/types";
+import { track, trackException } from "@/lib/analytics";
 
 ChartJS.register(
   CategoryScale,
@@ -147,6 +148,7 @@ export function RoiDashboard({ project }: { project: Project }) {
     setExporting(true);
     setExportError(null);
     setExportStatus("Preparing chart…");
+    track("pdf_export_started", { project_id: project.id });
     try {
       const chartDataUrl = chartRef.current?.toBase64Image("image/png", 1) ?? null;
 
@@ -177,10 +179,22 @@ export function RoiDashboard({ project }: { project: Project }) {
         countyLookupError: countyResult.error ?? null,
       });
 
+      track("pdf_export_completed", {
+        project_id: project.id,
+        installer_count: installers.length,
+        has_roof_map: Boolean(roofMapDataUrl),
+        has_county: Boolean(countyResult.county),
+      });
+
       if (countyResult.countyLinks && !project.county_links) {
         router.refresh();
       }
     } catch (err) {
+      track("pdf_export_failed", {
+        project_id: project.id,
+        error: err instanceof Error ? err.message : "Could not export PDF",
+      });
+      trackException(err, { context: "pdf_export", project_id: project.id });
       setExportError(
         err instanceof Error ? err.message : "Could not export PDF",
       );
@@ -202,6 +216,10 @@ export function RoiDashboard({ project }: { project: Project }) {
       startTransition(async () => {
         const supabase = createClient();
         await supabase.from("projects").update(next).eq("id", project.id);
+        track("roi_inputs_updated", {
+          project_id: project.id,
+          fields: Object.keys(next).join(","),
+        });
         router.refresh();
       });
     }, 400);
@@ -216,6 +234,11 @@ export function RoiDashboard({ project }: { project: Project }) {
   function updateToggle(key: keyof typeof toggles) {
     const next = { ...toggles, [key]: !toggles[key] };
     setToggles(next);
+    track("roi_toggle_changed", {
+      project_id: project.id,
+      toggle: key,
+      enabled: next[key],
+    });
     startTransition(async () => {
       const supabase = createClient();
       await supabase.from("projects").update(next).eq("id", project.id);

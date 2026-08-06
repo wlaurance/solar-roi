@@ -6,6 +6,7 @@ import { FormEvent, useState } from "react";
 import { Icons } from "@/components/icons";
 import { saveDraftProject, type DraftProject } from "@/lib/draft-project";
 import { createClient } from "@/lib/supabase/client";
+import { posthogRequestHeaders, track, trackException } from "@/lib/analytics";
 
 type Props = {
   locationLabel: string;
@@ -46,7 +47,10 @@ export function LocationProjectCta({
       const full = `${trimmedAddress}, ${trimmedCity}, ${trimmedState} ${trimmedZip}`;
       const res = await fetch("/api/geocode", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...posthogRequestHeaders(),
+        },
         body: JSON.stringify({ address: full }),
       });
       if (!res.ok) {
@@ -95,14 +99,32 @@ export function LocationProjectCta({
           .select("id")
           .single();
         if (insertError) throw insertError;
+        track("project_created", {
+          project_id: data.id,
+          state: next.state,
+          has_county: Boolean(next.county),
+          source: "location_page",
+          source_slug: sourceSlug,
+        });
         router.push(`/projects/${data.id}/dashboard`);
         router.refresh();
         return;
       }
 
       saveDraftProject(next);
+      track("teaser_address_submitted", {
+        source_slug: sourceSlug,
+        state: next.state,
+        has_county: Boolean(next.county),
+      });
+      track("teaser_modal_shown", { source_slug: sourceSlug });
       setDraft(next);
     } catch (err) {
+      track("teaser_address_failed", {
+        source_slug: sourceSlug,
+        error: err instanceof Error ? err.message : "Something went wrong",
+      });
+      trackException(err, { context: "location_cta" });
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
@@ -245,13 +267,19 @@ export function LocationProjectCta({
               <Link
                 href="/signup?from=teaser&next=/projects"
                 className="btn-primary flex-1 justify-center"
+                onClick={() =>
+                  track("teaser_signup_clicked", { source_slug: sourceSlug })
+                }
               >
                 Create account for full report
               </Link>
               <button
                 type="button"
                 className="btn-secondary flex-1 justify-center"
-                onClick={() => setDraft(null)}
+                onClick={() => {
+                  track("teaser_modal_dismissed", { source_slug: sourceSlug });
+                  setDraft(null);
+                }}
               >
                 Keep browsing
               </button>

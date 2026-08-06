@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Icons } from "@/components/icons";
 import { createClient } from "@/lib/supabase/client";
+import { posthogRequestHeaders, track, trackException } from "@/lib/analytics";
 
 export function CreateProjectButton() {
   const router = useRouter();
@@ -40,7 +41,10 @@ export function CreateProjectButton() {
       const fullAddress = `${trimmedAddress}, ${trimmedCity}, ${state.trim()} ${trimmedZip}`;
       const geoRes = await fetch("/api/geocode", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...posthogRequestHeaders(),
+        },
         body: JSON.stringify({ address: fullAddress }),
       });
       if (!geoRes.ok) {
@@ -72,10 +76,20 @@ export function CreateProjectButton() {
         .single();
 
       if (insertError) throw insertError;
+      track("project_created", {
+        project_id: data.id,
+        state: state.trim() || "CA",
+        has_county: Boolean(geo.county),
+        source: "projects_page",
+      });
       setOpen(false);
       router.push(`/projects/${data.id}/dashboard`);
       router.refresh();
     } catch (err) {
+      track("project_create_failed", {
+        error: err instanceof Error ? err.message : "Could not create project",
+      });
+      trackException(err, { context: "create_project" });
       setError(err instanceof Error ? err.message : "Could not create project");
     } finally {
       setLoading(false);
@@ -90,6 +104,7 @@ export function CreateProjectButton() {
         onClick={() => {
           setOpen(true);
           setError(null);
+          track("project_create_form_opened");
         }}
       >
         <Icons.plus className="h-4 w-4" />

@@ -11,6 +11,7 @@ import {
 import { systemKwFromPanels } from "@/lib/roi/calculate";
 import { createClient } from "@/lib/supabase/client";
 import type { Project } from "@/lib/types";
+import { posthogRequestHeaders, track, trackException } from "@/lib/analytics";
 
 type Props = {
   project: Project;
@@ -67,20 +68,31 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
     }
     setLoading(true);
     setError(null);
+    track("solar_insights_requested", {
+      project_id: project.id,
+      has_cached: Boolean(insights),
+    });
     try {
       const res = await fetch(
         `/api/solar/insights?lat=${project.lat}&lng=${project.lng}&projectId=${project.id}`,
+        { headers: posthogRequestHeaders() },
       );
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? "Solar API failed");
       setInsights(body.insights as BuildingInsightsResponse);
+      track("solar_insights_loaded", { project_id: project.id });
       router.refresh();
     } catch (err) {
+      track("solar_insights_failed", {
+        project_id: project.id,
+        error: err instanceof Error ? err.message : "Failed",
+      });
+      trackException(err, { context: "solar_insights", project_id: project.id });
       setError(err instanceof Error ? err.message : "Failed to load Solar insights");
     } finally {
       setLoading(false);
     }
-  }, [project.id, project.lat, project.lng, router]);
+  }, [insights, project.id, project.lat, project.lng, router]);
 
   useEffect(() => {
     if (!insights && project.lat != null && project.lng != null) {
@@ -92,6 +104,11 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
     setConfigIndex(next);
     const config = configs[next];
     const watts = pot?.panelCapacityWatts ?? 400;
+    track("roof_config_changed", {
+      project_id: project.id,
+      config_index: next,
+      panels: config?.panelsCount ?? 0,
+    });
     startTransition(async () => {
       const supabase = createClient();
       const patch: {

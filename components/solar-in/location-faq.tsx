@@ -1,6 +1,7 @@
 "use client";
 
 import type { LocationFaq } from "@/lib/locations/types";
+import { track } from "@/lib/analytics";
 
 export function LocationFaqSection({ faqs }: { faqs: LocationFaq[] }) {
   if (!faqs.length) return null;
@@ -19,7 +20,17 @@ export function LocationFaqSection({ faqs }: { faqs: LocationFaq[] }) {
       </p>
       <div className="mt-6 divide-y divide-stone-2/80 border-y border-stone-2/80">
         {faqs.map((faq) => (
-          <details key={faq.question} className="group py-4">
+          <details
+            key={faq.question}
+            className="group py-4"
+            onToggle={(e) => {
+              if ((e.target as HTMLDetailsElement).open) {
+                track("location_faq_opened", {
+                  question: faq.question.slice(0, 120),
+                });
+              }
+            }}
+          >
             <summary className="cursor-pointer list-none font-medium text-ink marker:content-none [&::-webkit-details-marker]:hidden">
               <span className="flex items-start justify-between gap-4">
                 <span>{faq.question}</span>

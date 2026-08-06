@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { InstallerPlace } from "@/lib/google/places";
 import type { Project } from "@/lib/types";
+import { posthogRequestHeaders, track, trackException } from "@/lib/analytics";
 
 function projectFullAddress(project: Project) {
   return [project.address, project.city, `${project.state} ${project.zip}`]
@@ -28,6 +29,7 @@ export function InstallersView({ project }: { project: Project }) {
     (async () => {
       setLoading(true);
       setError(null);
+      track("installers_search_started", { project_id: project.id });
       try {
         const params = new URLSearchParams({
           address: fullAddress,
@@ -37,12 +39,29 @@ export function InstallersView({ project }: { project: Project }) {
           params.set("lat", String(project.lat));
           params.set("lng", String(project.lng));
         }
-        const res = await fetch(`/api/installers?${params.toString()}`);
+        const res = await fetch(`/api/installers?${params.toString()}`, {
+          headers: posthogRequestHeaders(),
+        });
         const body = await res.json();
         if (!res.ok) throw new Error(body.error ?? "Failed to load installers");
-        if (!cancelled) setInstallers(body.installers ?? []);
+        if (!cancelled) {
+          const list = (body.installers ?? []) as InstallerPlace[];
+          setInstallers(list);
+          track("installers_search_completed", {
+            project_id: project.id,
+            count: list.length,
+          });
+        }
       } catch (err) {
         if (!cancelled) {
+          track("installers_search_failed", {
+            project_id: project.id,
+            error: err instanceof Error ? err.message : "Failed",
+          });
+          trackException(err, {
+            context: "installers_search",
+            project_id: project.id,
+          });
           setError(err instanceof Error ? err.message : "Failed to load installers");
         }
       } finally {
@@ -52,7 +71,7 @@ export function InstallersView({ project }: { project: Project }) {
     return () => {
       cancelled = true;
     };
-  }, [fullAddress, project.lat, project.lng]);
+  }, [fullAddress, project.id, project.lat, project.lng]);
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -106,7 +125,17 @@ export function InstallersView({ project }: { project: Project }) {
               </div>
               <div className="flex flex-wrap gap-2">
                 {place.phone ? (
-                  <a className="btn-secondary px-3 py-2 text-xs" href={`tel:${place.phone}`}>
+                  <a
+                    className="btn-secondary px-3 py-2 text-xs"
+                    href={`tel:${place.phone}`}
+                    onClick={() =>
+                      track("installer_contact_clicked", {
+                        project_id: project.id,
+                        action: "call",
+                        installer_id: place.id,
+                      })
+                    }
+                  >
                     Call
                   </a>
                 ) : null}
@@ -116,6 +145,13 @@ export function InstallersView({ project }: { project: Project }) {
                     href={place.website}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() =>
+                      track("installer_contact_clicked", {
+                        project_id: project.id,
+                        action: "website",
+                        installer_id: place.id,
+                      })
+                    }
                   >
                     Website
                   </a>
@@ -129,6 +165,13 @@ export function InstallersView({ project }: { project: Project }) {
                   }
                   target={place.website ? "_blank" : undefined}
                   rel={place.website ? "noreferrer" : undefined}
+                  onClick={() =>
+                    track("installer_contact_clicked", {
+                      project_id: project.id,
+                      action: "get_quote",
+                      installer_id: place.id,
+                    })
+                  }
                 >
                   Get quote
                 </a>
@@ -138,6 +181,13 @@ export function InstallersView({ project }: { project: Project }) {
                     href={place.mapsUri}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() =>
+                      track("installer_contact_clicked", {
+                        project_id: project.id,
+                        action: "maps",
+                        installer_id: place.id,
+                      })
+                    }
                   >
                     Maps
                   </a>

@@ -6,6 +6,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Icons } from "@/components/icons";
 import { readDraftProject } from "@/lib/draft-project";
+import { identifyUser, track, trackException } from "@/lib/analytics";
 
 export function SignupForm() {
   const router = useRouter();
@@ -44,6 +45,18 @@ export function SignupForm() {
       });
       if (signUpError) throw signUpError;
 
+      if (data.user) {
+        identifyUser(data.user.id, {
+          email: data.user.email,
+          full_name: fullName || null,
+        });
+      }
+      track("user_signed_up", {
+        from_teaser: fromTeaser || Boolean(draft),
+        has_draft_project: Boolean(draft),
+        has_session: Boolean(data.session),
+      });
+
       if (data.session) {
         router.push(redirectNext);
         router.refresh();
@@ -55,6 +68,10 @@ export function SignupForm() {
         );
       }
     } catch (err) {
+      track("signup_failed", {
+        error: err instanceof Error ? err.message : "Sign-up failed",
+      });
+      trackException(err, { context: "signup" });
       setError(err instanceof Error ? err.message : "Sign-up failed");
     } finally {
       setLoading(false);

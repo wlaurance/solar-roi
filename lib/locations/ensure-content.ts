@@ -6,6 +6,7 @@ import type {
   GeoPageRow,
   LocationRecord,
 } from "@/lib/locations/types";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 function rowToContent(row: GeoPageRow): GeoPageContent | null {
   if (!row.summary || !row.sections?.length) return null;
@@ -90,6 +91,24 @@ export async function ensureGeoPageContent(
     );
   } catch (err) {
     console.warn("geo_pages cache write failed:", err);
+  }
+
+  if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN) {
+    try {
+      const posthog = getPostHogClient();
+      posthog.capture({
+        distinctId: `geo-page:${location.slug}`,
+        event: "server_geo_page_generated",
+        properties: {
+          slug: location.slug,
+          kind: location.type,
+          state: location.state,
+        },
+      });
+      await posthog.shutdown();
+    } catch {
+      // analytics best-effort
+    }
   }
 
   return { content, cached: false };

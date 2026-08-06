@@ -3,6 +3,7 @@ import {
   Instrument_Serif,
 } from "next/font/google";
 import type { Metadata } from "next";
+import { PostHogIdentify } from "@/components/analytics/posthog-identify";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -34,7 +35,10 @@ export default function RootLayout({
       lang="en"
       className={`${instrumentSans.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <PostHogIdentify />
+        {children}
+      </body>
     </html>
   );
 }

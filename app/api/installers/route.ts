@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 import { searchSolarInstallers } from "@/lib/google/places";
+import {
+  captureServerEvent,
+  distinctIdFromRequest,
+} from "@/lib/posthog-server";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -9,6 +13,7 @@ export async function GET(request: Request) {
   const lat = latRaw != null && latRaw !== "" ? Number(latRaw) : null;
   const lng = lngRaw != null && lngRaw !== "" ? Number(lngRaw) : null;
   const q = searchParams.get("q") ?? "solar installer";
+  const distinctId = distinctIdFromRequest(request);
 
   if (!address) {
     return NextResponse.json(
@@ -24,6 +29,11 @@ export async function GET(request: Request) {
       lng: lng != null && Number.isFinite(lng) ? lng : null,
       query: q,
     });
+    await captureServerEvent({
+      distinctId,
+      event: "server_installers_searched",
+      properties: { count: installers.length, query: q },
+    });
     return NextResponse.json(
       { installers, searchedAddress: address },
       {
@@ -33,6 +43,13 @@ export async function GET(request: Request) {
       },
     );
   } catch (err) {
+    await captureServerEvent({
+      distinctId,
+      event: "server_installers_failed",
+      properties: {
+        error: err instanceof Error ? err.message : "Places search failed",
+      },
+    });
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Places search failed" },
       { status: 502 },
