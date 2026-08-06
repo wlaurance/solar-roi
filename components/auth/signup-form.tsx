@@ -1,13 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { FormEvent, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Icons } from "@/components/icons";
+import { readDraftProject } from "@/lib/draft-project";
 
 export function SignupForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const fromTeaser = searchParams.get("from") === "teaser";
+  const nextPath = searchParams.get("next") || "/projects";
+  const [hasDraft, setHasDraft] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,12 +20,18 @@ export function SignupForm() {
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setHasDraft(Boolean(readDraftProject()));
+  }, []);
+
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setLoading(true);
     setError(null);
     setMessage(null);
     const supabase = createClient();
+    const draft = readDraftProject();
+    const redirectNext = draft ? "/projects" : nextPath;
 
     try {
       const { data, error: signUpError } = await supabase.auth.signUp({
@@ -28,16 +39,20 @@ export function SignupForm() {
         password,
         options: {
           data: { full_name: fullName },
-          emailRedirectTo: `${window.location.origin}/auth/callback?next=/projects`,
+          emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(redirectNext)}`,
         },
       });
       if (signUpError) throw signUpError;
 
       if (data.session) {
-        router.push("/projects");
+        router.push(redirectNext);
         router.refresh();
       } else {
-        setMessage("Account created. Check your email to confirm, or sign in if confirmations are disabled.");
+        setMessage(
+          draft
+            ? "Account created. Confirm your email, then sign in — we’ll attach the address you entered as your first project."
+            : "Account created. Check your email to confirm, or sign in if confirmations are disabled.",
+        );
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign-up failed");
@@ -53,7 +68,11 @@ export function SignupForm() {
           <Icons.sun className="h-6 w-6" />
         </div>
         <h1 className="font-display text-4xl text-ink">Create account</h1>
-        <p className="mt-2 text-sm text-ink-muted">Start your SolarFlow portfolio</p>
+        <p className="mt-2 text-sm text-ink-muted">
+          {fromTeaser || hasDraft
+            ? "Finish signup to unlock your full solar report"
+            : "Start your SolarFlow portfolio"}
+        </p>
       </div>
 
       <form

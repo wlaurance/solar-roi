@@ -1,0 +1,6507 @@
+{
+  "generated_from": "census-2023-counties + miserlou-cities",
+  "counties": [
+    {
+      "type": "county",
+      "name": "Los Angeles County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 9663345,
+      "slug": "los-angeles-county-ca",
+      "fips": "06037"
+    },
+    {
+      "type": "county",
+      "name": "Cook County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 5087072,
+      "slug": "cook-county-il",
+      "fips": "17031"
+    },
+    {
+      "type": "county",
+      "name": "Harris County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 4835125,
+      "slug": "harris-county-tx",
+      "fips": "48201"
+    },
+    {
+      "type": "county",
+      "name": "Maricopa County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 4585871,
+      "slug": "maricopa-county-az",
+      "fips": "04013"
+    },
+    {
+      "type": "county",
+      "name": "San Diego County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 3269973,
+      "slug": "san-diego-county-ca",
+      "fips": "06073"
+    },
+    {
+      "type": "county",
+      "name": "Orange County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 3135755,
+      "slug": "orange-county-ca",
+      "fips": "06059"
+    },
+    {
+      "type": "county",
+      "name": "Miami-Dade County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 2686867,
+      "slug": "miami-dade-county-fl",
+      "fips": "12086"
+    },
+    {
+      "type": "county",
+      "name": "Dallas County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 2606358,
+      "slug": "dallas-county-tx",
+      "fips": "48113"
+    },
+    {
+      "type": "county",
+      "name": "Kings County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 2561225,
+      "slug": "kings-county-ny",
+      "fips": "36047"
+    },
+    {
+      "type": "county",
+      "name": "Riverside County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 2492442,
+      "slug": "riverside-county-ca",
+      "fips": "06065"
+    },
+    {
+      "type": "county",
+      "name": "Clark County",
+      "state": "NV",
+      "state_name": "Nevada",
+      "population": 2336573,
+      "slug": "clark-county-nv",
+      "fips": "32003"
+    },
+    {
+      "type": "county",
+      "name": "King County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 2271380,
+      "slug": "king-county-wa",
+      "fips": "53033"
+    },
+    {
+      "type": "county",
+      "name": "Queens County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 2252196,
+      "slug": "queens-county-ny",
+      "fips": "36081"
+    },
+    {
+      "type": "county",
+      "name": "San Bernardino County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 2195611,
+      "slug": "san-bernardino-county-ca",
+      "fips": "06071"
+    },
+    {
+      "type": "county",
+      "name": "Tarrant County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 2182947,
+      "slug": "tarrant-county-tx",
+      "fips": "48439"
+    },
+    {
+      "type": "county",
+      "name": "Bexar County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 2087679,
+      "slug": "bexar-county-tx",
+      "fips": "48029"
+    },
+    {
+      "type": "county",
+      "name": "Broward County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 1962531,
+      "slug": "broward-county-fl",
+      "fips": "12011"
+    },
+    {
+      "type": "county",
+      "name": "Santa Clara County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 1877592,
+      "slug": "santa-clara-county-ca",
+      "fips": "06085"
+    },
+    {
+      "type": "county",
+      "name": "Wayne County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 1751169,
+      "slug": "wayne-county-mi",
+      "fips": "26163"
+    },
+    {
+      "type": "county",
+      "name": "Middlesex County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 1623952,
+      "slug": "middlesex-county-ma",
+      "fips": "25017"
+    },
+    {
+      "type": "county",
+      "name": "Alameda County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 1622188,
+      "slug": "alameda-county-ca",
+      "fips": "06001"
+    },
+    {
+      "type": "county",
+      "name": "New York County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 1597451,
+      "slug": "new-york-county-ny",
+      "fips": "36061"
+    },
+    {
+      "type": "county",
+      "name": "Sacramento County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 1584288,
+      "slug": "sacramento-county-ca",
+      "fips": "06067"
+    },
+    {
+      "type": "county",
+      "name": "Philadelphia County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 1550542,
+      "slug": "philadelphia-county-pa",
+      "fips": "42101"
+    },
+    {
+      "type": "county",
+      "name": "Hillsborough County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 1535564,
+      "slug": "hillsborough-county-fl",
+      "fips": "12057"
+    },
+    {
+      "type": "county",
+      "name": "Palm Beach County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 1533801,
+      "slug": "palm-beach-county-fl",
+      "fips": "12099"
+    },
+    {
+      "type": "county",
+      "name": "Suffolk County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 1523170,
+      "slug": "suffolk-county-ny",
+      "fips": "36103"
+    },
+    {
+      "type": "county",
+      "name": "Orange County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 1471416,
+      "slug": "orange-county-fl",
+      "fips": "12095"
+    },
+    {
+      "type": "county",
+      "name": "Nassau County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 1381715,
+      "slug": "nassau-county-ny",
+      "fips": "36059"
+    },
+    {
+      "type": "county",
+      "name": "Bronx County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 1356476,
+      "slug": "bronx-county-ny",
+      "fips": "36005"
+    },
+    {
+      "type": "county",
+      "name": "Travis County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 1334961,
+      "slug": "travis-county-tx",
+      "fips": "48453"
+    },
+    {
+      "type": "county",
+      "name": "Franklin County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 1326063,
+      "slug": "franklin-county-oh",
+      "fips": "39049"
+    },
+    {
+      "type": "county",
+      "name": "Oakland County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 1270426,
+      "slug": "oakland-county-mi",
+      "fips": "26125"
+    },
+    {
+      "type": "county",
+      "name": "Hennepin County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 1258713,
+      "slug": "hennepin-county-mn",
+      "fips": "27053"
+    },
+    {
+      "type": "county",
+      "name": "Cuyahoga County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 1233088,
+      "slug": "cuyahoga-county-oh",
+      "fips": "39035"
+    },
+    {
+      "type": "county",
+      "name": "Allegheny County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 1224825,
+      "slug": "allegheny-county-pa",
+      "fips": "42003"
+    },
+    {
+      "type": "county",
+      "name": "Collin County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 1195359,
+      "slug": "collin-county-tx",
+      "fips": "48085"
+    },
+    {
+      "type": "county",
+      "name": "Wake County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 1190275,
+      "slug": "wake-county-nc",
+      "fips": "37183"
+    },
+    {
+      "type": "county",
+      "name": "Salt Lake County",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 1185813,
+      "slug": "salt-lake-county-ut",
+      "fips": "49035"
+    },
+    {
+      "type": "county",
+      "name": "Mecklenburg County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 1163701,
+      "slug": "mecklenburg-county-nc",
+      "fips": "37119"
+    },
+    {
+      "type": "county",
+      "name": "Contra Costa County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 1155025,
+      "slug": "contra-costa-county-ca",
+      "fips": "06013"
+    },
+    {
+      "type": "county",
+      "name": "Fairfax County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 1141878,
+      "slug": "fairfax-county-va",
+      "fips": "51059"
+    },
+    {
+      "type": "county",
+      "name": "Fulton County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 1079105,
+      "slug": "fulton-county-ga",
+      "fips": "13121"
+    },
+    {
+      "type": "county",
+      "name": "Pima County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 1063162,
+      "slug": "pima-county-az",
+      "fips": "04019"
+    },
+    {
+      "type": "county",
+      "name": "Montgomery County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 1058474,
+      "slug": "montgomery-county-md",
+      "fips": "24031"
+    },
+    {
+      "type": "county",
+      "name": "Duval County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 1030822,
+      "slug": "duval-county-fl",
+      "fips": "12031"
+    },
+    {
+      "type": "county",
+      "name": "Fresno County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 1017162,
+      "slug": "fresno-county-ca",
+      "fips": "06019"
+    },
+    {
+      "type": "county",
+      "name": "Denton County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 1007703,
+      "slug": "denton-county-tx",
+      "fips": "48121"
+    },
+    {
+      "type": "county",
+      "name": "Westchester County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 990817,
+      "slug": "westchester-county-ny",
+      "fips": "36119"
+    },
+    {
+      "type": "county",
+      "name": "Honolulu County",
+      "state": "HI",
+      "state_name": "Hawaii",
+      "population": 989408,
+      "slug": "honolulu-county-hi",
+      "fips": "15003"
+    },
+    {
+      "type": "county",
+      "name": "St. Louis County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 987059,
+      "slug": "st-louis-county-mo",
+      "fips": "29189"
+    },
+    {
+      "type": "county",
+      "name": "Gwinnett County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 983526,
+      "slug": "gwinnett-county-ga",
+      "fips": "13135"
+    },
+    {
+      "type": "county",
+      "name": "Capitol Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 975328,
+      "slug": "capitol-planning-region-county-ct",
+      "fips": "09110"
+    },
+    {
+      "type": "county",
+      "name": "Marion County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 968460,
+      "slug": "marion-county-in",
+      "fips": "18097"
+    },
+    {
+      "type": "county",
+      "name": "Pinellas County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 961596,
+      "slug": "pinellas-county-fl",
+      "fips": "12103"
+    },
+    {
+      "type": "county",
+      "name": "Bergen County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 957736,
+      "slug": "bergen-county-nj",
+      "fips": "34003"
+    },
+    {
+      "type": "county",
+      "name": "Prince George's County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 947430,
+      "slug": "prince-george-s-county-md",
+      "fips": "24033"
+    },
+    {
+      "type": "county",
+      "name": "Erie County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 946147,
+      "slug": "erie-county-ny",
+      "fips": "36029"
+    },
+    {
+      "type": "county",
+      "name": "Pierce County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 928696,
+      "slug": "pierce-county-wa",
+      "fips": "53053"
+    },
+    {
+      "type": "county",
+      "name": "DuPage County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 921213,
+      "slug": "dupage-county-il",
+      "fips": "17043"
+    },
+    {
+      "type": "county",
+      "name": "Fort Bend County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 916778,
+      "slug": "fort-bend-county-tx",
+      "fips": "48157"
+    },
+    {
+      "type": "county",
+      "name": "Milwaukee County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 916205,
+      "slug": "milwaukee-county-wi",
+      "fips": "55079"
+    },
+    {
+      "type": "county",
+      "name": "Kern County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 913820,
+      "slug": "kern-county-ca",
+      "fips": "06029"
+    },
+    {
+      "type": "county",
+      "name": "Shelby County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 910042,
+      "slug": "shelby-county-tn",
+      "fips": "47157"
+    },
+    {
+      "type": "county",
+      "name": "Hidalgo County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 898471,
+      "slug": "hidalgo-county-tx",
+      "fips": "48215"
+    },
+    {
+      "type": "county",
+      "name": "Macomb County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 875101,
+      "slug": "macomb-county-mi",
+      "fips": "26099"
+    },
+    {
+      "type": "county",
+      "name": "El Paso County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 869880,
+      "slug": "el-paso-county-tx",
+      "fips": "48141"
+    },
+    {
+      "type": "county",
+      "name": "Montgomery County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 868742,
+      "slug": "montgomery-county-pa",
+      "fips": "42091"
+    },
+    {
+      "type": "county",
+      "name": "Worcester County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 866866,
+      "slug": "worcester-county-ma",
+      "fips": "25027"
+    },
+    {
+      "type": "county",
+      "name": "Middlesex County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 863623,
+      "slug": "middlesex-county-nj",
+      "fips": "34023"
+    },
+    {
+      "type": "county",
+      "name": "Essex County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 851117,
+      "slug": "essex-county-nj",
+      "fips": "34013"
+    },
+    {
+      "type": "county",
+      "name": "Snohomish County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 844761,
+      "slug": "snohomish-county-wa",
+      "fips": "53061"
+    },
+    {
+      "type": "county",
+      "name": "Baltimore County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 844703,
+      "slug": "baltimore-county-md",
+      "fips": "24005"
+    },
+    {
+      "type": "county",
+      "name": "Lee County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 834573,
+      "slug": "lee-county-fl",
+      "fips": "12071"
+    },
+    {
+      "type": "county",
+      "name": "Ventura County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 829590,
+      "slug": "ventura-county-ca",
+      "fips": "06111"
+    },
+    {
+      "type": "county",
+      "name": "Hamilton County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 827058,
+      "slug": "hamilton-county-oh",
+      "fips": "39061"
+    },
+    {
+      "type": "county",
+      "name": "Polk County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 818330,
+      "slug": "polk-county-fl",
+      "fips": "12105"
+    },
+    {
+      "type": "county",
+      "name": "Essex County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 810089,
+      "slug": "essex-county-ma",
+      "fips": "25009"
+    },
+    {
+      "type": "county",
+      "name": "San Francisco County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 808988,
+      "slug": "san-francisco-county-ca",
+      "fips": "06075"
+    },
+    {
+      "type": "county",
+      "name": "Oklahoma County",
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "population": 808866,
+      "slug": "oklahoma-county-ok",
+      "fips": "40109"
+    },
+    {
+      "type": "county",
+      "name": "San Joaquin County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 800965,
+      "slug": "san-joaquin-county-ca",
+      "fips": "06077"
+    },
+    {
+      "type": "county",
+      "name": "Multnomah County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 789698,
+      "slug": "multnomah-county-or",
+      "fips": "41051"
+    },
+    {
+      "type": "county",
+      "name": "Cobb County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 776743,
+      "slug": "cobb-county-ga",
+      "fips": "13067"
+    },
+    {
+      "type": "county",
+      "name": "Jefferson County",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 772144,
+      "slug": "jefferson-county-ky",
+      "fips": "21111"
+    },
+    {
+      "type": "county",
+      "name": "Suffolk County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 768425,
+      "slug": "suffolk-county-ma",
+      "fips": "25025"
+    },
+    {
+      "type": "county",
+      "name": "DeKalb County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 762992,
+      "slug": "dekalb-county-ga",
+      "fips": "13089"
+    },
+    {
+      "type": "county",
+      "name": "Monroe County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 748482,
+      "slug": "monroe-county-ny",
+      "fips": "36055"
+    },
+    {
+      "type": "county",
+      "name": "El Paso County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 744215,
+      "slug": "el-paso-county-co",
+      "fips": "08041"
+    },
+    {
+      "type": "county",
+      "name": "Norfolk County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 727473,
+      "slug": "norfolk-county-ma",
+      "fips": "25021"
+    },
+    {
+      "type": "county",
+      "name": "San Mateo County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 726353,
+      "slug": "san-mateo-county-ca",
+      "fips": "06081"
+    },
+    {
+      "type": "county",
+      "name": "Utah County",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 719174,
+      "slug": "utah-county-ut",
+      "fips": "49049"
+    },
+    {
+      "type": "county",
+      "name": "Jackson County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 718560,
+      "slug": "jackson-county-mo",
+      "fips": "29095"
+    },
+    {
+      "type": "county",
+      "name": "Denver County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 716577,
+      "slug": "denver-county-co",
+      "fips": "08031"
+    },
+    {
+      "type": "county",
+      "name": "Davidson County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 712334,
+      "slug": "davidson-county-tn",
+      "fips": "47037"
+    },
+    {
+      "type": "county",
+      "name": "Montgomery County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 711354,
+      "slug": "montgomery-county-tx",
+      "fips": "48339"
+    },
+    {
+      "type": "county",
+      "name": "Lake County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 708760,
+      "slug": "lake-county-il",
+      "fips": "17097"
+    },
+    {
+      "type": "county",
+      "name": "Hudson County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 705472,
+      "slug": "hudson-county-nj",
+      "fips": "34017"
+    },
+    {
+      "type": "county",
+      "name": "Will County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 700728,
+      "slug": "will-county-il",
+      "fips": "17197"
+    },
+    {
+      "type": "county",
+      "name": "Williamson County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 697191,
+      "slug": "williamson-county-tx",
+      "fips": "48491"
+    },
+    {
+      "type": "county",
+      "name": "Tulsa County",
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "population": 682868,
+      "slug": "tulsa-county-ok",
+      "fips": "40143"
+    },
+    {
+      "type": "county",
+      "name": "District of Columbia",
+      "state": "DC",
+      "state_name": "District of Columbia",
+      "population": 678972,
+      "slug": "district-of-columbia-county-dc",
+      "fips": "11001"
+    },
+    {
+      "type": "county",
+      "name": "Bernalillo County",
+      "state": "NM",
+      "state_name": "New Mexico",
+      "population": 671586,
+      "slug": "bernalillo-county-nm",
+      "fips": "35001"
+    },
+    {
+      "type": "county",
+      "name": "Jefferson County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 662895,
+      "slug": "jefferson-county-al",
+      "fips": "01073"
+    },
+    {
+      "type": "county",
+      "name": "Kent County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 661354,
+      "slug": "kent-county-mi",
+      "fips": "26081"
+    },
+    {
+      "type": "county",
+      "name": "Providence County",
+      "state": "RI",
+      "state_name": "Rhode Island",
+      "population": 660615,
+      "slug": "providence-county-ri",
+      "fips": "44007"
+    },
+    {
+      "type": "county",
+      "name": "Ocean County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 659197,
+      "slug": "ocean-county-nj",
+      "fips": "34029"
+    },
+    {
+      "type": "county",
+      "name": "Arapahoe County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 656061,
+      "slug": "arapahoe-county-co",
+      "fips": "08005"
+    },
+    {
+      "type": "county",
+      "name": "Bucks County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 645984,
+      "slug": "bucks-county-pa",
+      "fips": "42017"
+    },
+    {
+      "type": "county",
+      "name": "Brevard County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 643979,
+      "slug": "brevard-county-fl",
+      "fips": "12009"
+    },
+    {
+      "type": "county",
+      "name": "Monmouth County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 642799,
+      "slug": "monmouth-county-nj",
+      "fips": "34025"
+    },
+    {
+      "type": "county",
+      "name": "Pasco County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 632996,
+      "slug": "pasco-county-fl",
+      "fips": "12101"
+    },
+    {
+      "type": "county",
+      "name": "Western Connecticut Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 623907,
+      "slug": "western-connecticut-planning-region-county-ct",
+      "fips": "09190"
+    },
+    {
+      "type": "county",
+      "name": "Johnson County",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 622237,
+      "slug": "johnson-county-ks",
+      "fips": "20091"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 598865,
+      "slug": "washington-county-or",
+      "fips": "41067"
+    },
+    {
+      "type": "county",
+      "name": "Anne Arundel County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 594582,
+      "slug": "anne-arundel-county-md",
+      "fips": "24003"
+    },
+    {
+      "type": "county",
+      "name": "Volusia County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 590357,
+      "slug": "volusia-county-fl",
+      "fips": "12127"
+    },
+    {
+      "type": "county",
+      "name": "Douglas County",
+      "state": "NE",
+      "state_name": "Nebraska",
+      "population": 589540,
+      "slug": "douglas-county-ne",
+      "fips": "31055"
+    },
+    {
+      "type": "county",
+      "name": "Bristol County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 581841,
+      "slug": "bristol-county-ma",
+      "fips": "25005"
+    },
+    {
+      "type": "county",
+      "name": "New Castle County",
+      "state": "DE",
+      "state_name": "Delaware",
+      "population": 578592,
+      "slug": "new-castle-county-de",
+      "fips": "10003"
+    },
+    {
+      "type": "county",
+      "name": "Delaware County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 576720,
+      "slug": "delaware-county-pa",
+      "fips": "42045"
+    },
+    {
+      "type": "county",
+      "name": "Jefferson County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 576366,
+      "slug": "jefferson-county-co",
+      "fips": "08059"
+    },
+    {
+      "type": "county",
+      "name": "Dane County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 575347,
+      "slug": "dane-county-wi",
+      "fips": "55025"
+    },
+    {
+      "type": "county",
+      "name": "Union County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 572726,
+      "slug": "union-county-nj",
+      "fips": "34039"
+    },
+    {
+      "type": "county",
+      "name": "South Central Connecticut Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 568158,
+      "slug": "south-central-connecticut-planning-region-county-ct",
+      "fips": "09170"
+    },
+    {
+      "type": "county",
+      "name": "Baltimore city",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 565239,
+      "slug": "baltimore-city-county-md",
+      "fips": "24510"
+    },
+    {
+      "type": "county",
+      "name": "Lancaster County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 558589,
+      "slug": "lancaster-county-pa",
+      "fips": "42071"
+    },
+    {
+      "type": "county",
+      "name": "Greenville County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 558036,
+      "slug": "greenville-county-sc",
+      "fips": "45045"
+    },
+    {
+      "type": "county",
+      "name": "Spokane County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 551455,
+      "slug": "spokane-county-wa",
+      "fips": "53063"
+    },
+    {
+      "type": "county",
+      "name": "Stanislaus County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 551430,
+      "slug": "stanislaus-county-ca",
+      "fips": "06099"
+    },
+    {
+      "type": "county",
+      "name": "Guilford County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 549866,
+      "slug": "guilford-county-nc",
+      "fips": "37081"
+    },
+    {
+      "type": "county",
+      "name": "Chester County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 549784,
+      "slug": "chester-county-pa",
+      "fips": "42029"
+    },
+    {
+      "type": "county",
+      "name": "Ramsey County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 536075,
+      "slug": "ramsey-county-mn",
+      "fips": "27123"
+    },
+    {
+      "type": "county",
+      "name": "Summit County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 535733,
+      "slug": "summit-county-oh",
+      "fips": "39153"
+    },
+    {
+      "type": "county",
+      "name": "Plymouth County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 535308,
+      "slug": "plymouth-county-ma",
+      "fips": "25023"
+    },
+    {
+      "type": "county",
+      "name": "Montgomery County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 533796,
+      "slug": "montgomery-county-oh",
+      "fips": "39113"
+    },
+    {
+      "type": "county",
+      "name": "Adams County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 533365,
+      "slug": "adams-county-co",
+      "fips": "08001"
+    },
+    {
+      "type": "county",
+      "name": "Sedgwick County",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 528469,
+      "slug": "sedgwick-county-ks",
+      "fips": "20173"
+    },
+    {
+      "type": "county",
+      "name": "Camden County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 527196,
+      "slug": "camden-county-nj",
+      "fips": "34007"
+    },
+    {
+      "type": "county",
+      "name": "Ada County",
+      "state": "ID",
+      "state_name": "Idaho",
+      "population": 524673,
+      "slug": "ada-county-id",
+      "fips": "16001"
+    },
+    {
+      "type": "county",
+      "name": "Clark County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 521150,
+      "slug": "clark-county-wa",
+      "fips": "53011"
+    },
+    {
+      "type": "county",
+      "name": "Kane County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 514982,
+      "slug": "kane-county-il",
+      "fips": "17089"
+    },
+    {
+      "type": "county",
+      "name": "Morris County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 514423,
+      "slug": "morris-county-nj",
+      "fips": "34027"
+    },
+    {
+      "type": "county",
+      "name": "Passaic County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 513395,
+      "slug": "passaic-county-nj",
+      "fips": "34031"
+    },
+    {
+      "type": "county",
+      "name": "Polk County",
+      "state": "IA",
+      "state_name": "Iowa",
+      "population": 505255,
+      "slug": "polk-county-ia",
+      "fips": "19153"
+    },
+    {
+      "type": "county",
+      "name": "Knox County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 500669,
+      "slug": "knox-county-tn",
+      "fips": "47093"
+    },
+    {
+      "type": "county",
+      "name": "Lake County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 500598,
+      "slug": "lake-county-in",
+      "fips": "18089"
+    },
+    {
+      "type": "county",
+      "name": "Washoe County",
+      "state": "NV",
+      "state_name": "Nevada",
+      "population": 498022,
+      "slug": "washoe-county-nv",
+      "fips": "32031"
+    },
+    {
+      "type": "county",
+      "name": "Richmond County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 490687,
+      "slug": "richmond-county-ny",
+      "fips": "36085"
+    },
+    {
+      "type": "county",
+      "name": "Prince William County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 489640,
+      "slug": "prince-william-county-va",
+      "fips": "51153"
+    },
+    {
+      "type": "county",
+      "name": "Seminole County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 484271,
+      "slug": "seminole-county-fl",
+      "fips": "12117"
+    },
+    {
+      "type": "county",
+      "name": "Pinal County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 484239,
+      "slug": "pinal-county-az",
+      "fips": "04021"
+    },
+    {
+      "type": "county",
+      "name": "Sonoma County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 481812,
+      "slug": "sonoma-county-ca",
+      "fips": "06097"
+    },
+    {
+      "type": "county",
+      "name": "Tulare County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 479468,
+      "slug": "tulare-county-ca",
+      "fips": "06107"
+    },
+    {
+      "type": "county",
+      "name": "Burlington County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 469167,
+      "slug": "burlington-county-nj",
+      "fips": "34005"
+    },
+    {
+      "type": "county",
+      "name": "Sarasota County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 469013,
+      "slug": "sarasota-county-fl",
+      "fips": "12115"
+    },
+    {
+      "type": "county",
+      "name": "Onondaga County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 467873,
+      "slug": "onondaga-county-ny",
+      "fips": "36067"
+    },
+    {
+      "type": "county",
+      "name": "York County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 464640,
+      "slug": "york-county-pa",
+      "fips": "42133"
+    },
+    {
+      "type": "county",
+      "name": "Hampden County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 460291,
+      "slug": "hampden-county-ma",
+      "fips": "25013"
+    },
+    {
+      "type": "county",
+      "name": "Naugatuck Valley Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 456128,
+      "slug": "naugatuck-valley-planning-region-county-ct",
+      "fips": "09140"
+    },
+    {
+      "type": "county",
+      "name": "Virginia Beach city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 453649,
+      "slug": "virginia-beach-city-county-va",
+      "fips": "51810"
+    },
+    {
+      "type": "county",
+      "name": "Solano County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 449218,
+      "slug": "solano-county-ca",
+      "fips": "06095"
+    },
+    {
+      "type": "county",
+      "name": "East Baton Rouge Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 448467,
+      "slug": "east-baton-rouge-parish-la",
+      "fips": "22033"
+    },
+    {
+      "type": "county",
+      "name": "Dakota County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 447440,
+      "slug": "dakota-county-mn",
+      "fips": "27037"
+    },
+    {
+      "type": "county",
+      "name": "Santa Barbara County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 441257,
+      "slug": "santa-barbara-county-ca",
+      "fips": "06083"
+    },
+    {
+      "type": "county",
+      "name": "Manatee County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 441095,
+      "slug": "manatee-county-fl",
+      "fips": "12081"
+    },
+    {
+      "type": "county",
+      "name": "Osceola County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 437784,
+      "slug": "osceola-county-fl",
+      "fips": "12097"
+    },
+    {
+      "type": "county",
+      "name": "Loudoun County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 436347,
+      "slug": "loudoun-county-va",
+      "fips": "51107"
+    },
+    {
+      "type": "county",
+      "name": "Berks County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 432821,
+      "slug": "berks-county-pa",
+      "fips": "42011"
+    },
+    {
+      "type": "county",
+      "name": "Monterey County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 430723,
+      "slug": "monterey-county-ca",
+      "fips": "06053"
+    },
+    {
+      "type": "county",
+      "name": "Hillsborough County",
+      "state": "NH",
+      "state_name": "New Hampshire",
+      "population": 427354,
+      "slug": "hillsborough-county-nh",
+      "fips": "33011"
+    },
+    {
+      "type": "county",
+      "name": "Cameron County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 426710,
+      "slug": "cameron-county-tx",
+      "fips": "48061"
+    },
+    {
+      "type": "county",
+      "name": "Lucas County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 425484,
+      "slug": "lucas-county-oh",
+      "fips": "39095"
+    },
+    {
+      "type": "county",
+      "name": "Richland County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 425138,
+      "slug": "richland-county-sc",
+      "fips": "45079"
+    },
+    {
+      "type": "county",
+      "name": "Lake County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 424462,
+      "slug": "lake-county-fl",
+      "fips": "12069"
+    },
+    {
+      "type": "county",
+      "name": "Charleston County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 424367,
+      "slug": "charleston-county-sc",
+      "fips": "45019"
+    },
+    {
+      "type": "county",
+      "name": "Placer County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 423561,
+      "slug": "placer-county-ca",
+      "fips": "06061"
+    },
+    {
+      "type": "county",
+      "name": "Clackamas County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 423173,
+      "slug": "clackamas-county-or",
+      "fips": "41005"
+    },
+    {
+      "type": "county",
+      "name": "Jefferson Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 421777,
+      "slug": "jefferson-parish-la",
+      "fips": "22051"
+    },
+    {
+      "type": "county",
+      "name": "St. Charles County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 416659,
+      "slug": "st-charles-county-mo",
+      "fips": "29183"
+    },
+    {
+      "type": "county",
+      "name": "Madison County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 412600,
+      "slug": "madison-county-al",
+      "fips": "01089"
+    },
+    {
+      "type": "county",
+      "name": "Waukesha County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 412591,
+      "slug": "waukesha-county-wi",
+      "fips": "55133"
+    },
+    {
+      "type": "county",
+      "name": "Mobile County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 411640,
+      "slug": "mobile-county-al",
+      "fips": "01097"
+    },
+    {
+      "type": "county",
+      "name": "Marion County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 409959,
+      "slug": "marion-county-fl",
+      "fips": "12083"
+    },
+    {
+      "type": "county",
+      "name": "Orange County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 407470,
+      "slug": "orange-county-ny",
+      "fips": "36071"
+    },
+    {
+      "type": "county",
+      "name": "Collier County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 404310,
+      "slug": "collier-county-fl",
+      "fips": "12021"
+    },
+    {
+      "type": "county",
+      "name": "Genesee County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 401522,
+      "slug": "genesee-county-mi",
+      "fips": "26049"
+    },
+    {
+      "type": "county",
+      "name": "Pulaski County",
+      "state": "AR",
+      "state_name": "Arkansas",
+      "population": 400009,
+      "slug": "pulaski-county-ar",
+      "fips": "05119"
+    },
+    {
+      "type": "county",
+      "name": "Brazoria County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 398938,
+      "slug": "brazoria-county-tx",
+      "fips": "48039"
+    },
+    {
+      "type": "county",
+      "name": "Horry County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 397478,
+      "slug": "horry-county-sc",
+      "fips": "45051"
+    },
+    {
+      "type": "county",
+      "name": "Allen County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 394545,
+      "slug": "allen-county-in",
+      "fips": "18003"
+    },
+    {
+      "type": "county",
+      "name": "Bell County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 393193,
+      "slug": "bell-county-tx",
+      "fips": "48027"
+    },
+    {
+      "type": "county",
+      "name": "Butler County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 393043,
+      "slug": "butler-county-oh",
+      "fips": "39017"
+    },
+    {
+      "type": "county",
+      "name": "Forsyth County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 392921,
+      "slug": "forsyth-county-nc",
+      "fips": "37067"
+    },
+    {
+      "type": "county",
+      "name": "Douglas County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 383906,
+      "slug": "douglas-county-co",
+      "fips": "08035"
+    },
+    {
+      "type": "county",
+      "name": "Chesterfield County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 383876,
+      "slug": "chesterfield-county-va",
+      "fips": "51041"
+    },
+    {
+      "type": "county",
+      "name": "Mercer County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 381671,
+      "slug": "mercer-county-nj",
+      "fips": "34021"
+    },
+    {
+      "type": "county",
+      "name": "Lane County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 381181,
+      "slug": "lane-county-or",
+      "fips": "41039"
+    },
+    {
+      "type": "county",
+      "name": "Hamilton County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 379864,
+      "slug": "hamilton-county-tn",
+      "fips": "47065"
+    },
+    {
+      "type": "county",
+      "name": "Lehigh County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 377754,
+      "slug": "lehigh-county-pa",
+      "fips": "42077"
+    },
+    {
+      "type": "county",
+      "name": "St. Lucie County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 373586,
+      "slug": "st-lucie-county-fl",
+      "fips": "12111"
+    },
+    {
+      "type": "county",
+      "name": "Davis County",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 373207,
+      "slug": "davis-county-ut",
+      "fips": "49011"
+    },
+    {
+      "type": "county",
+      "name": "Stark County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 372716,
+      "slug": "stark-county-oh",
+      "fips": "39151"
+    },
+    {
+      "type": "county",
+      "name": "Anoka County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 372441,
+      "slug": "anoka-county-mn",
+      "fips": "27003"
+    },
+    {
+      "type": "county",
+      "name": "Hamilton County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 371645,
+      "slug": "hamilton-county-in",
+      "fips": "18057"
+    },
+    {
+      "type": "county",
+      "name": "Larimer County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 370771,
+      "slug": "larimer-county-co",
+      "fips": "08069"
+    },
+    {
+      "type": "county",
+      "name": "Rutherford County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 367101,
+      "slug": "rutherford-county-tn",
+      "fips": "47149"
+    },
+    {
+      "type": "county",
+      "name": "Washtenaw County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 365536,
+      "slug": "washtenaw-county-mi",
+      "fips": "26161"
+    },
+    {
+      "type": "county",
+      "name": "Orleans Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 364136,
+      "slug": "orleans-parish-la",
+      "fips": "22071"
+    },
+    {
+      "type": "county",
+      "name": "Galveston County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 361744,
+      "slug": "galveston-county-tx",
+      "fips": "48167"
+    },
+    {
+      "type": "county",
+      "name": "Weld County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 359442,
+      "slug": "weld-county-co",
+      "fips": "08123"
+    },
+    {
+      "type": "county",
+      "name": "Spartanburg County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 356698,
+      "slug": "spartanburg-county-sc",
+      "fips": "45083"
+    },
+    {
+      "type": "county",
+      "name": "Nueces County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 352289,
+      "slug": "nueces-county-tx",
+      "fips": "48355"
+    },
+    {
+      "type": "county",
+      "name": "Westmoreland County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 351163,
+      "slug": "westmoreland-county-pa",
+      "fips": "42129"
+    },
+    {
+      "type": "county",
+      "name": "Somerset County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 348842,
+      "slug": "somerset-county-nj",
+      "fips": "34035"
+    },
+    {
+      "type": "county",
+      "name": "Marion County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 346741,
+      "slug": "marion-county-or",
+      "fips": "41047"
+    },
+    {
+      "type": "county",
+      "name": "Rockland County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 340807,
+      "slug": "rockland-county-ny",
+      "fips": "36087"
+    },
+    {
+      "type": "county",
+      "name": "Cumberland County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 337890,
+      "slug": "cumberland-county-nc",
+      "fips": "37051"
+    },
+    {
+      "type": "county",
+      "name": "Durham County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 336892,
+      "slug": "durham-county-nc",
+      "fips": "37063"
+    },
+    {
+      "type": "county",
+      "name": "Howard County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 336001,
+      "slug": "howard-county-md",
+      "fips": "24027"
+    },
+    {
+      "type": "county",
+      "name": "Henrico County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 334760,
+      "slug": "henrico-county-va",
+      "fips": "51087"
+    },
+    {
+      "type": "county",
+      "name": "Greater Bridgeport Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 327651,
+      "slug": "greater-bridgeport-planning-region-county-ct",
+      "fips": "09120"
+    },
+    {
+      "type": "county",
+      "name": "Luzerne County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 327388,
+      "slug": "luzerne-county-pa",
+      "fips": "42079"
+    },
+    {
+      "type": "county",
+      "name": "Escambia County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 326928,
+      "slug": "escambia-county-fl",
+      "fips": "12033"
+    },
+    {
+      "type": "county",
+      "name": "Boulder County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 326831,
+      "slug": "boulder-county-co",
+      "fips": "08013"
+    },
+    {
+      "type": "county",
+      "name": "Lancaster County",
+      "state": "NE",
+      "state_name": "Nebraska",
+      "population": 326716,
+      "slug": "lancaster-county-ne",
+      "fips": "31109"
+    },
+    {
+      "type": "county",
+      "name": "Lubbock County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 320940,
+      "slug": "lubbock-county-tx",
+      "fips": "48303"
+    },
+    {
+      "type": "county",
+      "name": "Rockingham County",
+      "state": "NH",
+      "state_name": "New Hampshire",
+      "population": 320689,
+      "slug": "rockingham-county-nh",
+      "fips": "33015"
+    },
+    {
+      "type": "county",
+      "name": "Fayette County",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 320154,
+      "slug": "fayette-county-ky",
+      "fips": "21067"
+    },
+    {
+      "type": "county",
+      "name": "St. Johns County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 320110,
+      "slug": "st-johns-county-fl",
+      "fips": "12109"
+    },
+    {
+      "type": "county",
+      "name": "Northampton County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 319091,
+      "slug": "northampton-county-pa",
+      "fips": "42095"
+    },
+    {
+      "type": "county",
+      "name": "Lorain County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 317910,
+      "slug": "lorain-county-oh",
+      "fips": "39093"
+    },
+    {
+      "type": "county",
+      "name": "Albany County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 316659,
+      "slug": "albany-county-ny",
+      "fips": "36001"
+    },
+    {
+      "type": "county",
+      "name": "McHenry County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 312800,
+      "slug": "mchenry-county-il",
+      "fips": "17111"
+    },
+    {
+      "type": "county",
+      "name": "Benton County",
+      "state": "AR",
+      "state_name": "Arkansas",
+      "population": 311013,
+      "slug": "benton-county-ar",
+      "fips": "05007"
+    },
+    {
+      "type": "county",
+      "name": "Cumberland County",
+      "state": "ME",
+      "state_name": "Maine",
+      "population": 310230,
+      "slug": "cumberland-county-me",
+      "fips": "23005"
+    },
+    {
+      "type": "county",
+      "name": "Lexington County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 309528,
+      "slug": "lexington-county-sc",
+      "fips": "45063"
+    },
+    {
+      "type": "county",
+      "name": "Gloucester County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 308423,
+      "slug": "gloucester-county-nj",
+      "fips": "34015"
+    },
+    {
+      "type": "county",
+      "name": "Greene County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 304611,
+      "slug": "greene-county-mo",
+      "fips": "29077"
+    },
+    {
+      "type": "county",
+      "name": "Chatham County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 303655,
+      "slug": "chatham-county-ga",
+      "fips": "13051"
+    },
+    {
+      "type": "county",
+      "name": "Ottawa County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 303372,
+      "slug": "ottawa-county-mi",
+      "fips": "26139"
+    },
+    {
+      "type": "county",
+      "name": "Cleveland County",
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "population": 301193,
+      "slug": "cleveland-county-ok",
+      "fips": "40027"
+    },
+    {
+      "type": "county",
+      "name": "Thurston County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 299003,
+      "slug": "thurston-county-wa",
+      "fips": "53067"
+    },
+    {
+      "type": "county",
+      "name": "York County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 298320,
+      "slug": "york-county-sc",
+      "fips": "45091"
+    },
+    {
+      "type": "county",
+      "name": "Clayton County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 298300,
+      "slug": "clayton-county-ga",
+      "fips": "13063"
+    },
+    {
+      "type": "county",
+      "name": "Dutchess County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 297150,
+      "slug": "dutchess-county-ny",
+      "fips": "36027"
+    },
+    {
+      "type": "county",
+      "name": "Leon County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 296913,
+      "slug": "leon-county-fl",
+      "fips": "12073"
+    },
+    {
+      "type": "county",
+      "name": "Frederick County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 293391,
+      "slug": "frederick-county-md",
+      "fips": "24021"
+    },
+    {
+      "type": "county",
+      "name": "Merced County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 291920,
+      "slug": "merced-county-ca",
+      "fips": "06047"
+    },
+    {
+      "type": "county",
+      "name": "Dauphin County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 289234,
+      "slug": "dauphin-county-pa",
+      "fips": "42043"
+    },
+    {
+      "type": "county",
+      "name": "Cherokee County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 286602,
+      "slug": "cherokee-county-ga",
+      "fips": "13057"
+    },
+    {
+      "type": "county",
+      "name": "Anchorage Municipality",
+      "state": "AK",
+      "state_name": "Alaska",
+      "population": 286075,
+      "slug": "anchorage-municipality-ak",
+      "fips": "02020"
+    },
+    {
+      "type": "county",
+      "name": "Alachua County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 285994,
+      "slug": "alachua-county-fl",
+      "fips": "12001"
+    },
+    {
+      "type": "county",
+      "name": "Ingham County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 284637,
+      "slug": "ingham-county-mi",
+      "fips": "26065"
+    },
+    {
+      "type": "county",
+      "name": "St. Louis city",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 281754,
+      "slug": "st-louis-city-county-mo",
+      "fips": "29510"
+    },
+    {
+      "type": "county",
+      "name": "San Luis Obispo County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 281639,
+      "slug": "san-luis-obispo-county-ca",
+      "fips": "06079"
+    },
+    {
+      "type": "county",
+      "name": "Winnebago County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 280922,
+      "slug": "winnebago-county-il",
+      "fips": "17201"
+    },
+    {
+      "type": "county",
+      "name": "Hays County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 280486,
+      "slug": "hays-county-tx",
+      "fips": "48209"
+    },
+    {
+      "type": "county",
+      "name": "Southeastern Connecticut Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 279634,
+      "slug": "southeastern-connecticut-planning-region-county-ct",
+      "fips": "09180"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 278936,
+      "slug": "washington-county-mn",
+      "fips": "27163"
+    },
+    {
+      "type": "county",
+      "name": "Kitsap County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 277658,
+      "slug": "kitsap-county-wa",
+      "fips": "53035"
+    },
+    {
+      "type": "county",
+      "name": "Buncombe County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 275901,
+      "slug": "buncombe-county-nc",
+      "fips": "37021"
+    },
+    {
+      "type": "county",
+      "name": "St. Tammany Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 275583,
+      "slug": "st-tammany-parish-la",
+      "fips": "22103"
+    },
+    {
+      "type": "county",
+      "name": "Atlantic County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 275213,
+      "slug": "atlantic-county-nj",
+      "fips": "34001"
+    },
+    {
+      "type": "county",
+      "name": "Forsyth County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 272887,
+      "slug": "forsyth-county-ga",
+      "fips": "13117"
+    },
+    {
+      "type": "county",
+      "name": "St. Joseph County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 272848,
+      "slug": "st-joseph-county-in",
+      "fips": "18141"
+    },
+    {
+      "type": "county",
+      "name": "Weber County",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 271926,
+      "slug": "weber-county-ut",
+      "fips": "49057"
+    },
+    {
+      "type": "county",
+      "name": "Brown County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 271417,
+      "slug": "brown-county-wi",
+      "fips": "55009"
+    },
+    {
+      "type": "county",
+      "name": "Cumberland County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 270738,
+      "slug": "cumberland-county-pa",
+      "fips": "42041"
+    },
+    {
+      "type": "county",
+      "name": "Webb County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 269148,
+      "slug": "webb-county-tx",
+      "fips": "48479"
+    },
+    {
+      "type": "county",
+      "name": "McLennan County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 268583,
+      "slug": "mclennan-county-tx",
+      "fips": "48309"
+    },
+    {
+      "type": "county",
+      "name": "Erie County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 267571,
+      "slug": "erie-county-pa",
+      "fips": "42049"
+    },
+    {
+      "type": "county",
+      "name": "Harford County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 264644,
+      "slug": "harford-county-md",
+      "fips": "24025"
+    },
+    {
+      "type": "county",
+      "name": "Williamson County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 264460,
+      "slug": "williamson-county-tn",
+      "fips": "47187"
+    },
+    {
+      "type": "county",
+      "name": "Sussex County",
+      "state": "DE",
+      "state_name": "Delaware",
+      "population": 263509,
+      "slug": "sussex-county-de",
+      "fips": "10005"
+    },
+    {
+      "type": "county",
+      "name": "Madison County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 262752,
+      "slug": "madison-county-il",
+      "fips": "17119"
+    },
+    {
+      "type": "county",
+      "name": "Kalamazoo County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 262215,
+      "slug": "kalamazoo-county-mi",
+      "fips": "26077"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "AR",
+      "state_name": "Arkansas",
+      "population": 261549,
+      "slug": "washington-county-ar",
+      "fips": "05143"
+    },
+    {
+      "type": "county",
+      "name": "Santa Cruz County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 261547,
+      "slug": "santa-cruz-county-ca",
+      "fips": "06087"
+    },
+    {
+      "type": "county",
+      "name": "Clay County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 259772,
+      "slug": "clay-county-mo",
+      "fips": "29047"
+    },
+    {
+      "type": "county",
+      "name": "Canyon County",
+      "state": "ID",
+      "state_name": "Idaho",
+      "population": 257674,
+      "slug": "canyon-county-id",
+      "fips": "16027"
+    },
+    {
+      "type": "county",
+      "name": "Yakima County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 256643,
+      "slug": "yakima-county-wa",
+      "fips": "53077"
+    },
+    {
+      "type": "county",
+      "name": "Union County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 256452,
+      "slug": "union-county-nc",
+      "fips": "37179"
+    },
+    {
+      "type": "county",
+      "name": "Berkeley County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 255217,
+      "slug": "berkeley-county-sc",
+      "fips": "45015"
+    },
+    {
+      "type": "county",
+      "name": "Henry County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 254613,
+      "slug": "henry-county-ga",
+      "fips": "13151"
+    },
+    {
+      "type": "county",
+      "name": "Marin County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 254407,
+      "slug": "marin-county-ca",
+      "fips": "06041"
+    },
+    {
+      "type": "county",
+      "name": "Chesapeake city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 253886,
+      "slug": "chesapeake-city-county-va",
+      "fips": "51550"
+    },
+    {
+      "type": "county",
+      "name": "Baldwin County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 253507,
+      "slug": "baldwin-county-al",
+      "fips": "01003"
+    },
+    {
+      "type": "county",
+      "name": "Warren County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 252148,
+      "slug": "warren-county-oh",
+      "fips": "39165"
+    },
+    {
+      "type": "county",
+      "name": "Jefferson County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 251496,
+      "slug": "jefferson-county-tx",
+      "fips": "48245"
+    },
+    {
+      "type": "county",
+      "name": "St. Clair County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 251018,
+      "slug": "st-clair-county-il",
+      "fips": "17163"
+    },
+    {
+      "type": "county",
+      "name": "Lafayette Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 249750,
+      "slug": "lafayette-parish-la",
+      "fips": "22055"
+    },
+    {
+      "type": "county",
+      "name": "Yavapai County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 249081,
+      "slug": "yavapai-county-az",
+      "fips": "04025"
+    },
+    {
+      "type": "county",
+      "name": "Smith County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 245209,
+      "slug": "smith-county-tx",
+      "fips": "48423"
+    },
+    {
+      "type": "county",
+      "name": "Brazos County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 244703,
+      "slug": "brazos-county-tx",
+      "fips": "48041"
+    },
+    {
+      "type": "county",
+      "name": "Johnston County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 241955,
+      "slug": "johnston-county-nc",
+      "fips": "37101"
+    },
+    {
+      "type": "county",
+      "name": "Cabarrus County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 240016,
+      "slug": "cabarrus-county-nc",
+      "fips": "37025"
+    },
+    {
+      "type": "county",
+      "name": "Montgomery County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 239872,
+      "slug": "montgomery-county-tn",
+      "fips": "47125"
+    },
+    {
+      "type": "county",
+      "name": "New Hanover County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 238852,
+      "slug": "new-hanover-county-nc",
+      "fips": "37129"
+    },
+    {
+      "type": "county",
+      "name": "Saratoga County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 238711,
+      "slug": "saratoga-county-ny",
+      "fips": "36091"
+    },
+    {
+      "type": "county",
+      "name": "Tuscaloosa County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 237373,
+      "slug": "tuscaloosa-county-al",
+      "fips": "01125"
+    },
+    {
+      "type": "county",
+      "name": "Gaston County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 237242,
+      "slug": "gaston-county-nc",
+      "fips": "37071"
+    },
+    {
+      "type": "county",
+      "name": "Arlington County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 234162,
+      "slug": "arlington-county-va",
+      "fips": "51013"
+    },
+    {
+      "type": "county",
+      "name": "Shelby County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 233000,
+      "slug": "shelby-county-al",
+      "fips": "01117"
+    },
+    {
+      "type": "county",
+      "name": "Clay County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 232439,
+      "slug": "clay-county-fl",
+      "fips": "12019"
+    },
+    {
+      "type": "county",
+      "name": "Whatcom County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 231919,
+      "slug": "whatcom-county-wa",
+      "fips": "53073"
+    },
+    {
+      "type": "county",
+      "name": "Barnstable County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 231735,
+      "slug": "barnstable-county-ma",
+      "fips": "25001"
+    },
+    {
+      "type": "county",
+      "name": "Lake County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 231640,
+      "slug": "lake-county-oh",
+      "fips": "39085"
+    },
+    {
+      "type": "county",
+      "name": "Delaware County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 231636,
+      "slug": "delaware-county-oh",
+      "fips": "39041"
+    },
+    {
+      "type": "county",
+      "name": "Jefferson County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 231230,
+      "slug": "jefferson-county-mo",
+      "fips": "29099"
+    },
+    {
+      "type": "county",
+      "name": "Norfolk city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 230930,
+      "slug": "norfolk-city-county-va",
+      "fips": "51710"
+    },
+    {
+      "type": "county",
+      "name": "Richmond city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 229247,
+      "slug": "richmond-city-county-va",
+      "fips": "51760"
+    },
+    {
+      "type": "county",
+      "name": "Linn County",
+      "state": "IA",
+      "state_name": "Iowa",
+      "population": 228972,
+      "slug": "linn-county-ia",
+      "fips": "19113"
+    },
+    {
+      "type": "county",
+      "name": "Oneida County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 227555,
+      "slug": "oneida-county-ny",
+      "fips": "36065"
+    },
+    {
+      "type": "county",
+      "name": "Caddo Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 226386,
+      "slug": "caddo-parish-la",
+      "fips": "22017"
+    },
+    {
+      "type": "county",
+      "name": "Mahoning County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 225596,
+      "slug": "mahoning-county-oh",
+      "fips": "39099"
+    },
+    {
+      "type": "county",
+      "name": "Do\u00f1a Ana County",
+      "state": "NM",
+      "state_name": "New Mexico",
+      "population": 225210,
+      "slug": "do-a-ana-county-nm",
+      "fips": "35013"
+    },
+    {
+      "type": "county",
+      "name": "Montgomery County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 224980,
+      "slug": "montgomery-county-al",
+      "fips": "01101"
+    },
+    {
+      "type": "county",
+      "name": "Mohave County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 223682,
+      "slug": "mohave-county-az",
+      "fips": "04015"
+    },
+    {
+      "type": "county",
+      "name": "Ellis County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 222829,
+      "slug": "ellis-county-tx",
+      "fips": "48139"
+    },
+    {
+      "type": "county",
+      "name": "Jackson County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 220768,
+      "slug": "jackson-county-or",
+      "fips": "41029"
+    },
+    {
+      "type": "county",
+      "name": "Yolo County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 220544,
+      "slug": "yolo-county-ca",
+      "fips": "06113"
+    },
+    {
+      "type": "county",
+      "name": "York County",
+      "state": "ME",
+      "state_name": "Maine",
+      "population": 218586,
+      "slug": "york-county-me",
+      "fips": "23031"
+    },
+    {
+      "type": "county",
+      "name": "Okaloosa County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 218464,
+      "slug": "okaloosa-county-fl",
+      "fips": "12091"
+    },
+    {
+      "type": "county",
+      "name": "Hall County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 217267,
+      "slug": "hall-county-ga",
+      "fips": "13139"
+    },
+    {
+      "type": "county",
+      "name": "Lackawanna County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 216123,
+      "slug": "lackawanna-county-pa",
+      "fips": "42069"
+    },
+    {
+      "type": "county",
+      "name": "Benton County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 215219,
+      "slug": "benton-county-wa",
+      "fips": "53005"
+    },
+    {
+      "type": "county",
+      "name": "Hinds County",
+      "state": "MS",
+      "state_name": "Mississippi",
+      "population": 214870,
+      "slug": "hinds-county-ms",
+      "fips": "28049"
+    },
+    {
+      "type": "county",
+      "name": "Onslow County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 213676,
+      "slug": "onslow-county-nc",
+      "fips": "37133"
+    },
+    {
+      "type": "county",
+      "name": "Yuma County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 213221,
+      "slug": "yuma-county-az",
+      "fips": "04027"
+    },
+    {
+      "type": "county",
+      "name": "Anderson County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 213076,
+      "slug": "anderson-county-sc",
+      "fips": "45007"
+    },
+    {
+      "type": "county",
+      "name": "Hernando County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 212807,
+      "slug": "hernando-county-fl",
+      "fips": "12053"
+    },
+    {
+      "type": "county",
+      "name": "Clermont County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 211972,
+      "slug": "clermont-county-oh",
+      "fips": "39025"
+    },
+    {
+      "type": "county",
+      "name": "Harrison County",
+      "state": "MS",
+      "state_name": "Mississippi",
+      "population": 210612,
+      "slug": "harrison-county-ms",
+      "fips": "28047"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 210232,
+      "slug": "washington-county-pa",
+      "fips": "42125"
+    },
+    {
+      "type": "county",
+      "name": "Niagara County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 209457,
+      "slug": "niagara-county-ny",
+      "fips": "36063"
+    },
+    {
+      "type": "county",
+      "name": "Deschutes County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 208513,
+      "slug": "deschutes-county-or",
+      "fips": "41017"
+    },
+    {
+      "type": "county",
+      "name": "Sumner County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 207994,
+      "slug": "sumner-county-tn",
+      "fips": "47165"
+    },
+    {
+      "type": "county",
+      "name": "Hawaii County",
+      "state": "HI",
+      "state_name": "Hawaii",
+      "population": 207615,
+      "slug": "hawaii-county-hi",
+      "fips": "15001"
+    },
+    {
+      "type": "county",
+      "name": "Butte County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 207172,
+      "slug": "butte-county-ca",
+      "fips": "06007"
+    },
+    {
+      "type": "county",
+      "name": "Minnehaha County",
+      "state": "SD",
+      "state_name": "South Dakota",
+      "population": 206930,
+      "slug": "minnehaha-county-sd",
+      "fips": "46099"
+    },
+    {
+      "type": "county",
+      "name": "Elkhart County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 206409,
+      "slug": "elkhart-county-in",
+      "fips": "18039"
+    },
+    {
+      "type": "county",
+      "name": "Charlotte County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 206134,
+      "slug": "charlotte-county-fl",
+      "fips": "12015"
+    },
+    {
+      "type": "county",
+      "name": "Champaign County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 205644,
+      "slug": "champaign-county-il",
+      "fips": "17019"
+    },
+    {
+      "type": "county",
+      "name": "Richmond County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 205414,
+      "slug": "richmond-county-ga",
+      "fips": "13245"
+    },
+    {
+      "type": "county",
+      "name": "Calcasieu Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 203761,
+      "slug": "calcasieu-parish-la",
+      "fips": "22019"
+    },
+    {
+      "type": "county",
+      "name": "Santa Rosa County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 203162,
+      "slug": "santa-rosa-county-fl",
+      "fips": "12113"
+    },
+    {
+      "type": "county",
+      "name": "Johnson County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 202906,
+      "slug": "johnson-county-tx",
+      "fips": "48251"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 202452,
+      "slug": "washington-county-ut",
+      "fips": "49053"
+    },
+    {
+      "type": "county",
+      "name": "Muscogee County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 201877,
+      "slug": "muscogee-county-ga",
+      "fips": "13215"
+    },
+    {
+      "type": "county",
+      "name": "St. Louis County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 200514,
+      "slug": "st-louis-county-mn",
+      "fips": "27137"
+    },
+    {
+      "type": "county",
+      "name": "Trumbull County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 200373,
+      "slug": "trumbull-county-oh",
+      "fips": "39155"
+    },
+    {
+      "type": "county",
+      "name": "Sarpy County",
+      "state": "NE",
+      "state_name": "Nebraska",
+      "population": 199886,
+      "slug": "sarpy-county-ne",
+      "fips": "31153"
+    },
+    {
+      "type": "county",
+      "name": "Iredell County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 199710,
+      "slug": "iredell-county-nc",
+      "fips": "37097"
+    },
+    {
+      "type": "county",
+      "name": "Beaufort County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 198979,
+      "slug": "beaufort-county-sc",
+      "fips": "45013"
+    },
+    {
+      "type": "county",
+      "name": "Butler County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 198413,
+      "slug": "butler-county-pa",
+      "fips": "42019"
+    },
+    {
+      "type": "county",
+      "name": "Livingston County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 196757,
+      "slug": "livingston-county-mi",
+      "fips": "26093"
+    },
+    {
+      "type": "county",
+      "name": "Racine County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 196613,
+      "slug": "racine-county-wi",
+      "fips": "55101"
+    },
+    {
+      "type": "county",
+      "name": "Cass County",
+      "state": "ND",
+      "state_name": "North Dakota",
+      "population": 196362,
+      "slug": "cass-county-nd",
+      "fips": "38017"
+    },
+    {
+      "type": "county",
+      "name": "Broome County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 196077,
+      "slug": "broome-county-ny",
+      "fips": "36007"
+    },
+    {
+      "type": "county",
+      "name": "Comal County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 193928,
+      "slug": "comal-county-tx",
+      "fips": "48091"
+    },
+    {
+      "type": "county",
+      "name": "Sangamon County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 193491,
+      "slug": "sangamon-county-il",
+      "fips": "17167"
+    },
+    {
+      "type": "county",
+      "name": "DeSoto County",
+      "state": "MS",
+      "state_name": "Mississippi",
+      "population": 193247,
+      "slug": "desoto-county-ms",
+      "fips": "28033"
+    },
+    {
+      "type": "county",
+      "name": "Outagamie County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 193234,
+      "slug": "outagamie-county-wi",
+      "fips": "55087"
+    },
+    {
+      "type": "county",
+      "name": "El Dorado County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 192215,
+      "slug": "el-dorado-county-ca",
+      "fips": "06017"
+    },
+    {
+      "type": "county",
+      "name": "Bay County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 190769,
+      "slug": "bay-county-fl",
+      "fips": "12005"
+    },
+    {
+      "type": "county",
+      "name": "Kent County",
+      "state": "DE",
+      "state_name": "Delaware",
+      "population": 189789,
+      "slug": "kent-county-de",
+      "fips": "10001"
+    },
+    {
+      "type": "county",
+      "name": "Boone County",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 189463,
+      "slug": "boone-county-mo",
+      "fips": "29019"
+    },
+    {
+      "type": "county",
+      "name": "Tippecanoe County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 188792,
+      "slug": "tippecanoe-county-in",
+      "fips": "18157"
+    },
+    {
+      "type": "county",
+      "name": "Guadalupe County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 188454,
+      "slug": "guadalupe-county-tx",
+      "fips": "48187"
+    },
+    {
+      "type": "county",
+      "name": "Saginaw County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 187782,
+      "slug": "saginaw-county-mi",
+      "fips": "26145"
+    },
+    {
+      "type": "county",
+      "name": "Hendricks County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 186387,
+      "slug": "hendricks-county-in",
+      "fips": "18063"
+    },
+    {
+      "type": "county",
+      "name": "Kaufman County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 185690,
+      "slug": "kaufman-county-tx",
+      "fips": "48257"
+    },
+    {
+      "type": "county",
+      "name": "Kootenai County",
+      "state": "ID",
+      "state_name": "Idaho",
+      "population": 185010,
+      "slug": "kootenai-county-id",
+      "fips": "16055"
+    },
+    {
+      "type": "county",
+      "name": "Medina County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 184042,
+      "slug": "medina-county-oh",
+      "fips": "39103"
+    },
+    {
+      "type": "county",
+      "name": "Lee County",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 183215,
+      "slug": "lee-county-al",
+      "fips": "01081"
+    },
+    {
+      "type": "county",
+      "name": "Licking County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 183201,
+      "slug": "licking-county-oh",
+      "fips": "39089"
+    },
+    {
+      "type": "county",
+      "name": "Paulding County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 183164,
+      "slug": "paulding-county-ga",
+      "fips": "13223"
+    },
+    {
+      "type": "county",
+      "name": "Newport News city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 183118,
+      "slug": "newport-news-city-county-va",
+      "fips": "51700"
+    },
+    {
+      "type": "county",
+      "name": "Ulster County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 182333,
+      "slug": "ulster-county-ny",
+      "fips": "36111"
+    },
+    {
+      "type": "county",
+      "name": "Shasta County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 180366,
+      "slug": "shasta-county-ca",
+      "fips": "06089"
+    },
+    {
+      "type": "county",
+      "name": "Vanderburgh County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 179810,
+      "slug": "vanderburgh-county-in",
+      "fips": "18163"
+    },
+    {
+      "type": "county",
+      "name": "Alamance County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 179165,
+      "slug": "alamance-county-nc",
+      "fips": "37001"
+    },
+    {
+      "type": "county",
+      "name": "Imperial County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 179057,
+      "slug": "imperial-county-ca",
+      "fips": "06025"
+    },
+    {
+      "type": "county",
+      "name": "Shawnee County",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 177746,
+      "slug": "shawnee-county-ks",
+      "fips": "20177"
+    },
+    {
+      "type": "county",
+      "name": "Peoria County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 177513,
+      "slug": "peoria-county-il",
+      "fips": "17143"
+    },
+    {
+      "type": "county",
+      "name": "Aiken County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 177130,
+      "slug": "aiken-county-sc",
+      "fips": "45003"
+    },
+    {
+      "type": "county",
+      "name": "Midland County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 177108,
+      "slug": "midland-county-tx",
+      "fips": "48329"
+    },
+    {
+      "type": "county",
+      "name": "Carroll County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 176639,
+      "slug": "carroll-county-md",
+      "fips": "24013"
+    },
+    {
+      "type": "county",
+      "name": "Muskegon County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 176564,
+      "slug": "muskegon-county-mi",
+      "fips": "26121"
+    },
+    {
+      "type": "county",
+      "name": "Lower Connecticut River Valley Planning Region",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 176215,
+      "slug": "lower-connecticut-river-valley-planning-region-county-ct",
+      "fips": "09130"
+    },
+    {
+      "type": "county",
+      "name": "Canadian County",
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "population": 175829,
+      "slug": "canadian-county-ok",
+      "fips": "40017"
+    },
+    {
+      "type": "county",
+      "name": "Porter County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 175335,
+      "slug": "porter-county-in",
+      "fips": "18127"
+    },
+    {
+      "type": "county",
+      "name": "Pitt County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 175119,
+      "slug": "pitt-county-nc",
+      "fips": "37147"
+    },
+    {
+      "type": "county",
+      "name": "Kanawha County",
+      "state": "WV",
+      "state_name": "West Virginia",
+      "population": 174805,
+      "slug": "kanawha-county-wv",
+      "fips": "54039"
+    },
+    {
+      "type": "county",
+      "name": "Davidson County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 174804,
+      "slug": "davidson-county-nc",
+      "fips": "37057"
+    },
+    {
+      "type": "county",
+      "name": "Scott County",
+      "state": "IA",
+      "state_name": "Iowa",
+      "population": 174270,
+      "slug": "scott-county-ia",
+      "fips": "19163"
+    },
+    {
+      "type": "county",
+      "name": "Parker County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 173494,
+      "slug": "parker-county-tx",
+      "fips": "48367"
+    },
+    {
+      "type": "county",
+      "name": "Houston County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 171974,
+      "slug": "houston-county-ga",
+      "fips": "13153"
+    },
+    {
+      "type": "county",
+      "name": "Charles County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 171973,
+      "slug": "charles-county-md",
+      "fips": "24017"
+    },
+    {
+      "type": "county",
+      "name": "Winnebago County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 171735,
+      "slug": "winnebago-county-wi",
+      "fips": "55139"
+    },
+    {
+      "type": "county",
+      "name": "Kenton County",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 171321,
+      "slug": "kenton-county-ky",
+      "fips": "21117"
+    },
+    {
+      "type": "county",
+      "name": "Kent County",
+      "state": "RI",
+      "state_name": "Rhode Island",
+      "population": 171278,
+      "slug": "kent-county-ri",
+      "fips": "44003"
+    },
+    {
+      "type": "county",
+      "name": "Yellowstone County",
+      "state": "MT",
+      "state_name": "Montana",
+      "population": 170843,
+      "slug": "yellowstone-county-mt",
+      "fips": "30111"
+    },
+    {
+      "type": "county",
+      "name": "McLean County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 170441,
+      "slug": "mclean-county-il",
+      "fips": "17113"
+    },
+    {
+      "type": "county",
+      "name": "Dorchester County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 169833,
+      "slug": "dorchester-county-sc",
+      "fips": "45035"
+    },
+    {
+      "type": "county",
+      "name": "Indian River County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 169795,
+      "slug": "indian-river-county-fl",
+      "fips": "12061"
+    },
+    {
+      "type": "county",
+      "name": "Greene County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 169691,
+      "slug": "greene-county-oh",
+      "fips": "39057"
+    },
+    {
+      "type": "county",
+      "name": "Chittenden County",
+      "state": "VT",
+      "state_name": "Vermont",
+      "population": 169481,
+      "slug": "chittenden-county-vt",
+      "fips": "50007"
+    },
+    {
+      "type": "county",
+      "name": "Pueblo County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 169422,
+      "slug": "pueblo-county-co",
+      "fips": "08101"
+    },
+    {
+      "type": "county",
+      "name": "Johnson County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 167819,
+      "slug": "johnson-county-in",
+      "fips": "18081"
+    },
+    {
+      "type": "county",
+      "name": "Kenosha County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 167488,
+      "slug": "kenosha-county-wi",
+      "fips": "55059"
+    },
+    {
+      "type": "county",
+      "name": "Citrus County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 166696,
+      "slug": "citrus-county-fl",
+      "fips": "12017"
+    },
+    {
+      "type": "county",
+      "name": "Monroe County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 166053,
+      "slug": "monroe-county-pa",
+      "fips": "42089"
+    },
+    {
+      "type": "county",
+      "name": "Beaver County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 165631,
+      "slug": "beaver-county-pa",
+      "fips": "42007"
+    },
+    {
+      "type": "county",
+      "name": "Stafford County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 165428,
+      "slug": "stafford-county-va",
+      "fips": "51179"
+    },
+    {
+      "type": "county",
+      "name": "Fairfield County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 165360,
+      "slug": "fairfield-county-oh",
+      "fips": "39045"
+    },
+    {
+      "type": "county",
+      "name": "Wyandotte County",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 165281,
+      "slug": "wyandotte-county-ks",
+      "fips": "20209"
+    },
+    {
+      "type": "county",
+      "name": "Columbia County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 165162,
+      "slug": "columbia-county-ga",
+      "fips": "13073"
+    },
+    {
+      "type": "county",
+      "name": "Olmsted County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 164784,
+      "slug": "olmsted-county-mn",
+      "fips": "27109"
+    },
+    {
+      "type": "county",
+      "name": "Catawba County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 164645,
+      "slug": "catawba-county-nc",
+      "fips": "37035"
+    },
+    {
+      "type": "county",
+      "name": "Ector County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 164494,
+      "slug": "ector-county-tx",
+      "fips": "48135"
+    },
+    {
+      "type": "county",
+      "name": "Rock County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 164278,
+      "slug": "rock-county-wi",
+      "fips": "55105"
+    },
+    {
+      "type": "county",
+      "name": "Maui County",
+      "state": "HI",
+      "state_name": "Hawaii",
+      "population": 164183,
+      "slug": "maui-county-hi",
+      "fips": "15009"
+    },
+    {
+      "type": "county",
+      "name": "Wilson County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 163674,
+      "slug": "wilson-county-tn",
+      "fips": "47189"
+    },
+    {
+      "type": "county",
+      "name": "Martin County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 163315,
+      "slug": "martin-county-fl",
+      "fips": "12085"
+    },
+    {
+      "type": "county",
+      "name": "Madera County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 162858,
+      "slug": "madera-county-ca",
+      "fips": "06039"
+    },
+    {
+      "type": "county",
+      "name": "Portage County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 162665,
+      "slug": "portage-county-oh",
+      "fips": "39133"
+    },
+    {
+      "type": "county",
+      "name": "Hampshire County",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 162502,
+      "slug": "hampshire-county-ma",
+      "fips": "25015"
+    },
+    {
+      "type": "county",
+      "name": "Sullivan County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 162135,
+      "slug": "sullivan-county-tn",
+      "fips": "47163"
+    },
+    {
+      "type": "county",
+      "name": "Stearns County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 160977,
+      "slug": "stearns-county-mn",
+      "fips": "27145"
+    },
+    {
+      "type": "county",
+      "name": "Rankin County",
+      "state": "MS",
+      "state_name": "Mississippi",
+      "population": 160417,
+      "slug": "rankin-county-ms",
+      "fips": "28121"
+    },
+    {
+      "type": "county",
+      "name": "Brunswick County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 159964,
+      "slug": "brunswick-county-nc",
+      "fips": "37019"
+    },
+    {
+      "type": "county",
+      "name": "Schenectady County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 159902,
+      "slug": "schenectady-county-ny",
+      "fips": "36093"
+    },
+    {
+      "type": "county",
+      "name": "St. Clair County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 159874,
+      "slug": "st-clair-county-mi",
+      "fips": "26147"
+    },
+    {
+      "type": "county",
+      "name": "Mesa County",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 159681,
+      "slug": "mesa-county-co",
+      "fips": "08077"
+    },
+    {
+      "type": "county",
+      "name": "Jackson County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 159424,
+      "slug": "jackson-county-mi",
+      "fips": "26075"
+    },
+    {
+      "type": "county",
+      "name": "Rensselaer County",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 159305,
+      "slug": "rensselaer-county-ny",
+      "fips": "36083"
+    },
+    {
+      "type": "county",
+      "name": "Franklin County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 157854,
+      "slug": "franklin-county-pa",
+      "fips": "42055"
+    },
+    {
+      "type": "county",
+      "name": "Centre County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 157795,
+      "slug": "centre-county-pa",
+      "fips": "42027"
+    },
+    {
+      "type": "county",
+      "name": "Ouachita Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 157568,
+      "slug": "ouachita-parish-la",
+      "fips": "22073"
+    },
+    {
+      "type": "county",
+      "name": "Johnson County",
+      "state": "IA",
+      "state_name": "Iowa",
+      "population": 157528,
+      "slug": "johnson-county-ia",
+      "fips": "19103"
+    },
+    {
+      "type": "county",
+      "name": "Merrimack County",
+      "state": "NH",
+      "state_name": "New Hampshire",
+      "population": 157103,
+      "slug": "merrimack-county-nh",
+      "fips": "33013"
+    },
+    {
+      "type": "county",
+      "name": "Bibb County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 156512,
+      "slug": "bibb-county-ga",
+      "fips": "13021"
+    },
+    {
+      "type": "county",
+      "name": "Santa Fe County",
+      "state": "NM",
+      "state_name": "New Mexico",
+      "population": 155956,
+      "slug": "santa-fe-county-nm",
+      "fips": "35049"
+    },
+    {
+      "type": "county",
+      "name": "Sandoval County",
+      "state": "NM",
+      "state_name": "New Mexico",
+      "population": 155936,
+      "slug": "sandoval-county-nm",
+      "fips": "35043"
+    },
+    {
+      "type": "county",
+      "name": "Coweta County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 155892,
+      "slug": "coweta-county-ga",
+      "fips": "13077"
+    },
+    {
+      "type": "county",
+      "name": "Scott County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 155814,
+      "slug": "scott-county-mn",
+      "fips": "27139"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 155813,
+      "slug": "washington-county-md",
+      "fips": "24043"
+    },
+    {
+      "type": "county",
+      "name": "Penobscot County",
+      "state": "ME",
+      "state_name": "Maine",
+      "population": 155312,
+      "slug": "penobscot-county-me",
+      "fips": "23019"
+    },
+    {
+      "type": "county",
+      "name": "Alexandria city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 155230,
+      "slug": "alexandria-city-county-va",
+      "fips": "51510"
+    },
+    {
+      "type": "county",
+      "name": "Monroe County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 155045,
+      "slug": "monroe-county-mi",
+      "fips": "26115"
+    },
+    {
+      "type": "county",
+      "name": "Kings County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 152682,
+      "slug": "kings-county-ca",
+      "fips": "06031"
+    },
+    {
+      "type": "county",
+      "name": "Cumberland County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 152326,
+      "slug": "cumberland-county-nj",
+      "fips": "34011"
+    },
+    {
+      "type": "county",
+      "name": "Berrien County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 152261,
+      "slug": "berrien-county-mi",
+      "fips": "26021"
+    },
+    {
+      "type": "county",
+      "name": "Rowan County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 151661,
+      "slug": "rowan-county-nc",
+      "fips": "37159"
+    },
+    {
+      "type": "county",
+      "name": "Sumter County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 151565,
+      "slug": "sumter-county-fl",
+      "fips": "12119"
+    },
+    {
+      "type": "county",
+      "name": "Wright County",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 151150,
+      "slug": "wright-county-mn",
+      "fips": "27171"
+    },
+    {
+      "type": "county",
+      "name": "Orange County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 150626,
+      "slug": "orange-county-nc",
+      "fips": "37135"
+    },
+    {
+      "type": "county",
+      "name": "Livingston Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 150145,
+      "slug": "livingston-parish-la",
+      "fips": "22063"
+    },
+    {
+      "type": "county",
+      "name": "Spotsylvania County",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 149588,
+      "slug": "spotsylvania-county-va",
+      "fips": "51177"
+    },
+    {
+      "type": "county",
+      "name": "Douglas County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 149160,
+      "slug": "douglas-county-ga",
+      "fips": "13097"
+    },
+    {
+      "type": "county",
+      "name": "Randall County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 148255,
+      "slug": "randall-county-tx",
+      "fips": "48381"
+    },
+    {
+      "type": "county",
+      "name": "Randolph County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 147458,
+      "slug": "randolph-county-nc",
+      "fips": "37151"
+    },
+    {
+      "type": "county",
+      "name": "Grayson County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 146907,
+      "slug": "grayson-county-tx",
+      "fips": "48181"
+    },
+    {
+      "type": "county",
+      "name": "Taylor County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 146836,
+      "slug": "taylor-county-tx",
+      "fips": "48441"
+    },
+    {
+      "type": "county",
+      "name": "Jackson County",
+      "state": "MS",
+      "state_name": "Mississippi",
+      "population": 146389,
+      "slug": "jackson-county-ms",
+      "fips": "28059"
+    },
+    {
+      "type": "county",
+      "name": "Sussex County",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 146132,
+      "slug": "sussex-county-nj",
+      "fips": "34037"
+    },
+    {
+      "type": "county",
+      "name": "Coconino County",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 144472,
+      "slug": "coconino-county-az",
+      "fips": "04005"
+    },
+    {
+      "type": "county",
+      "name": "Lebanon County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 144252,
+      "slug": "lebanon-county-pa",
+      "fips": "42075"
+    },
+    {
+      "type": "county",
+      "name": "Schuylkill County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 143786,
+      "slug": "schuylkill-county-pa",
+      "fips": "42107"
+    },
+    {
+      "type": "county",
+      "name": "Cache County",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 142393,
+      "slug": "cache-county-ut",
+      "fips": "49005"
+    },
+    {
+      "type": "county",
+      "name": "Warren County",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 142229,
+      "slug": "warren-county-ky",
+      "fips": "21227"
+    },
+    {
+      "type": "county",
+      "name": "Harnett County",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 141477,
+      "slug": "harnett-county-nc",
+      "fips": "37085"
+    },
+    {
+      "type": "county",
+      "name": "Blount County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 141456,
+      "slug": "blount-county-tn",
+      "fips": "47009"
+    },
+    {
+      "type": "county",
+      "name": "Rock Island County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 141236,
+      "slug": "rock-island-county-il",
+      "fips": "17161"
+    },
+    {
+      "type": "county",
+      "name": "Boone County",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 140496,
+      "slug": "boone-county-ky",
+      "fips": "21015"
+    },
+    {
+      "type": "county",
+      "name": "Kendall County",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 139976,
+      "slug": "kendall-county-il",
+      "fips": "17093"
+    },
+    {
+      "type": "county",
+      "name": "Monroe County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 139342,
+      "slug": "monroe-county-in",
+      "fips": "18105"
+    },
+    {
+      "type": "county",
+      "name": "Marathon County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 138612,
+      "slug": "marathon-county-wi",
+      "fips": "55073"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 138420,
+      "slug": "washington-county-tn",
+      "fips": "47179"
+    },
+    {
+      "type": "county",
+      "name": "Washington County",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 138168,
+      "slug": "washington-county-wi",
+      "fips": "55131"
+    },
+    {
+      "type": "county",
+      "name": "Tangipahoa Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 138064,
+      "slug": "tangipahoa-parish-la",
+      "fips": "22105"
+    },
+    {
+      "type": "county",
+      "name": "Florence County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 137214,
+      "slug": "florence-county-sc",
+      "fips": "45041"
+    },
+    {
+      "type": "county",
+      "name": "Hampton city",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 137098,
+      "slug": "hampton-city-county-va",
+      "fips": "51650"
+    },
+    {
+      "type": "county",
+      "name": "Pickens County",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 135495,
+      "slug": "pickens-county-sc",
+      "fips": "45077"
+    },
+    {
+      "type": "county",
+      "name": "Clark County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 134610,
+      "slug": "clark-county-oh",
+      "fips": "39023"
+    },
+    {
+      "type": "county",
+      "name": "Humboldt County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 133985,
+      "slug": "humboldt-county-ca",
+      "fips": "06023"
+    },
+    {
+      "type": "county",
+      "name": "Calhoun County",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 133366,
+      "slug": "calhoun-county-mi",
+      "fips": "26025"
+    },
+    {
+      "type": "county",
+      "name": "Strafford County",
+      "state": "NH",
+      "state_name": "New Hampshire",
+      "population": 133243,
+      "slug": "strafford-county-nh",
+      "fips": "33017"
+    },
+    {
+      "type": "county",
+      "name": "Napa County",
+      "state": "CA",
+      "state_name": "California",
+      "population": 133216,
+      "slug": "napa-county-ca",
+      "fips": "06055"
+    },
+    {
+      "type": "county",
+      "name": "Wood County",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 132650,
+      "slug": "wood-county-oh",
+      "fips": "39173"
+    },
+    {
+      "type": "county",
+      "name": "Madison County",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 132504,
+      "slug": "madison-county-in",
+      "fips": "18095"
+    },
+    {
+      "type": "county",
+      "name": "Berkeley County",
+      "state": "WV",
+      "state_name": "West Virginia",
+      "population": 132440,
+      "slug": "berkeley-county-wv",
+      "fips": "54003"
+    },
+    {
+      "type": "county",
+      "name": "Ascension Parish",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 131632,
+      "slug": "ascension-parish-la",
+      "fips": "22005"
+    },
+    {
+      "type": "county",
+      "name": "Linn County",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 131496,
+      "slug": "linn-county-or",
+      "fips": "41043"
+    },
+    {
+      "type": "county",
+      "name": "Flagler County",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 131439,
+      "slug": "flagler-county-fl",
+      "fips": "12035"
+    },
+    {
+      "type": "county",
+      "name": "Skagit County",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 131417,
+      "slug": "skagit-county-wa",
+      "fips": "53057"
+    },
+    {
+      "type": "county",
+      "name": "Bonneville County",
+      "state": "ID",
+      "state_name": "Idaho",
+      "population": 131366,
+      "slug": "bonneville-county-id",
+      "fips": "16019"
+    },
+    {
+      "type": "county",
+      "name": "Rockwall County",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 131307,
+      "slug": "rockwall-county-tx",
+      "fips": "48397"
+    },
+    {
+      "type": "county",
+      "name": "Cambria County",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 130668,
+      "slug": "cambria-county-pa",
+      "fips": "42021"
+    }
+  ],
+  "cities": [
+    {
+      "type": "city",
+      "name": "New York",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 8405837,
+      "slug": "new-york-ny",
+      "lat": 40.7127837,
+      "lng": -74.0059413
+    },
+    {
+      "type": "city",
+      "name": "Los Angeles",
+      "state": "CA",
+      "state_name": "California",
+      "population": 3884307,
+      "slug": "los-angeles-ca",
+      "lat": 34.0522342,
+      "lng": -118.2436849
+    },
+    {
+      "type": "city",
+      "name": "Chicago",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 2718782,
+      "slug": "chicago-il",
+      "lat": 41.8781136,
+      "lng": -87.6297982
+    },
+    {
+      "type": "city",
+      "name": "Houston",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 2195914,
+      "slug": "houston-tx",
+      "lat": 29.7604267,
+      "lng": -95.3698028
+    },
+    {
+      "type": "city",
+      "name": "Philadelphia",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 1553165,
+      "slug": "philadelphia-pa",
+      "lat": 39.9525839,
+      "lng": -75.1652215
+    },
+    {
+      "type": "city",
+      "name": "Phoenix",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 1513367,
+      "slug": "phoenix-az",
+      "lat": 33.4483771,
+      "lng": -112.0740373
+    },
+    {
+      "type": "city",
+      "name": "San Antonio",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 1409019,
+      "slug": "san-antonio-tx",
+      "lat": 29.4241219,
+      "lng": -98.49362819999999
+    },
+    {
+      "type": "city",
+      "name": "San Diego",
+      "state": "CA",
+      "state_name": "California",
+      "population": 1355896,
+      "slug": "san-diego-ca",
+      "lat": 32.715738,
+      "lng": -117.1610838
+    },
+    {
+      "type": "city",
+      "name": "Dallas",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 1257676,
+      "slug": "dallas-tx",
+      "lat": 32.7766642,
+      "lng": -96.79698789999999
+    },
+    {
+      "type": "city",
+      "name": "San Jose",
+      "state": "CA",
+      "state_name": "California",
+      "population": 998537,
+      "slug": "san-jose-ca",
+      "lat": 37.3382082,
+      "lng": -121.8863286
+    },
+    {
+      "type": "city",
+      "name": "Austin",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 885400,
+      "slug": "austin-tx",
+      "lat": 30.267153,
+      "lng": -97.7430608
+    },
+    {
+      "type": "city",
+      "name": "Indianapolis",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 843393,
+      "slug": "indianapolis-in",
+      "lat": 39.768403,
+      "lng": -86.158068
+    },
+    {
+      "type": "city",
+      "name": "Jacksonville",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 842583,
+      "slug": "jacksonville-fl",
+      "lat": 30.3321838,
+      "lng": -81.65565099999999
+    },
+    {
+      "type": "city",
+      "name": "San Francisco",
+      "state": "CA",
+      "state_name": "California",
+      "population": 837442,
+      "slug": "san-francisco-ca",
+      "lat": 37.7749295,
+      "lng": -122.4194155
+    },
+    {
+      "type": "city",
+      "name": "Columbus",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 822553,
+      "slug": "columbus-oh",
+      "lat": 39.9611755,
+      "lng": -82.99879419999999
+    },
+    {
+      "type": "city",
+      "name": "Charlotte",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 792862,
+      "slug": "charlotte-nc",
+      "lat": 35.2270869,
+      "lng": -80.8431267
+    },
+    {
+      "type": "city",
+      "name": "Fort Worth",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 792727,
+      "slug": "fort-worth-tx",
+      "lat": 32.7554883,
+      "lng": -97.3307658
+    },
+    {
+      "type": "city",
+      "name": "Detroit",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 688701,
+      "slug": "detroit-mi",
+      "lat": 42.331427,
+      "lng": -83.0457538
+    },
+    {
+      "type": "city",
+      "name": "El Paso",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 674433,
+      "slug": "el-paso-tx",
+      "lat": 31.7775757,
+      "lng": -106.4424559
+    },
+    {
+      "type": "city",
+      "name": "Memphis",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 653450,
+      "slug": "memphis-tn",
+      "lat": 35.1495343,
+      "lng": -90.0489801
+    },
+    {
+      "type": "city",
+      "name": "Seattle",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 652405,
+      "slug": "seattle-wa",
+      "lat": 47.6062095,
+      "lng": -122.3320708
+    },
+    {
+      "type": "city",
+      "name": "Denver",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 649495,
+      "slug": "denver-co",
+      "lat": 39.7392358,
+      "lng": -104.990251
+    },
+    {
+      "type": "city",
+      "name": "Washington",
+      "state": "DC",
+      "state_name": "District of Columbia",
+      "population": 646449,
+      "slug": "washington-dc",
+      "lat": 38.9071923,
+      "lng": -77.0368707
+    },
+    {
+      "type": "city",
+      "name": "Boston",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 645966,
+      "slug": "boston-ma",
+      "lat": 42.3600825,
+      "lng": -71.0588801
+    },
+    {
+      "type": "city",
+      "name": "Nashville-Davidson",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 634464,
+      "slug": "nashville-davidson-tn",
+      "lat": 36.1626638,
+      "lng": -86.7816016
+    },
+    {
+      "type": "city",
+      "name": "Baltimore",
+      "state": "MD",
+      "state_name": "Maryland",
+      "population": 622104,
+      "slug": "baltimore-md",
+      "lat": 39.2903848,
+      "lng": -76.6121893
+    },
+    {
+      "type": "city",
+      "name": "Oklahoma City",
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "population": 610613,
+      "slug": "oklahoma-city-ok",
+      "lat": 35.4675602,
+      "lng": -97.5164276
+    },
+    {
+      "type": "city",
+      "name": "Louisville/Jefferson County",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 609893,
+      "slug": "louisville-jefferson-county-ky",
+      "lat": 38.2526647,
+      "lng": -85.7584557
+    },
+    {
+      "type": "city",
+      "name": "Portland",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 609456,
+      "slug": "portland-or",
+      "lat": 45.5230622,
+      "lng": -122.6764816
+    },
+    {
+      "type": "city",
+      "name": "Las Vegas",
+      "state": "NV",
+      "state_name": "Nevada",
+      "population": 603488,
+      "slug": "las-vegas-nv",
+      "lat": 36.1699412,
+      "lng": -115.1398296
+    },
+    {
+      "type": "city",
+      "name": "Milwaukee",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 599164,
+      "slug": "milwaukee-wi",
+      "lat": 43.0389025,
+      "lng": -87.9064736
+    },
+    {
+      "type": "city",
+      "name": "Albuquerque",
+      "state": "NM",
+      "state_name": "New Mexico",
+      "population": 556495,
+      "slug": "albuquerque-nm",
+      "lat": 35.0853336,
+      "lng": -106.6055534
+    },
+    {
+      "type": "city",
+      "name": "Tucson",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 526116,
+      "slug": "tucson-az",
+      "lat": 32.2217429,
+      "lng": -110.926479
+    },
+    {
+      "type": "city",
+      "name": "Fresno",
+      "state": "CA",
+      "state_name": "California",
+      "population": 509924,
+      "slug": "fresno-ca",
+      "lat": 36.7468422,
+      "lng": -119.7725868
+    },
+    {
+      "type": "city",
+      "name": "Sacramento",
+      "state": "CA",
+      "state_name": "California",
+      "population": 479686,
+      "slug": "sacramento-ca",
+      "lat": 38.5815719,
+      "lng": -121.4943996
+    },
+    {
+      "type": "city",
+      "name": "Long Beach",
+      "state": "CA",
+      "state_name": "California",
+      "population": 469428,
+      "slug": "long-beach-ca",
+      "lat": 33.7700504,
+      "lng": -118.1937395
+    },
+    {
+      "type": "city",
+      "name": "Kansas City",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 467007,
+      "slug": "kansas-city-mo",
+      "lat": 39.0997265,
+      "lng": -94.5785667
+    },
+    {
+      "type": "city",
+      "name": "Mesa",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 457587,
+      "slug": "mesa-az",
+      "lat": 33.4151843,
+      "lng": -111.8314724
+    },
+    {
+      "type": "city",
+      "name": "Virginia Beach",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 448479,
+      "slug": "virginia-beach-va",
+      "lat": 36.8529263,
+      "lng": -75.97798499999999
+    },
+    {
+      "type": "city",
+      "name": "Atlanta",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 447841,
+      "slug": "atlanta-ga",
+      "lat": 33.7489954,
+      "lng": -84.3879824
+    },
+    {
+      "type": "city",
+      "name": "Colorado Springs",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 439886,
+      "slug": "colorado-springs-co",
+      "lat": 38.8338816,
+      "lng": -104.8213634
+    },
+    {
+      "type": "city",
+      "name": "Omaha",
+      "state": "NE",
+      "state_name": "Nebraska",
+      "population": 434353,
+      "slug": "omaha-ne",
+      "lat": 41.2523634,
+      "lng": -95.99798829999999
+    },
+    {
+      "type": "city",
+      "name": "Raleigh",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 431746,
+      "slug": "raleigh-nc",
+      "lat": 35.7795897,
+      "lng": -78.6381787
+    },
+    {
+      "type": "city",
+      "name": "Miami",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 417650,
+      "slug": "miami-fl",
+      "lat": 25.7616798,
+      "lng": -80.1917902
+    },
+    {
+      "type": "city",
+      "name": "Oakland",
+      "state": "CA",
+      "state_name": "California",
+      "population": 406253,
+      "slug": "oakland-ca",
+      "lat": 37.8043637,
+      "lng": -122.2711137
+    },
+    {
+      "type": "city",
+      "name": "Minneapolis",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 400070,
+      "slug": "minneapolis-mn",
+      "lat": 44.977753,
+      "lng": -93.2650108
+    },
+    {
+      "type": "city",
+      "name": "Tulsa",
+      "state": "OK",
+      "state_name": "Oklahoma",
+      "population": 398121,
+      "slug": "tulsa-ok",
+      "lat": 36.1539816,
+      "lng": -95.99277500000001
+    },
+    {
+      "type": "city",
+      "name": "Cleveland",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 390113,
+      "slug": "cleveland-oh",
+      "lat": 41.49932,
+      "lng": -81.6943605
+    },
+    {
+      "type": "city",
+      "name": "Wichita",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 386552,
+      "slug": "wichita-ks",
+      "lat": 37.688889,
+      "lng": -97.336111
+    },
+    {
+      "type": "city",
+      "name": "Arlington",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 379577,
+      "slug": "arlington-tx",
+      "lat": 32.735687,
+      "lng": -97.10806559999999
+    },
+    {
+      "type": "city",
+      "name": "New Orleans",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 378715,
+      "slug": "new-orleans-la",
+      "lat": 29.95106579999999,
+      "lng": -90.0715323
+    },
+    {
+      "type": "city",
+      "name": "Bakersfield",
+      "state": "CA",
+      "state_name": "California",
+      "population": 363630,
+      "slug": "bakersfield-ca",
+      "lat": 35.3732921,
+      "lng": -119.0187125
+    },
+    {
+      "type": "city",
+      "name": "Tampa",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 352957,
+      "slug": "tampa-fl",
+      "lat": 27.950575,
+      "lng": -82.4571776
+    },
+    {
+      "type": "city",
+      "name": "Honolulu",
+      "state": "HI",
+      "state_name": "Hawaii",
+      "population": 347884,
+      "slug": "honolulu-hi",
+      "lat": 21.3069444,
+      "lng": -157.8583333
+    },
+    {
+      "type": "city",
+      "name": "Aurora",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 345803,
+      "slug": "aurora-co",
+      "lat": 39.7294319,
+      "lng": -104.8319195
+    },
+    {
+      "type": "city",
+      "name": "Anaheim",
+      "state": "CA",
+      "state_name": "California",
+      "population": 345012,
+      "slug": "anaheim-ca",
+      "lat": 33.8352932,
+      "lng": -117.9145036
+    },
+    {
+      "type": "city",
+      "name": "Santa Ana",
+      "state": "CA",
+      "state_name": "California",
+      "population": 334227,
+      "slug": "santa-ana-ca",
+      "lat": 33.7455731,
+      "lng": -117.8678338
+    },
+    {
+      "type": "city",
+      "name": "St. Louis",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 318416,
+      "slug": "st-louis-mo",
+      "lat": 38.6270025,
+      "lng": -90.19940419999999
+    },
+    {
+      "type": "city",
+      "name": "Riverside",
+      "state": "CA",
+      "state_name": "California",
+      "population": 316619,
+      "slug": "riverside-ca",
+      "lat": 33.9533487,
+      "lng": -117.3961564
+    },
+    {
+      "type": "city",
+      "name": "Corpus Christi",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 316381,
+      "slug": "corpus-christi-tx",
+      "lat": 27.8005828,
+      "lng": -97.39638099999999
+    },
+    {
+      "type": "city",
+      "name": "Lexington-Fayette",
+      "state": "KY",
+      "state_name": "Kentucky",
+      "population": 308428,
+      "slug": "lexington-fayette-ky",
+      "lat": 38.0405837,
+      "lng": -84.5037164
+    },
+    {
+      "type": "city",
+      "name": "Pittsburgh",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "population": 305841,
+      "slug": "pittsburgh-pa",
+      "lat": 40.44062479999999,
+      "lng": -79.9958864
+    },
+    {
+      "type": "city",
+      "name": "Anchorage",
+      "state": "AK",
+      "state_name": "Alaska",
+      "population": 300950,
+      "slug": "anchorage-ak",
+      "lat": 61.2180556,
+      "lng": -149.9002778
+    },
+    {
+      "type": "city",
+      "name": "Stockton",
+      "state": "CA",
+      "state_name": "California",
+      "population": 298118,
+      "slug": "stockton-ca",
+      "lat": 37.9577016,
+      "lng": -121.2907796
+    },
+    {
+      "type": "city",
+      "name": "Cincinnati",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 297517,
+      "slug": "cincinnati-oh",
+      "lat": 39.1031182,
+      "lng": -84.5120196
+    },
+    {
+      "type": "city",
+      "name": "St. Paul",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "population": 294873,
+      "slug": "st-paul-mn",
+      "lat": 44.9537029,
+      "lng": -93.0899578
+    },
+    {
+      "type": "city",
+      "name": "Toledo",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 282313,
+      "slug": "toledo-oh",
+      "lat": 41.6639383,
+      "lng": -83.55521200000001
+    },
+    {
+      "type": "city",
+      "name": "Greensboro",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 279639,
+      "slug": "greensboro-nc",
+      "lat": 36.0726354,
+      "lng": -79.7919754
+    },
+    {
+      "type": "city",
+      "name": "Newark",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 278427,
+      "slug": "newark-nj",
+      "lat": 40.735657,
+      "lng": -74.1723667
+    },
+    {
+      "type": "city",
+      "name": "Plano",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 274409,
+      "slug": "plano-tx",
+      "lat": 33.0198431,
+      "lng": -96.6988856
+    },
+    {
+      "type": "city",
+      "name": "Henderson",
+      "state": "NV",
+      "state_name": "Nevada",
+      "population": 270811,
+      "slug": "henderson-nv",
+      "lat": 36.0395247,
+      "lng": -114.9817213
+    },
+    {
+      "type": "city",
+      "name": "Lincoln",
+      "state": "NE",
+      "state_name": "Nebraska",
+      "population": 268738,
+      "slug": "lincoln-ne",
+      "lat": 40.8257625,
+      "lng": -96.6851982
+    },
+    {
+      "type": "city",
+      "name": "Buffalo",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 258959,
+      "slug": "buffalo-ny",
+      "lat": 42.88644679999999,
+      "lng": -78.8783689
+    },
+    {
+      "type": "city",
+      "name": "Jersey City",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 257342,
+      "slug": "jersey-city-nj",
+      "lat": 40.72815749999999,
+      "lng": -74.0776417
+    },
+    {
+      "type": "city",
+      "name": "Chula Vista",
+      "state": "CA",
+      "state_name": "California",
+      "population": 256780,
+      "slug": "chula-vista-ca",
+      "lat": 32.6400541,
+      "lng": -117.0841955
+    },
+    {
+      "type": "city",
+      "name": "Fort Wayne",
+      "state": "IN",
+      "state_name": "Indiana",
+      "population": 256496,
+      "slug": "fort-wayne-in",
+      "lat": 41.079273,
+      "lng": -85.1393513
+    },
+    {
+      "type": "city",
+      "name": "Orlando",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 255483,
+      "slug": "orlando-fl",
+      "lat": 28.5383355,
+      "lng": -81.3792365
+    },
+    {
+      "type": "city",
+      "name": "St. Petersburg",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 249688,
+      "slug": "st-petersburg-fl",
+      "lat": 27.773056,
+      "lng": -82.64
+    },
+    {
+      "type": "city",
+      "name": "Chandler",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 249146,
+      "slug": "chandler-az",
+      "lat": 33.3061605,
+      "lng": -111.8412502
+    },
+    {
+      "type": "city",
+      "name": "Laredo",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 248142,
+      "slug": "laredo-tx",
+      "lat": 27.5305671,
+      "lng": -99.48032409999999
+    },
+    {
+      "type": "city",
+      "name": "Norfolk",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 246139,
+      "slug": "norfolk-va",
+      "lat": 36.8507689,
+      "lng": -76.28587259999999
+    },
+    {
+      "type": "city",
+      "name": "Durham",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 245475,
+      "slug": "durham-nc",
+      "lat": 35.9940329,
+      "lng": -78.898619
+    },
+    {
+      "type": "city",
+      "name": "Madison",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "population": 243344,
+      "slug": "madison-wi",
+      "lat": 43.0730517,
+      "lng": -89.4012302
+    },
+    {
+      "type": "city",
+      "name": "Lubbock",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 239538,
+      "slug": "lubbock-tx",
+      "lat": 33.5778631,
+      "lng": -101.8551665
+    },
+    {
+      "type": "city",
+      "name": "Irvine",
+      "state": "CA",
+      "state_name": "California",
+      "population": 236716,
+      "slug": "irvine-ca",
+      "lat": 33.6839473,
+      "lng": -117.7946942
+    },
+    {
+      "type": "city",
+      "name": "Winston-Salem",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 236441,
+      "slug": "winston-salem-nc",
+      "lat": 36.09985959999999,
+      "lng": -80.244216
+    },
+    {
+      "type": "city",
+      "name": "Glendale",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 234632,
+      "slug": "glendale-az",
+      "lat": 33.5386523,
+      "lng": -112.1859866
+    },
+    {
+      "type": "city",
+      "name": "Garland",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 234566,
+      "slug": "garland-tx",
+      "lat": 32.912624,
+      "lng": -96.63888329999999
+    },
+    {
+      "type": "city",
+      "name": "Hialeah",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 233394,
+      "slug": "hialeah-fl",
+      "lat": 25.8575963,
+      "lng": -80.2781057
+    },
+    {
+      "type": "city",
+      "name": "Reno",
+      "state": "NV",
+      "state_name": "Nevada",
+      "population": 233294,
+      "slug": "reno-nv",
+      "lat": 39.5296329,
+      "lng": -119.8138027
+    },
+    {
+      "type": "city",
+      "name": "Chesapeake",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 230571,
+      "slug": "chesapeake-va",
+      "lat": 36.7682088,
+      "lng": -76.2874927
+    },
+    {
+      "type": "city",
+      "name": "Gilbert",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 229972,
+      "slug": "gilbert-az",
+      "lat": 33.3528264,
+      "lng": -111.789027
+    },
+    {
+      "type": "city",
+      "name": "Baton Rouge",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 229426,
+      "slug": "baton-rouge-la",
+      "lat": 30.4582829,
+      "lng": -91.1403196
+    },
+    {
+      "type": "city",
+      "name": "Irving",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 228653,
+      "slug": "irving-tx",
+      "lat": 32.8140177,
+      "lng": -96.9488945
+    },
+    {
+      "type": "city",
+      "name": "Scottsdale",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 226918,
+      "slug": "scottsdale-az",
+      "lat": 33.4941704,
+      "lng": -111.9260519
+    },
+    {
+      "type": "city",
+      "name": "North Las Vegas",
+      "state": "NV",
+      "state_name": "Nevada",
+      "population": 226877,
+      "slug": "north-las-vegas-nv",
+      "lat": 36.1988592,
+      "lng": -115.1175013
+    },
+    {
+      "type": "city",
+      "name": "Fremont",
+      "state": "CA",
+      "state_name": "California",
+      "population": 224922,
+      "slug": "fremont-ca",
+      "lat": 37.5482697,
+      "lng": -121.9885719
+    },
+    {
+      "type": "city",
+      "name": "Boise City",
+      "state": "ID",
+      "state_name": "Idaho",
+      "population": 214237,
+      "slug": "boise-city-id",
+      "lat": 43.6187102,
+      "lng": -116.2146068
+    },
+    {
+      "type": "city",
+      "name": "Richmond",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 214114,
+      "slug": "richmond-va",
+      "lat": 37.5407246,
+      "lng": -77.4360481
+    },
+    {
+      "type": "city",
+      "name": "San Bernardino",
+      "state": "CA",
+      "state_name": "California",
+      "population": 213708,
+      "slug": "san-bernardino-ca",
+      "lat": 34.1083449,
+      "lng": -117.2897652
+    },
+    {
+      "type": "city",
+      "name": "Birmingham",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 212113,
+      "slug": "birmingham-al",
+      "lat": 33.5206608,
+      "lng": -86.80248999999999
+    },
+    {
+      "type": "city",
+      "name": "Spokane",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 210721,
+      "slug": "spokane-wa",
+      "lat": 47.6587802,
+      "lng": -117.4260466
+    },
+    {
+      "type": "city",
+      "name": "Rochester",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 210358,
+      "slug": "rochester-ny",
+      "lat": 43.16103,
+      "lng": -77.6109219
+    },
+    {
+      "type": "city",
+      "name": "Des Moines",
+      "state": "IA",
+      "state_name": "Iowa",
+      "population": 207510,
+      "slug": "des-moines-ia",
+      "lat": 41.6005448,
+      "lng": -93.6091064
+    },
+    {
+      "type": "city",
+      "name": "Modesto",
+      "state": "CA",
+      "state_name": "California",
+      "population": 204933,
+      "slug": "modesto-ca",
+      "lat": 37.63909719999999,
+      "lng": -120.9968782
+    },
+    {
+      "type": "city",
+      "name": "Fayetteville",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 204408,
+      "slug": "fayetteville-nc",
+      "lat": 35.0526641,
+      "lng": -78.87835849999999
+    },
+    {
+      "type": "city",
+      "name": "Tacoma",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 203446,
+      "slug": "tacoma-wa",
+      "lat": 47.2528768,
+      "lng": -122.4442906
+    },
+    {
+      "type": "city",
+      "name": "Oxnard",
+      "state": "CA",
+      "state_name": "California",
+      "population": 203007,
+      "slug": "oxnard-ca",
+      "lat": 34.1975048,
+      "lng": -119.1770516
+    },
+    {
+      "type": "city",
+      "name": "Fontana",
+      "state": "CA",
+      "state_name": "California",
+      "population": 203003,
+      "slug": "fontana-ca",
+      "lat": 34.0922335,
+      "lng": -117.435048
+    },
+    {
+      "type": "city",
+      "name": "Columbus",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 202824,
+      "slug": "columbus-ga",
+      "lat": 32.4609764,
+      "lng": -84.9877094
+    },
+    {
+      "type": "city",
+      "name": "Montgomery",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 201332,
+      "slug": "montgomery-al",
+      "lat": 32.3668052,
+      "lng": -86.2999689
+    },
+    {
+      "type": "city",
+      "name": "Moreno Valley",
+      "state": "CA",
+      "state_name": "California",
+      "population": 201175,
+      "slug": "moreno-valley-ca",
+      "lat": 33.9424658,
+      "lng": -117.2296717
+    },
+    {
+      "type": "city",
+      "name": "Shreveport",
+      "state": "LA",
+      "state_name": "Louisiana",
+      "population": 200327,
+      "slug": "shreveport-la",
+      "lat": 32.5251516,
+      "lng": -93.7501789
+    },
+    {
+      "type": "city",
+      "name": "Aurora",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 199963,
+      "slug": "aurora-il",
+      "lat": 41.7605849,
+      "lng": -88.32007150000001
+    },
+    {
+      "type": "city",
+      "name": "Yonkers",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 199766,
+      "slug": "yonkers-ny",
+      "lat": 40.9312099,
+      "lng": -73.89874689999999
+    },
+    {
+      "type": "city",
+      "name": "Akron",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 198100,
+      "slug": "akron-oh",
+      "lat": 41.0814447,
+      "lng": -81.51900529999999
+    },
+    {
+      "type": "city",
+      "name": "Huntington Beach",
+      "state": "CA",
+      "state_name": "California",
+      "population": 197575,
+      "slug": "huntington-beach-ca",
+      "lat": 33.660297,
+      "lng": -117.9992265
+    },
+    {
+      "type": "city",
+      "name": "Little Rock",
+      "state": "AR",
+      "state_name": "Arkansas",
+      "population": 197357,
+      "slug": "little-rock-ar",
+      "lat": 34.7464809,
+      "lng": -92.28959479999999
+    },
+    {
+      "type": "city",
+      "name": "Augusta-Richmond County",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 197350,
+      "slug": "augusta-richmond-county-ga",
+      "lat": 33.4734978,
+      "lng": -82.0105148
+    },
+    {
+      "type": "city",
+      "name": "Amarillo",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 196429,
+      "slug": "amarillo-tx",
+      "lat": 35.2219971,
+      "lng": -101.8312969
+    },
+    {
+      "type": "city",
+      "name": "Glendale",
+      "state": "CA",
+      "state_name": "California",
+      "population": 196021,
+      "slug": "glendale-ca",
+      "lat": 34.1425078,
+      "lng": -118.255075
+    },
+    {
+      "type": "city",
+      "name": "Mobile",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 194899,
+      "slug": "mobile-al",
+      "lat": 30.6953657,
+      "lng": -88.0398912
+    },
+    {
+      "type": "city",
+      "name": "Grand Rapids",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 192294,
+      "slug": "grand-rapids-mi",
+      "lat": 42.9633599,
+      "lng": -85.6680863
+    },
+    {
+      "type": "city",
+      "name": "Salt Lake City",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 191180,
+      "slug": "salt-lake-city-ut",
+      "lat": 40.7607793,
+      "lng": -111.8910474
+    },
+    {
+      "type": "city",
+      "name": "Tallahassee",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 186411,
+      "slug": "tallahassee-fl",
+      "lat": 30.4382559,
+      "lng": -84.28073289999999
+    },
+    {
+      "type": "city",
+      "name": "Huntsville",
+      "state": "AL",
+      "state_name": "Alabama",
+      "population": 186254,
+      "slug": "huntsville-al",
+      "lat": 34.7303688,
+      "lng": -86.5861037
+    },
+    {
+      "type": "city",
+      "name": "Grand Prairie",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 183372,
+      "slug": "grand-prairie-tx",
+      "lat": 32.7459645,
+      "lng": -96.99778459999999
+    },
+    {
+      "type": "city",
+      "name": "Knoxville",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 183270,
+      "slug": "knoxville-tn",
+      "lat": 35.9606384,
+      "lng": -83.9207392
+    },
+    {
+      "type": "city",
+      "name": "Worcester",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 182544,
+      "slug": "worcester-ma",
+      "lat": 42.2625932,
+      "lng": -71.8022934
+    },
+    {
+      "type": "city",
+      "name": "Newport News",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 182020,
+      "slug": "newport-news-va",
+      "lat": 37.0870821,
+      "lng": -76.4730122
+    },
+    {
+      "type": "city",
+      "name": "Brownsville",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 181860,
+      "slug": "brownsville-tx",
+      "lat": 25.9017472,
+      "lng": -97.4974838
+    },
+    {
+      "type": "city",
+      "name": "Overland Park",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 181260,
+      "slug": "overland-park-ks",
+      "lat": 38.9822282,
+      "lng": -94.6707917
+    },
+    {
+      "type": "city",
+      "name": "Santa Clarita",
+      "state": "CA",
+      "state_name": "California",
+      "population": 179590,
+      "slug": "santa-clarita-ca",
+      "lat": 34.3916641,
+      "lng": -118.542586
+    },
+    {
+      "type": "city",
+      "name": "Providence",
+      "state": "RI",
+      "state_name": "Rhode Island",
+      "population": 177994,
+      "slug": "providence-ri",
+      "lat": 41.8239891,
+      "lng": -71.4128343
+    },
+    {
+      "type": "city",
+      "name": "Garden Grove",
+      "state": "CA",
+      "state_name": "California",
+      "population": 175140,
+      "slug": "garden-grove-ca",
+      "lat": 33.7739053,
+      "lng": -117.9414477
+    },
+    {
+      "type": "city",
+      "name": "Chattanooga",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 173366,
+      "slug": "chattanooga-tn",
+      "lat": 35.0456297,
+      "lng": -85.3096801
+    },
+    {
+      "type": "city",
+      "name": "Oceanside",
+      "state": "CA",
+      "state_name": "California",
+      "population": 172794,
+      "slug": "oceanside-ca",
+      "lat": 33.1958696,
+      "lng": -117.3794834
+    },
+    {
+      "type": "city",
+      "name": "Jackson",
+      "state": "MS",
+      "state_name": "Mississippi",
+      "population": 172638,
+      "slug": "jackson-ms",
+      "lat": 32.2987573,
+      "lng": -90.1848103
+    },
+    {
+      "type": "city",
+      "name": "Fort Lauderdale",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 172389,
+      "slug": "fort-lauderdale-fl",
+      "lat": 26.1224386,
+      "lng": -80.13731740000001
+    },
+    {
+      "type": "city",
+      "name": "Santa Rosa",
+      "state": "CA",
+      "state_name": "California",
+      "population": 171990,
+      "slug": "santa-rosa-ca",
+      "lat": 38.440429,
+      "lng": -122.7140548
+    },
+    {
+      "type": "city",
+      "name": "Rancho Cucamonga",
+      "state": "CA",
+      "state_name": "California",
+      "population": 171386,
+      "slug": "rancho-cucamonga-ca",
+      "lat": 34.10639889999999,
+      "lng": -117.5931084
+    },
+    {
+      "type": "city",
+      "name": "Port St. Lucie",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 171016,
+      "slug": "port-st-lucie-fl",
+      "lat": 27.2730492,
+      "lng": -80.3582261
+    },
+    {
+      "type": "city",
+      "name": "Tempe",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 168228,
+      "slug": "tempe-az",
+      "lat": 33.4255104,
+      "lng": -111.9400054
+    },
+    {
+      "type": "city",
+      "name": "Ontario",
+      "state": "CA",
+      "state_name": "California",
+      "population": 167500,
+      "slug": "ontario-ca",
+      "lat": 34.0633443,
+      "lng": -117.6508876
+    },
+    {
+      "type": "city",
+      "name": "Vancouver",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 167405,
+      "slug": "vancouver-wa",
+      "lat": 45.6387281,
+      "lng": -122.6614861
+    },
+    {
+      "type": "city",
+      "name": "Cape Coral",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 165831,
+      "slug": "cape-coral-fl",
+      "lat": 26.5628537,
+      "lng": -81.9495331
+    },
+    {
+      "type": "city",
+      "name": "Sioux Falls",
+      "state": "SD",
+      "state_name": "South Dakota",
+      "population": 164676,
+      "slug": "sioux-falls-sd",
+      "lat": 43.5445959,
+      "lng": -96.73110340000001
+    },
+    {
+      "type": "city",
+      "name": "Springfield",
+      "state": "MO",
+      "state_name": "Missouri",
+      "population": 164122,
+      "slug": "springfield-mo",
+      "lat": 37.2089572,
+      "lng": -93.29229889999999
+    },
+    {
+      "type": "city",
+      "name": "Peoria",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "population": 162592,
+      "slug": "peoria-az",
+      "lat": 33.5805955,
+      "lng": -112.2373779
+    },
+    {
+      "type": "city",
+      "name": "Pembroke Pines",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 162329,
+      "slug": "pembroke-pines-fl",
+      "lat": 26.007765,
+      "lng": -80.2962555
+    },
+    {
+      "type": "city",
+      "name": "Elk Grove",
+      "state": "CA",
+      "state_name": "California",
+      "population": 161007,
+      "slug": "elk-grove-ca",
+      "lat": 38.4087993,
+      "lng": -121.3716178
+    },
+    {
+      "type": "city",
+      "name": "Salem",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 160614,
+      "slug": "salem-or",
+      "lat": 44.9428975,
+      "lng": -123.0350963
+    },
+    {
+      "type": "city",
+      "name": "Lancaster",
+      "state": "CA",
+      "state_name": "California",
+      "population": 159523,
+      "slug": "lancaster-ca",
+      "lat": 34.6867846,
+      "lng": -118.1541632
+    },
+    {
+      "type": "city",
+      "name": "Corona",
+      "state": "CA",
+      "state_name": "California",
+      "population": 159503,
+      "slug": "corona-ca",
+      "lat": 33.8752935,
+      "lng": -117.5664384
+    },
+    {
+      "type": "city",
+      "name": "Eugene",
+      "state": "OR",
+      "state_name": "Oregon",
+      "population": 159190,
+      "slug": "eugene-or",
+      "lat": 44.0520691,
+      "lng": -123.0867536
+    },
+    {
+      "type": "city",
+      "name": "Palmdale",
+      "state": "CA",
+      "state_name": "California",
+      "population": 157161,
+      "slug": "palmdale-ca",
+      "lat": 34.5794343,
+      "lng": -118.1164613
+    },
+    {
+      "type": "city",
+      "name": "Salinas",
+      "state": "CA",
+      "state_name": "California",
+      "population": 155662,
+      "slug": "salinas-ca",
+      "lat": 36.6777372,
+      "lng": -121.6555013
+    },
+    {
+      "type": "city",
+      "name": "Springfield",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "population": 153703,
+      "slug": "springfield-ma",
+      "lat": 42.1014831,
+      "lng": -72.589811
+    },
+    {
+      "type": "city",
+      "name": "Pasadena",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 152735,
+      "slug": "pasadena-tx",
+      "lat": 29.6910625,
+      "lng": -95.2091006
+    },
+    {
+      "type": "city",
+      "name": "Fort Collins",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 152061,
+      "slug": "fort-collins-co",
+      "lat": 40.5852602,
+      "lng": -105.084423
+    },
+    {
+      "type": "city",
+      "name": "Hayward",
+      "state": "CA",
+      "state_name": "California",
+      "population": 151574,
+      "slug": "hayward-ca",
+      "lat": 37.6688205,
+      "lng": -122.0807964
+    },
+    {
+      "type": "city",
+      "name": "Pomona",
+      "state": "CA",
+      "state_name": "California",
+      "population": 151348,
+      "slug": "pomona-ca",
+      "lat": 34.055103,
+      "lng": -117.7499909
+    },
+    {
+      "type": "city",
+      "name": "Cary",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "population": 151088,
+      "slug": "cary-nc",
+      "lat": 35.79154,
+      "lng": -78.7811169
+    },
+    {
+      "type": "city",
+      "name": "Rockford",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 150251,
+      "slug": "rockford-il",
+      "lat": 42.2711311,
+      "lng": -89.0939952
+    },
+    {
+      "type": "city",
+      "name": "Alexandria",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 148892,
+      "slug": "alexandria-va",
+      "lat": 38.8048355,
+      "lng": -77.0469214
+    },
+    {
+      "type": "city",
+      "name": "Escondido",
+      "state": "CA",
+      "state_name": "California",
+      "population": 148738,
+      "slug": "escondido-ca",
+      "lat": 33.1192068,
+      "lng": -117.086421
+    },
+    {
+      "type": "city",
+      "name": "McKinney",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 148559,
+      "slug": "mckinney-tx",
+      "lat": 33.1972465,
+      "lng": -96.6397822
+    },
+    {
+      "type": "city",
+      "name": "Kansas City",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 148483,
+      "slug": "kansas-city-ks",
+      "lat": 39.114053,
+      "lng": -94.6274636
+    },
+    {
+      "type": "city",
+      "name": "Joliet",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 147806,
+      "slug": "joliet-il",
+      "lat": 41.525031,
+      "lng": -88.0817251
+    },
+    {
+      "type": "city",
+      "name": "Sunnyvale",
+      "state": "CA",
+      "state_name": "California",
+      "population": 147559,
+      "slug": "sunnyvale-ca",
+      "lat": 37.36883,
+      "lng": -122.0363496
+    },
+    {
+      "type": "city",
+      "name": "Torrance",
+      "state": "CA",
+      "state_name": "California",
+      "population": 147478,
+      "slug": "torrance-ca",
+      "lat": 33.8358492,
+      "lng": -118.3406288
+    },
+    {
+      "type": "city",
+      "name": "Bridgeport",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 147216,
+      "slug": "bridgeport-ct",
+      "lat": 41.1865478,
+      "lng": -73.19517669999999
+    },
+    {
+      "type": "city",
+      "name": "Lakewood",
+      "state": "CO",
+      "state_name": "Colorado",
+      "population": 147214,
+      "slug": "lakewood-co",
+      "lat": 39.7047095,
+      "lng": -105.0813734
+    },
+    {
+      "type": "city",
+      "name": "Hollywood",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 146526,
+      "slug": "hollywood-fl",
+      "lat": 26.0112014,
+      "lng": -80.1494901
+    },
+    {
+      "type": "city",
+      "name": "Paterson",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "population": 145948,
+      "slug": "paterson-nj",
+      "lat": 40.9167654,
+      "lng": -74.17181099999999
+    },
+    {
+      "type": "city",
+      "name": "Naperville",
+      "state": "IL",
+      "state_name": "Illinois",
+      "population": 144864,
+      "slug": "naperville-il",
+      "lat": 41.7508391,
+      "lng": -88.1535352
+    },
+    {
+      "type": "city",
+      "name": "Syracuse",
+      "state": "NY",
+      "state_name": "New York",
+      "population": 144669,
+      "slug": "syracuse-ny",
+      "lat": 43.0481221,
+      "lng": -76.14742439999999
+    },
+    {
+      "type": "city",
+      "name": "Mesquite",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 143484,
+      "slug": "mesquite-tx",
+      "lat": 32.76679550000001,
+      "lng": -96.5991593
+    },
+    {
+      "type": "city",
+      "name": "Dayton",
+      "state": "OH",
+      "state_name": "Ohio",
+      "population": 143355,
+      "slug": "dayton-oh",
+      "lat": 39.7589478,
+      "lng": -84.1916069
+    },
+    {
+      "type": "city",
+      "name": "Savannah",
+      "state": "GA",
+      "state_name": "Georgia",
+      "population": 142772,
+      "slug": "savannah-ga",
+      "lat": 32.0835407,
+      "lng": -81.09983419999999
+    },
+    {
+      "type": "city",
+      "name": "Clarksville",
+      "state": "TN",
+      "state_name": "Tennessee",
+      "population": 142357,
+      "slug": "clarksville-tn",
+      "lat": 36.5297706,
+      "lng": -87.3594528
+    },
+    {
+      "type": "city",
+      "name": "Orange",
+      "state": "CA",
+      "state_name": "California",
+      "population": 139969,
+      "slug": "orange-ca",
+      "lat": 33.7877944,
+      "lng": -117.8531119
+    },
+    {
+      "type": "city",
+      "name": "Pasadena",
+      "state": "CA",
+      "state_name": "California",
+      "population": 139731,
+      "slug": "pasadena-ca",
+      "lat": 34.1477849,
+      "lng": -118.1445155
+    },
+    {
+      "type": "city",
+      "name": "Fullerton",
+      "state": "CA",
+      "state_name": "California",
+      "population": 138981,
+      "slug": "fullerton-ca",
+      "lat": 33.8703596,
+      "lng": -117.9242966
+    },
+    {
+      "type": "city",
+      "name": "Killeen",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 137147,
+      "slug": "killeen-tx",
+      "lat": 31.1171194,
+      "lng": -97.72779589999999
+    },
+    {
+      "type": "city",
+      "name": "Frisco",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 136791,
+      "slug": "frisco-tx",
+      "lat": 33.1506744,
+      "lng": -96.82361159999999
+    },
+    {
+      "type": "city",
+      "name": "Hampton",
+      "state": "VA",
+      "state_name": "Virginia",
+      "population": 136699,
+      "slug": "hampton-va",
+      "lat": 37.0298687,
+      "lng": -76.34522179999999
+    },
+    {
+      "type": "city",
+      "name": "McAllen",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 136639,
+      "slug": "mcallen-tx",
+      "lat": 26.2034071,
+      "lng": -98.23001239999999
+    },
+    {
+      "type": "city",
+      "name": "Warren",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 134873,
+      "slug": "warren-mi",
+      "lat": 42.5144566,
+      "lng": -83.01465259999999
+    },
+    {
+      "type": "city",
+      "name": "Bellevue",
+      "state": "WA",
+      "state_name": "Washington",
+      "population": 133992,
+      "slug": "bellevue-wa",
+      "lat": 47.610377,
+      "lng": -122.2006786
+    },
+    {
+      "type": "city",
+      "name": "West Valley City",
+      "state": "UT",
+      "state_name": "Utah",
+      "population": 133579,
+      "slug": "west-valley-city-ut",
+      "lat": 40.6916132,
+      "lng": -112.0010501
+    },
+    {
+      "type": "city",
+      "name": "Columbia",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 133358,
+      "slug": "columbia-sc",
+      "lat": 34.0007104,
+      "lng": -81.0348144
+    },
+    {
+      "type": "city",
+      "name": "Olathe",
+      "state": "KS",
+      "state_name": "Kansas",
+      "population": 131885,
+      "slug": "olathe-ks",
+      "lat": 38.8813958,
+      "lng": -94.81912849999999
+    },
+    {
+      "type": "city",
+      "name": "Sterling Heights",
+      "state": "MI",
+      "state_name": "Michigan",
+      "population": 131224,
+      "slug": "sterling-heights-mi",
+      "lat": 42.5803122,
+      "lng": -83.0302033
+    },
+    {
+      "type": "city",
+      "name": "New Haven",
+      "state": "CT",
+      "state_name": "Connecticut",
+      "population": 130660,
+      "slug": "new-haven-ct",
+      "lat": 41.308274,
+      "lng": -72.9278835
+    },
+    {
+      "type": "city",
+      "name": "Miramar",
+      "state": "FL",
+      "state_name": "Florida",
+      "population": 130288,
+      "slug": "miramar-fl",
+      "lat": 25.9860762,
+      "lng": -80.30356019999999
+    },
+    {
+      "type": "city",
+      "name": "Waco",
+      "state": "TX",
+      "state_name": "Texas",
+      "population": 129030,
+      "slug": "waco-tx",
+      "lat": 31.549333,
+      "lng": -97.1466695
+    },
+    {
+      "type": "city",
+      "name": "Thousand Oaks",
+      "state": "CA",
+      "state_name": "California",
+      "population": 128731,
+      "slug": "thousand-oaks-ca",
+      "lat": 34.1705609,
+      "lng": -118.8375937
+    },
+    {
+      "type": "city",
+      "name": "Cedar Rapids",
+      "state": "IA",
+      "state_name": "Iowa",
+      "population": 128429,
+      "slug": "cedar-rapids-ia",
+      "lat": 41.9778795,
+      "lng": -91.6656232
+    },
+    {
+      "type": "city",
+      "name": "Charleston",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "population": 127999,
+      "slug": "charleston-sc",
+      "lat": 32.7764749,
+      "lng": -79.93105120000001
+    }
+  ]
+}

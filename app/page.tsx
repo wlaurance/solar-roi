@@ -20,6 +20,9 @@ export default function HomePage() {
           <Link href="/signup" className="btn-secondary">
             Create account
           </Link>
+          <Link href="/solar-in" className="text-sm font-medium text-canopy hover:underline">
+            Solar by city & county
+          </Link>
         </div>
       </div>
     </main>

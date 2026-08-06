@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { Project } from "@/lib/types";
 import { ProjectsList } from "@/components/projects/projects-list";
 import { CreateProjectButton } from "@/components/projects/create-project-button";
+import { ClaimDraftProject } from "@/components/projects/claim-draft-project";
 
 export default async function ProjectsPage() {
   const supabase = await createClient();
@@ -18,6 +19,7 @@ export default async function ProjectsPage() {
 
   return (
     <div className="mx-auto max-w-5xl">
+      <ClaimDraftProject />
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-brass">
