@@ -17,6 +17,12 @@ export type Project = {
   system_kw_base: number;
   selected_panel_config_index: number;
   solar_insights: BuildingInsightsResponse | null;
+  /** Current monthly bill USD; null → ROI heuristic base */
+  monthly_bill_usd: number | null;
+  /** Current monthly usage kWh; null → derive from bill / rate */
+  monthly_usage_kwh: number | null;
+  /** Blended rate to sync $ ↔ kWh */
+  rate_usd_per_kwh: number;
   created_at: string;
   updated_at: string;
 };

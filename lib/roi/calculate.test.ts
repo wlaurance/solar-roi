@@ -64,6 +64,40 @@ describe("calculateRoi", () => {
     expect(result.offset).toBe(0);
     expect(result.monthlyBillAfter).toBe(result.monthlyBillBefore);
   });
+
+  it("uses user monthly bill and kWh for baseline and offset", () => {
+    const result = calculateRoi({
+      solar: true,
+      battery: true,
+      hvac: false,
+      water: false,
+      monthlyBillUsd: 350,
+      monthlyUsageKwh: 1000,
+      rateUsdPerKwh: 0.35,
+      solarDrive: {
+        systemKw: 8,
+        yearlyEnergyDcKwh: 12000,
+      },
+    });
+
+    expect(result.monthlyBillBefore).toBe(350);
+    expect(result.monthlyUsageKwhBefore).toBe(1000);
+    expect(result.offset).toBeGreaterThan(0.2);
+  });
+
+  it("derives bill from kWh when only usage is set", () => {
+    const result = calculateRoi({
+      solar: false,
+      battery: false,
+      hvac: false,
+      water: false,
+      monthlyUsageKwh: 2000,
+      rateUsdPerKwh: 0.4,
+    });
+
+    expect(result.monthlyBillBefore).toBe(800);
+    expect(result.monthlyUsageKwhBefore).toBe(2000);
+  });
 });
 
 describe("solarDriveFromInsights", () => {

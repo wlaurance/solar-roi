@@ -16,6 +16,12 @@ export type RoiInput = RoiToggles & {
   /** Fallback base system size when Solar insights unavailable */
   systemKwBase?: number;
   solarDrive?: SolarDriveInputs | null;
+  /** User-entered current monthly bill before solar ($) */
+  monthlyBillUsd?: number | null;
+  /** User-entered current monthly usage (kWh); preferred for offset calc */
+  monthlyUsageKwh?: number | null;
+  /** Blended $/kWh to convert between bill and usage */
+  rateUsdPerKwh?: number | null;
 };
 
 export type RoiYearPoint = {
@@ -31,6 +37,8 @@ export type RoiResult = {
   netCost: number;
   monthlyBillBefore: number;
   monthlyBillAfter: number;
+  monthlyUsageKwhBefore: number;
+  rateUsdPerKwh: number;
   offset: number;
   yearlyEnergyDcKwh: number | null;
   breakEvenYear: number | null;
@@ -51,14 +59,55 @@ export const HORIZON_YEARS = 25;
 export const DEFAULT_SYSTEM_KW_BASE = 8.5;
 export const HVAC_KW = 3.0;
 export const WATER_KW = 1.5;
+export const DEFAULT_RATE_USD_PER_KWH = 0.35;
+
+export function resolveRate(rate?: number | null): number {
+  if (rate != null && rate > 0) return rate;
+  return DEFAULT_RATE_USD_PER_KWH;
+}
+
+/** Baseline monthly bill before electrification add-ons */
+export function resolveBaselineMonthlyBill(input: Pick<
+  RoiInput,
+  "monthlyBillUsd" | "monthlyUsageKwh" | "rateUsdPerKwh"
+>): number {
+  const rate = resolveRate(input.rateUsdPerKwh);
+  if (input.monthlyBillUsd != null && input.monthlyBillUsd > 0) {
+    return input.monthlyBillUsd;
+  }
+  if (input.monthlyUsageKwh != null && input.monthlyUsageKwh > 0) {
+    return input.monthlyUsageKwh * rate;
+  }
+  return BASE_ELEC;
+}
+
+/** Baseline monthly usage before electrification add-ons */
+export function resolveBaselineMonthlyUsageKwh(input: Pick<
+  RoiInput,
+  "monthlyBillUsd" | "monthlyUsageKwh" | "rateUsdPerKwh"
+>): number {
+  const rate = resolveRate(input.rateUsdPerKwh);
+  if (input.monthlyUsageKwh != null && input.monthlyUsageKwh > 0) {
+    return input.monthlyUsageKwh;
+  }
+  if (input.monthlyBillUsd != null && input.monthlyBillUsd > 0) {
+    return input.monthlyBillUsd / rate;
+  }
+  return BASE_ELEC / rate;
+}
+
+function electrificationBillAdd(input: RoiToggles): number {
+  return (input.hvac ? HVAC_ADD : 0) + (input.water ? WATER_ADD : 0);
+}
+
+function electrificationUsageAdd(input: RoiToggles, rate: number): number {
+  return electrificationBillAdd(input) / rate;
+}
 
 function resolveSystemKw(input: RoiInput): number {
   const solarDriveKw = input.solarDrive?.systemKw;
   if (input.solar && solarDriveKw != null && solarDriveKw > 0) {
-    let kw = solarDriveKw;
-    // Solar API size already reflects panels; still add load upgrades as incremental capacity
-    // only when using fallback heuristic — when Solar-driven, keep panel-derived size.
-    return kw;
+    return solarDriveKw;
   }
 
   let kw = input.systemKwBase ?? DEFAULT_SYSTEM_KW_BASE;
@@ -68,18 +117,16 @@ function resolveSystemKw(input: RoiInput): number {
   return kw;
 }
 
-function resolveOffset(input: RoiInput, yearlyEnergyDcKwh: number | null): number {
+function resolveOffset(
+  input: RoiInput,
+  yearlyEnergyDcKwh: number | null,
+  annualUsageKwh: number,
+): number {
   if (!input.solar) return 0;
 
-  // Blend: if we have Solar yearly energy, estimate offset vs annual household usage.
-  // Usage heuristic from monthly bill / blended rate (~$0.35/kWh CA residential-ish).
   if (yearlyEnergyDcKwh != null && yearlyEnergyDcKwh > 0) {
-    const monthlyBefore =
-      BASE_ELEC + (input.hvac ? HVAC_ADD : 0) + (input.water ? WATER_ADD : 0);
-    const annualUsageKwh = (monthlyBefore * 12) / 0.35;
     const productionAcKwh = yearlyEnergyDcKwh * 0.86; // DC→AC derate
     let rawOffset = Math.min(1.15, productionAcKwh / Math.max(annualUsageKwh, 1));
-    // Battery improves self-consumption under export-light tariffs
     if (input.battery) {
       rawOffset = Math.min(1.0, rawOffset * 1.08);
     } else {
@@ -97,6 +144,7 @@ export function calculateRoi(input: RoiInput): RoiResult {
       ? input.solarDrive.yearlyEnergyDcKwh
       : null;
 
+  const rate = resolveRate(input.rateUsdPerKwh);
   const systemKw = resolveSystemKw(input);
   const panelCost = input.solar ? systemKw * COST_PER_KW : 0;
   const batteryCost = input.battery ? BATTERY_COST : 0;
@@ -104,9 +152,12 @@ export function calculateRoi(input: RoiInput): RoiResult {
   const netCost = grossCost * ITC_NET_FACTOR;
 
   const monthlyBillBefore =
-    BASE_ELEC + (input.hvac ? HVAC_ADD : 0) + (input.water ? WATER_ADD : 0);
+    resolveBaselineMonthlyBill(input) + electrificationBillAdd(input);
+  const monthlyUsageKwhBefore =
+    resolveBaselineMonthlyUsageKwh(input) + electrificationUsageAdd(input, rate);
+  const annualUsageKwh = monthlyUsageKwhBefore * 12;
 
-  const offset = resolveOffset(input, yearlyEnergyDcKwh);
+  const offset = resolveOffset(input, yearlyEnergyDcKwh, annualUsageKwh);
   const monthlyBillAfter = monthlyBillBefore * (1 - offset);
 
   const series: RoiYearPoint[] = [];
@@ -142,6 +193,8 @@ export function calculateRoi(input: RoiInput): RoiResult {
     netCost: Math.round(netCost),
     monthlyBillBefore: Math.round(monthlyBillBefore),
     monthlyBillAfter: Math.round(monthlyBillAfter),
+    monthlyUsageKwhBefore: Math.round(monthlyUsageKwhBefore),
+    rateUsdPerKwh: rate,
     offset: Math.round(offset * 1000) / 1000,
     yearlyEnergyDcKwh:
       yearlyEnergyDcKwh != null ? Math.round(yearlyEnergyDcKwh) : null,
