@@ -122,6 +122,27 @@ describe("calculateRoi", () => {
     expect(high.energyInflationPct).toBe(10);
     expect(high.netSavings25).toBeGreaterThan(low.netSavings25);
   });
+
+  it("sizes system from panels × watts for cost", () => {
+    const result = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      solarDrive: {
+        panelsCount: 25,
+        panelCapacityWatts: 400,
+        systemKw: 10,
+        yearlyEnergyDcKwh: 15000,
+      },
+    });
+
+    expect(result.systemKw).toBe(10);
+    expect(result.panelsCount).toBe(25);
+    expect(result.panelCapacityWatts).toBe(400);
+    expect(result.solarDriven).toBe(true);
+    expect(result.grossCost).toBe(Math.round(10 * 3100));
+  });
 });
 
 describe("solarDriveFromInsights", () => {
@@ -142,6 +163,8 @@ describe("solarDriveFromInsights", () => {
     expect(drive).toEqual({
       systemKw: 8,
       yearlyEnergyDcKwh: 9800,
+      panelsCount: 20,
+      panelCapacityWatts: 400,
     });
   });
 });

@@ -8,6 +8,7 @@ import {
   assessSolarCandidate,
   type SolarCandidateTier,
 } from "@/lib/solar/candidate";
+import { systemKwFromPanels } from "@/lib/roi/calculate";
 import { createClient } from "@/lib/supabase/client";
 import type { Project } from "@/lib/types";
 
@@ -89,12 +90,18 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
 
   function onConfigChange(next: number) {
     setConfigIndex(next);
+    const config = configs[next];
+    const watts = pot?.panelCapacityWatts ?? 400;
     startTransition(async () => {
       const supabase = createClient();
-      await supabase
-        .from("projects")
-        .update({ selected_panel_config_index: next })
-        .eq("id", project.id);
+      const patch: {
+        selected_panel_config_index: number;
+        system_kw_base?: number;
+      } = { selected_panel_config_index: next };
+      if (config?.panelsCount) {
+        patch.system_kw_base = systemKwFromPanels(config.panelsCount, watts);
+      }
+      await supabase.from("projects").update(patch).eq("id", project.id);
       router.refresh();
     });
   }
@@ -145,10 +152,23 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
               </label>
               <p className="text-sm text-ink">
                 <strong>{selectedConfig.panelsCount}</strong> panels ·{" "}
+                <strong>{pot?.panelCapacityWatts ?? "—"} W</strong> modules ·{" "}
                 <strong>
-                  {Math.round(selectedConfig.yearlyEnergyDcKwh).toLocaleString()} kWh/yr DC
+                  {systemKwFromPanels(
+                    selectedConfig.panelsCount,
+                    pot?.panelCapacityWatts ?? 400,
+                  )}{" "}
+                  kW
                 </strong>{" "}
-                · {pot?.panelCapacityWatts ?? "—"} W modules
+                ·{" "}
+                <strong>
+                  {Math.round(selectedConfig.yearlyEnergyDcKwh).toLocaleString()}{" "}
+                  kWh/yr DC
+                </strong>
+              </p>
+              <p className="mt-1 text-xs text-ink-muted">
+                Panel count × watts drives system size and ROI cost; yearly energy
+                drives bill offset on the ROI dashboard.
               </p>
             </div>
             {dominantSegment ? (

@@ -10,6 +10,8 @@ export type SolarDriveInputs = {
   systemKw?: number | null;
   /** Annual DC generation kWh from selected solarPanelConfig */
   yearlyEnergyDcKwh?: number | null;
+  panelsCount?: number | null;
+  panelCapacityWatts?: number | null;
 };
 
 export type RoiInput = RoiToggles & {
@@ -40,6 +42,8 @@ export type RoiYearPoint = {
 
 export type RoiResult = {
   systemKw: number;
+  panelsCount: number | null;
+  panelCapacityWatts: number | null;
   grossCost: number;
   netCost: number;
   monthlyBillBefore: number;
@@ -51,6 +55,8 @@ export type RoiResult = {
   yearlyEnergyDcKwh: number | null;
   breakEvenYear: number | null;
   netSavings25: number;
+  /** True when size/energy came from Roof Designer Solar panel config */
+  solarDriven: boolean;
   series: RoiYearPoint[];
 };
 
@@ -129,9 +135,17 @@ function electrificationUsageAdd(input: RoiToggles, rate: number): number {
 }
 
 function resolveSystemKw(input: RoiInput): number {
-  const solarDriveKw = input.solarDrive?.systemKw;
-  if (input.solar && solarDriveKw != null && solarDriveKw > 0) {
-    return solarDriveKw;
+  // Prefer Roof Designer: panels × module watts
+  if (input.solar) {
+    const panels = input.solarDrive?.panelsCount;
+    const watts = input.solarDrive?.panelCapacityWatts;
+    if (panels != null && panels > 0 && watts != null && watts > 0) {
+      return (panels * watts) / 1000;
+    }
+    const solarDriveKw = input.solarDrive?.systemKw;
+    if (solarDriveKw != null && solarDriveKw > 0) {
+      return solarDriveKw;
+    }
   }
 
   let kw = input.systemKwBase ?? DEFAULT_SYSTEM_KW_BASE;
@@ -163,15 +177,24 @@ function resolveOffset(
 }
 
 export function calculateRoi(input: RoiInput): RoiResult {
+  const drive = input.solar ? input.solarDrive : null;
   const yearlyEnergyDcKwh =
-    input.solar && input.solarDrive?.yearlyEnergyDcKwh != null
-      ? input.solarDrive.yearlyEnergyDcKwh
+    drive?.yearlyEnergyDcKwh != null && drive.yearlyEnergyDcKwh > 0
+      ? drive.yearlyEnergyDcKwh
       : null;
 
   const rate = resolveRate(input.rateUsdPerKwh);
   const inflationPct = resolveEnergyInflationPct(input.energyInflationPct);
   const inflation = resolveEnergyInflationRate(inflationPct);
   const systemKw = resolveSystemKw(input);
+  const solarDriven =
+    Boolean(input.solar) &&
+    ((drive?.panelsCount != null &&
+      drive.panelsCount > 0 &&
+      drive.panelCapacityWatts != null &&
+      drive.panelCapacityWatts > 0) ||
+      (drive?.systemKw != null && drive.systemKw > 0));
+
   const panelCost = input.solar ? systemKw * COST_PER_KW : 0;
   const batteryCost = input.battery ? BATTERY_COST : 0;
   const grossCost = panelCost + batteryCost;
@@ -228,8 +251,19 @@ export function calculateRoi(input: RoiInput): RoiResult {
     });
   }
 
+  const panelsCount =
+    drive?.panelsCount != null && drive.panelsCount > 0
+      ? drive.panelsCount
+      : null;
+  const panelCapacityWatts =
+    drive?.panelCapacityWatts != null && drive.panelCapacityWatts > 0
+      ? drive.panelCapacityWatts
+      : null;
+
   return {
     systemKw: Math.round(systemKw * 100) / 100,
+    panelsCount,
+    panelCapacityWatts,
     grossCost: Math.round(grossCost),
     netCost: Math.round(netCost),
     monthlyBillBefore: Math.round(monthlyBillBefore),
@@ -242,11 +276,12 @@ export function calculateRoi(input: RoiInput): RoiResult {
       yearlyEnergyDcKwh != null ? Math.round(yearlyEnergyDcKwh) : null,
     breakEvenYear,
     netSavings25: series[series.length - 1]?.cumulativeSavings ?? 0,
+    solarDriven,
     series,
   };
 }
 
-/** Derive Solar-driven size + energy from cached BuildingInsights + config index */
+/** Derive size + energy from cached Building Insights + selected panel config index */
 export function solarDriveFromInsights(
   insights: {
     solarPotential?: {
@@ -262,11 +297,19 @@ export function solarDriveFromInsights(
   const pot = insights?.solarPotential;
   const configs = pot?.solarPanelConfigs;
   if (!pot || !configs?.length) return null;
-  const idx = Math.max(0, Math.min(configIndex, configs.length - 1));
+  const idx = Math.max(0, Math.min(configIndex ?? 0, configs.length - 1));
   const config = configs[idx];
+  if (!config || !(config.panelsCount > 0)) return null;
   const watts = pot.panelCapacityWatts ?? 400;
   return {
+    panelsCount: config.panelsCount,
+    panelCapacityWatts: watts,
     systemKw: (config.panelsCount * watts) / 1000,
     yearlyEnergyDcKwh: config.yearlyEnergyDcKwh,
   };
+}
+
+/** System kW from a panel count and module wattage */
+export function systemKwFromPanels(panelsCount: number, watts: number): number {
+  return Math.round(((panelsCount * watts) / 1000) * 1000) / 1000;
 }

@@ -294,17 +294,18 @@ export function RoiDashboard({ project }: { project: Project }) {
           <h1 className="font-display mt-1 text-4xl text-ink">{project.name}</h1>
           <p className="mt-2 text-sm text-ink-muted">
             {project.address}, {project.city} {project.state} {project.zip}
-            {solarDrive ? (
+            {result.solarDriven && result.panelsCount != null ? (
               <span className="ml-2 text-canopy">
-                · Driven by Google Solar ({result.systemKw} kW
+                · Roof Designer: {result.panelsCount} ×{" "}
+                {result.panelCapacityWatts ?? "—"} W = {result.systemKw} kW
                 {result.yearlyEnergyDcKwh
-                  ? `, ${result.yearlyEnergyDcKwh.toLocaleString()} kWh/yr DC`
+                  ? ` · ${result.yearlyEnergyDcKwh.toLocaleString()} kWh/yr DC`
                   : ""}
-                )
               </span>
             ) : (
               <span className="ml-2">
-                · Heuristic system size (open Roof Designer to load Solar insights)
+                · Using fallback {result.systemKw} kW — open Roof Designer and pick
+                a panel configuration to drive ROI
               </span>
             )}
           </p>
@@ -451,6 +452,19 @@ export function RoiDashboard({ project }: { project: Project }) {
       </div>
 
       <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Stat
+          label="System size"
+          value={
+            result.panelsCount != null
+              ? `${result.systemKw} kW`
+              : `${result.systemKw} kW`
+          }
+          hint={
+            result.panelsCount != null
+              ? `${result.panelsCount} panels × ${result.panelCapacityWatts} W`
+              : "Load Roof Designer panel config"
+          }
+        />
         <Stat label="Net system cost" value={formatMoney(result.netCost)} hint="After 30% ITC (×0.7)" />
         <Stat
           label="New monthly bill"

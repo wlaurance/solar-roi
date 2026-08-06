@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { fetchBuildingInsights } from "@/lib/google/solar";
+import { systemKwFromPanels } from "@/lib/roi/calculate";
 import { createClient } from "@/lib/supabase/server";
 
 export async function GET(request: Request) {
@@ -21,10 +22,12 @@ export async function GET(request: Request) {
         data: { user },
       } = await supabase.auth.getUser();
       if (user) {
-        // Pick a mid-range default config if unset / zero
         const configs = insights.solarPotential?.solarPanelConfigs ?? [];
+        const watts = insights.solarPotential?.panelCapacityWatts ?? 400;
         const midIndex =
-          configs.length > 0 ? Math.min(Math.floor(configs.length / 2), configs.length - 1) : 0;
+          configs.length > 0
+            ? Math.min(Math.floor(configs.length / 2), configs.length - 1)
+            : 0;
 
         const { data: existing } = await supabase
           .from("projects")
@@ -33,15 +36,30 @@ export async function GET(request: Request) {
           .eq("user_id", user.id)
           .maybeSingle();
 
+        const hasSavedIndex =
+          existing != null &&
+          typeof existing.selected_panel_config_index === "number";
+        const configIndex = hasSavedIndex
+          ? Math.max(
+              0,
+              Math.min(
+                existing.selected_panel_config_index,
+                Math.max(configs.length - 1, 0),
+              ),
+            )
+          : midIndex;
+
+        const selected = configs[configIndex];
+        const systemKw = selected?.panelsCount
+          ? systemKwFromPanels(selected.panelsCount, watts)
+          : undefined;
+
         await supabase
           .from("projects")
           .update({
             solar_insights: insights,
-            selected_panel_config_index:
-              existing?.selected_panel_config_index &&
-              existing.selected_panel_config_index > 0
-                ? existing.selected_panel_config_index
-                : midIndex,
+            selected_panel_config_index: configIndex,
+            ...(systemKw != null ? { system_kw_base: systemKw } : {}),
           })
           .eq("id", projectId)
           .eq("user_id", user.id);

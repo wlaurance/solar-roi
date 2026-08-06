@@ -1,0 +1,10 @@
+# https://ntl.fyi/configure-secrets-scanning
+#
+# Turbopack Next build caches can contain inlined server env values in *.sst
+# files. Those caches are not the published site. Omit them from secrets scan.
+# Gemini/OpenRouter keys stay server-only (no NEXT_PUBLIC_*); omit the key names
+# so Netlify doesn't fail when Next embeds them into serverless server chunks.
+
+[build.environment]
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache/**,.next/cache/**"
+  SECRETS_SCAN_OMIT_KEYS = "GEMINI_API_KEY,OPENROUTER_API_KEY,SUPABASE_ACCESS_TOKEN"
