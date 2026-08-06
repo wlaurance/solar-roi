@@ -27,6 +27,11 @@ import {
   solarDriveFromInsights,
 } from "@/lib/roi/calculate";
 import { exportProjectPdf } from "@/lib/report/export-project-pdf";
+import {
+  ensureCountyForProject,
+  fetchInstallersForProject,
+  fetchRoofMapDataUrl,
+} from "@/lib/report/prepare-export";
 import { assessSolarCandidate } from "@/lib/solar/candidate";
 import { createClient } from "@/lib/supabase/client";
 import type { Project } from "@/lib/types";
@@ -94,6 +99,7 @@ export function RoiDashboard({ project }: { project: Project }) {
   const [billUsd, setBillUsd] = useState(roundMoney(initialBill));
   const [usageKwh, setUsageKwh] = useState(roundKwh(initialKwh));
   const [exporting, setExporting] = useState(false);
+  const [exportStatus, setExportStatus] = useState<string | null>(null);
   const [exportError, setExportError] = useState<string | null>(null);
   const persistTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const chartRef = useRef<Chart<"line"> | null>(null);
@@ -140,22 +146,47 @@ export function RoiDashboard({ project }: { project: Project }) {
   async function handleExportPdf() {
     setExporting(true);
     setExportError(null);
+    setExportStatus("Preparing chart…");
     try {
       const chartDataUrl = chartRef.current?.toBase64Image("image/png", 1) ?? null;
 
+      setExportStatus("Loading roof map, installers, and county info…");
+      const [roofMapDataUrl, installers, countyResult] = await Promise.all([
+        fetchRoofMapDataUrl(project),
+        fetchInstallersForProject(project).catch(() => []),
+        ensureCountyForProject(project),
+      ]);
+
+      const projectForPdf: Project = {
+        ...project,
+        county: countyResult.county,
+        county_links: countyResult.countyLinks,
+      };
+
+      setExportStatus("Building PDF…");
       await exportProjectPdf({
-        project,
+        project: projectForPdf,
         result,
         toggles,
         candidate,
         chartDataUrl,
+        roofMapDataUrl,
+        installers,
+        countyName: countyResult.county,
+        countyLinks: countyResult.countyLinks,
+        countyLookupError: countyResult.error ?? null,
       });
+
+      if (countyResult.countyLinks && !project.county_links) {
+        router.refresh();
+      }
     } catch (err) {
       setExportError(
         err instanceof Error ? err.message : "Could not export PDF",
       );
     } finally {
       setExporting(false);
+      setExportStatus(null);
     }
   }
 
@@ -316,8 +347,13 @@ export function RoiDashboard({ project }: { project: Project }) {
             className="btn-secondary"
             onClick={handleExportPdf}
             disabled={exporting}
+            aria-busy={exporting}
           >
-            <Icons.download className="h-4 w-4" />
+            {exporting ? (
+              <Icons.spinner className="h-4 w-4 animate-spin" />
+            ) : (
+              <Icons.download className="h-4 w-4" />
+            )}
             {exporting ? "Exporting…" : "Export PDF"}
           </button>
           {exportError ? (
@@ -325,6 +361,34 @@ export function RoiDashboard({ project }: { project: Project }) {
           ) : null}
         </div>
       </div>
+
+      {exporting ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4 backdrop-blur-[2px]"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="export-pdf-title"
+          aria-describedby="export-pdf-status"
+        >
+          <div className="w-full max-w-sm rounded-2xl border border-stone-2 bg-surface p-6 shadow-lg">
+            <div className="flex items-start gap-3">
+              <Icons.spinner className="mt-0.5 h-5 w-5 shrink-0 animate-spin text-canopy" />
+              <div>
+                <p id="export-pdf-title" className="font-medium text-ink">
+                  Building your PDF report
+                </p>
+                <p id="export-pdf-status" className="mt-1 text-sm text-ink-muted">
+                  {exportStatus ?? "Working…"}
+                </p>
+                <p className="mt-3 text-xs text-ink-muted">
+                  Gathering roof map, installers, and county permitting — usually a
+                  few seconds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <div className="mb-6 flex flex-wrap gap-2">
         {(

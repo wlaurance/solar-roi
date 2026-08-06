@@ -1,7 +1,8 @@
 import type { jsPDF } from "jspdf";
+import type { InstallerPlace } from "@/lib/google/places";
 import type { RoiResult } from "@/lib/roi/calculate";
 import type { SolarCandidateAssessment } from "@/lib/solar/candidate";
-import type { Project } from "@/lib/types";
+import type { CountyLinksPayload, Project } from "@/lib/types";
 
 const INK: [number, number, number] = [28, 36, 33];
 const MUTED: [number, number, number] = [90, 102, 95];
@@ -21,7 +22,18 @@ function slugify(s: string) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
-    .slice(0, 48);
+    .slice(0, 40);
+}
+
+function shortProjectKey(id: string) {
+  return id.replace(/-/g, "").slice(0, 8);
+}
+
+function reportFilename(project: Project): string {
+  const name = slugify(project.name) || "project";
+  const key = shortProjectKey(project.id);
+  const date = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  return `solarflow-${name}-${key}-${date}.pdf`;
 }
 
 export type ProjectPdfInput = {
@@ -35,6 +47,11 @@ export type ProjectPdfInput = {
   };
   candidate: SolarCandidateAssessment | null;
   chartDataUrl: string | null;
+  roofMapDataUrl: string | null;
+  installers: InstallerPlace[];
+  countyName: string | null;
+  countyLinks: CountyLinksPayload | null;
+  countyLookupError?: string | null;
 };
 
 function ensureSpace(doc: jsPDF, y: number, needed: number): number {
@@ -98,11 +115,40 @@ function kv(doc: jsPDF, label: string, value: string, x: number, y: number) {
   doc.text(value, x, y + 5);
 }
 
+function addImageSafe(
+  doc: jsPDF,
+  dataUrl: string,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+): boolean {
+  try {
+    const format = dataUrl.includes("image/jpeg") ? "JPEG" : "PNG";
+    doc.addImage(dataUrl, format, x, y, w, h);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
   const { jsPDF } = await import("jspdf");
   const doc = new jsPDF({ unit: "mm", format: "letter" });
-  const { project, result, toggles, candidate, chartDataUrl } = input;
+  const {
+    project,
+    result,
+    toggles,
+    candidate,
+    chartDataUrl,
+    roofMapDataUrl,
+    installers,
+    countyName,
+    countyLinks,
+    countyLookupError,
+  } = input;
   const address = `${project.address}, ${project.city}, ${project.state} ${project.zip}`;
+  const pageW = doc.internal.pageSize.getWidth();
 
   // —— Page 1: Overview ——
   drawHeader(doc, "Project report");
@@ -149,14 +195,18 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
   y += 14;
   kv(doc, "New monthly bill", money(result.monthlyBillAfter), 14, y);
   kv(doc, "25-yr net savings", money(result.netSavings25), 70, y);
-  kv(
-    doc,
-    "Bill offset",
-    `${(result.offset * 100).toFixed(0)}%`,
-    140,
-    y,
-  );
-  y += 18;
+  kv(doc, "Bill offset", `${(result.offset * 100).toFixed(0)}%`, 140, y);
+  y += 14;
+  if (result.panelsCount != null) {
+    kv(
+      doc,
+      "Panel layout",
+      `${result.panelsCount} × ${result.panelCapacityWatts ?? "—"} W`,
+      14,
+      y,
+    );
+    y += 14;
+  }
 
   if (candidate) {
     y = sectionTitle(doc, "Solar candidate (sunshine heuristic)", y);
@@ -172,11 +222,10 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
       180,
     );
     doc.text(lines, 14, y);
-    y += lines.length * 4.5 + 6;
     doc.setTextColor(...INK);
   }
 
-  // —— Page 2: Chart + cash path ——
+  // —— Page 2: Chart ——
   doc.addPage();
   drawHeader(doc, "Financial outlook");
   y = 40;
@@ -194,16 +243,10 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
   y += 8;
 
   if (chartDataUrl) {
-    const pageW = doc.internal.pageSize.getWidth();
-    const imgW = pageW - 28;
-    const imgH = 90;
-    try {
-      doc.addImage(chartDataUrl, "PNG", 14, y, imgW, imgH);
-      y += imgH + 10;
-    } catch {
+    if (!addImageSafe(doc, chartDataUrl, 14, y, pageW - 28, 90)) {
       doc.text("Chart image could not be embedded.", 14, y);
-      y += 8;
     }
+    y += 100;
   } else {
     doc.text("Chart unavailable — open the ROI dashboard and try again.", 14, y);
     y += 8;
@@ -213,15 +256,44 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
   const last = result.series[result.series.length - 1];
   kv(doc, "Utility only spend", money(last.cumulativeUtilitySpend), 14, y);
   kv(doc, "Solar path spend", money(last.cumulativeSolarPathSpend), 90, y);
-  y += 16;
 
-  // —— Page 3: Roof / Solar API ——
+  // —— Page 3: Roof satellite map ——
   doc.addPage();
   drawHeader(doc, "Roof & Google Solar");
   y = 40;
-  const pot = project.solar_insights?.solarPotential;
-  y = sectionTitle(doc, "Building insights", y);
+  y = sectionTitle(doc, "Roof layout map", y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.setTextColor(...MUTED);
+  doc.text(
+    "Satellite view with Google Solar panel centers for the selected configuration.",
+    14,
+    y,
+  );
+  y += 6;
 
+  if (roofMapDataUrl) {
+    const imgW = pageW - 28;
+    const imgH = 78;
+    if (addImageSafe(doc, roofMapDataUrl, 14, y, imgW, imgH)) {
+      y += imgH + 8;
+    } else {
+      doc.setTextColor(...MUTED);
+      doc.text("Roof map image could not be embedded.", 14, y);
+      y += 8;
+    }
+  } else {
+    doc.setTextColor(...MUTED);
+    doc.text(
+      "Roof map unavailable. Confirm the project has coordinates and Solar insights.",
+      14,
+      y,
+    );
+    y += 8;
+  }
+
+  y = sectionTitle(doc, "Building insights", y);
+  const pot = project.solar_insights?.solarPotential;
   if (!pot) {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
@@ -296,32 +368,32 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
     }
   }
 
-  // —— Page 4+: AI county permitting content ——
+  // —— Page 4+: County permitting ——
   doc.addPage();
-  drawHeader(doc, "Permitting checklist");
+  drawHeader(doc, "County permitting");
   y = 40;
+  y = sectionTitle(doc, "County resources", y);
 
-  if (project.county || project.county_links) {
-    y = sectionTitle(doc, "County resources", y);
+  if (countyName || countyLinks) {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
     doc.setTextColor(...INK);
     doc.text(
-      project.county ?? project.county_links?.countyName ?? "County",
+      countyName ?? countyLinks?.countyName ?? "County",
       14,
       y,
     );
     y += 6;
-    if (project.county_links?.summary) {
+    if (countyLinks?.summary) {
       doc.setFont("helvetica", "normal");
       doc.setFontSize(9);
       doc.setTextColor(...MUTED);
-      const summaryLines = doc.splitTextToSize(project.county_links.summary, 180);
+      const summaryLines = doc.splitTextToSize(countyLinks.summary, 180);
       doc.text(summaryLines, 14, y);
       y += summaryLines.length * 4 + 4;
     }
 
-    const steps = project.county_links?.steps ?? [];
+    const steps = countyLinks?.steps ?? [];
     if (steps.length) {
       y = sectionTitle(doc, "Permit checklist", y);
       for (const [idx, step] of steps.entries()) {
@@ -349,28 +421,91 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
       }
     }
 
-    for (const link of project.county_links?.links ?? []) {
-      y = ensureSpace(doc, y, 14);
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(10);
-      doc.setTextColor(...CANOPY);
-      doc.textWithLink(link.title, 14, y, { url: link.url });
-      y += 4;
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(8);
-      doc.setTextColor(...MUTED);
-      const desc = doc.splitTextToSize(link.description, 180);
-      doc.text(desc, 14, y);
-      y += desc.length * 3.5 + 4;
+    if (countyLinks?.links?.length) {
+      y = sectionTitle(doc, "Official links", y);
+      for (const link of countyLinks.links) {
+        y = ensureSpace(doc, y, 14);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(...CANOPY);
+        doc.textWithLink(link.title, 14, y, { url: link.url });
+        y += 4;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(8);
+        doc.setTextColor(...MUTED);
+        const desc = doc.splitTextToSize(link.description, 180);
+        doc.text(desc, 14, y);
+        y += desc.length * 3.5 + 4;
+      }
     }
   } else {
     doc.setFontSize(10);
     doc.setTextColor(...MUTED);
     doc.text(
-      "No county permitting content saved yet. Open County Permits to generate it.",
+      countyLookupError
+        ? `County lookup failed: ${countyLookupError}`
+        : "County permitting content was not available for this export.",
       14,
       y,
     );
+  }
+
+  // —— Installers ——
+  doc.addPage();
+  drawHeader(doc, "Recommended installers");
+  y = 40;
+  y = sectionTitle(doc, "Local solar contractors", y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.setTextColor(...MUTED);
+  doc.text(`Near ${address}`, 14, y);
+  y += 8;
+
+  if (!installers.length) {
+    doc.setFontSize(10);
+    doc.text("No installers found near this project address.", 14, y);
+  } else {
+    for (const [idx, place] of installers.slice(0, 12).entries()) {
+      y = ensureSpace(doc, y, 22);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(...INK);
+      doc.text(`${idx + 1}. ${place.name}`, 14, y);
+      y += 5;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9);
+      doc.setTextColor(...MUTED);
+      const meta = [
+        place.rating != null ? `${place.rating.toFixed(1)}★` : null,
+        place.userRatingsTotal != null
+          ? `${place.userRatingsTotal} reviews`
+          : null,
+        place.distanceMeters != null
+          ? `${(place.distanceMeters / 1609.34).toFixed(1)} mi`
+          : null,
+      ]
+        .filter(Boolean)
+        .join(" · ");
+      if (meta) {
+        doc.text(meta, 18, y);
+        y += 4;
+      }
+      if (place.address) {
+        doc.text(place.address, 18, y);
+        y += 4;
+      }
+      if (place.phone) {
+        doc.text(`Phone: ${place.phone}`, 18, y);
+        y += 4;
+      }
+      if (place.website) {
+        doc.setTextColor(...CANOPY);
+        doc.setFontSize(8);
+        doc.textWithLink(place.website, 18, y, { url: place.website });
+        y += 4;
+      }
+      y += 4;
+    }
   }
 
   const total = doc.getNumberOfPages();
@@ -379,6 +514,6 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
     drawFooter(doc, i, total);
   }
 
-  const filename = `solarflow-${slugify(project.name) || "project"}-report.pdf`;
+  const filename = reportFilename(project);
   doc.save(filename);
 }

@@ -74,6 +74,11 @@ export const Icons = {
       <path d="M5 18h14" />
     </svg>
   ),
+  spinner: (props: IconProps) => (
+    <svg {...base({ ...props, className: undefined })} className={props.className}>
+      <path d="M12 3a9 9 0 1 0 9 9" strokeWidth={2} />
+    </svg>
+  ),
   chevron: (props: IconProps) => (
     <svg {...base(props)}>
       <path d="M9 6l6 6-6 6" />
