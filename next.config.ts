@@ -4,6 +4,15 @@ import { fileURLToPath } from "node:url";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
+if (
+  process.env.NETLIFY &&
+  !process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN?.trim()
+) {
+  console.warn(
+    "[PostHog] NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN is missing at Netlify build time. Client events will not fire. Add the var for Builds and redeploy (clear cache).",
+  );
+}
+
 const nextConfig: NextConfig = {
   turbopack: {
     root,
