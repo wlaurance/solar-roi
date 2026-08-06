@@ -17,8 +17,11 @@ describe("calculateRoi", () => {
     expect(result.monthlyBillBefore).toBe(670);
     expect(result.systemKw).toBe(8.5);
     expect(result.offset).toBe(0.95);
-    expect(result.series).toHaveLength(25);
-    expect(result.series[11].batteryReplacement).toBe(BATTERY_REPLACEMENT_COST);
+    expect(result.series).toHaveLength(26);
+    expect(result.series[12].year).toBe(12);
+    expect(result.series[12].batteryReplacement).toBe(BATTERY_REPLACEMENT_COST);
+    expect(result.series[0].cumulativeSolarPathSpend).toBe(result.netCost);
+    expect(result.series[0].cumulativeUtilitySpend).toBe(0);
   });
 
   it("adds HVAC and water load to bill and system size", () => {

@@ -26,6 +26,11 @@ export type RoiInput = RoiToggles & {
 
 export type RoiYearPoint = {
   year: number;
+  /** Cumulative $ spent staying on utility (no solar path) */
+  cumulativeUtilitySpend: number;
+  /** Cumulative $ spent on solar path (net install + bills + replacements) */
+  cumulativeSolarPathSpend: number;
+  /** Utility spend − solar path spend (positive = ahead) */
   cumulativeSavings: number;
   annualSavings: number;
   batteryReplacement: number;
@@ -160,28 +165,43 @@ export function calculateRoi(input: RoiInput): RoiResult {
   const offset = resolveOffset(input, yearlyEnergyDcKwh, annualUsageKwh);
   const monthlyBillAfter = monthlyBillBefore * (1 - offset);
 
-  const series: RoiYearPoint[] = [];
-  let cumulative = -netCost;
+  const series: RoiYearPoint[] = [
+    {
+      year: 0,
+      cumulativeUtilitySpend: 0,
+      cumulativeSolarPathSpend: Math.round(netCost),
+      cumulativeSavings: Math.round(-netCost),
+      annualSavings: 0,
+      batteryReplacement: 0,
+    },
+  ];
+  let cumulativeUtility = 0;
+  let cumulativeSolar = netCost;
   let breakEvenYear: number | null = null;
 
   for (let year = 1; year <= HORIZON_YEARS; year++) {
     const inflationFactor = Math.pow(1 + INFLATION, year - 1);
-    const annualSavings =
-      (monthlyBillBefore - monthlyBillAfter) * 12 * inflationFactor;
+    const utilityYearCost = monthlyBillBefore * 12 * inflationFactor;
+    const solarYearCost = monthlyBillAfter * 12 * inflationFactor;
     const batteryReplacement =
       input.battery && year === BATTERY_REPLACEMENT_YEAR
         ? BATTERY_REPLACEMENT_COST
         : 0;
+    const annualSavings = utilityYearCost - solarYearCost;
 
-    cumulative += annualSavings - batteryReplacement;
+    cumulativeUtility += utilityYearCost;
+    cumulativeSolar += solarYearCost + batteryReplacement;
+    const cumulativeSavings = cumulativeUtility - cumulativeSolar;
 
-    if (breakEvenYear == null && cumulative >= 0) {
+    if (breakEvenYear == null && cumulativeSavings >= 0 && input.solar) {
       breakEvenYear = year;
     }
 
     series.push({
       year,
-      cumulativeSavings: Math.round(cumulative),
+      cumulativeUtilitySpend: Math.round(cumulativeUtility),
+      cumulativeSolarPathSpend: Math.round(cumulativeSolar),
+      cumulativeSavings: Math.round(cumulativeSavings),
       annualSavings: Math.round(annualSavings),
       batteryReplacement,
     });

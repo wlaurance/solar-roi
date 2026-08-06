@@ -1,17 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { InstallerPlace } from "@/lib/google/places";
 import type { Project } from "@/lib/types";
+
+function projectFullAddress(project: Project) {
+  return [project.address, project.city, `${project.state} ${project.zip}`]
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .join(", ");
+}
 
 export function InstallersView({ project }: { project: Project }) {
   const [installers, setInstallers] = useState<InstallerPlace[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const fullAddress = useMemo(() => projectFullAddress(project), [project]);
+
   useEffect(() => {
-    if (project.lat == null || project.lng == null) {
-      setError("Project is missing coordinates.");
+    if (!fullAddress) {
+      setError("Project is missing an address.");
       setLoading(false);
       return;
     }
@@ -20,9 +29,15 @@ export function InstallersView({ project }: { project: Project }) {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(
-          `/api/installers?lat=${project.lat}&lng=${project.lng}&q=${encodeURIComponent("solar installer")}`,
-        );
+        const params = new URLSearchParams({
+          address: fullAddress,
+          q: "solar installer",
+        });
+        if (project.lat != null && project.lng != null) {
+          params.set("lat", String(project.lat));
+          params.set("lng", String(project.lng));
+        }
+        const res = await fetch(`/api/installers?${params.toString()}`);
         const body = await res.json();
         if (!res.ok) throw new Error(body.error ?? "Failed to load installers");
         if (!cancelled) setInstallers(body.installers ?? []);
@@ -37,7 +52,7 @@ export function InstallersView({ project }: { project: Project }) {
     return () => {
       cancelled = true;
     };
-  }, [project.lat, project.lng]);
+  }, [fullAddress, project.lat, project.lng]);
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -47,20 +62,24 @@ export function InstallersView({ project }: { project: Project }) {
         </p>
         <h1 className="font-display mt-1 text-4xl text-ink">Find installers</h1>
         <p className="mt-2 text-sm text-ink-muted">
-          Google Places Nearby Search for solar installers near {project.address},{" "}
-          {project.city}.
+          Searching Google Places for solar installers near your project address:
         </p>
+        <p className="mt-1 text-sm font-medium text-ink">{fullAddress || "—"}</p>
       </div>
 
       {loading ? (
-        <p className="text-sm text-ink-muted">Searching nearby installers…</p>
+        <p className="text-sm text-ink-muted">
+          Searching contractors near {fullAddress}…
+        </p>
       ) : null}
       {error ? (
         <p className="rounded-md bg-danger/10 px-4 py-3 text-sm text-danger">{error}</p>
       ) : null}
 
       {!loading && !error && installers.length === 0 ? (
-        <p className="text-sm text-ink-muted">No installers found in range.</p>
+        <p className="text-sm text-ink-muted">
+          No installers found near this address.
+        </p>
       ) : null}
 
       <ul className="space-y-3">
@@ -81,7 +100,7 @@ export function InstallersView({ project }: { project: Project }) {
                     ? ` (${place.userRatingsTotal})`
                     : ""}
                   {place.distanceMeters != null
-                    ? ` · ${(place.distanceMeters / 1609.34).toFixed(1)} mi`
+                    ? ` · ${(place.distanceMeters / 1609.34).toFixed(1)} mi from project`
                     : ""}
                 </p>
               </div>
@@ -106,7 +125,7 @@ export function InstallersView({ project }: { project: Project }) {
                   href={
                     place.website
                       ? place.website
-                      : `mailto:?subject=${encodeURIComponent(`Solar quote for ${project.address}`)}&body=${encodeURIComponent(`Hi ${place.name},\n\nI'm interested in a solar quote for ${project.address}, ${project.city} ${project.state} ${project.zip}.\n`)}`
+                      : `mailto:?subject=${encodeURIComponent(`Solar quote for ${fullAddress}`)}&body=${encodeURIComponent(`Hi ${place.name},\n\nI'm interested in a solar quote for ${fullAddress}.\n`)}`
                   }
                   target={place.website ? "_blank" : undefined}
                   rel={place.website ? "noreferrer" : undefined}

@@ -67,6 +67,13 @@ export const Icons = {
       <path d="M15 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-3" />
     </svg>
   ),
+  download: (props: IconProps) => (
+    <svg {...base(props)}>
+      <path d="M12 4v10" />
+      <path d="M8 10l4 4 4-4" />
+      <path d="M5 18h14" />
+    </svg>
+  ),
   chevron: (props: IconProps) => (
     <svg {...base(props)}>
       <path d="M9 6l6 6-6 6" />

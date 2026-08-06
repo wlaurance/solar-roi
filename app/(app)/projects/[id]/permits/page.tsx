@@ -1,6 +1,6 @@
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import type { PermitJurisdictionWithSteps } from "@/lib/types";
+import type { PermitJurisdictionWithSteps, Project } from "@/lib/types";
 import { PermitsView } from "@/components/permits/permits-view";
 
 export default async function PermitsPage({
@@ -17,11 +17,11 @@ export default async function PermitsPage({
 
   const { data: project } = await supabase
     .from("projects")
-    .select("id, name, city")
+    .select("*")
     .eq("id", id)
     .maybeSingle();
 
-  if (!project) redirect("/projects");
+  if (!project) notFound();
 
   const { data: jurisdictions } = await supabase
     .from("permit_jurisdictions")
@@ -39,8 +39,7 @@ export default async function PermitsPage({
 
   return (
     <PermitsView
-      projectName={project.name}
-      projectCity={project.city}
+      project={project as Project}
       jurisdictions={normalized}
     />
   );

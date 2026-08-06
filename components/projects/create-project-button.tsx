@@ -62,6 +62,7 @@ export function CreateProjectButton() {
           zip: trimmedZip,
           lat: geo.lat,
           lng: geo.lng,
+          county: geo.county ?? null,
           solar: true,
           battery: true,
           hvac: false,

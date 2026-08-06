@@ -10,6 +10,10 @@ export type Project = {
   zip: string;
   lat: number | null;
   lng: number | null;
+  /** From Google Geocoding administrative_area_level_2 */
+  county: string | null;
+  /** Cached LLM county solar/permit resource pack */
+  county_links: CountyLinksPayload | null;
   solar: boolean;
   battery: boolean;
   hvac: boolean;
@@ -25,6 +29,29 @@ export type Project = {
   rate_usd_per_kwh: number;
   created_at: string;
   updated_at: string;
+};
+
+export type CountyLink = {
+  title: string;
+  url: string;
+  description: string;
+  category:
+    | "building_permit"
+    | "planning"
+    | "fire"
+    | "utility_interconnection"
+    | "incentives"
+    | "other";
+};
+
+export type CountyLinksPayload = {
+  countyName: string;
+  state: string;
+  summary: string;
+  links: CountyLink[];
+  model?: string;
+  provider?: string;
+  lookedUpAt?: string;
 };
 
 export type PermitJurisdiction = {

@@ -3,18 +3,29 @@ import { searchSolarInstallers } from "@/lib/google/places";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const lat = Number(searchParams.get("lat"));
-  const lng = Number(searchParams.get("lng"));
+  const address = searchParams.get("address")?.trim() ?? "";
+  const latRaw = searchParams.get("lat");
+  const lngRaw = searchParams.get("lng");
+  const lat = latRaw != null && latRaw !== "" ? Number(latRaw) : null;
+  const lng = lngRaw != null && lngRaw !== "" ? Number(lngRaw) : null;
   const q = searchParams.get("q") ?? "solar installer";
 
-  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
-    return NextResponse.json({ error: "lat and lng are required" }, { status: 400 });
+  if (!address) {
+    return NextResponse.json(
+      { error: "address is required (use the project street address)" },
+      { status: 400 },
+    );
   }
 
   try {
-    const installers = await searchSolarInstallers(lat, lng, q);
+    const installers = await searchSolarInstallers({
+      address,
+      lat: lat != null && Number.isFinite(lat) ? lat : null,
+      lng: lng != null && Number.isFinite(lng) ? lng : null,
+      query: q,
+    });
     return NextResponse.json(
-      { installers },
+      { installers, searchedAddress: address },
       {
         headers: {
           "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",

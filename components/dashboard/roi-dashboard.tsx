@@ -9,10 +9,12 @@ import {
   LineElement,
   PointElement,
   Tooltip,
+  type Chart,
 } from "chart.js";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { Line } from "react-chartjs-2";
 import { useRouter } from "next/navigation";
+import { Icons } from "@/components/icons";
 import {
   BASE_ELEC,
   DEFAULT_RATE_USD_PER_KWH,
@@ -22,8 +24,10 @@ import {
   resolveRate,
   solarDriveFromInsights,
 } from "@/lib/roi/calculate";
+import { exportProjectPdf } from "@/lib/report/export-project-pdf";
+import { assessSolarCandidate } from "@/lib/solar/candidate";
 import { createClient } from "@/lib/supabase/client";
-import type { Project } from "@/lib/types";
+import type { PermitJurisdictionWithSteps, Project } from "@/lib/types";
 
 ChartJS.register(
   CategoryScale,
@@ -78,7 +82,10 @@ export function RoiDashboard({ project }: { project: Project }) {
   const [kwhInput, setKwhInput] = useState(String(roundKwh(initialKwh)));
   const [billUsd, setBillUsd] = useState(roundMoney(initialBill));
   const [usageKwh, setUsageKwh] = useState(roundKwh(initialKwh));
+  const [exporting, setExporting] = useState(false);
+  const [exportError, setExportError] = useState<string | null>(null);
   const persistTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const chartRef = useRef<Chart<"line"> | null>(null);
 
   const solarDrive = useMemo(
     () =>
@@ -101,6 +108,54 @@ export function RoiDashboard({ project }: { project: Project }) {
       }),
     [toggles, project.system_kw_base, solarDrive, billUsd, usageKwh, rate],
   );
+
+  const candidate = useMemo(
+    () =>
+      assessSolarCandidate(
+        project.solar_insights?.solarPotential?.maxSunshineHoursPerYear,
+      ),
+    [project.solar_insights],
+  );
+
+  async function handleExportPdf() {
+    setExporting(true);
+    setExportError(null);
+    try {
+      const supabase = createClient();
+      const { data: jurisdictions, error } = await supabase
+        .from("permit_jurisdictions")
+        .select("*, permit_steps(*)")
+        .order("name");
+      if (error) throw error;
+
+      const normalized = (
+        (jurisdictions ?? []) as PermitJurisdictionWithSteps[]
+      ).map((j) => ({
+        ...j,
+        permit_steps: [...(j.permit_steps ?? [])].sort(
+          (a, b) => a.sort_order - b.sort_order,
+        ),
+      }));
+
+      const chartDataUrl = chartRef.current?.toBase64Image("image/png", 1) ?? null;
+
+      await exportProjectPdf({
+        project,
+        result,
+        toggles,
+        candidate,
+        jurisdictions: normalized,
+        chartDataUrl,
+      });
+    } catch (err) {
+      setExportError(
+        err instanceof Error ? err.message : "Could not export PDF",
+      );
+    } finally {
+      setExporting(false);
+    }
+  }
+
 
   function persistUsage(next: {
     monthly_bill_usd: number;
@@ -185,17 +240,30 @@ export function RoiDashboard({ project }: { project: Project }) {
   }
 
   const chartData = {
-    labels: result.series.map((p) => `Y${p.year}`),
+    labels: result.series.map((p) => (p.year === 0 ? "Start" : `Yr ${p.year}`)),
     datasets: [
       {
-        label: "Cumulative savings",
-        data: result.series.map((p) => p.cumulativeSavings),
+        label: "Utility only (do nothing)",
+        data: result.series.map((p) => p.cumulativeUtilitySpend),
+        borderColor: "#B4533A",
+        backgroundColor: "rgba(180, 83, 58, 0.06)",
+        borderDash: [6, 4],
+        fill: false,
+        tension: 0.2,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        borderWidth: 2,
+      },
+      {
+        label: "Solar path (install + bills)",
+        data: result.series.map((p) => p.cumulativeSolarPathSpend),
         borderColor: "#3F6B4F",
         backgroundColor: "rgba(63, 107, 79, 0.12)",
         fill: true,
-        tension: 0.25,
+        tension: 0.2,
         pointRadius: 0,
-        borderWidth: 2,
+        pointHoverRadius: 4,
+        borderWidth: 2.5,
       },
     ],
   };
@@ -205,27 +273,43 @@ export function RoiDashboard({ project }: { project: Project }) {
 
   return (
     <div className="mx-auto max-w-5xl">
-      <div className="mb-8">
-        <p className="text-xs font-medium uppercase tracking-[0.12em] text-brass">
-          ROI model
-        </p>
-        <h1 className="font-display mt-1 text-4xl text-ink">{project.name}</h1>
-        <p className="mt-2 text-sm text-ink-muted">
-          {project.address}, {project.city} {project.state} {project.zip}
-          {solarDrive ? (
-            <span className="ml-2 text-canopy">
-              · Driven by Google Solar ({result.systemKw} kW
-              {result.yearlyEnergyDcKwh
-                ? `, ${result.yearlyEnergyDcKwh.toLocaleString()} kWh/yr DC`
-                : ""}
-              )
-            </span>
-          ) : (
-            <span className="ml-2">
-              · Heuristic system size (open Roof Designer to load Solar insights)
-            </span>
-          )}
-        </p>
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-brass">
+            ROI model
+          </p>
+          <h1 className="font-display mt-1 text-4xl text-ink">{project.name}</h1>
+          <p className="mt-2 text-sm text-ink-muted">
+            {project.address}, {project.city} {project.state} {project.zip}
+            {solarDrive ? (
+              <span className="ml-2 text-canopy">
+                · Driven by Google Solar ({result.systemKw} kW
+                {result.yearlyEnergyDcKwh
+                  ? `, ${result.yearlyEnergyDcKwh.toLocaleString()} kWh/yr DC`
+                  : ""}
+                )
+              </span>
+            ) : (
+              <span className="ml-2">
+                · Heuristic system size (open Roof Designer to load Solar insights)
+              </span>
+            )}
+          </p>
+        </div>
+        <div className="flex flex-col items-end gap-2">
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={handleExportPdf}
+            disabled={exporting}
+          >
+            <Icons.download className="h-4 w-4" />
+            {exporting ? "Exporting…" : "Export PDF"}
+          </button>
+          {exportError ? (
+            <p className="max-w-xs text-right text-xs text-danger">{exportError}</p>
+          ) : null}
+        </div>
       </div>
 
       <div className="mb-6 flex flex-wrap gap-2">
@@ -344,27 +428,97 @@ export function RoiDashboard({ project }: { project: Project }) {
       </div>
 
       <div className="rounded-2xl border border-stone-2/80 bg-surface/90 p-4 shadow-sm sm:p-6">
-        <h2 className="mb-4 text-sm font-medium uppercase tracking-[0.08em] text-ink-muted">
-          Cumulative cash flow
-        </h2>
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-sm font-medium uppercase tracking-[0.08em] text-ink-muted">
+              25-year cumulative spend
+            </h2>
+            <p className="mt-1 text-xs text-ink-muted">
+              Lower curve wins. Gap at year 25 ≈ lifetime savings vs staying on the
+              grid.
+            </p>
+          </div>
+          <ul className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-ink">
+            <li className="flex items-center gap-2">
+              <span
+                className="inline-block h-0.5 w-6 border-t-2 border-dashed"
+                style={{ borderColor: "#B4533A" }}
+                aria-hidden
+              />
+              <span>
+                <span className="font-medium">Utility only</span>
+                <span className="text-ink-muted"> — pay the bill forever</span>
+              </span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span
+                className="inline-block h-0.5 w-6 rounded-full bg-canopy"
+                aria-hidden
+              />
+              <span>
+                <span className="font-medium">Solar path</span>
+                <span className="text-ink-muted">
+                  {" "}
+                  — net install + lower bills
+                  {toggles.battery ? " + Yr 12 battery" : ""}
+                </span>
+              </span>
+            </li>
+          </ul>
+        </div>
         <div className="h-72">
           <Line
+            ref={chartRef}
             data={chartData}
             options={{
               responsive: true,
               maintainAspectRatio: false,
+              interaction: { mode: "index", intersect: false },
               plugins: {
-                legend: { display: false },
+                legend: {
+                  display: true,
+                  position: "bottom",
+                  align: "start",
+                  labels: {
+                    boxWidth: 14,
+                    boxHeight: 3,
+                    padding: 16,
+                    color: "#1C2421",
+                    font: { size: 12, family: "Instrument Sans, sans-serif" },
+                    usePointStyle: false,
+                  },
+                },
                 tooltip: {
                   callbacks: {
-                    label: (ctx) => formatMoney(Number(ctx.raw)),
+                    title: (items) => {
+                      const label = items[0]?.label ?? "";
+                      return label === "Start" ? "Start (year 0)" : label;
+                    },
+                    label: (ctx) =>
+                      `${ctx.dataset.label}: ${formatMoney(Number(ctx.raw))}`,
+                    footer: (items) => {
+                      if (items.length < 2) return "";
+                      const util = Number(items[0]?.raw ?? 0);
+                      const solar = Number(items[1]?.raw ?? 0);
+                      const gap = util - solar;
+                      if (gap >= 0) {
+                        return `Solar ahead by ${formatMoney(gap)}`;
+                      }
+                      return `Solar behind by ${formatMoney(Math.abs(gap))}`;
+                    },
                   },
                 },
               },
               scales: {
                 x: {
-                  ticks: { maxTicksLimit: 13, color: "#5a665f" },
+                  ticks: { maxTicksLimit: 14, color: "#5a665f" },
                   grid: { color: "rgba(28,36,33,0.05)" },
+                  title: {
+                    display: true,
+                    text: "Year",
+                    color: "#5a665f",
+                    font: { size: 11 },
+                  },
                 },
                 y: {
                   ticks: {
@@ -372,13 +526,27 @@ export function RoiDashboard({ project }: { project: Project }) {
                     callback: (v) => `$${Number(v) / 1000}k`,
                   },
                   grid: { color: "rgba(28,36,33,0.06)" },
+                  title: {
+                    display: true,
+                    text: "Cumulative spend ($)",
+                    color: "#5a665f",
+                    font: { size: 11 },
+                  },
                 },
               },
             }}
           />
         </div>
         <p className="mt-3 text-xs text-ink-muted">
-          Year 12 marks the battery replacement cash event when battery is enabled.
+          Dashed line = staying on utility rates (8% inflation). Solid line =
+          net system cost at start
+          {toggles.battery
+            ? ", lower bills, and an $8,500 battery replacement at year 12"
+            : " plus ongoing solar-path bills"}
+          .
+          {result.breakEvenYear != null
+            ? ` Curves cross around year ${result.breakEvenYear}.`
+            : null}
         </p>
       </div>
     </div>
