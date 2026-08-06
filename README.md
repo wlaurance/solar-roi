@@ -59,7 +59,7 @@ Run the app:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000), create an account, then **New design** (defaults to **2225 Stewart Ave, Walnut Creek, CA 94596**).
+Open [http://localhost:3000](http://localhost:3000), create an account, then **New design** and enter a property address.
 
 ## Scripts
 

@@ -182,7 +182,7 @@ insert into public.permit_steps (jurisdiction_id, sort_order, title, body, link_
     'a0000000-0000-4000-8000-000000000002',
     2,
     'Fire setbacks & access pathways',
-    'Ensure pathways meet California Residential Code / local fire amendments (typically roof-edge and ridge clearances). South-facing arrays at 2225 Stewart Ave should respect ridge and eave clearances.',
+    'Ensure pathways meet California Residential Code / local fire amendments (typically roof-edge and ridge clearances). South-facing arrays should respect ridge and eave clearances.',
     null,
     null
   ),

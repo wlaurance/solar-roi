@@ -4,14 +4,30 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Icons } from "@/components/icons";
 import { createClient } from "@/lib/supabase/client";
-import { DEFAULT_PROJECT_ADDRESS } from "@/lib/types";
 
 export function CreateProjectButton() {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("CA");
+  const [zip, setZip] = useState("");
 
-  async function createProject() {
+  async function createProject(e: React.FormEvent) {
+    e.preventDefault();
+    const trimmedName = name.trim();
+    const trimmedAddress = address.trim();
+    const trimmedCity = city.trim();
+    const trimmedZip = zip.trim();
+
+    if (!trimmedName || !trimmedAddress || !trimmedCity || !trimmedZip) {
+      setError("Name, street address, city, and ZIP are required.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
     try {
@@ -21,39 +37,31 @@ export function CreateProjectButton() {
       } = await supabase.auth.getUser();
       if (!user) throw new Error("Not signed in");
 
-      let lat: number = DEFAULT_PROJECT_ADDRESS.lat;
-      let lng: number = DEFAULT_PROJECT_ADDRESS.lng;
-
-      try {
-        const geoRes = await fetch("/api/geocode", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            address: `${DEFAULT_PROJECT_ADDRESS.address}, ${DEFAULT_PROJECT_ADDRESS.city}, ${DEFAULT_PROJECT_ADDRESS.state} ${DEFAULT_PROJECT_ADDRESS.zip}`,
-          }),
-        });
-        if (geoRes.ok) {
-          const geo = await geoRes.json();
-          if (geo.lat != null && geo.lng != null) {
-            lat = geo.lat;
-            lng = geo.lng;
-          }
-        }
-      } catch {
-        // Keep fallback lat/lng
+      const fullAddress = `${trimmedAddress}, ${trimmedCity}, ${state.trim()} ${trimmedZip}`;
+      const geoRes = await fetch("/api/geocode", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ address: fullAddress }),
+      });
+      if (!geoRes.ok) {
+        throw new Error("Could not geocode that address. Check it and try again.");
+      }
+      const geo = await geoRes.json();
+      if (geo.lat == null || geo.lng == null) {
+        throw new Error("Could not geocode that address. Check it and try again.");
       }
 
       const { data, error: insertError } = await supabase
         .from("projects")
         .insert({
           user_id: user.id,
-          name: DEFAULT_PROJECT_ADDRESS.name,
-          address: DEFAULT_PROJECT_ADDRESS.address,
-          city: DEFAULT_PROJECT_ADDRESS.city,
-          state: DEFAULT_PROJECT_ADDRESS.state,
-          zip: DEFAULT_PROJECT_ADDRESS.zip,
-          lat,
-          lng,
+          name: trimmedName,
+          address: trimmedAddress,
+          city: trimmedCity,
+          state: state.trim() || "CA",
+          zip: trimmedZip,
+          lat: geo.lat,
+          lng: geo.lng,
           solar: true,
           battery: true,
           hvac: false,
@@ -63,6 +71,7 @@ export function CreateProjectButton() {
         .single();
 
       if (insertError) throw insertError;
+      setOpen(false);
       router.push(`/projects/${data.id}/dashboard`);
       router.refresh();
     } catch (err) {
@@ -72,18 +81,93 @@ export function CreateProjectButton() {
     }
   }
 
-  return (
-    <div className="flex flex-col items-end gap-2">
+  if (!open) {
+    return (
       <button
         type="button"
         className="btn-primary"
-        onClick={createProject}
-        disabled={loading}
+        onClick={() => {
+          setOpen(true);
+          setError(null);
+        }}
       >
         <Icons.plus className="h-4 w-4" />
-        {loading ? "Creating…" : "New design"}
+        New design
       </button>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={createProject}
+      className="w-full max-w-md space-y-3 rounded-2xl border border-stone-line bg-white p-4 shadow-sm"
+    >
+      <div className="flex items-center justify-between">
+        <h2 className="text-sm font-semibold text-ink">New project</h2>
+        <button
+          type="button"
+          className="text-xs text-ink-muted hover:text-ink"
+          onClick={() => setOpen(false)}
+          disabled={loading}
+        >
+          Cancel
+        </button>
+      </div>
+      <label className="block space-y-1">
+        <span className="text-xs font-medium text-ink-muted">Name</span>
+        <input
+          className="w-full rounded-lg border border-stone-line px-3 py-2 text-sm"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Home solar design"
+          required
+          autoFocus
+        />
+      </label>
+      <label className="block space-y-1">
+        <span className="text-xs font-medium text-ink-muted">Street address</span>
+        <input
+          className="w-full rounded-lg border border-stone-line px-3 py-2 text-sm"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          placeholder="123 Main St"
+          required
+        />
+      </label>
+      <div className="grid grid-cols-6 gap-2">
+        <label className="col-span-3 block space-y-1">
+          <span className="text-xs font-medium text-ink-muted">City</span>
+          <input
+            className="w-full rounded-lg border border-stone-line px-3 py-2 text-sm"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            required
+          />
+        </label>
+        <label className="col-span-1 block space-y-1">
+          <span className="text-xs font-medium text-ink-muted">State</span>
+          <input
+            className="w-full rounded-lg border border-stone-line px-3 py-2 text-sm"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            maxLength={2}
+            required
+          />
+        </label>
+        <label className="col-span-2 block space-y-1">
+          <span className="text-xs font-medium text-ink-muted">ZIP</span>
+          <input
+            className="w-full rounded-lg border border-stone-line px-3 py-2 text-sm"
+            value={zip}
+            onChange={(e) => setZip(e.target.value)}
+            required
+          />
+        </label>
+      </div>
       {error ? <p className="text-xs text-danger">{error}</p> : null}
-    </div>
+      <button type="submit" className="btn-primary w-full justify-center" disabled={loading}>
+        {loading ? "Creating…" : "Create project"}
+      </button>
+    </form>
   );
 }

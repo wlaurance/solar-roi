@@ -41,14 +41,3 @@ export type PermitStep = {
 export type PermitJurisdictionWithSteps = PermitJurisdiction & {
   permit_steps: PermitStep[];
 };
-
-export const DEFAULT_PROJECT_ADDRESS = {
-  name: "Stewart Avenue Home",
-  address: "2225 Stewart Ave",
-  city: "Walnut Creek",
-  state: "CA",
-  zip: "94596",
-  // Fallback; refined via Geocoding API on create
-  lat: 37.8753063,
-  lng: -122.0285039,
-} as const;

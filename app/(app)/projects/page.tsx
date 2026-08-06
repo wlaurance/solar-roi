@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { DEFAULT_PROJECT_ADDRESS, type Project } from "@/lib/types";
+import type { Project } from "@/lib/types";
 import { ProjectsList } from "@/components/projects/projects-list";
 import { CreateProjectButton } from "@/components/projects/create-project-button";
 
@@ -25,9 +25,8 @@ export default async function ProjectsPage() {
           </p>
           <h1 className="font-display mt-1 text-4xl text-ink">Projects</h1>
           <p className="mt-2 max-w-xl text-sm text-ink-muted">
-            Each project holds address, ROI toggles, cached Google Solar insights, and
-            permit/installer context. New designs default to{" "}
-            {DEFAULT_PROJECT_ADDRESS.address}, {DEFAULT_PROJECT_ADDRESS.city}.
+            Each project holds an address, ROI toggles, cached Google Solar insights,
+            and permit/installer context.
           </p>
         </div>
         <CreateProjectButton />
