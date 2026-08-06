@@ -4,6 +4,10 @@ import { APIProvider, Map, useMap } from "@vis.gl/react-google-maps";
 import { useCallback, useEffect, useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import type { BuildingInsightsResponse, SolarPanel } from "@/lib/google/solar-types";
+import {
+  assessSolarCandidate,
+  type SolarCandidateTier,
+} from "@/lib/solar/candidate";
 import { createClient } from "@/lib/supabase/client";
 import type { Project } from "@/lib/types";
 
@@ -44,6 +48,11 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
     )[0];
     return pot?.roofSegmentStats?.[best.segmentIndex] ?? null;
   }, [selectedConfig, pot]);
+
+  const solarCandidate = useMemo(
+    () => assessSolarCandidate(pot?.maxSunshineHoursPerYear),
+    [pot?.maxSunshineHoursPerYear],
+  );
 
   const center = {
     lat: insights?.center?.latitude ?? project.lat ?? 37.9058,
@@ -190,20 +199,50 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
       </div>
 
       {insights ? (
-        <dl className="mt-4 grid gap-3 sm:grid-cols-3">
-          <Meta
-            label="Max array"
-            value={`${pot?.maxArrayPanelsCount ?? "—"} panels`}
-          />
-          <Meta
-            label="Sunshine hours / yr"
-            value={`${pot?.maxSunshineHoursPerYear ?? "—"}`}
-          />
-          <Meta
-            label="Imagery quality"
-            value={insights.imageryQuality ?? "—"}
-          />
-        </dl>
+        <>
+          {solarCandidate ? (
+            <div
+              className={`mt-4 rounded-2xl border px-4 py-4 sm:px-5 ${candidateTone(solarCandidate.tier)}`}
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.1em]">
+                Solar candidate · {solarCandidate.label}
+              </p>
+              <p className="mt-1 text-lg font-medium text-ink">
+                {solarCandidate.candidateAnswer}
+              </p>
+              <p className="mt-1 max-w-3xl text-sm text-ink-muted">
+                {solarCandidate.sunshineHoursPerYear.toLocaleString()} sunshine
+                hours / year on the best roof area. {solarCandidate.summary}
+              </p>
+              <div className="mt-3 h-1.5 max-w-xs overflow-hidden rounded-full bg-black/10">
+                <div
+                  className="h-full rounded-full bg-canopy"
+                  style={{ width: `${solarCandidate.score}%` }}
+                />
+              </div>
+            </div>
+          ) : null}
+          <dl className="mt-4 grid gap-3 sm:grid-cols-3">
+            <Meta
+              label="Max array"
+              value={`${pot?.maxArrayPanelsCount ?? "—"} panels`}
+            />
+            <Meta
+              label="Sunshine hours / yr"
+              value={
+                pot?.maxSunshineHoursPerYear != null
+                  ? `${Math.round(pot.maxSunshineHoursPerYear).toLocaleString()}${
+                      solarCandidate ? ` · ${solarCandidate.label}` : ""
+                    }`
+                  : "—"
+              }
+            />
+            <Meta
+              label="Imagery quality"
+              value={insights.imageryQuality ?? "—"}
+            />
+          </dl>
+        </>
       ) : (
         <p className="mt-4 text-sm text-ink-muted">
           Loading Google Solar Building Insights for this address…
@@ -211,6 +250,19 @@ export function RoofDesigner({ project, mapsApiKey }: Props) {
       )}
     </div>
   );
+}
+
+function candidateTone(tier: SolarCandidateTier): string {
+  switch (tier) {
+    case "excellent":
+      return "border-canopy/40 bg-canopy/10";
+    case "good":
+      return "border-brass/40 bg-brass/10";
+    case "fair":
+      return "border-stone-2 bg-stone/60";
+    case "poor":
+      return "border-danger/30 bg-danger/5";
+  }
 }
 
 function Meta({ label, value }: { label: string; value: string }) {

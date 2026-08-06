@@ -1,0 +1,23 @@
+---
+description: Always apply new Supabase migrations to the remote DB after creating them
+alwaysApply: true
+---
+
+# Supabase migrations
+
+When you add or change SQL under `supabase/migrations/`:
+
+1. Apply immediately to the linked remote project (do not wait for the user to ask):
+
+```bash
+set -a && source .env.local && set +a
+npx supabase db push --yes
+```
+
+2. If `SUPABASE_ACCESS_TOKEN` is missing or `db push` fails with auth errors, tell the user — do not leave migrations unapplied and silent.
+
+3. Confirm with `npx supabase migration list` that local and remote match before finishing.
+
+4. Prefer additive migrations (`alter table … add column`, new tables). Avoid destructive changes without an explicit user request and a backfill plan.
+
+`.env.local` holds `SUPABASE_ACCESS_TOKEN` and project URL; never commit secrets.
