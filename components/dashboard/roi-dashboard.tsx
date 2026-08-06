@@ -27,7 +27,7 @@ import {
 import { exportProjectPdf } from "@/lib/report/export-project-pdf";
 import { assessSolarCandidate } from "@/lib/solar/candidate";
 import { createClient } from "@/lib/supabase/client";
-import type { PermitJurisdictionWithSteps, Project } from "@/lib/types";
+import type { Project } from "@/lib/types";
 
 ChartJS.register(
   CategoryScale,
@@ -121,22 +121,6 @@ export function RoiDashboard({ project }: { project: Project }) {
     setExporting(true);
     setExportError(null);
     try {
-      const supabase = createClient();
-      const { data: jurisdictions, error } = await supabase
-        .from("permit_jurisdictions")
-        .select("*, permit_steps(*)")
-        .order("name");
-      if (error) throw error;
-
-      const normalized = (
-        (jurisdictions ?? []) as PermitJurisdictionWithSteps[]
-      ).map((j) => ({
-        ...j,
-        permit_steps: [...(j.permit_steps ?? [])].sort(
-          (a, b) => a.sort_order - b.sort_order,
-        ),
-      }));
-
       const chartDataUrl = chartRef.current?.toBase64Image("image/png", 1) ?? null;
 
       await exportProjectPdf({
@@ -144,7 +128,6 @@ export function RoiDashboard({ project }: { project: Project }) {
         result,
         toggles,
         candidate,
-        jurisdictions: normalized,
         chartDataUrl,
       });
     } catch (err) {

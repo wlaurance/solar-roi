@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import type { PermitJurisdictionWithSteps, Project } from "@/lib/types";
+import type { Project } from "@/lib/types";
 import { PermitsView } from "@/components/permits/permits-view";
 
 export default async function PermitsPage({
@@ -23,24 +23,5 @@ export default async function PermitsPage({
 
   if (!project) notFound();
 
-  const { data: jurisdictions } = await supabase
-    .from("permit_jurisdictions")
-    .select("*, permit_steps(*)")
-    .order("name");
-
-  const normalized = ((jurisdictions ?? []) as PermitJurisdictionWithSteps[]).map(
-    (j) => ({
-      ...j,
-      permit_steps: [...(j.permit_steps ?? [])].sort(
-        (a, b) => a.sort_order - b.sort_order,
-      ),
-    }),
-  );
-
-  return (
-    <PermitsView
-      project={project as Project}
-      jurisdictions={normalized}
-    />
-  );
+  return <PermitsView project={project as Project} />;
 }

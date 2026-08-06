@@ -2,10 +2,18 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { geocodeAddress } from "@/lib/google/geocode";
 import { lookupCountySolarResources } from "@/lib/llm/county-lookup";
+import type { CountyLinksPayload } from "@/lib/types";
+
+function needsFreshLookup(pack: CountyLinksPayload | null | undefined): boolean {
+  if (!pack) return true;
+  // Older caches may only have links — regenerate so steps are persisted too
+  if (!pack.steps?.length) return true;
+  return false;
+}
 
 /**
- * Resolve county via Geocoding + LLM resource links for the project address.
- * Caches county + county_links on the project row.
+ * Resolve county via Geocoding + LLM permitting content for the project address.
+ * Persists county + county_links (summary, steps, links) on the project row.
  */
 export async function POST(request: Request) {
   try {
@@ -46,6 +54,7 @@ export async function POST(request: Request) {
     let county = project.county as string | null;
     let city = project.city as string;
     let state = project.state as string;
+    const existingPack = project.county_links as CountyLinksPayload | null;
 
     if (!county || force) {
       const geo = await geocodeAddress(fullAddress);
@@ -62,7 +71,7 @@ export async function POST(request: Request) {
       if (geo.city) city = geo.city;
       if (geo.state) state = geo.state;
 
-      await supabase
+      const { error: geoUpdateError } = await supabase
         .from("projects")
         .update({
           county,
@@ -72,29 +81,36 @@ export async function POST(request: Request) {
           lng: geo.lng,
         })
         .eq("id", projectId);
+      if (geoUpdateError) {
+        throw new Error(`Failed to save county: ${geoUpdateError.message}`);
+      }
     }
 
-    if (!force && project.county_links) {
+    if (!force && !needsFreshLookup(existingPack)) {
       return NextResponse.json({
         county,
         state,
         city,
-        links: project.county_links,
+        links: existingPack,
         cached: true,
       });
     }
 
     const lookup = await lookupCountySolarResources({
-      county,
+      county: county!,
       state,
       city,
       address: fullAddress,
     });
 
-    await supabase
+    const { error: saveError } = await supabase
       .from("projects")
       .update({ county, county_links: lookup })
       .eq("id", projectId);
+
+    if (saveError) {
+      throw new Error(`Failed to save permitting content: ${saveError.message}`);
+    }
 
     return NextResponse.json({
       county,

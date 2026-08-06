@@ -1,7 +1,7 @@
 import type { jsPDF } from "jspdf";
 import type { RoiResult } from "@/lib/roi/calculate";
 import type { SolarCandidateAssessment } from "@/lib/solar/candidate";
-import type { PermitJurisdictionWithSteps, Project } from "@/lib/types";
+import type { Project } from "@/lib/types";
 
 const INK: [number, number, number] = [28, 36, 33];
 const MUTED: [number, number, number] = [90, 102, 95];
@@ -34,7 +34,6 @@ export type ProjectPdfInput = {
     water: boolean;
   };
   candidate: SolarCandidateAssessment | null;
-  jurisdictions: PermitJurisdictionWithSteps[];
   chartDataUrl: string | null;
 };
 
@@ -102,8 +101,7 @@ function kv(doc: jsPDF, label: string, value: string, x: number, y: number) {
 export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
   const { jsPDF } = await import("jspdf");
   const doc = new jsPDF({ unit: "mm", format: "letter" });
-  const { project, result, toggles, candidate, jurisdictions, chartDataUrl } =
-    input;
+  const { project, result, toggles, candidate, chartDataUrl } = input;
   const address = `${project.address}, ${project.city}, ${project.state} ${project.zip}`;
 
   // —— Page 1: Overview ——
@@ -298,7 +296,7 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
     }
   }
 
-  // —— Page 4+: County LLM links + seeded permits ——
+  // —— Page 4+: AI county permitting content ——
   doc.addPage();
   drawHeader(doc, "Permitting checklist");
   y = 40;
@@ -322,6 +320,35 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
       doc.text(summaryLines, 14, y);
       y += summaryLines.length * 4 + 4;
     }
+
+    const steps = project.county_links?.steps ?? [];
+    if (steps.length) {
+      y = sectionTitle(doc, "Permit checklist", y);
+      for (const [idx, step] of steps.entries()) {
+        const bodyLines = doc.splitTextToSize(step.body, 170);
+        y = ensureSpace(doc, y, 10 + bodyLines.length * 4);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(...CANOPY);
+        doc.text(`${idx + 1}. ${step.title}`, 14, y);
+        y += 5;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9);
+        doc.setTextColor(...INK);
+        doc.text(bodyLines, 18, y);
+        y += bodyLines.length * 4 + 2;
+        if (step.linkUrl) {
+          doc.setTextColor(...CANOPY);
+          doc.setFontSize(8);
+          doc.textWithLink(step.linkLabel ?? step.linkUrl, 18, y, {
+            url: step.linkUrl,
+          });
+          y += 5;
+        }
+        y += 3;
+      }
+    }
+
     for (const link of project.county_links?.links ?? []) {
       y = ensureSpace(doc, y, 14);
       doc.setFont("helvetica", "bold");
@@ -336,57 +363,14 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
       doc.text(desc, 14, y);
       y += desc.length * 3.5 + 4;
     }
-    y += 4;
-  }
-
-  y = sectionTitle(doc, "Seeded permitting steps", y);
-
-  if (!jurisdictions.length) {
+  } else {
     doc.setFontSize(10);
     doc.setTextColor(...MUTED);
-    doc.text("No permit jurisdictions available.", 14, y);
-  } else {
-    for (const j of jurisdictions) {
-      y = ensureSpace(doc, y, 20);
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
-      doc.setTextColor(...INK);
-      doc.text(j.name, 14, y);
-      y += 4;
-      if (j.region) {
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(8);
-        doc.setTextColor(...MUTED);
-        doc.text(j.region, 14, y);
-        y += 5;
-      }
-      const steps = [...(j.permit_steps ?? [])].sort(
-        (a, b) => a.sort_order - b.sort_order,
-      );
-      for (const [idx, step] of steps.entries()) {
-        const bodyLines = doc.splitTextToSize(step.body, 170);
-        y = ensureSpace(doc, y, 10 + bodyLines.length * 4);
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(10);
-        doc.setTextColor(...CANOPY);
-        doc.text(`${idx + 1}. ${step.title}`, 14, y);
-        y += 5;
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9);
-        doc.setTextColor(...INK);
-        doc.text(bodyLines, 18, y);
-        y += bodyLines.length * 4 + 2;
-        if (step.link_url) {
-          doc.setTextColor(...CANOPY);
-          doc.setFontSize(8);
-          const linkLabel = step.link_label ?? step.link_url;
-          doc.textWithLink(linkLabel, 18, y, { url: step.link_url });
-          y += 5;
-        }
-        y += 3;
-      }
-      y += 4;
-    }
+    doc.text(
+      "No county permitting content saved yet. Open County Permits to generate it.",
+      14,
+      y,
+    );
   }
 
   const total = doc.getNumberOfPages();

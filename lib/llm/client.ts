@@ -3,8 +3,8 @@ import { createOpenAI } from "@ai-sdk/openai";
 import type { LanguageModel } from "ai";
 
 /** Default inexpensive model for county / permit resource lookups */
-export const DEFAULT_LOOKUP_MODEL = "google/gemini-2.5-flash-lite";
-export const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite";
+export const DEFAULT_LOOKUP_MODEL = "google/gemini-3.5-flash-lite";
+export const DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite";
 
 export type LlmRoute = {
   provider: "openrouter" | "google";

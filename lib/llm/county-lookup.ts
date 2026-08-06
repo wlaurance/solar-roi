@@ -18,12 +18,30 @@ export const countyLinkSchema = z.object({
   ]),
 });
 
+export const countyPermitStepSchema = z.object({
+  title: z.string().describe("Checklist step title"),
+  body: z
+    .string()
+    .describe("2-4 sentences explaining what to do for this locality"),
+  linkUrl: z
+    .string()
+    .url()
+    .nullable()
+    .describe("Optional official URL for this step, or null"),
+  linkLabel: z.string().nullable().describe("Link label, or null"),
+});
+
 export const countyLookupSchema = z.object({
   countyName: z.string(),
   state: z.string(),
   summary: z
     .string()
     .describe("2-3 sentences on how residential rooftop solar permitting works here"),
+  steps: z
+    .array(countyPermitStepSchema)
+    .min(4)
+    .max(10)
+    .describe("Ordered permitting checklist for this property's locality"),
   links: z.array(countyLinkSchema).min(2).max(10),
 });
 
@@ -53,19 +71,15 @@ Property:
 ${input.city ? `- City: ${input.city}` : ""}
 ${input.address ? `- Address: ${input.address}` : ""}
 
-Return official (or highly authoritative) web resources for:
-1) County or city building / solar permitting
-2) Planning / expedited solar if available
-3) Fire department rooftop access / setbacks if relevant
-4) Electric utility interconnection (infer likely utility, e.g. PG&E in much of Northern CA)
-5) State / local incentives (e.g. GoSolarSF, CEC, or IRS ITC overview)
+Produce:
+A) An ordered permitting CHECKLIST (steps) tailored to this county/city — e.g. building permit / expedited solar, structural/electrical plans, fire setbacks, utility interconnection / PTO, inspection. Be specific to the locality when possible.
+B) Official (or highly authoritative) LINKS for building/solar permitting, planning, fire, utility interconnection, and incentives.
 
 Rules:
 - Prefer .gov / .ca.gov / official utility portals.
-- Every URL must be a real, commonly known official site pattern — do not invent paths you are unsure about; prefer homepage / solar landing pages that exist.
-- Include the county name in titles where useful.
-- If the city has its own building department separate from the county, include both.
-- Keep summary practical for a residential NEM / net billing solar + battery project.`,
+- Every URL must be a real, commonly known official site pattern — do not invent deep paths you are unsure about; prefer known homepages / solar landing pages.
+- If the city has its own building department separate from the county, cover both in steps and links.
+- Keep content practical for a residential NEM / net billing solar + battery project.`,
   });
 
   return {

@@ -44,33 +44,21 @@ export type CountyLink = {
     | "other";
 };
 
+export type CountyPermitStep = {
+  title: string;
+  body: string;
+  linkUrl: string | null;
+  linkLabel: string | null;
+};
+
 export type CountyLinksPayload = {
   countyName: string;
   state: string;
   summary: string;
+  /** AI-generated ordered permitting checklist (persisted on the project) */
+  steps?: CountyPermitStep[];
   links: CountyLink[];
   model?: string;
   provider?: string;
   lookedUpAt?: string;
-};
-
-export type PermitJurisdiction = {
-  id: string;
-  slug: string;
-  name: string;
-  region: string;
-};
-
-export type PermitStep = {
-  id: string;
-  jurisdiction_id: string;
-  sort_order: number;
-  title: string;
-  body: string;
-  link_url: string | null;
-  link_label: string | null;
-};
-
-export type PermitJurisdictionWithSteps = PermitJurisdiction & {
-  permit_steps: PermitStep[];
 };
