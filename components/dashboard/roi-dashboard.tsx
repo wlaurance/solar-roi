@@ -17,10 +17,12 @@ import { useRouter } from "next/navigation";
 import { Icons } from "@/components/icons";
 import {
   BASE_ELEC,
+  DEFAULT_ENERGY_INFLATION_PCT,
   DEFAULT_RATE_USD_PER_KWH,
   calculateRoi,
   resolveBaselineMonthlyBill,
   resolveBaselineMonthlyUsageKwh,
+  resolveEnergyInflationPct,
   resolveRate,
   solarDriveFromInsights,
 } from "@/lib/roi/calculate";
@@ -66,6 +68,11 @@ export function RoiDashboard({ project }: { project: Project }) {
   });
 
   const initialRate = resolveRate(project.rate_usd_per_kwh);
+  const initialInflationPct = resolveEnergyInflationPct(
+    project.energy_inflation_pct != null
+      ? Number(project.energy_inflation_pct)
+      : null,
+  );
   const initialBill = resolveBaselineMonthlyBill({
     monthlyBillUsd: project.monthly_bill_usd,
     monthlyUsageKwh: project.monthly_usage_kwh,
@@ -78,6 +85,10 @@ export function RoiDashboard({ project }: { project: Project }) {
   });
 
   const [rate, setRate] = useState(initialRate);
+  const [inflationPct, setInflationPct] = useState(initialInflationPct);
+  const [inflationInput, setInflationInput] = useState(
+    String(initialInflationPct),
+  );
   const [billInput, setBillInput] = useState(String(roundMoney(initialBill)));
   const [kwhInput, setKwhInput] = useState(String(roundKwh(initialKwh)));
   const [billUsd, setBillUsd] = useState(roundMoney(initialBill));
@@ -105,8 +116,17 @@ export function RoiDashboard({ project }: { project: Project }) {
         monthlyBillUsd: billUsd,
         monthlyUsageKwh: usageKwh,
         rateUsdPerKwh: rate,
+        energyInflationPct: inflationPct,
       }),
-    [toggles, project.system_kw_base, solarDrive, billUsd, usageKwh, rate],
+    [
+      toggles,
+      project.system_kw_base,
+      solarDrive,
+      billUsd,
+      usageKwh,
+      rate,
+      inflationPct,
+    ],
   );
 
   const candidate = useMemo(
@@ -141,9 +161,10 @@ export function RoiDashboard({ project }: { project: Project }) {
 
 
   function persistUsage(next: {
-    monthly_bill_usd: number;
-    monthly_usage_kwh: number;
-    rate_usd_per_kwh: number;
+    monthly_bill_usd?: number;
+    monthly_usage_kwh?: number;
+    rate_usd_per_kwh?: number;
+    energy_inflation_pct?: number;
   }) {
     if (persistTimer.current) clearTimeout(persistTimer.current);
     persistTimer.current = setTimeout(() => {
@@ -220,6 +241,15 @@ export function RoiDashboard({ project }: { project: Project }) {
       monthly_usage_kwh: usageKwh,
       rate_usd_per_kwh: nextRate,
     });
+  }
+
+  function onInflationChange(raw: string) {
+    setInflationInput(raw);
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed) || parsed < 0) return;
+    const next = Math.round(parsed * 100) / 100;
+    setInflationPct(next);
+    persistUsage({ energy_inflation_pct: next });
   }
 
   const chartData = {
@@ -334,7 +364,7 @@ export function RoiDashboard({ project }: { project: Project }) {
             </p>
           </div>
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <label className="block space-y-1.5">
             <span className="text-xs font-medium text-ink-muted">Monthly bill ($)</span>
             <div className="relative">
@@ -381,6 +411,35 @@ export function RoiDashboard({ project }: { project: Project }) {
               />
             </div>
           </label>
+          <label className="block space-y-1.5">
+            <span className="text-xs font-medium text-ink-muted">
+              Energy inflation (%/yr)
+            </span>
+            <div className="relative">
+              <input
+                type="number"
+                min={0}
+                max={30}
+                step={0.1}
+                inputMode="decimal"
+                className="w-full rounded-lg border border-stone-line bg-white py-2.5 pl-3 pr-8 text-sm text-ink"
+                value={inflationInput}
+                onChange={(e) => onInflationChange(e.target.value)}
+                onBlur={() => {
+                  if (inflationInput.trim() === "") {
+                    setInflationInput(String(DEFAULT_ENERGY_INFLATION_PCT));
+                    setInflationPct(DEFAULT_ENERGY_INFLATION_PCT);
+                    persistUsage({
+                      energy_inflation_pct: DEFAULT_ENERGY_INFLATION_PCT,
+                    });
+                  }
+                }}
+              />
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ink-muted">
+                %
+              </span>
+            </div>
+          </label>
         </div>
         <p className="mt-3 text-xs text-ink-muted">
           Model baseline: {formatMoney(result.monthlyBillBefore)} / mo ·{" "}
@@ -406,7 +465,7 @@ export function RoiDashboard({ project }: { project: Project }) {
         <Stat
           label="25-yr net savings"
           value={formatMoney(result.netSavings25)}
-          hint={`${result.systemKw} kW · 8% inflation`}
+          hint={`${result.systemKw} kW · ${result.energyInflationPct}% inflation`}
         />
       </div>
 
@@ -521,7 +580,8 @@ export function RoiDashboard({ project }: { project: Project }) {
           />
         </div>
         <p className="mt-3 text-xs text-ink-muted">
-          Dashed line = staying on utility rates (8% inflation). Solid line =
+          Dashed line = staying on utility rates ({result.energyInflationPct}%
+          inflation). Solid line =
           net system cost at start
           {toggles.battery
             ? ", lower bills, and an $8,500 battery replacement at year 12"

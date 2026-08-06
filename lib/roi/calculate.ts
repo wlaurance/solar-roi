@@ -22,6 +22,8 @@ export type RoiInput = RoiToggles & {
   monthlyUsageKwh?: number | null;
   /** Blended $/kWh to convert between bill and usage */
   rateUsdPerKwh?: number | null;
+  /** Annual utility/energy cost inflation as a percent (e.g. 5 = 5%/yr) */
+  energyInflationPct?: number | null;
 };
 
 export type RoiYearPoint = {
@@ -44,6 +46,7 @@ export type RoiResult = {
   monthlyBillAfter: number;
   monthlyUsageKwhBefore: number;
   rateUsdPerKwh: number;
+  energyInflationPct: number;
   offset: number;
   yearlyEnergyDcKwh: number | null;
   breakEvenYear: number | null;
@@ -59,7 +62,8 @@ export const BATTERY_COST = 13500;
 export const BATTERY_REPLACEMENT_YEAR = 12;
 export const BATTERY_REPLACEMENT_COST = 8500;
 export const ITC_NET_FACTOR = 0.7;
-export const INFLATION = 0.08;
+/** Default annual energy cost inflation: 5%/yr */
+export const DEFAULT_ENERGY_INFLATION_PCT = 5;
 export const HORIZON_YEARS = 25;
 export const DEFAULT_SYSTEM_KW_BASE = 8.5;
 export const HVAC_KW = 3.0;
@@ -69,6 +73,21 @@ export const DEFAULT_RATE_USD_PER_KWH = 0.35;
 export function resolveRate(rate?: number | null): number {
   if (rate != null && rate > 0) return rate;
   return DEFAULT_RATE_USD_PER_KWH;
+}
+
+/** Convert percent (e.g. 5) to annual rate (0.05). */
+export function resolveEnergyInflationRate(pct?: number | null): number {
+  if (pct != null && Number.isFinite(pct) && pct >= 0) {
+    return pct / 100;
+  }
+  return DEFAULT_ENERGY_INFLATION_PCT / 100;
+}
+
+export function resolveEnergyInflationPct(pct?: number | null): number {
+  if (pct != null && Number.isFinite(pct) && pct >= 0) {
+    return pct;
+  }
+  return DEFAULT_ENERGY_INFLATION_PCT;
 }
 
 /** Baseline monthly bill before electrification add-ons */
@@ -150,6 +169,8 @@ export function calculateRoi(input: RoiInput): RoiResult {
       : null;
 
   const rate = resolveRate(input.rateUsdPerKwh);
+  const inflationPct = resolveEnergyInflationPct(input.energyInflationPct);
+  const inflation = resolveEnergyInflationRate(inflationPct);
   const systemKw = resolveSystemKw(input);
   const panelCost = input.solar ? systemKw * COST_PER_KW : 0;
   const batteryCost = input.battery ? BATTERY_COST : 0;
@@ -180,7 +201,7 @@ export function calculateRoi(input: RoiInput): RoiResult {
   let breakEvenYear: number | null = null;
 
   for (let year = 1; year <= HORIZON_YEARS; year++) {
-    const inflationFactor = Math.pow(1 + INFLATION, year - 1);
+    const inflationFactor = Math.pow(1 + inflation, year - 1);
     const utilityYearCost = monthlyBillBefore * 12 * inflationFactor;
     const solarYearCost = monthlyBillAfter * 12 * inflationFactor;
     const batteryReplacement =
@@ -215,6 +236,7 @@ export function calculateRoi(input: RoiInput): RoiResult {
     monthlyBillAfter: Math.round(monthlyBillAfter),
     monthlyUsageKwhBefore: Math.round(monthlyUsageKwhBefore),
     rateUsdPerKwh: rate,
+    energyInflationPct: inflationPct,
     offset: Math.round(offset * 1000) / 1000,
     yearlyEnergyDcKwh:
       yearlyEnergyDcKwh != null ? Math.round(yearlyEnergyDcKwh) : null,

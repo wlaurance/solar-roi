@@ -27,6 +27,8 @@ export type Project = {
   monthly_usage_kwh: number | null;
   /** Blended rate to sync $ ↔ kWh */
   rate_usd_per_kwh: number;
+  /** Annual energy cost inflation as a percent (e.g. 5 = 5%/yr) */
+  energy_inflation_pct: number;
   created_at: string;
   updated_at: string;
 };

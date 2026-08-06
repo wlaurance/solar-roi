@@ -101,6 +101,27 @@ describe("calculateRoi", () => {
     expect(result.monthlyBillBefore).toBe(800);
     expect(result.monthlyUsageKwhBefore).toBe(2000);
   });
+
+  it("uses custom energy inflation", () => {
+    const low = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      energyInflationPct: 2,
+    });
+    const high = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      energyInflationPct: 10,
+    });
+
+    expect(low.energyInflationPct).toBe(2);
+    expect(high.energyInflationPct).toBe(10);
+    expect(high.netSavings25).toBeGreaterThan(low.netSavings25);
+  });
 });
 
 describe("solarDriveFromInsights", () => {
