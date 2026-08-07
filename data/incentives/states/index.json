@@ -1,0 +1,257 @@
+[
+  {
+    "slug": "california",
+    "state": "CA",
+    "priority": 100
+  },
+  {
+    "slug": "massachusetts",
+    "state": "MA",
+    "priority": 99
+  },
+  {
+    "slug": "new-jersey",
+    "state": "NJ",
+    "priority": 98
+  },
+  {
+    "slug": "texas",
+    "state": "TX",
+    "priority": 97
+  },
+  {
+    "slug": "florida",
+    "state": "FL",
+    "priority": 96
+  },
+  {
+    "slug": "new-york",
+    "state": "NY",
+    "priority": 95
+  },
+  {
+    "slug": "illinois",
+    "state": "IL",
+    "priority": 94
+  },
+  {
+    "slug": "arizona",
+    "state": "AZ",
+    "priority": 93
+  },
+  {
+    "slug": "colorado",
+    "state": "CO",
+    "priority": 92
+  },
+  {
+    "slug": "maryland",
+    "state": "MD",
+    "priority": 91
+  },
+  {
+    "slug": "pennsylvania",
+    "state": "PA",
+    "priority": 90
+  },
+  {
+    "slug": "connecticut",
+    "state": "CT",
+    "priority": 89
+  },
+  {
+    "slug": "rhode-island",
+    "state": "RI",
+    "priority": 88
+  },
+  {
+    "slug": "nevada",
+    "state": "NV",
+    "priority": 87
+  },
+  {
+    "slug": "hawaii",
+    "state": "HI",
+    "priority": 86
+  },
+  {
+    "slug": "north-carolina",
+    "state": "NC",
+    "priority": 85
+  },
+  {
+    "slug": "virginia",
+    "state": "VA",
+    "priority": 84
+  },
+  {
+    "slug": "south-carolina",
+    "state": "SC",
+    "priority": 83
+  },
+  {
+    "slug": "oregon",
+    "state": "OR",
+    "priority": 82
+  },
+  {
+    "slug": "washington",
+    "state": "WA",
+    "priority": 81
+  },
+  {
+    "slug": "minnesota",
+    "state": "MN",
+    "priority": 80
+  },
+  {
+    "slug": "michigan",
+    "state": "MI",
+    "priority": 79
+  },
+  {
+    "slug": "georgia",
+    "state": "GA",
+    "priority": 78
+  },
+  {
+    "slug": "new-mexico",
+    "state": "NM",
+    "priority": 77
+  },
+  {
+    "slug": "utah",
+    "state": "UT",
+    "priority": 76
+  },
+  {
+    "slug": "ohio",
+    "state": "OH",
+    "priority": 75
+  },
+  {
+    "slug": "wisconsin",
+    "state": "WI",
+    "priority": 74
+  },
+  {
+    "slug": "indiana",
+    "state": "IN",
+    "priority": 73
+  },
+  {
+    "slug": "missouri",
+    "state": "MO",
+    "priority": 72
+  },
+  {
+    "slug": "maine",
+    "state": "ME",
+    "priority": 71
+  },
+  {
+    "slug": "new-hampshire",
+    "state": "NH",
+    "priority": 70
+  },
+  {
+    "slug": "vermont",
+    "state": "VT",
+    "priority": 69
+  },
+  {
+    "slug": "delaware",
+    "state": "DE",
+    "priority": 68
+  },
+  {
+    "slug": "idaho",
+    "state": "ID",
+    "priority": 67
+  },
+  {
+    "slug": "iowa",
+    "state": "IA",
+    "priority": 66
+  },
+  {
+    "slug": "kansas",
+    "state": "KS",
+    "priority": 65
+  },
+  {
+    "slug": "kentucky",
+    "state": "KY",
+    "priority": 64
+  },
+  {
+    "slug": "louisiana",
+    "state": "LA",
+    "priority": 63
+  },
+  {
+    "slug": "arkansas",
+    "state": "AR",
+    "priority": 62
+  },
+  {
+    "slug": "oklahoma",
+    "state": "OK",
+    "priority": 61
+  },
+  {
+    "slug": "montana",
+    "state": "MT",
+    "priority": 60
+  },
+  {
+    "slug": "wyoming",
+    "state": "WY",
+    "priority": 59
+  },
+  {
+    "slug": "north-dakota",
+    "state": "ND",
+    "priority": 58
+  },
+  {
+    "slug": "south-dakota",
+    "state": "SD",
+    "priority": 57
+  },
+  {
+    "slug": "nebraska",
+    "state": "NE",
+    "priority": 56
+  },
+  {
+    "slug": "alaska",
+    "state": "AK",
+    "priority": 55
+  },
+  {
+    "slug": "mississippi",
+    "state": "MS",
+    "priority": 53
+  },
+  {
+    "slug": "alabama",
+    "state": "AL",
+    "priority": 52
+  },
+  {
+    "slug": "west-virginia",
+    "state": "WV",
+    "priority": 51
+  },
+  {
+    "slug": "tennessee",
+    "state": "TN",
+    "priority": 50
+  },
+  {
+    "slug": "district-of-columbia",
+    "state": "DC",
+    "priority": 49
+  }
+]

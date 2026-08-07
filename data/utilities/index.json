@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "pge",
+    "name": "PG&E",
+    "state": "CA",
+    "customers_approx": 5188308,
+    "priority_score": 100,
+    "why": "Largest US IOU; NEM 3.0 mandates batteries; highest utility rates."
+  },
+  {
+    "slug": "sce",
+    "name": "SCE",
+    "state": "CA",
+    "customers_approx": 4963983,
+    "priority_score": 99,
+    "why": "Massive SoCal footprint; NEM 3.0 active; high wildfire risk/PSPS zones."
+  },
+  {
+    "slug": "fpl",
+    "name": "FPL",
+    "state": "FL",
+    "customers_approx": 4708793,
+    "priority_score": 98,
+    "why": "Largest FL utility; 1:1 net metering active but highly politicized."
+  },
+  {
+    "slug": "comed",
+    "name": "ComEd",
+    "state": "IL",
+    "customers_approx": 4029200,
+    "priority_score": 95,
+    "why": "Major Midwest hub; strong state SREC program (Illinois Shines)."
+  },
+  {
+    "slug": "oncor",
+    "name": "Oncor",
+    "state": "TX",
+    "customers_approx": 3412609,
+    "priority_score": 94,
+    "why": "Largest TX TDU; deregulated market requires matching TDSP with retail electric provider buyback plans."
+  },
+  {
+    "slug": "coned",
+    "name": "ConEd",
+    "state": "NY",
+    "customers_approx": 2478248,
+    "priority_score": 93,
+    "why": "Highest NY rates; VDER Value Stack compensation replaces traditional net metering."
+  },
+  {
+    "slug": "centerpoint",
+    "name": "CenterPoint Energy",
+    "state": "TX",
+    "customers_approx": 2468148,
+    "priority_score": 92,
+    "why": "Houston TDU; pairing with solar buyback plans is complex for homeowners."
+  },
+  {
+    "slug": "dominion-energy-va",
+    "name": "Dominion Energy VA",
+    "state": "VA",
+    "customers_approx": 2381312,
+    "priority_score": 91,
+    "why": "Strong net metering market in the Mid-Atlantic."
+  },
+  {
+    "slug": "georgia-power",
+    "name": "Georgia Power",
+    "state": "GA",
+    "customers_approx": 2410042,
+    "priority_score": 90,
+    "why": "Strict interconnection limits; solar economically challenging without specific tariff programs."
+  },
+  {
+    "slug": "pseg",
+    "name": "PSE&G",
+    "state": "NJ",
+    "customers_approx": 2348053,
+    "priority_score": 95,
+    "why": "High electric rates; excellent NJ SuSI ADI program ($77/MWh)."
+  },
+  {
+    "slug": "dte-energy",
+    "name": "DTE Energy",
+    "state": "MI",
+    "customers_approx": 2142829,
+    "priority_score": 85,
+    "why": "Inflow/outflow billing mechanism replaced 1:1 net metering."
+  },
+  {
+    "slug": "duke-energy-carolinas",
+    "name": "Duke Energy Carolinas",
+    "state": "NC",
+    "customers_approx": 2800000,
+    "priority_score": 89,
+    "why": "Transitioned to net billing; upfront rebates available but capped."
+  },
+  {
+    "slug": "duke-energy-florida",
+    "name": "Duke Energy Florida",
+    "state": "FL",
+    "customers_approx": 1800000,
+    "priority_score": 88,
+    "why": "Major FL utility with robust net metering."
+  },
+  {
+    "slug": "national-grid-ny",
+    "name": "National Grid NY",
+    "state": "NY",
+    "customers_approx": 1600000,
+    "priority_score": 87,
+    "why": "Upstate NY; NY-Sun megawatt block incentives apply."
+  },
+  {
+    "slug": "alabama-power",
+    "name": "Alabama Power",
+    "state": "AL",
+    "customers_approx": 1546483,
+    "priority_score": 60,
+    "why": "High capacity charges make residential solar economically difficult."
+  },
+  {
+    "slug": "xcel-colorado",
+    "name": "Xcel Energy CO",
+    "state": "CO",
+    "customers_approx": 1500000,
+    "priority_score": 90,
+    "why": "Strong solar mandates; Solar*Rewards program offers REC buybacks."
+  },
+  {
+    "slug": "eversource-ma",
+    "name": "Eversource MA",
+    "state": "MA",
+    "customers_approx": 1400000,
+    "priority_score": 97,
+    "why": "SMART 3.0 program territory; high electricity costs."
+  },
+  {
+    "slug": "sdge",
+    "name": "SDG&E",
+    "state": "CA",
+    "customers_approx": 1400000,
+    "priority_score": 98,
+    "why": "Highest baseline per-kWh rates in the continental US; NEM 3.0 active."
+  },
+  {
+    "slug": "aps",
+    "name": "APS",
+    "state": "AZ",
+    "customers_approx": 1300000,
+    "priority_score": 92,
+    "why": "High solar penetration; fixed export rates (EPR-6) drop annually."
+  },
+  {
+    "slug": "national-grid-ma",
+    "name": "National Grid MA",
+    "state": "MA",
+    "customers_approx": 1300000,
+    "priority_score": 96,
+    "why": "SMART 3.0 territory; shares MA market with Eversource."
+  },
+  {
+    "slug": "ameren-illinois",
+    "name": "Ameren Illinois",
+    "state": "IL",
+    "customers_approx": 1224108,
+    "priority_score": 89,
+    "why": "Illinois Shines incentive block participant."
+  },
+  {
+    "slug": "jcpl",
+    "name": "JCP&L",
+    "state": "NJ",
+    "customers_approx": 1100000,
+    "priority_score": 93,
+    "why": "Central NJ footprint; SuSI ADI program eligible."
+  },
+  {
+    "slug": "puget-sound-energy",
+    "name": "Puget Sound Energy",
+    "state": "WA",
+    "customers_approx": 1100000,
+    "priority_score": 80,
+    "why": "Pacific Northwest market; low base electric rates impact ROI."
+  },
+  {
+    "slug": "duke-energy-ohio",
+    "name": "Duke Energy Ohio",
+    "state": "OH",
+    "customers_approx": 900000,
+    "priority_score": 82,
+    "why": "Ohio net metering rules apply; moderate electric rates."
+  },
+  {
+    "slug": "nv-energy",
+    "name": "NV Energy",
+    "state": "NV",
+    "customers_approx": 1300000,
+    "priority_score": 85,
+    "why": "Tiered net metering blocks; high desert solar irradiance."
+  },
+  {
+    "slug": "xcel-minnesota",
+    "name": "Xcel Energy MN",
+    "state": "MN",
+    "customers_approx": 1300000,
+    "priority_score": 86,
+    "why": "Solar*Rewards program participant; strong community solar market."
+  },
+  {
+    "slug": "peco",
+    "name": "PECO",
+    "state": "PA",
+    "customers_approx": 1600000,
+    "priority_score": 88,
+    "why": "1:1 retail credit mandated under PA Alternative Energy Portfolio Standards."
+  },
+  {
+    "slug": "ppl-electric",
+    "name": "PPL Electric",
+    "state": "PA",
+    "customers_approx": 1400000,
+    "priority_score": 87,
+    "why": "PA market; shares 1:1 net metering mandate."
+  },
+  {
+    "slug": "bge",
+    "name": "BGE",
+    "state": "MD",
+    "customers_approx": 1300000,
+    "priority_score": 89,
+    "why": "Maryland SREC market participant; strong clean energy goals."
+  },
+  {
+    "slug": "pepco-md",
+    "name": "Pepco MD",
+    "state": "MD",
+    "customers_approx": 890000,
+    "priority_score": 88,
+    "why": "DC suburbs; lucrative MD SREC market."
+  },
+  {
+    "slug": "dominion-energy-sc",
+    "name": "Dominion Energy SC",
+    "state": "SC",
+    "customers_approx": 780000,
+    "priority_score": 84,
+    "why": "Solar Choice program structures export compensation."
+  },
+  {
+    "slug": "duke-energy-progress",
+    "name": "Duke Energy Progress",
+    "state": "NC",
+    "customers_approx": 1700000,
+    "priority_score": 85,
+    "why": "Net billing transition identical to Duke Carolinas."
+  },
+  {
+    "slug": "portland-general-electric",
+    "name": "Portland General Electric",
+    "state": "OR",
+    "customers_approx": 900000,
+    "priority_score": 86,
+    "why": "Oregon net metering and state rebate ecosystem."
+  },
+  {
+    "slug": "pacific-power-or",
+    "name": "Pacific Power OR",
+    "state": "OR",
+    "customers_approx": 600000,
+    "priority_score": 84,
+    "why": "Secondary OR market; lower density than PGE."
+  },
+  {
+    "slug": "idaho-power",
+    "name": "Idaho Power",
+    "state": "ID",
+    "customers_approx": 600000,
+    "priority_score": 75,
+    "why": "Recent shifts in net metering compensation rates."
+  },
+  {
+    "slug": "rocky-mountain-power-ut",
+    "name": "Rocky Mountain Power UT",
+    "state": "UT",
+    "customers_approx": 900000,
+    "priority_score": 80,
+    "why": "Transitioned to export credit rate significantly below retail."
+  },
+  {
+    "slug": "pnm",
+    "name": "PNM",
+    "state": "NM",
+    "customers_approx": 540000,
+    "priority_score": 82,
+    "why": "High irradiance state; 1:1 net metering still active."
+  },
+  {
+    "slug": "heco",
+    "name": "Hawaiian Electric",
+    "state": "HI",
+    "customers_approx": 460000,
+    "priority_score": 99,
+    "why": "Highest US electricity rates; zero-export/smart export programs mandate batteries."
+  },
+  {
+    "slug": "ace",
+    "name": "Atlantic City Electric",
+    "state": "NJ",
+    "customers_approx": 560000,
+    "priority_score": 92,
+    "why": "South NJ market; eligible for SuSI ADI program."
+  },
+  {
+    "slug": "delmarva-power",
+    "name": "Delmarva Power",
+    "state": "DE",
+    "customers_approx": 330000,
+    "priority_score": 85,
+    "why": "Delaware net metering and SREC market."
+  },
+  {
+    "slug": "teco",
+    "name": "Tampa Electric",
+    "state": "FL",
+    "customers_approx": 800000,
+    "priority_score": 86,
+    "why": "Tampa Bay area; standard FL net metering applies."
+  },
+  {
+    "slug": "nyseg",
+    "name": "NYSEG",
+    "state": "NY",
+    "customers_approx": 900000,
+    "priority_score": 85,
+    "why": "Upstate NY; VDER Value Stack application."
+  },
+  {
+    "slug": "rge",
+    "name": "RG&E",
+    "state": "NY",
+    "customers_approx": 380000,
+    "priority_score": 83,
+    "why": "Rochester area; VDER Value Stack application."
+  },
+  {
+    "slug": "central-hudson",
+    "name": "Central Hudson",
+    "state": "NY",
+    "customers_approx": 300000,
+    "priority_score": 82,
+    "why": "Mid-Hudson valley; VDER Value Stack application."
+  },
+  {
+    "slug": "orange-rockland",
+    "name": "Orange & Rockland",
+    "state": "NY",
+    "customers_approx": 230000,
+    "priority_score": 81,
+    "why": "NY/NJ border; VDER Value Stack application."
+  },
+  {
+    "slug": "unitil-ma",
+    "name": "Unitil MA",
+    "state": "MA",
+    "customers_approx": 100000,
+    "priority_score": 85,
+    "why": "Small MA footprint but eligible for lucrative SMART 3.0."
+  },
+  {
+    "slug": "aep-texas",
+    "name": "AEP Texas",
+    "state": "TX",
+    "customers_approx": 1000000,
+    "priority_score": 86,
+    "why": "South/West TX TDU; requires retail electric provider pairing."
+  },
+  {
+    "slug": "tnmp",
+    "name": "TNMP",
+    "state": "TX",
+    "customers_approx": 260000,
+    "priority_score": 80,
+    "why": "Texas TDU; deregulated market dynamics apply."
+  },
+  {
+    "slug": "tep",
+    "name": "TEP",
+    "state": "AZ",
+    "customers_approx": 430000,
+    "priority_score": 85,
+    "why": "Tucson market; RCP (Resource Comparison Proxy) export rates."
+  },
+  {
+    "slug": "we-energies",
+    "name": "We Energies",
+    "state": "WI",
+    "customers_approx": 1100000,
+    "priority_score": 78,
+    "why": "Wisconsin market; net billing standard."
+  }
+]

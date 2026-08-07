@@ -1,0 +1,11 @@
+slug,page_type,primary_query,secondary_queries
+pge,utility,"PG&E solar interconnection","PG&E NEM 3.0 rules, PGE solar battery requirements 2026, PG&E solar PTO process"
+eversource-ma,utility,"Eversource MA solar net metering","Eversource MA SMART program, Eversource solar interconnection steps"
+oncor,utility,"Oncor solar buyback plans","Oncor solar interconnection, Texas TDSP solar rules"
+residential-clean-energy-credit,federal_incentive,"federal solar tax credit 2026","is the solar tax credit ending, 25D tax credit 2026 expiration, OBBBA solar impact"
+domestic-content-and-manufacturing,federal_incentive,"Made in USA solar tax credit homeowner","IRA domestic content residential solar myth"
+new-jersey,state_incentive,"NJ solar incentives 2026","NJ SREC-II rates, NJ SuSI ADI program, New Jersey solar tax exemption"
+massachusetts,state_incentive,"MA solar incentives 2026","SMART 3.0 program rates, Mass solar net metering 2026"
+tesla,manufacturer,"Tesla Powerwall 3 specs","Powerwall 3 vs Enphase 5p, Tesla Powerwall 3 inverter, Powerwall 3 warranty"
+enphase,manufacturer,"Enphase IQ 5P battery","Enphase 15 year battery warranty, Enphase microinverters vs string inverter"
+maxeon,manufacturer,"Maxeon solar panel warranty","Maxeon 7 specs, Maxeon vs Qcells, Maxeon 40 year warranty"

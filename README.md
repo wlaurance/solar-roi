@@ -82,7 +82,7 @@ Open [http://localhost:3000](http://localhost:3000), create an account, then **N
 
 ## ROI notes
 
-Prototype constants: base bill `$670`, HVAC `+$110`, water `+$40`, battery `$13,500` with **`$8,500` replacement at year 12**, ITC net `×0.7`, inflation `8%`. When Solar insights are cached, system kW = `panelsCount × panelCapacityWatts / 1000` and offset blends from `yearlyEnergyDcKwh`.
+Prototype constants: base bill `$670`, HVAC `+$110`, water `+$40`, battery `$13,500` with **`$8,500` replacement at year 12**, federal residential ITC `×1.0` (0% after Dec 31, 2025 / OBBBA), inflation `5%`. When Solar insights are cached, system kW = `panelsCount × panelCapacityWatts / 1000` and offset blends from `yearlyEnergyDcKwh`.
 
 ## Visual direction
 

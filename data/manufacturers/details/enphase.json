@@ -1,0 +1,68 @@
+{
+  "slug": "enphase",
+  "name": "Enphase",
+  "legal_name": "Enphase Energy, Inc.",
+  "categories": [
+    "microinverter",
+    "battery"
+  ],
+  "hq_country": "USA",
+  "us_manufacturing_notes": "Enphase has expanded U.S. manufacturing capacity for certain products — confirm current factory claims on official pages.",
+  "headline": "Enphase IQ Battery and Microinverters",
+  "summary": "Homeowners who prioritize modularity and per-panel optimization often prefer Enphase. Microinverters under each panel behave differently from a single string inverter plus DC optimizer design.",
+  "product_lines": [
+    {
+      "name": "IQ8 Series Microinverters",
+      "category": "microinverter",
+      "warranty_years_product": 25,
+      "warranty_years_performance": 25,
+      "notes": "Per-panel conversion; shading on one module impacts that module primarily."
+    },
+    {
+      "name": "IQ Battery 5P",
+      "category": "battery",
+      "warranty_years_product": 15,
+      "warranty_years_performance": 15,
+      "notes": "Modular ~5 kWh class AC-coupled battery; stack multiple units for larger backup. Confirm datasheet for cycle/retention guarantees."
+    }
+  ],
+  "typical_pairings": [
+    "REC",
+    "Silfab",
+    "Qcells"
+  ],
+  "questions_to_ask_installer": [
+    "How many battery modules are needed for whole-home vs essential loads?",
+    "Is the system controller / gateway included for backup transfer?"
+  ],
+  "red_flags": [
+    "Enphase battery quoted with an unrelated string inverter ecosystem without explaining communication/backup limitations."
+  ],
+  "sections": [
+    {
+      "heading": "Modular batteries vs one big box",
+      "body": "Enphase’s modular batteries trade a larger wall footprint for incremental capacity and a long warranty narrative. Compare apples-to-apples kWh, backup loads, and labor — not module count alone."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is one IQ battery smaller than a Powerwall?",
+      "answer": "Enphase uses smaller modules you stack. Three ~5 kWh units approximate one large ~15 kWh pack — quotes should show total kWh, not unit count only."
+    }
+  ],
+  "official_url": "https://enphase.com/",
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "Enphase storage",
+      "url": "https://enphase.com/",
+      "accessed": "2026-08-06"
+    }
+  ],
+  "researched_detail": true,
+  "cta": {
+    "primary": "Find local installers who quote Enphase equipment near your address",
+    "requires": "project_and_account",
+    "copy": "Create a free SolarFlow project for your home — we’ll use your roof model and location for a local search. Equipment pages don’t show national pricing as gospel."
+  }
+}

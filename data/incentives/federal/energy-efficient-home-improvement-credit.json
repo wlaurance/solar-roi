@@ -1,0 +1,49 @@
+{
+  "kind": "federal",
+  "slug": "energy-efficient-home-improvement-credit",
+  "title": "Energy Efficient Home Improvement Credit (IRC 25C)",
+  "headline": "The 25C Home Improvement Credit Also Ended for 2026 Property",
+  "summary": "Section 25C (windows, heat pumps, insulation, etc.) is a separate credit from solar’s 25D. Under OBBBA, 25C generally does not apply to property placed in service after December 31, 2025.",
+  "status": "expired",
+  "effective_dates": {
+    "start": null,
+    "end": "2025-12-31",
+    "notes": "Not allowed for property placed in service after Dec 31, 2025."
+  },
+  "percent_or_amount": "$0 for property placed in service after Dec 31, 2025.",
+  "eligible_tech": [
+    "heat_pump",
+    "insulation",
+    "windows",
+    "other_efficiency"
+  ],
+  "homeowner_eligibility_notes": "Do not confuse 25C (efficiency improvements) with 25D (clean energy). Both face 2025 cutoffs under OBBBA, with slightly different statutory wording.",
+  "claim_howto": "Prior-year rules used Form 5695. Confirm with a tax advisor for any carryover or 2025 installs.",
+  "official_urls": [
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+  ],
+  "sections": [
+    {
+      "heading": "Why this shows up in solar research",
+      "body": "Sales conversations sometimes mix heat-pump HVAC, insulation, and solar incentives. In 2026, assume neither 25C nor 25D applies to newly completed residential work unless your tax advisor documents an exception."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "If I add a heat pump with solar, do I get a federal credit?",
+      "answer": "Generally not for property placed in service after Dec 31, 2025 under current OBBBA FAQs. Confirm with a tax advisor."
+    }
+  ],
+  "common_myths": [
+    "Solar + heat pump still gets a federal efficiency rebate in 2026 (Usually false for new completes)."
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "IRS OBBB FAQs",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+      "accessed": "2026-08-07"
+    }
+  ],
+  "last_verified": "2026-08-07"
+}

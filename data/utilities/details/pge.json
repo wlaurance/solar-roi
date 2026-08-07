@@ -1,0 +1,105 @@
+{
+  "slug": "pge",
+  "name": "PG&E",
+  "full_name": "Pacific Gas and Electric Company",
+  "state": "CA",
+  "state_name": "California",
+  "region": "Northern and Central California",
+  "default_city": "San Francisco",
+  "ownership_type": "iou",
+  "eia_id_or_alias": "14328",
+  "residential_customers_approx": 5188308,
+  "illustrative_rate_usd_per_kwh": 0.38,
+  "rate_note": "Averaged across Tier 1 and Tier 2 Time-of-Use (E-TOU-C) rates; peaks can exceed $0.50/kWh in summer. Excludes fixed delivery charges.",
+  "rate_as_of": "2026-08",
+  "rate_sources": [
+    "https://www.pge.com/en/save-energy-and-money/"
+  ],
+  "export_compensation": {
+    "regime": "net_billing",
+    "summary": "PG&E operates under the Solar Billing Plan (NEM 3.0). Homeowners do not receive a 1:1 retail credit for solar exported to the grid. Instead, exported power is credited at an avoided cost rate, which averages $0.05 - $0.08/kWh during midday. To achieve a return on investment, homeowners must install a home battery to store excess solar during the day and discharge it during peak evening hours.",
+    "official_url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/"
+  },
+  "interconnection": {
+    "program_name": "Rule 21 Distributed Generation Interconnection",
+    "application_url": "https://yourprojects-pge.com",
+    "typical_size_notes": "Residential systems are typically under 30 kW. Systems exceeding 30 kW face significantly higher review scrutiny and potential transformer upgrade costs.",
+    "pto_notes": "Permission to Operate (PTO) takes an average of 15 to 45 days after the municipal electrical inspection is passed.",
+    "steps": [
+      {
+        "sort_order": 1,
+        "title": "Interconnection Application (Pre-Install)",
+        "body": "Your installer submits a site plan, single-line electrical diagram, and equipment specifications (verifying active UL 1741 and IEEE 1547 compliance) to the PG&E portal before physical installation begins. PG&E runs a hosting capacity screen to ensure the local transformer can handle the load.",
+        "link_url": null,
+        "link_label": null
+      },
+      {
+        "sort_order": 2,
+        "title": "Local AHJ Permitting & Construction",
+        "body": "Once PG&E approves the engineering review, the local city or county building department issues a permit. The physical solar and battery installation occurs, usually taking 1 to 3 days.",
+        "link_url": null,
+        "link_label": null
+      },
+      {
+        "sort_order": 3,
+        "title": "Municipal Electrical Inspection",
+        "body": "A local building inspector visits your home to verify the system meets NEC Article 690 codes and rapid-shutdown safety requirements. Passing this inspection is required before the utility will grant PTO.",
+        "link_url": null,
+        "link_label": null
+      },
+      {
+        "sort_order": 4,
+        "title": "Permission to Operate (PTO)",
+        "body": "Your installer forwards the signed municipal job card to PG&E. PG&E reviews the documentation, reprograms your smart meter for bidirectional data, and issues an official PTO letter. Only then can you legally energize the system.",
+        "link_url": null,
+        "link_label": null
+      }
+    ]
+  },
+  "local_permitting_notes": "California's SolarAPP+ streamlines the local AHJ permit step for PG&E customers in participating municipalities, reducing initial permit approval times. Under the California Solar Rights Act, HOAs cannot legally ban solar installations, though they can dictate reasonable aesthetic placement.",
+  "related_permit_jurisdiction_slugs": [
+    "contra-costa",
+    "walnut-creek"
+  ],
+  "headline": "Is solar worth it with PG&E in 2026?",
+  "summary": "Homeowners who installed solar with PG&E years ago brag about 1:1 net metering, but today's shoppers face the Solar Billing Plan (NEM 3.0). Because PG&E pays pennies for exported power — and the federal 25D credit no longer applies to 2026 cash/loan installs — solar math usually requires a battery for self-consumption and peak avoidance.",
+  "sections": [
+    {
+      "heading": "Why PG&E bills trigger solar research",
+      "body": "PG&E possesses some of the highest and most volatile electricity rates in the United States, with average residential rates hovering near $0.38/kWh and peak summer rates frequently crossing $0.50/kWh. Homeowners usually seek out solar after unexpected seasonal bill spikes. With the expiration of the 30% federal tax credit for cash purchases in 2026, the economics rely entirely on avoiding PG&E's retail rates through self-consumption. Sizing a system simply to match 100% of usage with panels alone no longer works; systems must be sized alongside a battery to load-shift away from the 4 PM to 9 PM time-of-use window."
+    },
+    {
+      "heading": "SGIP Battery Rebates in 2026",
+      "body": "PG&E customers may be eligible for the state-mandated Self-Generation Incentive Program (SGIP). While general market funds are largely exhausted, the 2026 program prioritizes low-income households, Medical Baseline customers, and homes in Tier 2/3 High Fire-Threat Districts that experience Public Safety Power Shutoffs (PSPS). Eligible Equity Resiliency customers can receive substantial per-kWh battery incentives — confirm current funding before signing."
+    },
+    {
+      "heading": "What happens after you say yes",
+      "body": "Local building permits and PG&E Rule 21 interconnection are separate gates. Passing a city electrical inspection does not grant Permission to Operate. Expect PTO roughly 15–45 days after inspection paperwork reaches PG&E."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I still get NEM 2.0 with PG&E?",
+      "answer": "No. The deadline to be grandfathered into NEM 2.0 passed in April 2023. All new solar applications submitted to PG&E fall under the current Solar Billing Plan (NEM 3.0)."
+    },
+    {
+      "question": "Does the 30% federal solar tax credit still apply?",
+      "answer": "For homeowner-owned systems placed in service after December 31, 2025, Section 25D is generally unavailable. Confirm with a tax advisor. Some lease/PPA structures may still reflect commercial credits."
+    }
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "California Grid Modernization / CPUC electrical energy topics",
+      "url": "https://www.cpuc.ca.gov/",
+      "accessed": "2026-08-06"
+    },
+    {
+      "title": "Self-Generation Incentive Program",
+      "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/self-generation-incentive-program.html",
+      "accessed": "2026-08-06"
+    }
+  ],
+  "open_questions": [],
+  "researched_detail": true
+}

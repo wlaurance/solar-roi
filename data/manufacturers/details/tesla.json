@@ -1,0 +1,61 @@
+{
+  "slug": "tesla",
+  "name": "Tesla",
+  "legal_name": "Tesla, Inc.",
+  "categories": [
+    "battery",
+    "hybrid_inverter"
+  ],
+  "hq_country": "USA",
+  "us_manufacturing_notes": "Powerwalls are assembled in Sparks, Nevada, utilizing global supply chains.",
+  "headline": "Tesla Powerwall 3: Integrated Inverter and High Output",
+  "summary": "Homeowners comparing quotes will find the Powerwall 3 fundamentally different from AC-coupled batteries. It features a built-in solar inverter, simplifying many new installs and changing how quotes should itemize hardware.",
+  "product_lines": [
+    {
+      "name": "Powerwall 3",
+      "category": "battery",
+      "warranty_years_product": 10,
+      "warranty_years_performance": 10,
+      "notes": "~13.5 kWh usable class; high continuous output designed for heavy loads. Confirm latest Tesla datasheet for your configuration."
+    }
+  ],
+  "typical_pairings": [
+    "Qcells",
+    "REC",
+    "Maxeon"
+  ],
+  "questions_to_ask_installer": [
+    "Is my electrical panel compatible without a main panel upgrade?",
+    "Are you a Tesla Certified Installer for warranty activation?"
+  ],
+  "red_flags": [
+    "Quoted Powerwall 3 alongside a separate SolarEdge/Enphase solar inverter on a new DC-coupled design without a clear retrofit reason."
+  ],
+  "sections": [
+    {
+      "heading": "Why Powerwall 3 changes solar quotes in 2026",
+      "body": "The Powerwall 3 integrates solar inverter capability so many new systems wire panels into the battery unit rather than a separate string inverter. That can simplify installs — and it can also create waste if a quote double-counts inverter hardware. For retrofits with existing inverters, AC-coupled batteries may still fit better."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I run my air conditioner during an outage with a Powerwall 3?",
+      "answer": "Many homes can with sufficient continuous and surge capacity — verify your HVAC starting current against Tesla’s latest published specs and your installer’s load calculation."
+    }
+  ],
+  "official_url": "https://www.tesla.com/powerwall",
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "Tesla Powerwall 3 product page",
+      "url": "https://www.tesla.com/powerwall",
+      "accessed": "2026-08-06"
+    }
+  ],
+  "researched_detail": true,
+  "cta": {
+    "primary": "Find local installers who quote Tesla Powerwall 3 near your address",
+    "requires": "project_and_account",
+    "copy": "Create a free SolarFlow project for your home — we’ll use your roof model and location for a local search. Equipment pages don’t show national pricing as gospel."
+  }
+}

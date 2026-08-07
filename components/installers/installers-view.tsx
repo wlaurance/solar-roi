@@ -12,28 +12,48 @@ function projectFullAddress(project: Project) {
     .join(", ");
 }
 
-export function InstallersView({ project }: { project: Project }) {
+export function InstallersView({
+  project,
+  brandSlug,
+}: {
+  project: Project;
+  brandSlug?: string | null;
+}) {
   const [installers, setInstallers] = useState<InstallerPlace[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fullAddress = useMemo(() => projectFullAddress(project), [project]);
+  const searchQuery = brandSlug
+    ? `${brandSlug.replaceAll("-", " ")} solar installer`
+    : "solar installer";
 
   useEffect(() => {
-    if (!fullAddress) {
-      setError("Project is missing an address.");
-      setLoading(false);
-      return;
-    }
     let cancelled = false;
+
+    if (!fullAddress) {
+      queueMicrotask(() => {
+        if (!cancelled) {
+          setError("Project is missing an address.");
+          setLoading(false);
+        }
+      });
+      return () => {
+        cancelled = true;
+      };
+    }
+
     (async () => {
       setLoading(true);
       setError(null);
-      track("installers_search_started", { project_id: project.id });
+      track("installers_search_started", {
+        project_id: project.id,
+        brand: brandSlug ?? null,
+      });
       try {
         const params = new URLSearchParams({
           address: fullAddress,
-          q: "solar installer",
+          q: searchQuery,
         });
         if (project.lat != null && project.lng != null) {
           params.set("lat", String(project.lat));
@@ -50,6 +70,7 @@ export function InstallersView({ project }: { project: Project }) {
           track("installers_search_completed", {
             project_id: project.id,
             count: list.length,
+            brand: brandSlug ?? null,
           });
         }
       } catch (err) {
@@ -71,7 +92,7 @@ export function InstallersView({ project }: { project: Project }) {
     return () => {
       cancelled = true;
     };
-  }, [fullAddress, project.id, project.lat, project.lng]);
+  }, [fullAddress, project.id, project.lat, project.lng, searchQuery, brandSlug]);
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -81,7 +102,20 @@ export function InstallersView({ project }: { project: Project }) {
         </p>
         <h1 className="font-display mt-1 text-4xl text-ink">Find installers</h1>
         <p className="mt-2 text-sm text-ink-muted">
-          Searching Google Places for solar installers near your project address:
+          Searching Google Places near your project address
+          {brandSlug ? (
+            <>
+              {" "}
+              for{" "}
+              <span className="font-medium text-ink">
+                {brandSlug.replaceAll("-", " ")}
+              </span>
+              -related solar installers
+            </>
+          ) : (
+            " for solar installers"
+          )}
+          :
         </p>
         <p className="mt-1 text-sm font-medium text-ink">{fullAddress || "—"}</p>
       </div>

@@ -10,8 +10,9 @@ export default function HomePage() {
         </div>
         <p className="font-display text-5xl tracking-tight text-ink">SolarFlow</p>
         <p className="mt-4 text-base text-ink-muted">
-          Model solar ROI, inspect Google Solar roof layouts, follow county permits,
-          and find nearby installers — for every project in your portfolio.
+          Model solar ROI without outdated federal rebate assumptions — roof
+          layout, permits, utilities, equipment, and nearby installers for every
+          project in your portfolio.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link href="/login" className="btn-primary">
@@ -23,13 +24,19 @@ export default function HomePage() {
         </div>
         <nav className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-canopy">
           <Link href="/solar-for" className="hover:underline">
-            By utility bill
+            Utilities
           </Link>
-          <Link href="/solar-in" className="hover:underline">
-            By city & county
+          <Link href="/incentives" className="hover:underline">
+            Incentives
+          </Link>
+          <Link href="/equipment" className="hover:underline">
+            Equipment
           </Link>
           <Link href="/solar-permits" className="hover:underline">
             Permits
+          </Link>
+          <Link href="/solar-in" className="hover:underline">
+            Cities
           </Link>
           <Link href="/tools/quote-check" className="hover:underline">
             Quote check

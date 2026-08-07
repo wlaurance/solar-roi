@@ -80,7 +80,7 @@ export function decodeSolarQuote(input: QuoteDecodeInput): QuoteDecodeResult {
 
   const notes: string[] = [
     `SolarFlow planning cost uses $${COST_PER_KW.toLocaleString("en-US")}/kW ($${benchmarkDollarsPerWatt.toFixed(2)}/W) before incentives for the PV portion.`,
-    `Federal ITC in the model applies a ×${ITC_NET_FACTOR} net factor (~${Math.round((1 - ITC_NET_FACTOR) * 100)}% credit) — confirm eligibility with a tax advisor.`,
+    `Federal residential ITC (25D) in this 2026 planning model is ${Math.round((1 - ITC_NET_FACTOR) * 100)}% (×${ITC_NET_FACTOR}) — confirm eligibility with a tax advisor.`,
   ];
 
   if (input.includesBattery) {

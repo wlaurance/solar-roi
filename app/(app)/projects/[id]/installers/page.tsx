@@ -5,10 +5,13 @@ import { InstallersView } from "@/components/installers/installers-view";
 
 export default async function InstallersPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ brand?: string }>;
 }) {
   const { id } = await params;
+  const { brand } = await searchParams;
   const supabase = await createClient();
   const {
     data: { user },
@@ -23,5 +26,10 @@ export default async function InstallersPage({
 
   if (!project) notFound();
 
-  return <InstallersView project={project as Project} />;
+  return (
+    <InstallersView
+      project={project as Project}
+      brandSlug={brand?.trim() || null}
+    />
+  );
 }

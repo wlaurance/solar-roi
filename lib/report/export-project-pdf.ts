@@ -191,7 +191,7 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
 
   y = sectionTitle(doc, "ROI snapshot", y);
   kv(doc, "System size", `${result.systemKw} kW`, 14, y);
-  kv(doc, "Net cost (after ITC)", money(result.netCost), 70, y);
+  kv(doc, "Net cost (planning)", money(result.netCost), 70, y);
   kv(
     doc,
     "Break-even",
@@ -225,7 +225,7 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
         ? " · size/energy from Google Solar roof config"
         : " · fallback system size until Roof Designer is set"
     }.`,
-    `ITC illustration: ×${ITC_NET_FACTOR} net factor (~${Math.round((1 - ITC_NET_FACTOR) * 100)}% credit) — not tax advice.`,
+    `Federal residential ITC (25D): ${Math.round((1 - ITC_NET_FACTOR) * 100)}% in this 2026 planning model (×${ITC_NET_FACTOR}) — expenditures after Dec 31, 2025 generally do not qualify; not tax advice.`,
     `Energy inflation: ${result.energyInflationPct}% / year · blended rate $${result.rateUsdPerKwh.toFixed(2)}/kWh.`,
   ];
   if (toggles.battery) {

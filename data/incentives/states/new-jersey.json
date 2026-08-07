@@ -1,0 +1,63 @@
+{
+  "kind": "state",
+  "slug": "new-jersey",
+  "state": "NJ",
+  "state_name": "New Jersey",
+  "headline": "Solar incentives in New Jersey in 2026",
+  "summary": "Homeowners who assume solar is dead without the federal tax credit haven't looked at New Jersey's state programs. NJ still combines strong production incentives, sales/property tax treatment, and (for now) full retail net metering on IOUs — confirm current BPU rates.",
+  "net_metering_or_billing_overview": "New Jersey has historically mandated full 1:1 retail-rate net metering for residential solar on investor-owned utilities. Always confirm the current BPU rule and your utility’s interconnection package.",
+  "programs": [
+    {
+      "name": "Successor Solar Incentive (SuSI) ADI Program",
+      "status": "active",
+      "summary": "The ADI program replaced the volatile SREC market with a fixed multi-year payment for energy produced. Research notes a residential rate of $77.00 per MWh ($0.077/kWh) for registrations on or after July 27, 2026 — verify on the official NJ Clean Energy page before modeling.",
+      "tech": [
+        "pv"
+      ],
+      "official_url": "https://cleanenergy.nj.gov/programs/solar/administratively-determined-incentive-adi-program",
+      "dollar_amounts": "Research cited $77.00/MWh fixed for 15 years for late-2026 registrations — confirm official tracker.",
+      "stacking_notes": "Often stacks with net metering and NJ sales tax exemption."
+    },
+    {
+      "name": "Solar Equipment Sales Tax Exemption",
+      "status": "active",
+      "summary": "Solar energy systems and related equipment are generally exempt from New Jersey state sales and use tax when qualifying — confirm with your installer invoice.",
+      "tech": [
+        "pv",
+        "battery"
+      ],
+      "official_url": "https://dep.nj.gov/cleanenergy/technologies/solar/",
+      "dollar_amounts": "State sales tax avoided at point of sale when exemption applies.",
+      "stacking_notes": "Applied at purchase when eligible."
+    }
+  ],
+  "property_tax_sales_tax_notes": "New Jersey generally excludes qualifying solar from property tax assessment increases — confirm current statute with local assessor.",
+  "hoa_solar_access_law": "New Jersey limits HOA powers to ban solar; aesthetic restrictions may still apply. Read current statute before fighting an architectural board.",
+  "sections": [
+    {
+      "heading": "Understanding SuSI ADI value in 2026",
+      "body": "Under SuSI ADI (often called SREC-II by installers), the state framework pays for generating clean electricity. Rates are administratively set and can change by registration date. Ask whether your installer will assign/sell the incentive stream upfront or leave quarterly payments with you."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I have to sell my SRECs myself?",
+      "answer": "Under SuSI ADI, installers or aggregators usually handle registration. Ask who owns the incentive stream if they offer an upfront buyout."
+    }
+  ],
+  "related_utility_slugs": [
+    "pseg",
+    "jcpl",
+    "ace"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "NJ Clean Energy — ADI program",
+      "url": "https://cleanenergy.nj.gov/programs/solar/administratively-determined-incentive-adi-program",
+      "accessed": "2026-08-06"
+    }
+  ],
+  "last_verified": "2026-08-06",
+  "researched_detail": true
+}

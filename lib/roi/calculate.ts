@@ -67,7 +67,15 @@ export const COST_PER_KW = 3100;
 export const BATTERY_COST = 13500;
 export const BATTERY_REPLACEMENT_YEAR = 12;
 export const BATTERY_REPLACEMENT_COST = 8500;
-export const ITC_NET_FACTOR = 0.7;
+/**
+ * Federal Residential Clean Energy Credit (IRC 25D) generally does not apply to
+ * expenditures made after Dec 31, 2025 (OBBBA / P.L. 119-21). Planning model
+ * uses 0% federal residential ITC for homeowner-owned systems in 2026+.
+ * @see https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb
+ */
+export const FEDERAL_RESIDENTIAL_ITC_PERCENT = 0;
+/** Multiply gross cost by this for modeled net cost (1.0 = no federal residential ITC). */
+export const ITC_NET_FACTOR = 1 - FEDERAL_RESIDENTIAL_ITC_PERCENT / 100;
 /** Default annual energy cost inflation: 5%/yr */
 export const DEFAULT_ENERGY_INFLATION_PCT = 5;
 export const HORIZON_YEARS = 25;

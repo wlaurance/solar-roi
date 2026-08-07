@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { listPermitGuides } from "@/lib/permits/catalog";
+import { listUtilityIndex } from "@/lib/utilities/catalog";
 
 export const metadata: Metadata = {
   title: "Solar permit & interconnection guides | SolarFlow",
   description:
-    "What happens after you say yes to solar — local building permits, fire setbacks, and utility interconnection steps before Permission to Operate.",
+    "What happens after you say yes to solar — local building permits and utility interconnection / PTO steps before you energize.",
 };
 
 export const dynamic = "force-dynamic";
 
 export default async function SolarPermitsIndexPage() {
   const guides = await listPermitGuides();
+  const utilities = listUtilityIndex()
+    .slice()
+    .sort((a, b) => b.priority_score - a.priority_score)
+    .slice(0, 24);
 
   return (
     <main className="flex-1">
@@ -27,33 +32,64 @@ export default async function SolarPermitsIndexPage() {
         </h1>
         <p className="mt-4 max-w-2xl text-ink-muted">
           Deals often die after a great quote — when HOA reviews, fire setbacks,
-          or utility timelines show up late. Read the typical steps for your area
-          before you commit emotionally.
+          or utility PTO timelines show up late. Passing a municipal inspection
+          is not the same as Permission to Operate.
         </p>
 
-        <ul className="mt-10 space-y-3">
-          {guides.map((g) => (
-            <li key={g.slug}>
-              <Link
-                href={`/solar-permits/${g.slug}`}
-                className="group flex flex-wrap items-baseline justify-between gap-2 border-b border-stone-2/80 py-3"
-              >
-                <span className="font-display text-xl text-ink group-hover:text-canopy">
-                  {g.name}
-                </span>
-                <span className="text-xs text-ink-muted">
-                  {g.region} · {g.steps.length} steps
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <section className="mt-12">
+          <h2 className="font-display text-2xl text-ink">
+            Local AHJ / seeded guides
+          </h2>
+          <ul className="mt-4 space-y-3">
+            {guides.map((g) => (
+              <li key={g.slug}>
+                <Link
+                  href={`/solar-permits/${g.slug}`}
+                  className="group flex flex-wrap items-baseline justify-between gap-2 border-b border-stone-2/80 py-3"
+                >
+                  <span className="font-display text-xl text-ink group-hover:text-canopy">
+                    {g.name}
+                  </span>
+                  <span className="text-xs text-ink-muted">
+                    {g.region} · {g.steps.length} steps
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-12">
+          <h2 className="font-display text-2xl text-ink">
+            Utility interconnection (IOUs)
+          </h2>
+          <p className="mt-2 text-sm text-ink-muted">
+            Full interconnect + PTO steps live on each utility guide.
+          </p>
+          <ul className="mt-4 columns-1 gap-x-8 sm:columns-2">
+            {utilities.map((u) => (
+              <li key={u.slug} className="mb-2 break-inside-avoid">
+                <Link
+                  href={`/solar-for/${u.slug}#interconnection`}
+                  className="text-sm text-canopy hover:underline"
+                >
+                  {u.name} ({u.state}) interconnect
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-ink-muted">
+            <Link href="/solar-for" className="underline">
+              Browse all utility guides
+            </Link>
+          </p>
+        </section>
 
         <p className="mt-10 text-sm text-ink-muted">
           Need address-level permit lookup after signup? Create a project and open
-          the Permits tab — it builds a checklist for your county.{" "}
-          <Link href="/solar-for" className="text-canopy hover:underline">
-            Utility bill guides
+          the Permits tab.{" "}
+          <Link href="/incentives" className="text-canopy hover:underline">
+            Incentives
           </Link>
           {" · "}
           <Link href="/solar-in" className="text-canopy hover:underline">

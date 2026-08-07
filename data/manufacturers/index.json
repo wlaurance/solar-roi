@@ -1,0 +1,149 @@
+[
+  {
+    "slug": "maxeon",
+    "name": "Maxeon",
+    "category": "module",
+    "priority": 100,
+    "blurb": "Premium panels offering an industry-leading 40-year warranty and IBC technology."
+  },
+  {
+    "slug": "rec",
+    "name": "REC",
+    "category": "module",
+    "priority": 99,
+    "blurb": "Top-tier reliability with the 25-year ProTrust warranty covering product, performance, and labor."
+  },
+  {
+    "slug": "qcells",
+    "name": "Qcells",
+    "category": "module",
+    "priority": 98,
+    "blurb": "Massively popular mid-range panel manufactured in Georgia, USA."
+  },
+  {
+    "slug": "silfab",
+    "name": "Silfab",
+    "category": "module",
+    "priority": 95,
+    "blurb": "North American manufacturing with a strong 30-year performance guarantee."
+  },
+  {
+    "slug": "canadian-solar",
+    "name": "Canadian Solar",
+    "category": "module",
+    "priority": 90,
+    "blurb": "Value-oriented Tier 1 manufacturer with strong financial backing."
+  },
+  {
+    "slug": "jinkosolar",
+    "name": "JinkoSolar",
+    "category": "module",
+    "priority": 90,
+    "blurb": "Global leader pushing N-Type technology with 30-year performance warranties."
+  },
+  {
+    "slug": "trina-solar",
+    "name": "Trina Solar",
+    "category": "module",
+    "priority": 85,
+    "blurb": "High-efficiency value panels for broad residential application."
+  },
+  {
+    "slug": "mission-solar",
+    "name": "Mission Solar",
+    "category": "module",
+    "priority": 80,
+    "blurb": "US-based manufacturer focusing on standard-wattage residential solutions."
+  },
+  {
+    "slug": "panasonic",
+    "name": "Panasonic",
+    "category": "module",
+    "priority": 75,
+    "blurb": "Legacy premium brand with strong warranty backing."
+  },
+  {
+    "slug": "seg-solar",
+    "name": "SEG Solar",
+    "category": "module",
+    "priority": 70,
+    "blurb": "Emerging manufacturer offering 30-year performance guarantees."
+  },
+  {
+    "slug": "meyer-burger",
+    "name": "Meyer Burger",
+    "category": "module",
+    "priority": 75,
+    "blurb": "European-engineered premium modules with exceptional degradation rates."
+  },
+  {
+    "slug": "tesla",
+    "name": "Tesla",
+    "category": "battery",
+    "priority": 100,
+    "blurb": "Powerwall 3 features integrated hybrid inverter and high continuous output."
+  },
+  {
+    "slug": "enphase",
+    "name": "Enphase",
+    "category": "battery",
+    "priority": 99,
+    "blurb": "IQ Battery 5P offers modular capacity with a long warranty; microinverter ecosystem."
+  },
+  {
+    "slug": "franklinwh",
+    "name": "FranklinWH",
+    "category": "battery",
+    "priority": 95,
+    "blurb": "aPower system provides robust whole-home backup integration."
+  },
+  {
+    "slug": "generac",
+    "name": "Generac",
+    "category": "battery",
+    "priority": 90,
+    "blurb": "PWRcell integrates into Generac's backup ecosystem."
+  },
+  {
+    "slug": "lg-energy-solution",
+    "name": "LG Energy Solution",
+    "category": "battery",
+    "priority": 85,
+    "blurb": "RESU line offers compact residential storage."
+  },
+  {
+    "slug": "solaredge",
+    "name": "SolarEdge",
+    "category": "inverter",
+    "priority": 98,
+    "blurb": "DC-optimized inverter architecture maximizing roof space efficiency."
+  },
+  {
+    "slug": "eg4",
+    "name": "EG4",
+    "category": "inverter",
+    "priority": 80,
+    "blurb": "Hybrid inverters popular in DIY and value-installer channels."
+  },
+  {
+    "slug": "sol-ark",
+    "name": "Sol-Ark",
+    "category": "inverter",
+    "priority": 85,
+    "blurb": "Heavy-duty hybrid inverters for large backup setups."
+  },
+  {
+    "slug": "sma",
+    "name": "SMA",
+    "category": "inverter",
+    "priority": 80,
+    "blurb": "Legacy string inverter manufacturer known for reliability."
+  },
+  {
+    "slug": "fronius",
+    "name": "Fronius",
+    "category": "inverter",
+    "priority": 75,
+    "blurb": "European string inverter known for active cooling and durability."
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "slug": "bge",
+  "name": "BGE",
+  "full_name": "BGE",
+  "state": "MD",
+  "state_name": "Maryland",
+  "region": "Maryland",
+  "default_city": "",
+  "ownership_type": "iou",
+  "eia_id_or_alias": null,
+  "residential_customers_approx": 1300000,
+  "illustrative_rate_usd_per_kwh": 0.16,
+  "rate_note": "Illustrative residential blend for BGE territory — verify with your bill and rate schedule.",
+  "rate_as_of": "2026-08",
+  "rate_sources": [],
+  "export_compensation": {
+    "regime": "unclear",
+    "summary": "Maryland SREC market participant; strong clean energy goals.",
+    "official_url": null
+  },
+  "interconnection": {
+    "program_name": "Distributed generation interconnection",
+    "application_url": null,
+    "typical_size_notes": "Residential rooftop systems are typically under 25–30 kW. Confirm thresholds with the utility.",
+    "pto_notes": "Permission to Operate usually follows municipal final inspection and utility review. Do not export until PTO is granted.",
+    "steps": [
+      {
+        "sort_order": 1,
+        "title": "Interconnection application",
+        "body": "Your installer submits equipment specs and a one-line diagram to BGE for hosting-capacity / engineering review before or during construction.",
+        "link_url": null,
+        "link_label": null
+      },
+      {
+        "sort_order": 2,
+        "title": "Local AHJ permitting & construction",
+        "body": "City/county building and electrical permits are separate from utility approval. Permit timelines vary by municipality (often 2–8 weeks).",
+        "link_url": null,
+        "link_label": null
+      },
+      {
+        "sort_order": 3,
+        "title": "Municipal electrical inspection",
+        "body": "A local inspector verifies NEC / rapid-shutdown compliance. Passing this inspection is required before utility PTO.",
+        "link_url": null,
+        "link_label": null
+      },
+      {
+        "sort_order": 4,
+        "title": "Permission to Operate (PTO)",
+        "body": "BGE reviews documentation, configures metering, and issues PTO. Only then can you legally energize export.",
+        "link_url": null,
+        "link_label": null
+      }
+    ]
+  },
+  "local_permitting_notes": "Local AHJ timelines vary widely (SolarAPP+ in some CA cities vs multi-week manual review elsewhere). Confirm with your city/county before signing.",
+  "related_permit_jurisdiction_slugs": [],
+  "headline": "Is solar worth it with BGE in 2026?",
+  "summary": "Maryland SREC market participant; strong clean energy goals. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+  "sections": [
+    {
+      "heading": "Why BGE customers research solar",
+      "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+    },
+    {
+      "heading": "Export compensation & interconnection",
+      "body": "Maryland SREC market participant; strong clean energy goals. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+    },
+    {
+      "heading": "What to do before a sales appointment",
+      "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does the federal solar tax credit still apply for BGE customers in 2026?",
+      "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+    },
+    {
+      "question": "How do I evaluate a solar quote in BGE territory?",
+      "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+    }
+  ],
+  "confidence": "medium",
+  "sources": [],
+  "open_questions": [
+    "Confirm official interconnection portal URL and 2026 tariff details from utility primary sources."
+  ],
+  "researched_detail": false
+}

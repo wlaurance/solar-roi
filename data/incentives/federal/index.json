@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "residential-clean-energy-credit",
+    "name": "Residential Clean Energy Credit (Section 25D)",
+    "status": "expired",
+    "priority": "high"
+  },
+  {
+    "slug": "energy-efficient-home-improvement-credit",
+    "name": "Energy Efficient Home Improvement Credit (Section 25C)",
+    "status": "expired",
+    "priority": "medium"
+  },
+  {
+    "slug": "domestic-content-and-manufacturing",
+    "name": "Domestic Content & Manufacturing Myths",
+    "status": "active",
+    "priority": "high"
+  }
+]

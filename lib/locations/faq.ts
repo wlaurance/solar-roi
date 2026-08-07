@@ -16,7 +16,7 @@ export function mixLocationFaqs(
   const stock: LocationFaq[] = [
     {
       question: `Is solar worth it in ${short}?`,
-      answer: `Most homeowners in ${place} see value when their roof gets decent sun, their utility rates are rising, and they can use federal tax credits plus any local incentives. SolarFlow models payback for your exact address using Google Solar roof data — not county averages.`,
+      answer: `Most homeowners in ${place} see value when their roof gets decent sun and utility rates (or export rules) support self-consumption — especially now that the federal residential clean energy credit (25D) generally does not apply to systems completed after Dec 31, 2025. SolarFlow models payback for your exact address using Google Solar roof data — not county averages.`,
     },
     {
       question: `How much does a residential solar system cost in ${short}?`,

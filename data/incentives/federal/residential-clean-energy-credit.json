@@ -1,0 +1,57 @@
+{
+  "kind": "federal",
+  "slug": "residential-clean-energy-credit",
+  "title": "Residential Clean Energy Credit (IRC 25D)",
+  "headline": "The 30% Federal Solar Tax Credit Ended for 2026 Purchases",
+  "summary": "Homeowners who researched solar in the past expect a 30% tax rebate to offset their purchase. Under Public Law 119-21 (OBBBA), Section 25D generally does not apply to expenditures made after December 31, 2025.",
+  "status": "expired",
+  "effective_dates": {
+    "start": "2022-01-01",
+    "end": "2025-12-31",
+    "notes": "Terminated for expenditures made after Dec 31, 2025 (installation completion date typically controls)."
+  },
+  "percent_or_amount": "0% for qualifying homeowner expenditures made after Dec 31, 2025.",
+  "eligible_tech": [
+    "pv",
+    "battery",
+    "geothermal"
+  ],
+  "homeowner_eligibility_notes": "If you buy your own system with cash or a loan and installation is completed after December 31, 2025, you generally cannot claim the federal residential credit. The date installation is completed (placed-in-service timing under IRS rules) matters more than the contract date.",
+  "claim_howto": "Not applicable for most 2026 installs. Prior-year eligible claims used IRS Form 5695. Carryforward rules for unused prior credits may still apply — consult a tax advisor. SolarFlow is not a tax advisor.",
+  "official_urls": [
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+  ],
+  "sections": [
+    {
+      "heading": "Why did the federal solar tax credit end?",
+      "body": "Under the One Big Beautiful Bill Act (OBBBA / Public Law 119-21), signed July 4, 2025, the Residential Clean Energy Credit (Section 25D) was terminated for expenditures made after December 31, 2025. The prior multi-year phase-down schedule does not apply to post-2025 expenditures. Confirm details on IRS FAQs for OBBB."
+    },
+    {
+      "heading": "How solar leasing is pitched in 2026",
+      "body": "While residential 25D is gone for new homeowner purchases, commercial investment credit pathways (e.g., Section 48E for third-party-owned systems) may still appear in lease/PPA pricing — subject to their own deadlines and safe-harbor rules. Cash buyers should not assume a 30% federal rebate. Get ownership structure and credit assumptions in writing."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I claim the solar tax credit if I sign a contract in 2026?",
+      "answer": "Generally no for a homeowner-owned cash or loan purchase if installation completes after Dec 31, 2025. Contract date alone does not save the credit. Confirm with a tax advisor."
+    },
+    {
+      "question": "Does SolarFlow still apply a 30% ITC to ROI?",
+      "answer": "No. SolarFlow’s 2026 planning model treats federal residential ITC as 0% for homeowner-owned systems unless you explicitly model otherwise with an advisor."
+    }
+  ],
+  "common_myths": [
+    "The credit steps down to 26% later this decade (False for typical 2026 residential purchases — 25D terminated for post-2025 expenditures).",
+    "Signing a contract in 2025 guarantees the credit even if install finishes in 2026 (Generally false — installation completion timing controls)."
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "IRS FAQs — OBBB modifications to 25C/25D and related credits",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+      "accessed": "2026-08-07"
+    }
+  ],
+  "last_verified": "2026-08-07"
+}

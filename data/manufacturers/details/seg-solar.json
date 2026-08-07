@@ -1,0 +1,50 @@
+{
+  "slug": "seg-solar",
+  "name": "SEG Solar",
+  "legal_name": "SEG Solar",
+  "categories": [
+    "module"
+  ],
+  "hq_country": "",
+  "us_manufacturing_notes": "",
+  "headline": "SEG Solar solar equipment for homeowners",
+  "summary": "Emerging manufacturer offering 30-year performance guarantees. Compare warranties and architecture on your quote — then find local installers via a SolarFlow project for your address.",
+  "product_lines": [
+    {
+      "name": "SEG Solar",
+      "category": "module",
+      "warranty_years_product": null,
+      "warranty_years_performance": null,
+      "notes": "Emerging manufacturer offering 30-year performance guarantees."
+    }
+  ],
+  "typical_pairings": [],
+  "questions_to_ask_installer": [
+    "Is this SEG Solar SKU still under active warranty registration for U.S. residential installs?",
+    "What labor coverage applies if a module fails in year 8–12?"
+  ],
+  "red_flags": [
+    "Quotes that list SEG Solar without model numbers or warranty documents."
+  ],
+  "sections": [
+    {
+      "heading": "How to read this brand on a quote",
+      "body": "Ask for exact model numbers, datasheets, and who registers the warranty. Brand blurbs are not substitutes for the paperwork attached to your contract."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is SEG Solar a good choice in 2026?",
+      "answer": "It depends on price, warranty enforceability, installer familiarity, and how the rest of the system is designed. Use our local search after creating a project — we don’t publish national fake dealer lists."
+    }
+  ],
+  "official_url": null,
+  "confidence": "medium",
+  "sources": [],
+  "researched_detail": false,
+  "cta": {
+    "primary": "Find local installers who quote SEG Solar near your address",
+    "requires": "project_and_account",
+    "copy": "Create a free SolarFlow project for your home — we’ll use your roof model and location for a local search. Equipment pages don’t show national pricing as gospel."
+  }
+}

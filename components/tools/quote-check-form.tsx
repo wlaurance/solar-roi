@@ -87,9 +87,8 @@ export function QuoteCheckForm() {
           Decode a solar quote
         </h2>
         <p className="text-sm text-white/85">
-          Enter figures from the proposal (cash price before tax credits). We
-          compare against SolarFlow’s transparent planning benchmarks — not a
-          sales target.
+          Enter figures from the proposal (cash price). Federal residential 25D
+          is modeled at 0% for 2026 homeowner purchases.
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2">
@@ -107,7 +106,7 @@ export function QuoteCheckForm() {
           </label>
           <label className="block">
             <span className="mb-1 block text-xs font-medium uppercase tracking-wide text-white/70">
-              Gross price (before ITC)
+              Gross cash price
             </span>
             <input
               className="w-full rounded-md border-0 bg-white px-3 py-2.5 text-sm text-ink"
@@ -209,7 +208,7 @@ export function QuoteCheckForm() {
             </div>
             <div>
               <dt className="text-xs uppercase tracking-wide text-ink-muted">
-                Rough net after ITC*
+                Rough net (2026 model)*
               </dt>
               <dd className="mt-1 text-xl font-semibold text-ink">
                 {money(result.estimatedNetAfterItcUsd)}
@@ -225,8 +224,8 @@ export function QuoteCheckForm() {
             ))}
           </ul>
           <p className="text-xs text-ink-muted">
-            *ITC illustration only — not tax advice. Next: model your roof so
-            size and production match the quote.
+            *2026 planning model applies 0% federal residential 25D ITC — not tax
+            advice. Next: model your roof so size and production match the quote.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/signup" className="btn-primary">

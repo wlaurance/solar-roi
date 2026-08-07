@@ -554,7 +554,7 @@ export function RoiDashboard({ project }: { project: Project }) {
               : "Load Roof Designer panel config"
           }
         />
-        <Stat label="Net system cost" value={formatMoney(result.netCost)} hint="After 30% ITC (×0.7)" />
+        <Stat label="Net system cost" value={formatMoney(result.netCost)} hint="No federal 25D ITC in 2026 model (×1.0)" />
         <Stat
           label="New monthly bill"
           value={formatMoney(result.monthlyBillAfter)}

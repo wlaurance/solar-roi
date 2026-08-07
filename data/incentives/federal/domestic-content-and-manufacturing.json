@@ -1,0 +1,41 @@
+{
+  "kind": "federal",
+  "slug": "domestic-content-and-manufacturing",
+  "title": "Domestic Content Myths vs. Realities for Homeowners",
+  "headline": "Does 'Made in USA' Solar Save You Money in 2026?",
+  "summary": "Sales representatives often tout IRA American-made hardware, but homeowners should know this rarely translates to a direct cash rebate for residential cash buyers in 2026.",
+  "status": "active",
+  "effective_dates": {
+    "start": "2023-01-01",
+    "end": null,
+    "notes": "Domestic content bonuses primarily affect commercial credit pathways, not expired 25D homeowner purchases."
+  },
+  "percent_or_amount": "0% direct homeowner federal bonus for cash buyers without 25D.",
+  "eligible_tech": [
+    "pv",
+    "battery"
+  ],
+  "homeowner_eligibility_notes": "Domestic content additives under commercial clean electricity credits do not create a new residential 25D percentage for homeowner-owned systems after the 25D cutoff.",
+  "claim_howto": "If leasing, ask whether any domestic-content commercial credit is reflected in your monthly payment. Cash buyers should not expect a federal manufacturing rebate check.",
+  "official_urls": [
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+  ],
+  "sections": [
+    {
+      "heading": "The American-made sales pitch",
+      "body": "When a salesperson says panels are Made in the USA and qualify for an IRA bonus, they are usually referring to commercial credit rules. Because homeowner 25D is unavailable for typical 2026 completes, the only way federal tax benefits still show up in residential solar is often via third-party ownership — and even then, savings show up as contract pricing, not a Form 5695 for you."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I get a bigger tax return if I buy US-made solar panels?",
+      "answer": "No federal residential manufacturing bonus replaces 25D for cash buyers in 2026. US-made quality/warranty may still matter — just not as a phantom tax refund."
+    }
+  ],
+  "common_myths": [
+    "Buying Qcells or Silfab gives the homeowner a 10% federal bonus in 2026 (Generally false for cash purchases)."
+  ],
+  "confidence": "high",
+  "sources": [],
+  "last_verified": "2026-08-07"
+}

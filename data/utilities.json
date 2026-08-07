@@ -3,264 +3,1900 @@
     {
       "slug": "pge",
       "name": "PG&E",
-      "full_name": "Pacific Gas and Electric",
+      "full_name": "Pacific Gas and Electric Company",
       "state": "CA",
       "state_name": "California",
-      "region": "Northern & Central California",
-      "default_city": "",
-      "illustrative_rate_usd_per_kwh": 0.42,
-      "rate_note": "Illustrative blended residential ballpark for high-usage PG&E homes after recent rate cycles — verify with your bill and rate schedule (E-TOU, EV2-A, etc.).",
-      "rate_as_of": "2025",
-      "headline": "Is solar worth it on a PG&E bill?",
-      "summary": "PG&E customers often start solar research after a summer bill spike — not because they love panels. Model payback with your rate and roof, then compare quotes without trusting a salesperson’s black-box savings claim.",
+      "region": "Northern and Central California",
+      "default_city": "San Francisco",
+      "illustrative_rate_usd_per_kwh": 0.38,
+      "rate_note": "Averaged across Tier 1 and Tier 2 Time-of-Use (E-TOU-C) rates; peaks can exceed $0.50/kWh in summer. Excludes fixed delivery charges.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with PG&E in 2026?",
+      "summary": "Homeowners who installed solar with PG&E years ago brag about 1:1 net metering, but today's shoppers face the Solar Billing Plan (NEM 3.0). Because PG&E pays pennies for exported power — and the federal 25D credit no longer applies to 2026 cash/loan installs — solar math usually requires a battery for self-consumption and peak avoidance.",
       "sections": [
         {
-          "heading": "Why PG&E bills push people to research solar",
-          "body": "Homeowners in PG&E territory usually open a solar tab after a concrete month — a July/August bill, a rate notice, or a neighbor’s install. Past behavior looks the same: two installer websites, one “free savings estimate,” then stalled confusion because every quote assumes a different rate and system size. Your decision is less about whether solar “works in California” and more about whether the numbers on your bill and roof match the pitch."
+          "heading": "Why PG&E bills trigger solar research",
+          "body": "PG&E possesses some of the highest and most volatile electricity rates in the United States, with average residential rates hovering near $0.38/kWh and peak summer rates frequently crossing $0.50/kWh. Homeowners usually seek out solar after unexpected seasonal bill spikes. With the expiration of the 30% federal tax credit for cash purchases in 2026, the economics rely entirely on avoiding PG&E's retail rates through self-consumption. Sizing a system simply to match 100% of usage with panels alone no longer works; systems must be sized alongside a battery to load-shift away from the 4 PM to 9 PM time-of-use window."
         },
         {
-          "heading": "Net Billing vs. the savings story you’ll hear",
-          "body": "California’s Net Billing Tariff credits exports differently than classic NEM. Export-heavy designs can look worse on paper than self-consumption + battery. When you decode a quote, ask what export credit and self-consumption assumptions they used — and whether battery is required for their savings claim. SolarFlow separates bill offset from backup so you can see both jobs clearly."
+          "heading": "SGIP Battery Rebates in 2026",
+          "body": "PG&E customers may be eligible for the state-mandated Self-Generation Incentive Program (SGIP). While general market funds are largely exhausted, the 2026 program prioritizes low-income households, Medical Baseline customers, and homes in Tier 2/3 High Fire-Threat Districts that experience Public Safety Power Shutoffs (PSPS). Eligible Equity Resiliency customers can receive substantial per-kWh battery incentives — confirm current funding before signing."
         },
         {
-          "heading": "What to do before the sales appointment",
-          "body": "Pull your last 12 months of usage if you have them, note your rate schedule from the bill, and model your address with Google Solar roof data. That gives you a spouse-ready baseline before anyone asks for a deposit. Also skim local permit timelines so soft costs don’t ambush you after you say yes."
+          "heading": "What happens after you say yes",
+          "body": "Local building permits and PG&E Rule 21 interconnection are separate gates. Passing a city electrical inspection does not grant Permission to Operate. Expect PTO roughly 15–45 days after inspection paperwork reaches PG&E."
         }
       ],
       "faqs": [
         {
-          "question": "What rate should I use for a PG&E solar ROI model?",
-          "answer": "Use your blended effective rate from recent bills (total $ ÷ kWh), not a marketing “average California rate.” Time-of-use schedules change the $/kWh you avoid. SolarFlow lets you enter bill, usage, and $/kWh so they stay in sync."
+          "question": "Can I still get NEM 2.0 with PG&E?",
+          "answer": "No. The deadline to be grandfathered into NEM 2.0 passed in April 2023. All new solar applications submitted to PG&E fall under the current Solar Billing Plan (NEM 3.0)."
         },
         {
-          "question": "Do I need a battery with solar on PG&E?",
-          "answer": "Not always, but Net Billing often makes self-consumption and evening use more important. Batteries also matter for wildfire / PSPS backup — a different job than bill savings. Toggle battery in the ROI model to compare both paths."
-        },
-        {
-          "question": "How do I know if a PG&E-area solar quote is fair?",
-          "answer": "Normalize to dollars per watt before incentives, system size (kW), and whether battery is included. Then run our free quote market check and compare against your address-level model — not against another installer’s spreadsheet."
+          "question": "Does the 30% federal solar tax credit still apply?",
+          "answer": "For homeowner-owned systems placed in service after December 31, 2025, Section 25D is generally unavailable. Confirm with a tax advisor. Some lease/PPA structures may still reflect commercial credits."
         }
       ]
     },
     {
       "slug": "sce",
       "name": "SCE",
-      "full_name": "Southern California Edison",
+      "full_name": "SCE",
       "state": "CA",
       "state_name": "California",
-      "region": "Southern California",
+      "region": "California",
       "default_city": "",
       "illustrative_rate_usd_per_kwh": 0.38,
-      "rate_note": "Illustrative blended residential ballpark — confirm from your SCE bill and schedule.",
-      "rate_as_of": "2025",
-      "headline": "Solar bill calculator thinking for SCE customers",
-      "summary": "If your Southern California Edison bill jumped and you’re comparing quotes, start with your roof and rate — not county averages. Build a neutral model you can share with a spouse before you sit through a pitch.",
+      "rate_note": "Illustrative residential blend for SCE territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with SCE in 2026?",
+      "summary": "Massive SoCal footprint; NEM 3.0 active; high wildfire risk/PSPS zones. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
       "sections": [
         {
-          "heading": "Bill shock is the real trigger",
-          "body": "SCE customers rarely “decide to go green” in the abstract. They react to a bill, a heat wave, or a rate change, then collect quotes that disagree with each other. The pain is distrust: different kW sizes, different assumed rates, and savings graphs nobody can audit."
+          "heading": "Why SCE customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
         },
         {
-          "heading": "Net Billing still applies",
-          "body": "Like other California IOUs, export credits under Net Billing are not 1:1 retail. Ask every quote to break out self-consumed kWh vs. exported kWh. If they won’t, treat the savings number as soft."
+          "heading": "Export compensation & interconnection",
+          "body": "Massive SoCal footprint; NEM 3.0 active; high wildfire risk/PSPS zones. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
         },
         {
-          "heading": "Permits and HOAs kill momentum",
-          "body": "Many SCE-area deals stall after a quote when HOA architectural review or city fire setbacks appear. Check process reality for your ZIP before you emotionally commit — SolarFlow’s permit tools and local guides help surface those steps early."
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
         }
       ],
       "faqs": [
         {
-          "question": "Is solar worth it with SCE rates?",
-          "answer": "It depends on your usage, roof production, and rate schedule — not a statewide slogan. Model your address, then pressure-test installer quotes against that baseline."
+          "question": "Does the federal solar tax credit still apply for SCE customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
         },
         {
-          "question": "What should I bring to an SCE solar appointment?",
-          "answer": "Recent bills (or usage chart), your roof readiness notes, and a short list of questions about $/W, warranties, and Net Billing assumptions. A shareable SolarFlow report helps keep the conversation specific."
-        }
-      ]
-    },
-    {
-      "slug": "sdge",
-      "name": "SDG&E",
-      "full_name": "San Diego Gas & Electric",
-      "state": "CA",
-      "state_name": "California",
-      "region": "San Diego County",
-      "default_city": "San Diego",
-      "illustrative_rate_usd_per_kwh": 0.45,
-      "rate_note": "SDG&E often ranks among the highest U.S. residential rates; this is an illustrative blend — use your bill.",
-      "rate_as_of": "2025",
-      "headline": "High SDG&E bills and whether solar pays back",
-      "summary": "San Diego–area homeowners search solar because rates hurt. Get an address-level model with transparent assumptions so you can compare quotes without another high-pressure appointment.",
-      "sections": [
-        {
-          "heading": "High rates change the math — if the quote is honest",
-          "body": "Elevated $/kWh improves payback when you displace your own usage. It does not fix a bad roof, bad pricing, or opaque financing. Your job is to separate rate-driven opportunity from salesperson optimism."
-        },
-        {
-          "heading": "Coast vs inland production",
-          "body": "San Diego County roofs vary — marine layer, orientation, and shade matter. Google Solar–based layouts beat hand-wavy “homes in your ZIP save $X” claims."
-        },
-        {
-          "heading": "Compare quotes like a buyer, not a lead",
-          "body": "Normalize each proposal to $/W, equipment brands, battery inclusion, and timeline to PTO. Use the quote market-check tool, then share one spouse-ready PDF so decisions happen in your kitchen, not on a driveway pitch."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Why are solar quotes in San Diego all over the map?",
-          "answer": "Different system sizes, battery packages, financing (loan vs cash), and Net Billing assumptions. Always convert to cash $/W and model your roof separately."
-        }
-      ]
-    },
-    {
-      "slug": "coned",
-      "name": "Con Edison",
-      "full_name": "Consolidated Edison",
-      "state": "NY",
-      "state_name": "New York",
-      "region": "New York City metro",
-      "default_city": "New York",
-      "illustrative_rate_usd_per_kwh": 0.32,
-      "rate_note": "Illustrative NYC-area residential blend — delivery + supply vary; confirm on your Con Edison bill.",
-      "rate_as_of": "2025",
-      "headline": "Solar on a Con Edison bill: what to model first",
-      "summary": "NYC-area bills stack supply and delivery. Before you chase a rooftop or community-solar sales call, understand your usage and whether your building/roof can host a system at all.",
-      "sections": [
-        {
-          "heading": "Dense housing changes the job",
-          "body": "Many Con Edison customers hit co-op boards, roof rights, or shading from neighboring buildings. Feasibility and process pain show up before ROI spreadsheets do. Start with roof readiness, then economics."
-        },
-        {
-          "heading": "Incentives change — don’t memorize last year’s ad",
-          "body": "Federal credits and state/NYSERDA-era programs evolve. Ask for current eligibility in writing and keep a neutral model so you’re not dependent on a flyer."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Can apartment dwellers use SolarFlow?",
-          "answer": "SolarFlow models rooftop systems at an address. If you lack roof rights, community solar or other products may fit better — still start by understanding your bill and usage."
-        }
-      ]
-    },
-    {
-      "slug": "duke-energy",
-      "name": "Duke Energy",
-      "full_name": "Duke Energy",
-      "state": "NC",
-      "state_name": "North Carolina",
-      "region": "Carolinas & overlapping territories",
-      "default_city": "",
-      "illustrative_rate_usd_per_kwh": 0.15,
-      "rate_note": "Illustrative — Duke territories differ by state; always use your bill’s effective rate.",
-      "rate_as_of": "2025",
-      "headline": "Solar with Duke Energy: bill math without the pitch",
-      "summary": "Lower average rates than coastal California mean payback hinges on system cost, production, and incentives. Model your address so a low $/kWh doesn’t get buried under an aggressive loan payment.",
-      "sections": [
-        {
-          "heading": "When rates are moderate, price discipline matters more",
-          "body": "If you’re not escaping 40¢/kWh bills, an overpriced system takes longer to break even. Quote comparison and $/W checks matter even more than in high-rate utilities."
-        },
-        {
-          "heading": "Interconnection still has a process",
-          "body": "Utility interconnection and local building permits still gate Permission to Operate. Know the steps so timeline surprises don’t erode trust after you sign."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Is solar worth it if my Duke rate is “only” 12–16¢/kWh?",
-          "answer": "Possibly — especially with incentives, rising rates, or long ownership horizon — but the margin for quote padding is thinner. Run the numbers with your roof and compare installed $/W carefully."
+          "question": "How do I evaluate a solar quote in SCE territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
         }
       ]
     },
     {
       "slug": "fpl",
       "name": "FPL",
-      "full_name": "Florida Power & Light",
+      "full_name": "FPL",
       "state": "FL",
       "state_name": "Florida",
-      "region": "Much of Florida",
+      "region": "Florida",
       "default_city": "",
-      "illustrative_rate_usd_per_kwh": 0.15,
-      "rate_note": "Illustrative residential blend — Florida rates and net metering rules vary; verify locally.",
-      "rate_as_of": "2025",
-      "headline": "FPL bills, Florida sun, and realistic solar payback",
-      "summary": "Florida has strong sun and frequent sales pressure. Anchor on your roof production and all-in system cost before you accept a “$0 down” payment that hides the economics.",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for FPL territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with FPL in 2026?",
+      "summary": "Largest FL utility; 1:1 net metering active but highly politicized. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
       "sections": [
         {
-          "heading": "Sunlight is not the same as a good deal",
-          "body": "Great irradiance helps production; it does not justify every financed package. Homeowners who get stuck usually skipped normalizing quotes to cash economics."
+          "heading": "Why FPL customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
         },
         {
-          "heading": "Hurricane and roof age questions",
-          "body": "Ask about roof condition, mounting, and warranty interactions with storm risk. Production models assume the array stays installed and performing."
+          "heading": "Export compensation & interconnection",
+          "body": "Largest FL utility; 1:1 net metering active but highly politicized. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
         }
       ],
       "faqs": [
         {
-          "question": "Should I replace my roof before solar in Florida?",
-          "answer": "If the roof is near end of life, installers often recommend reroofing first. Factor that cost into true payback — SolarFlow’s planning tools help you keep assumptions visible."
+          "question": "Does the federal solar tax credit still apply for FPL customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in FPL territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "comed",
+      "name": "ComEd",
+      "full_name": "ComEd",
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Illinois",
+      "default_city": "Chicago",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for ComEd territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with ComEd in 2026?",
+      "summary": "Major Midwest hub; strong state SREC program (Illinois Shines). Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why ComEd customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Major Midwest hub; strong state SREC program (Illinois Shines). Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for ComEd customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in ComEd territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "oncor",
+      "name": "Oncor",
+      "full_name": "Oncor",
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Texas",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Oncor territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Oncor in 2026?",
+      "summary": "Largest TX TDU; deregulated market requires matching TDSP with retail electric provider buyback plans. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Oncor customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Largest TX TDU; deregulated market requires matching TDSP with retail electric provider buyback plans. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Oncor customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Oncor territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "coned",
+      "name": "ConEd",
+      "full_name": "ConEd",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for ConEd territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with ConEd in 2026?",
+      "summary": "Highest NY rates; VDER Value Stack compensation replaces traditional net metering. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why ConEd customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Highest NY rates; VDER Value Stack compensation replaces traditional net metering. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for ConEd customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in ConEd territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "centerpoint",
+      "name": "CenterPoint Energy",
+      "full_name": "CenterPoint Energy",
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Texas",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for CenterPoint Energy territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with CenterPoint Energy in 2026?",
+      "summary": "Houston TDU; pairing with solar buyback plans is complex for homeowners. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why CenterPoint Energy customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Houston TDU; pairing with solar buyback plans is complex for homeowners. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for CenterPoint Energy customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in CenterPoint Energy territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "dominion-energy-va",
+      "name": "Dominion Energy VA",
+      "full_name": "Dominion Energy VA",
+      "state": "VA",
+      "state_name": "Virginia",
+      "region": "Virginia",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Dominion Energy VA territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Dominion Energy VA in 2026?",
+      "summary": "Strong net metering market in the Mid-Atlantic. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Dominion Energy VA customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Strong net metering market in the Mid-Atlantic. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Dominion Energy VA customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Dominion Energy VA territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "georgia-power",
+      "name": "Georgia Power",
+      "full_name": "Georgia Power",
+      "state": "GA",
+      "state_name": "Georgia",
+      "region": "Georgia",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Georgia Power territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Georgia Power in 2026?",
+      "summary": "Strict interconnection limits; solar economically challenging without specific tariff programs. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Georgia Power customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Strict interconnection limits; solar economically challenging without specific tariff programs. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Georgia Power customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Georgia Power territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "pseg",
+      "name": "PSE&G",
+      "full_name": "PSE&G",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "New Jersey",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for PSE&G territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with PSE&G in 2026?",
+      "summary": "High electric rates; excellent NJ SuSI ADI program ($77/MWh). Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why PSE&G customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "High electric rates; excellent NJ SuSI ADI program ($77/MWh). Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for PSE&G customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in PSE&G territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "dte-energy",
+      "name": "DTE Energy",
+      "full_name": "DTE Energy",
+      "state": "MI",
+      "state_name": "Michigan",
+      "region": "Michigan",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for DTE Energy territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with DTE Energy in 2026?",
+      "summary": "Inflow/outflow billing mechanism replaced 1:1 net metering. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why DTE Energy customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Inflow/outflow billing mechanism replaced 1:1 net metering. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for DTE Energy customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in DTE Energy territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "duke-energy-carolinas",
+      "name": "Duke Energy Carolinas",
+      "full_name": "Duke Energy Carolinas",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "North Carolina",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Duke Energy Carolinas territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Duke Energy Carolinas in 2026?",
+      "summary": "Transitioned to net billing; upfront rebates available but capped. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Duke Energy Carolinas customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Transitioned to net billing; upfront rebates available but capped. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Duke Energy Carolinas customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Duke Energy Carolinas territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "duke-energy-florida",
+      "name": "Duke Energy Florida",
+      "full_name": "Duke Energy Florida",
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Florida",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Duke Energy Florida territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Duke Energy Florida in 2026?",
+      "summary": "Major FL utility with robust net metering. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Duke Energy Florida customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Major FL utility with robust net metering. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Duke Energy Florida customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Duke Energy Florida territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "national-grid-ny",
+      "name": "National Grid NY",
+      "full_name": "National Grid NY",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for National Grid NY territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with National Grid NY in 2026?",
+      "summary": "Upstate NY; NY-Sun megawatt block incentives apply. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why National Grid NY customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Upstate NY; NY-Sun megawatt block incentives apply. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for National Grid NY customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in National Grid NY territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "alabama-power",
+      "name": "Alabama Power",
+      "full_name": "Alabama Power",
+      "state": "AL",
+      "state_name": "Alabama",
+      "region": "Alabama",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Alabama Power territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Alabama Power in 2026?",
+      "summary": "High capacity charges make residential solar economically difficult. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Alabama Power customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "High capacity charges make residential solar economically difficult. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Alabama Power customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Alabama Power territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "xcel-colorado",
+      "name": "Xcel Energy CO",
+      "full_name": "Xcel Energy CO",
+      "state": "CO",
+      "state_name": "Colorado",
+      "region": "Colorado",
+      "default_city": "Denver",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Xcel Energy CO territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Xcel Energy CO in 2026?",
+      "summary": "Strong solar mandates; Solar*Rewards program offers REC buybacks. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Xcel Energy CO customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Strong solar mandates; Solar*Rewards program offers REC buybacks. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Xcel Energy CO customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Xcel Energy CO territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "eversource-ma",
+      "name": "Eversource MA",
+      "full_name": "Eversource MA",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Massachusetts",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for Eversource MA territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Eversource MA in 2026?",
+      "summary": "SMART 3.0 program territory; high electricity costs. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Eversource MA customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "SMART 3.0 program territory; high electricity costs. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Eversource MA customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Eversource MA territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "sdge",
+      "name": "SDG&E",
+      "full_name": "SDG&E",
+      "state": "CA",
+      "state_name": "California",
+      "region": "California",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.38,
+      "rate_note": "Illustrative residential blend for SDG&E territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with SDG&E in 2026?",
+      "summary": "Highest baseline per-kWh rates in the continental US; NEM 3.0 active. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why SDG&E customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Highest baseline per-kWh rates in the continental US; NEM 3.0 active. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for SDG&E customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in SDG&E territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
         }
       ]
     },
     {
       "slug": "aps",
       "name": "APS",
-      "full_name": "Arizona Public Service",
+      "full_name": "APS",
       "state": "AZ",
       "state_name": "Arizona",
-      "region": "Central Arizona",
+      "region": "Arizona",
       "default_city": "Phoenix",
       "illustrative_rate_usd_per_kwh": 0.16,
-      "rate_note": "Illustrative — desert TOU and demand components vary; pull numbers from your APS bill.",
-      "rate_as_of": "2025",
-      "headline": "APS + Arizona sun: model before you buy",
-      "summary": "Phoenix-area roofs produce strong output, but rate design (TOU, demand) shapes savings. Enter your real bill and usage so a quote can’t hide behind “Arizona averages.”",
+      "rate_note": "Illustrative residential blend for APS territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with APS in 2026?",
+      "summary": "High solar penetration; fixed export rates (EPR-6) drop annually. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
       "sections": [
         {
-          "heading": "TOU and demand change the savings story",
-          "body": "Ask which rate schedule the quote assumes after solar. A model that ignores demand charges or TOU shifts can overstate monthly savings."
+          "heading": "Why APS customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
         },
         {
-          "heading": "Heat, HVAC, and system sizing",
-          "body": "High AC load is often why people look at solar. If you’re also considering heat-pump HVAC later, SolarFlow’s toggles help you see stacked scenarios."
+          "heading": "Export compensation & interconnection",
+          "body": "High solar penetration; fixed export rates (EPR-6) drop annually. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
         }
       ],
       "faqs": [
         {
-          "question": "Is a battery worth it with APS?",
-          "answer": "Backup and rate arbitrage are different jobs. Toggle battery in the ROI dashboard and decide based on outages and your rate — not a bundled “package discount” alone."
+          "question": "Does the federal solar tax credit still apply for APS customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in APS territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
         }
       ]
     },
     {
-      "slug": "xcel",
-      "name": "Xcel Energy",
-      "full_name": "Xcel Energy",
-      "state": "CO",
-      "state_name": "Colorado",
-      "region": "Colorado & other Xcel territories",
-      "default_city": "Denver",
-      "illustrative_rate_usd_per_kwh": 0.14,
-      "rate_note": "Illustrative Colorado-oriented blend — Xcel territories differ; use your bill.",
-      "rate_as_of": "2025",
-      "headline": "Xcel Energy solar: payback without county averages",
-      "summary": "Front Range homeowners often hear conflicting stories about net metering and incentives. Build an address-level baseline, then pressure-test installer math.",
+      "slug": "national-grid-ma",
+      "name": "National Grid MA",
+      "full_name": "National Grid MA",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Massachusetts",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for National Grid MA territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with National Grid MA in 2026?",
+      "summary": "SMART 3.0 territory; shares MA market with Eversource. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
       "sections": [
         {
-          "heading": "Snow, orientation, and production honesty",
-          "body": "Ask how the proposal handles winter production and roof pitch. Google Solar insights plus a clear production figure beat vague “offset 100% of your bill” language."
+          "heading": "Why National Grid MA customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
         },
         {
-          "heading": "Get the assumptions in writing",
-          "body": "Export or share a SolarFlow report with rate, inflation, system size, and ITC assumptions labeled. That document is what spouses and skeptical partners actually need."
+          "heading": "Export compensation & interconnection",
+          "body": "SMART 3.0 territory; shares MA market with Eversource. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
         }
       ],
       "faqs": [
         {
-          "question": "How do I compare Xcel solar quotes quickly?",
-          "answer": "Convert to $/W, confirm battery inclusion, and check whether savings use your bill’s rate. Our quote checker flags quotes that sit far above planning benchmarks."
+          "question": "Does the federal solar tax credit still apply for National Grid MA customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in National Grid MA territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "ameren-illinois",
+      "name": "Ameren Illinois",
+      "full_name": "Ameren Illinois",
+      "state": "IL",
+      "state_name": "Illinois",
+      "region": "Illinois",
+      "default_city": "Chicago",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Ameren Illinois territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Ameren Illinois in 2026?",
+      "summary": "Illinois Shines incentive block participant. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Ameren Illinois customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Illinois Shines incentive block participant. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Ameren Illinois customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Ameren Illinois territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "jcpl",
+      "name": "JCP&L",
+      "full_name": "JCP&L",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "New Jersey",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for JCP&L territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with JCP&L in 2026?",
+      "summary": "Central NJ footprint; SuSI ADI program eligible. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why JCP&L customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Central NJ footprint; SuSI ADI program eligible. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for JCP&L customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in JCP&L territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "puget-sound-energy",
+      "name": "Puget Sound Energy",
+      "full_name": "Puget Sound Energy",
+      "state": "WA",
+      "state_name": "Washington",
+      "region": "Washington",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Puget Sound Energy territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Puget Sound Energy in 2026?",
+      "summary": "Pacific Northwest market; low base electric rates impact ROI. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Puget Sound Energy customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Pacific Northwest market; low base electric rates impact ROI. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Puget Sound Energy customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Puget Sound Energy territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "duke-energy-ohio",
+      "name": "Duke Energy Ohio",
+      "full_name": "Duke Energy Ohio",
+      "state": "OH",
+      "state_name": "Ohio",
+      "region": "Ohio",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Duke Energy Ohio territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Duke Energy Ohio in 2026?",
+      "summary": "Ohio net metering rules apply; moderate electric rates. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Duke Energy Ohio customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Ohio net metering rules apply; moderate electric rates. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Duke Energy Ohio customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Duke Energy Ohio territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "nv-energy",
+      "name": "NV Energy",
+      "full_name": "NV Energy",
+      "state": "NV",
+      "state_name": "Nevada",
+      "region": "Nevada",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for NV Energy territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with NV Energy in 2026?",
+      "summary": "Tiered net metering blocks; high desert solar irradiance. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why NV Energy customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Tiered net metering blocks; high desert solar irradiance. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for NV Energy customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in NV Energy territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "xcel-minnesota",
+      "name": "Xcel Energy MN",
+      "full_name": "Xcel Energy MN",
+      "state": "MN",
+      "state_name": "Minnesota",
+      "region": "Minnesota",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Xcel Energy MN territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Xcel Energy MN in 2026?",
+      "summary": "Solar*Rewards program participant; strong community solar market. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Xcel Energy MN customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Solar*Rewards program participant; strong community solar market. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Xcel Energy MN customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Xcel Energy MN territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "peco",
+      "name": "PECO",
+      "full_name": "PECO",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Pennsylvania",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for PECO territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with PECO in 2026?",
+      "summary": "1:1 retail credit mandated under PA Alternative Energy Portfolio Standards. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why PECO customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "1:1 retail credit mandated under PA Alternative Energy Portfolio Standards. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for PECO customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in PECO territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "ppl-electric",
+      "name": "PPL Electric",
+      "full_name": "PPL Electric",
+      "state": "PA",
+      "state_name": "Pennsylvania",
+      "region": "Pennsylvania",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for PPL Electric territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with PPL Electric in 2026?",
+      "summary": "PA market; shares 1:1 net metering mandate. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why PPL Electric customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "PA market; shares 1:1 net metering mandate. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for PPL Electric customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in PPL Electric territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "bge",
+      "name": "BGE",
+      "full_name": "BGE",
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Maryland",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for BGE territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with BGE in 2026?",
+      "summary": "Maryland SREC market participant; strong clean energy goals. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why BGE customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Maryland SREC market participant; strong clean energy goals. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for BGE customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in BGE territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "pepco-md",
+      "name": "Pepco MD",
+      "full_name": "Pepco MD",
+      "state": "MD",
+      "state_name": "Maryland",
+      "region": "Maryland",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Pepco MD territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Pepco MD in 2026?",
+      "summary": "DC suburbs; lucrative MD SREC market. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Pepco MD customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "DC suburbs; lucrative MD SREC market. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Pepco MD customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Pepco MD territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "dominion-energy-sc",
+      "name": "Dominion Energy SC",
+      "full_name": "Dominion Energy SC",
+      "state": "SC",
+      "state_name": "South Carolina",
+      "region": "South Carolina",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Dominion Energy SC territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Dominion Energy SC in 2026?",
+      "summary": "Solar Choice program structures export compensation. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Dominion Energy SC customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Solar Choice program structures export compensation. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Dominion Energy SC customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Dominion Energy SC territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "duke-energy-progress",
+      "name": "Duke Energy Progress",
+      "full_name": "Duke Energy Progress",
+      "state": "NC",
+      "state_name": "North Carolina",
+      "region": "North Carolina",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Duke Energy Progress territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Duke Energy Progress in 2026?",
+      "summary": "Net billing transition identical to Duke Carolinas. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Duke Energy Progress customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Net billing transition identical to Duke Carolinas. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Duke Energy Progress customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Duke Energy Progress territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "portland-general-electric",
+      "name": "Portland General Electric",
+      "full_name": "Portland General Electric",
+      "state": "OR",
+      "state_name": "Oregon",
+      "region": "Oregon",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Portland General Electric territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Portland General Electric in 2026?",
+      "summary": "Oregon net metering and state rebate ecosystem. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Portland General Electric customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Oregon net metering and state rebate ecosystem. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Portland General Electric customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Portland General Electric territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "pacific-power-or",
+      "name": "Pacific Power OR",
+      "full_name": "Pacific Power OR",
+      "state": "OR",
+      "state_name": "Oregon",
+      "region": "Oregon",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Pacific Power OR territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Pacific Power OR in 2026?",
+      "summary": "Secondary OR market; lower density than PGE. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Pacific Power OR customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Secondary OR market; lower density than PGE. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Pacific Power OR customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Pacific Power OR territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "idaho-power",
+      "name": "Idaho Power",
+      "full_name": "Idaho Power",
+      "state": "ID",
+      "state_name": "Idaho",
+      "region": "Idaho",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Idaho Power territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Idaho Power in 2026?",
+      "summary": "Recent shifts in net metering compensation rates. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Idaho Power customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Recent shifts in net metering compensation rates. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Idaho Power customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Idaho Power territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "rocky-mountain-power-ut",
+      "name": "Rocky Mountain Power UT",
+      "full_name": "Rocky Mountain Power UT",
+      "state": "UT",
+      "state_name": "Utah",
+      "region": "Utah",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Rocky Mountain Power UT territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Rocky Mountain Power UT in 2026?",
+      "summary": "Transitioned to export credit rate significantly below retail. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Rocky Mountain Power UT customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Transitioned to export credit rate significantly below retail. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Rocky Mountain Power UT customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Rocky Mountain Power UT territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "pnm",
+      "name": "PNM",
+      "full_name": "PNM",
+      "state": "NM",
+      "state_name": "New Mexico",
+      "region": "New Mexico",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for PNM territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with PNM in 2026?",
+      "summary": "High irradiance state; 1:1 net metering still active. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why PNM customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "High irradiance state; 1:1 net metering still active. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for PNM customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in PNM territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "heco",
+      "name": "Hawaiian Electric",
+      "full_name": "Hawaiian Electric",
+      "state": "HI",
+      "state_name": "Hawaii",
+      "region": "Hawaii",
+      "default_city": "Honolulu",
+      "illustrative_rate_usd_per_kwh": 0.38,
+      "rate_note": "Illustrative residential blend for Hawaiian Electric territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Hawaiian Electric in 2026?",
+      "summary": "Highest US electricity rates; zero-export/smart export programs mandate batteries. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Hawaiian Electric customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Highest US electricity rates; zero-export/smart export programs mandate batteries. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Hawaiian Electric customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Hawaiian Electric territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "ace",
+      "name": "Atlantic City Electric",
+      "full_name": "Atlantic City Electric",
+      "state": "NJ",
+      "state_name": "New Jersey",
+      "region": "New Jersey",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for Atlantic City Electric territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Atlantic City Electric in 2026?",
+      "summary": "South NJ market; eligible for SuSI ADI program. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Atlantic City Electric customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "South NJ market; eligible for SuSI ADI program. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Atlantic City Electric customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Atlantic City Electric territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "delmarva-power",
+      "name": "Delmarva Power",
+      "full_name": "Delmarva Power",
+      "state": "DE",
+      "state_name": "Delaware",
+      "region": "Delaware",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Delmarva Power territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Delmarva Power in 2026?",
+      "summary": "Delaware net metering and SREC market. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Delmarva Power customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Delaware net metering and SREC market. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Delmarva Power customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Delmarva Power territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "teco",
+      "name": "Tampa Electric",
+      "full_name": "Tampa Electric",
+      "state": "FL",
+      "state_name": "Florida",
+      "region": "Florida",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for Tampa Electric territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Tampa Electric in 2026?",
+      "summary": "Tampa Bay area; standard FL net metering applies. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Tampa Electric customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Tampa Bay area; standard FL net metering applies. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Tampa Electric customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Tampa Electric territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "nyseg",
+      "name": "NYSEG",
+      "full_name": "NYSEG",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for NYSEG territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with NYSEG in 2026?",
+      "summary": "Upstate NY; VDER Value Stack application. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why NYSEG customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Upstate NY; VDER Value Stack application. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for NYSEG customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in NYSEG territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "rge",
+      "name": "RG&E",
+      "full_name": "RG&E",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for RG&E territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with RG&E in 2026?",
+      "summary": "Rochester area; VDER Value Stack application. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why RG&E customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Rochester area; VDER Value Stack application. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for RG&E customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in RG&E territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "central-hudson",
+      "name": "Central Hudson",
+      "full_name": "Central Hudson",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for Central Hudson territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Central Hudson in 2026?",
+      "summary": "Mid-Hudson valley; VDER Value Stack application. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Central Hudson customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Mid-Hudson valley; VDER Value Stack application. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Central Hudson customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Central Hudson territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "orange-rockland",
+      "name": "Orange & Rockland",
+      "full_name": "Orange & Rockland",
+      "state": "NY",
+      "state_name": "New York",
+      "region": "New York",
+      "default_city": "New York",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for Orange & Rockland territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Orange & Rockland in 2026?",
+      "summary": "NY/NJ border; VDER Value Stack application. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Orange & Rockland customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "NY/NJ border; VDER Value Stack application. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Orange & Rockland customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Orange & Rockland territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "unitil-ma",
+      "name": "Unitil MA",
+      "full_name": "Unitil MA",
+      "state": "MA",
+      "state_name": "Massachusetts",
+      "region": "Massachusetts",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.28,
+      "rate_note": "Illustrative residential blend for Unitil MA territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with Unitil MA in 2026?",
+      "summary": "Small MA footprint but eligible for lucrative SMART 3.0. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why Unitil MA customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Small MA footprint but eligible for lucrative SMART 3.0. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for Unitil MA customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in Unitil MA territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "aep-texas",
+      "name": "AEP Texas",
+      "full_name": "AEP Texas",
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Texas",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for AEP Texas territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with AEP Texas in 2026?",
+      "summary": "South/West TX TDU; requires retail electric provider pairing. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why AEP Texas customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "South/West TX TDU; requires retail electric provider pairing. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for AEP Texas customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in AEP Texas territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "tnmp",
+      "name": "TNMP",
+      "full_name": "TNMP",
+      "state": "TX",
+      "state_name": "Texas",
+      "region": "Texas",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for TNMP territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with TNMP in 2026?",
+      "summary": "Texas TDU; deregulated market dynamics apply. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why TNMP customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Texas TDU; deregulated market dynamics apply. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for TNMP customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in TNMP territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "tep",
+      "name": "TEP",
+      "full_name": "TEP",
+      "state": "AZ",
+      "state_name": "Arizona",
+      "region": "Arizona",
+      "default_city": "Phoenix",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for TEP territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with TEP in 2026?",
+      "summary": "Tucson market; RCP (Resource Comparison Proxy) export rates. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why TEP customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Tucson market; RCP (Resource Comparison Proxy) export rates. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for TEP customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in TEP territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
+        }
+      ]
+    },
+    {
+      "slug": "we-energies",
+      "name": "We Energies",
+      "full_name": "We Energies",
+      "state": "WI",
+      "state_name": "Wisconsin",
+      "region": "Wisconsin",
+      "default_city": "",
+      "illustrative_rate_usd_per_kwh": 0.16,
+      "rate_note": "Illustrative residential blend for We Energies territory — verify with your bill and rate schedule.",
+      "rate_as_of": "2026-08",
+      "headline": "Is solar worth it with We Energies in 2026?",
+      "summary": "Wisconsin market; net billing standard. Model your address with transparent assumptions — the 30% federal residential tax credit (25D) no longer applies to systems placed in service after Dec 31, 2025.",
+      "sections": [
+        {
+          "heading": "Why We Energies customers research solar",
+          "body": "Homeowners usually start after a bill spike, rate notice, or neighbor install — then hit conflicting quotes. In 2026, cash/loan buyers cannot rely on the expired federal 25D credit. Payback depends on your utility’s export rules, state programs, and whether a battery or third-party ownership structure is part of the deal."
+        },
+        {
+          "heading": "Export compensation & interconnection",
+          "body": "Wisconsin market; net billing standard. Interconnection still requires utility review after the municipal electrical inspection. Treat Permission to Operate as a separate gate from the city final."
+        },
+        {
+          "heading": "What to do before a sales appointment",
+          "body": "Pull recent bills, note your rate schedule, and model your roof at your address. Ask every quote to show cash price, $/W, export/self-consumption assumptions, and whether any state production incentive is included."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does the federal solar tax credit still apply for We Energies customers in 2026?",
+          "answer": "For homeowner-owned cash or loan purchases placed in service after Dec 31, 2025, Section 25D is generally $0. Some leases/PPAs may still reflect commercial credits — get that in writing. Not tax advice."
+        },
+        {
+          "question": "How do I evaluate a solar quote in We Energies territory?",
+          "answer": "Normalize to $/W before incentives, separate batteries, and pressure-test savings against your bill’s rate and this utility’s export regime — not a national average."
         }
       ]
     }

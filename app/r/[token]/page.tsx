@@ -159,8 +159,9 @@ export default async function SharedReportPage({ params }: Props) {
                 : " · using fallback system size until Roof Designer is set"}
             </li>
             <li>
-              ITC illustration: ×{ITC_NET_FACTOR} net factor (~
-              {Math.round((1 - ITC_NET_FACTOR) * 100)}% credit) — not tax advice
+              ITC illustration: {Math.round((1 - ITC_NET_FACTOR) * 100)}% federal
+              residential credit in this 2026 model (×{ITC_NET_FACTOR}) — 25D
+              generally unavailable after Dec 31, 2025; not tax advice
             </li>
             <li>
               Energy inflation:{" "}
@@ -174,7 +175,7 @@ export default async function SharedReportPage({ params }: Props) {
               </li>
             ) : null}
             <li>Gross install (modeled): {money(result.grossCost)}</li>
-            <li>Net after ITC illustration: {money(result.netCost)}</li>
+            <li>Net planning cost: {money(result.netCost)}</li>
           </ul>
         </section>
 

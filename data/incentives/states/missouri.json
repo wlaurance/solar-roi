@@ -1,0 +1,33 @@
+{
+  "kind": "state",
+  "slug": "missouri",
+  "state": "MO",
+  "state_name": "Missouri",
+  "headline": "Solar incentives in Missouri in 2026",
+  "summary": "With federal 25D unavailable for typical 2026 homeowner completes, Missouri solar economics lean on utility export rules, any state production/rebate programs, tax treatment, and system cost. Confirm primary sources — this page is a planning overview.",
+  "net_metering_or_billing_overview": "Export compensation is utility- and state-specific. Start with your utility guide, then check the state energy office / DSIRE-style directories against primary .gov pages.",
+  "programs": [],
+  "property_tax_sales_tax_notes": "Check whether the state offers sales or property tax exemptions for residential solar.",
+  "hoa_solar_access_law": "Some states limit HOA bans on solar. Confirm current statute before assuming protection.",
+  "sections": [
+    {
+      "heading": "Federal credit reality in 2026",
+      "body": "Section 25D generally does not apply to expenditures made after Dec 31, 2025. Do not model a 30% federal rebate for a new cash/loan install unless your tax advisor says otherwise."
+    },
+    {
+      "heading": "Where to verify Missouri programs",
+      "body": "Use the official state energy office, utility rebate portals, and interconnection tariffs. Aggregator blogs go stale quickly after OBBBA."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is solar worth it in Missouri without the federal tax credit?",
+      "answer": "It depends on rates, export rules, state incentives, and installed $/W. Model your address and compare quotes with labeled assumptions."
+    }
+  ],
+  "related_utility_slugs": [],
+  "confidence": "low",
+  "sources": [],
+  "last_verified": "2026-08-07",
+  "researched_detail": false
+}
