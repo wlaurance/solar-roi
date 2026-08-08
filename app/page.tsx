@@ -1,14 +1,15 @@
 import { Icons } from "@/components/icons";
 import { HomeJsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, SITE_DEFAULT_TITLE } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Model solar ROI before you sign",
+  title: SITE_DEFAULT_TITLE,
   description:
     "Model solar ROI without outdated federal rebate assumptions — roof layout, permits, utilities, equipment, and nearby installers for every project in your portfolio.",
   path: "/",
   image: "home",
+  absoluteTitle: true,
   keywords: [
     "solar ROI calculator",
     "rooftop solar planning",
