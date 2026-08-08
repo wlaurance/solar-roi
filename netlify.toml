@@ -7,4 +7,10 @@
 
 [build.environment]
   SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache/**,.next/cache/**"
-  SECRETS_SCAN_OMIT_KEYS = "GEMINI_API_KEY,OPENROUTER_API_KEY,SUPABASE_ACCESS_TOKEN,SUPABASE_SERVICE_ROLE_KEY,NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN"
+  SECRETS_SCAN_OMIT_KEYS = "GEMINI_API_KEY,OPENROUTER_API_KEY,SUPABASE_ACCESS_TOKEN,SUPABASE_SERVICE_ROLE_KEY,BILL_PROCESS_SECRET,NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  # Utility catalog JSON is read at runtime while parsing bills.
+  included_files = ["data/utilities/**"]
