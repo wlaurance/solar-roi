@@ -13,6 +13,7 @@ import {
 } from "chart.js";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { Line } from "react-chartjs-2";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icons } from "@/components/icons";
 import {
@@ -727,7 +728,11 @@ export function RoiDashboard({
               Equipment payment
             </h2>
             <p className="mt-1 text-xs text-ink-muted">
-              Pay cash for the net system cost, or finance with a down payment and APR.
+              Pay cash for the net system cost, or finance with a down payment and
+              APR.{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                Solar financing guides
+              </Link>
             </p>
           </div>
           <div className="flex gap-2">
@@ -837,10 +842,22 @@ export function RoiDashboard({
               Upfront {formatMoney(result.upfrontCost)} down · financed{" "}
               {formatMoney(result.loanPrincipal)} at {result.loanAprPct}% APR for{" "}
               {result.loanTermYears} years · {formatMoney(result.monthlyLoanPayment)}
-              /mo loan payment (plus the new utility bill).
+              /mo loan payment (plus the new utility bill). Compare lender and
+              marketplace options in{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                financing
+              </Link>
+              .
             </>
           ) : (
-            <>Cash outlay at start: {formatMoney(result.upfrontCost)} (net system cost).</>
+            <>
+              Cash outlay at start: {formatMoney(result.upfrontCost)} (net system
+              cost). Exploring a loan instead? See{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                solar financing guides
+              </Link>
+              .
+            </>
           )}
         </p>
       </div>

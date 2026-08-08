@@ -194,7 +194,11 @@ export default async function SharedReportPage({ params }: Props) {
               Equipment payment:{" "}
               {result.paymentMode === "finance"
                 ? `Finance — ${result.loanDownPaymentPct}% down, ${result.loanAprPct}% APR, ${result.loanTermYears} yr (${money(result.monthlyLoanPayment)}/mo)`
-                : "Cash"}
+                : "Cash"}{" "}
+              ·{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                Financing guides
+              </Link>
             </li>
             {project.battery ? (
               <li>
