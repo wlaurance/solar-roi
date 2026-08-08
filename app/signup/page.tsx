@@ -1,5 +1,19 @@
 import { Suspense } from "react";
 import { SignupForm } from "@/components/auth/signup-form";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Create your free account",
+  description:
+    "Start a free SolarFlow project for your home address — ROI modeling, roof layout, permits, equipment, and nearby installers without outdated rebate assumptions.",
+  path: "/signup",
+  image: "signup",
+  keywords: [
+    "solar planning account",
+    "solar ROI tool",
+    "free solar project",
+  ],
+});
 
 export default function SignupPage() {
   return (

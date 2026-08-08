@@ -5,6 +5,7 @@ import { Icons } from "@/components/icons";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { LocationProjectCta } from "@/components/solar-in/location-project-cta";
 import { getPermitGuideBySlug } from "@/lib/permits/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -13,12 +14,27 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = await getPermitGuideBySlug(slug);
-  if (!guide) return { title: "Solar permits | SolarFlow" };
-  return {
-    title: `Solar permits: ${guide.name} | SolarFlow`,
-    description: `Typical solar permitting and interconnection steps for ${guide.name} (${guide.region}). Know the process before you sign.`,
-    alternates: { canonical: `/solar-permits/${guide.slug}` },
-  };
+  if (!guide) {
+    return pageMetadata({
+      title: "Solar permits",
+      description:
+        "Local building permits and utility interconnection / PTO steps before you energize.",
+      path: "/solar-permits",
+      image: "permits",
+    });
+  }
+  return pageMetadata({
+    title: `Solar permits: ${guide.name}`,
+    description: `Typical solar permitting and interconnection steps for ${guide.name} (${guide.region}). Know the process before you sign — then model your address.`,
+    path: `/solar-permits/${guide.slug}`,
+    image: "permits",
+    keywords: [
+      `${guide.name} solar permits`,
+      "solar interconnection",
+      "permission to operate",
+      guide.region,
+    ],
+  });
 }
 
 function defaultStateFromRegion(region: string): string {

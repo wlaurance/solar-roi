@@ -1,5 +1,14 @@
 import { Suspense } from "react";
 import { LoginForm } from "@/components/auth/login-form";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Sign in",
+  description:
+    "Sign in to SolarFlow to model solar ROI, roof layouts, permits, and nearby installers across your projects.",
+  path: "/login",
+  image: "signup",
+});
 
 export default function LoginPage() {
   return (

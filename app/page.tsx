@@ -1,9 +1,27 @@
 import { Icons } from "@/components/icons";
+import { HomeJsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Model solar ROI before you sign",
+  description:
+    "Model solar ROI without outdated federal rebate assumptions — roof layout, permits, utilities, equipment, and nearby installers for every project in your portfolio.",
+  path: "/",
+  image: "home",
+  keywords: [
+    "solar ROI calculator",
+    "rooftop solar planning",
+    "solar permits",
+    "solar installers",
+    "solar incentives 2026",
+  ],
+});
 
 export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-6 py-16">
+      <HomeJsonLd />
       <div className="max-w-lg text-center">
         <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-canopy text-white shadow-sm">
           <Icons.sun className="h-7 w-7" />

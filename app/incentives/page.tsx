@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import {
@@ -6,12 +5,21 @@ import {
   listStateIncentiveIndex,
   getStateIncentive,
 } from "@/lib/incentives/catalog";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Solar incentives 2026 | SolarFlow",
+export const metadata = pageMetadata({
+  title: "Solar incentives 2026",
   description:
-    "Federal residential solar tax credit status after OBBBA, plus state-by-state incentive overviews for homeowners researching rooftop solar in 2026.",
-};
+    "Federal residential solar tax credit status after OBBBA, plus state-by-state incentive overviews for homeowners researching rooftop solar in 2026 — then model your address.",
+  path: "/incentives",
+  image: "incentives",
+  keywords: [
+    "solar tax credit 2026",
+    "solar incentives",
+    "residential clean energy credit",
+    "state solar rebates",
+  ],
+});
 
 export default function IncentivesIndexPage() {
   const federal = listFederalIncentiveIndex();

@@ -1,12 +1,5 @@
 import type { MetadataRoute } from "next";
-
-function siteOrigin(): string {
-  return (
-    process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-    process.env.URL?.replace(/\/$/, "") ||
-    "https://solarflow.app"
-  );
-}
+import { siteOrigin } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   const origin = siteOrigin();
@@ -14,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/projects/", "/api/"],
+      disallow: ["/projects/", "/api/", "/r/"],
     },
     sitemap: `${origin}/sitemap.xml`,
   };

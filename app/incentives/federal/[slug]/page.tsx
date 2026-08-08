@@ -7,6 +7,7 @@ import {
   getFederalIncentive,
   listFederalIncentiveIndex,
 } from "@/lib/incentives/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,12 +18,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getFederalIncentive(slug);
-  if (!item) return { title: "Federal incentives | SolarFlow" };
-  return {
-    title: `${item.title} | SolarFlow`,
-    description: item.summary.slice(0, 155),
-    alternates: { canonical: `/incentives/federal/${item.slug}` },
-  };
+  if (!item) {
+    return pageMetadata({
+      title: "Federal solar incentives",
+      description:
+        "Federal residential solar tax credit status for homeowners researching rooftop solar in 2026.",
+      path: "/incentives",
+      image: "incentives",
+    });
+  }
+  return pageMetadata({
+    title: item.title,
+    description: item.summary,
+    path: `/incentives/federal/${item.slug}`,
+    image: "incentives",
+    keywords: [
+      "federal solar tax credit",
+      "residential clean energy credit",
+      "solar incentives 2026",
+      item.status,
+    ],
+  });
 }
 
 export default async function FederalIncentivePage({ params }: Props) {
