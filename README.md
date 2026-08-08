@@ -80,6 +80,7 @@ Open [http://localhost:3000](http://localhost:3000), create an account, then **N
 - `/projects/[id]/permits` — seeded jurisdiction steps from Supabase
 - `/projects/[id]/installers` — Places nearby “solar installer”
 - `/upload-bill` / `/upload-bill/[utility]` — marketing bill upload (auth-gated submit → Supabase + Gemini parse)
+- `/financing` / `/financing/[slug]` — solar loan / embedded finance guides (lenders, marketplaces, aggregators)
 
 ## ROI notes
 

@@ -1,0 +1,80 @@
+{
+  "slug": "sunvoy",
+  "name": "Sunvoy",
+  "category": "aggregator",
+  "category_label": "Unified data API",
+  "headline": "Sunvoy unified API for solar hardware and financing data",
+  "summary": "Sunvoy tackles the N+1 integration problem: one RESTful API that normalizes telemetry from 30+ inverter brands (including Enphase and SolarEdge), batteries, and financing platforms such as GoodLeap, Mosaic, Sunlight Financial, and Dividend.",
+  "key_facts": [
+    {
+      "label": "Pattern",
+      "value": "Single unified REST API across hardware + finance vendors"
+    },
+    {
+      "label": "Hardware breadth",
+      "value": "30+ inverter brands + battery systems"
+    },
+    {
+      "label": "Finance examples",
+      "value": "GoodLeap, Mosaic, Sunlight Financial, Dividend"
+    },
+    {
+      "label": "Pricing model",
+      "value": "Usage-based credits (~$0.00975 per typical request)"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Post-install telemetry meets loan tracking",
+      "body": "Unlike proposal-only aggregators, Sunvoy emphasizes ongoing operations: inverter production, storage behavior, and financing status in one normalized feed. Asset managers and software teams can monitor performance and payment state without maintaining separate OAuth flows per vendor."
+    },
+    {
+      "heading": "Solving N+1 integrations",
+      "body": "Without a unifier, each manufacturer and lender means another key rotation policy, schema, and failure mode. Sunvoy collapses that to one integration surface with a predictable response format — useful for portfolios, not just single-home sales tools."
+    },
+    {
+      "heading": "Usage-based cost control",
+      "body": "Most calls cost one credit (on the order of a fraction of a cent). That granularity helps developers prototype affordably and scale deliberately — though production architectures should still cache where freshness allows."
+    },
+    {
+      "heading": "Homeowner relevance",
+      "body": "You may never log into Sunvoy. You will feel it if your installer’s monitoring app or financier portal shows production and loan milestones in one place. If monitoring and loan servicing feel disconnected, ask who aggregates your hardware data and who services the note."
+    }
+  ],
+  "questions_to_ask": [
+    "Which monitoring platform will I use after PTO, and does it include financing status?",
+    "If my inverter brand changes mid-project, does monitoring still work?",
+    "Who do I call for loan servicing vs production issues?"
+  ],
+  "red_flags": [
+    "No monitoring plan disclosed before deposit.",
+    "Financing and production support contacts that bounce you between vendors indefinitely."
+  ],
+  "faqs": [
+    {
+      "question": "Is Sunvoy a solar lender?",
+      "answer": "No. It is a unified API layer over hardware telemetry and financing platforms."
+    },
+    {
+      "question": "Does SolarFlow use Sunvoy?",
+      "answer": "SolarFlow models ROI and roof layouts for homeowners; this page explains an industry aggregator you may encounter indirectly through installer/ops software."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "solargraf",
+    "goodleap",
+    "sunlight-financial",
+    "solar-loan-apis"
+  ],
+  "confidence": "medium",
+  "sources": [
+    {
+      "title": "GoodLeap (ecosystem context)",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

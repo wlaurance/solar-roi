@@ -1,0 +1,80 @@
+{
+  "slug": "hearth",
+  "name": "Hearth",
+  "category": "marketplace",
+  "category_label": "Multi-lender marketplace",
+  "headline": "Hearth — multi-lender solar and home-improvement financing",
+  "summary": "Hearth aggregates loan offers from about $1,000 to $250,000 inside a SaaS suite that also covers digital estimates and invoicing — useful when a single lender’s credit box or loan cap does not fit.",
+  "key_facts": [
+    {
+      "label": "Loan range",
+      "value": "About $1,000–$250,000 across lenders"
+    },
+    {
+      "label": "Model",
+      "value": "Multi-lender marketplace (not a single balance-sheet lender)"
+    },
+    {
+      "label": "Contractor suite",
+      "value": "Estimates, invoicing, and financing in one SaaS"
+    },
+    {
+      "label": "Onboarding data",
+      "value": "Integrations such as Infutor Digital Onboarding for PII digitization"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Why aggregators exist",
+      "body": "A single lender may decline a file another lender would approve — or cap loans below a commercial/residential hybrid job. Hearth’s marketplace shape returns an array of viable products so the consumer can choose among asynchronous underwriting results."
+    },
+    {
+      "heading": "API shape for developers",
+      "body": "External integrations typically authenticate with POST header credentials or Bearer tokens. Because Hearth fans out to multiple lenders, payloads and responses must tolerate varying requirements and stitch multiple decisions into one selectable list."
+    },
+    {
+      "heading": "Identity and compliance tooling",
+      "body": "Digital onboarding APIs help collect and verify first-party PII while aiming to keep underwriting compliant. For homeowners, that usually feels like a guided web form — still read every consent around soft vs hard credit pulls."
+    },
+    {
+      "heading": "When Hearth shows up on your quote",
+      "body": "You may see multiple offers with different APRs, terms, and max amounts. Compare them on the same cash price, and watch for dealer fees that differ by capital partner. Marketplace convenience is not the same as “best rate.”"
+    }
+  ],
+  "questions_to_ask": [
+    "How many lenders decisioned my file, and can I see declines as well as approvals?",
+    "Which offer has the lowest total cost of credit — not just the lowest monthly payment?",
+    "Does using Hearth change who services my loan after funding?"
+  ],
+  "red_flags": [
+    "Only the highest-payment-factor offer presented when multiple came back.",
+    "Unclear which legal lender is on the promissory note."
+  ],
+  "faqs": [
+    {
+      "question": "Is Hearth the lender on my contract?",
+      "answer": "Often Hearth is the marketplace/software layer; a participating lender funds the loan. Confirm the lender name on the final agreements."
+    },
+    {
+      "question": "Can Hearth cover a large solar + storage project?",
+      "answer": "Its upper range (about $250k) can reach large residential and some commercial scopes that mid-tier caps like Wisetack’s $25k cannot."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "acorn-finance",
+    "wisetack",
+    "how-solar-loans-work",
+    "goodleap"
+  ],
+  "confidence": "medium",
+  "sources": [
+    {
+      "title": "GoodLeap (ecosystem context)",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

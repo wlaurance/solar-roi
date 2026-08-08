@@ -1,0 +1,76 @@
+{
+  "slug": "acorn-finance",
+  "name": "Acorn Finance",
+  "category": "marketplace",
+  "category_label": "Open lending marketplace",
+  "headline": "Acorn Finance prequal widgets for solar contractor websites",
+  "summary": "Acorn Finance operates as an open lending marketplace whose flagship contractor tool is an embeddable soft-pull pre-qualification widget — built to capture financially verified leads before a salesperson ever calls.",
+  "key_facts": [
+    {
+      "label": "Primary offer",
+      "value": "Embeddable pre-qualification widget"
+    },
+    {
+      "label": "Funnel job",
+      "value": "Top-of-funnel conversion on installer marketing sites"
+    },
+    {
+      "label": "Coverage",
+      "value": "All 50 U.S. states (per platform positioning)"
+    },
+    {
+      "label": "Credit pull",
+      "value": "Soft-pull exploration prior to sales contact"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Widget-first, not enterprise-API-first",
+      "body": "Similar to Hearth’s marketplace model, Acorn emphasizes open lending. Its distinctive contractor surface is the website widget: anonymous visitors can explore financing options without waiting for a kitchen-table appointment. Soft-pull results then pass into the contractor CRM with an approved amount attached."
+    },
+    {
+      "heading": "Why installers embed it",
+      "body": "Sales teams want certainty about buying power. A prequal widget filters tire-kickers, prioritizes follow-up, and works nationally for developers who operate across state lines. Implementation is typically a snippet or hosted link rather than a months-long Financing API project."
+    },
+    {
+      "heading": "Homeowner tips if you used an Acorn-style widget",
+      "body": "Screenshot or save the offers shown, confirm soft vs hard pull language, and still request a cash proposal. Prequal maximums are not a reason to oversize a system — model your roof and bill first in SolarFlow, then finance the right kW."
+    }
+  ],
+  "questions_to_ask": [
+    "Which lenders stand behind the offers the widget returned?",
+    "How long is my prequal valid, and what triggers a hard pull?",
+    "Can I get a cash price that matches the financed scope exactly?"
+  ],
+  "red_flags": [
+    "Widget that collects full SSN without clear soft-pull disclosure.",
+    "Installer treats prequal max as the system design target instead of your usage and roof."
+  ],
+  "faqs": [
+    {
+      "question": "Does using an Acorn widget lock me into one installer?",
+      "answer": "Usually the widget lives on a specific contractor’s site, so leads route to that business. You can still shop other installers and lenders independently."
+    },
+    {
+      "question": "Is Acorn available in my state?",
+      "answer": "The platform positions itself across all fifty U.S. states; confirm product availability on the disclosure screens for your address."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "hearth",
+    "solar-affiliate-widgets",
+    "wisetack",
+    "how-solar-loans-work"
+  ],
+  "confidence": "medium",
+  "sources": [
+    {
+      "title": "GoodLeap (ecosystem context)",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

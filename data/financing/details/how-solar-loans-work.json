@@ -1,0 +1,94 @@
+{
+  "slug": "how-solar-loans-work",
+  "name": "How solar loans work",
+  "category": "guide",
+  "category_label": "Guide",
+  "headline": "How solar loans work at the kitchen table",
+  "summary": "Modern solar loans are embedded in the sales proposal — soft credit checks, dealer fees, and multi-tier payment schedules — not a separate bank trip. Here’s how to read the offer before you sign.",
+  "key_facts": [
+    {
+      "label": "Typical system cost range",
+      "value": "$15,000–$100,000+ before incentives"
+    },
+    {
+      "label": "Common check type at quote",
+      "value": "Soft pull (does not impact FICO the way a hard inquiry does)"
+    },
+    {
+      "label": "2026 federal 25D ITC",
+      "value": "Generally $0 for homeowner-owned cash/loan completes after Dec 31, 2025 — verify any “tax credit payment drop” story in writing"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "From fragmented loans to point-of-sale financing",
+      "body": "Historically, buyers had to arrange generic personal loans, HELOCs, or second mortgages separately from the installer pitch. Today most residential solar deals use embedded point-of-sale (POS) financing: the lender’s underwriting sits inside the design proposal, CRM, or marketplace. That cuts friction, speeds decisions, and raises close rates — but it also concentrates complexity in the PDF you’re handed at the table."
+    },
+    {
+      "heading": "Soft pulls vs hard inquiries",
+      "body": "Sales teams prefer soft credit pulls so they can show pre-approved monthly payments without deterring buyers with a hard inquiry. Soft decisions let reps resize the array, add batteries, or adjust price against your approved ceiling. A hard inquiry usually comes later when you formally accept a loan. Ask which type of pull they are running and when."
+    },
+    {
+      "heading": "Dealer fees and the real cash price",
+      "body": "Many solar loans charge a dealer fee (an origination fee paid by the installer to the lender). That fee is often baked into your financed amount or the $/W on the proposal. A “0%” or low payment-factor offer can still be expensive once dealer fees inflate the principal. Always get the cash price, the financed amount, the APR or payment factor, and the dealer fee as separate line items."
+    },
+    {
+      "heading": "Re-amortization, DPPs, and tax-credit language",
+      "body": "Older solar loan products often used Deferred Payment Portions (DPPs) and re-amortization tied to the federal Investment Tax Credit (ITC): lower payments for ~12–18 months, then a larger payment if you did not apply a lump-sum credit to the principal. In SolarFlow’s 2026 planning model, Section 25D is generally unavailable for homeowner-owned systems completed after Dec 31, 2025. If a proposal still shows a “tax credit” payment step-down, demand the exact product docs — do not assume a 30% federal rebate still applies."
+    },
+    {
+      "heading": "What the API sends behind the scenes",
+      "body": "When a rep designs a system, proposal software can transmit DC capacity, expected yield, hardware, and project cost to the lender’s underwriting engine. The engine returns monthly payments, dealer fees, and rate tiers in seconds. You do not see the API call — you see a pre-approved payment. Treat that number as conditional until underwriting, title, and ACH requirements clear."
+    }
+  ],
+  "questions_to_ask": [
+    "What is the cash price before financing, and what is the amount actually financed?",
+    "What is the dealer fee (dollar amount and % of project), and who pays it?",
+    "Is this a soft pull or hard inquiry, and when does a hard pull occur?",
+    "Does the payment schedule re-amortize? On what date, and what triggers the higher payment?",
+    "What happens if federal or state tax credits do not materialize as assumed?",
+    "Is ACH enrollment required, and what are late-fee / default terms?"
+  ],
+  "red_flags": [
+    "Payment-factor marketing with no APR, no cash price, and no dealer-fee disclosure.",
+    "Savings charts that still assume a 30% federal residential ITC for a 2026 cash/loan install.",
+    "Pressure to sign the same day because “your rate expires tonight” without written product terms.",
+    "Bundled battery + roof work with no itemized costs (some lenders enforce price-per-watt caps that require itemization)."
+  ],
+  "faqs": [
+    {
+      "question": "Is a solar loan better than a HELOC?",
+      "answer": "It depends on rate, fees, lien position, and how long you will keep the home. Solar POS loans are convenient and often unsecured or UCC-filed differently than a HELOC, but dealer fees can erase the convenience. Compare APR + fees on the same cash price."
+    },
+    {
+      "question": "Will checking solar financing hurt my credit?",
+      "answer": "Many kitchen-table quotes start with a soft pull that does not affect your score the way a hard inquiry does. Confirm with the lender name on your proposal before authorizing anything."
+    },
+    {
+      "question": "Why did my payment jump after month 18 on a neighbor’s loan?",
+      "answer": "Many legacy products assumed you would apply the federal ITC to principal. If that lump sum never hit the loan, payments re-amortized upward. For 2026 homeowner-owned completes, do not plan around Section 25D unless a tax advisor confirms eligibility."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "embedded-solar-finance",
+    "goodleap",
+    "sunlight-financial",
+    "solar-loan-apis"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "GoodLeap",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    },
+    {
+      "title": "IRS OBBB FAQs (25C/25D termination)",
+      "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

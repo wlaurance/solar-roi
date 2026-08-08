@@ -14,6 +14,7 @@ export type OgImageKey =
   | "solar-for"
   | "incentives"
   | "equipment"
+  | "financing"
   | "permits"
   | "quote-check"
   | "signup";
@@ -25,6 +26,7 @@ export const OG_IMAGES: Record<OgImageKey, string> = {
   "solar-for": "/og/og-solar-for.jpg",
   incentives: "/og/og-incentives.jpg",
   equipment: "/og/og-equipment.jpg",
+  financing: "/og/og-financing.jpg",
   permits: "/og/og-permits.jpg",
   "quote-check": "/og/og-quote-check.jpg",
   signup: "/og/og-signup.jpg",

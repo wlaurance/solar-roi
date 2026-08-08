@@ -1,0 +1,105 @@
+{
+  "slug": "wisetack",
+  "name": "Wisetack",
+  "category": "marketplace",
+  "category_label": "Specialized financing",
+  "headline": "Wisetack financing for mid-size solar and home-service jobs",
+  "summary": "Wisetack focuses on smaller to mid-sized residential projects with loan originations capped at $25,000 — a fit for repairs, inverter swaps, battery retrofits, and HVAC more than whole-home solar-plus-storage — delivered through conversion-optimized embeddable widgets.",
+  "key_facts": [
+    {
+      "label": "Loan cap",
+      "value": "$25,000 maximum origination"
+    },
+    {
+      "label": "Best fit",
+      "value": "Repairs, inverter replacements, battery retrofits, HVAC"
+    },
+    {
+      "label": "Integration speed",
+      "value": "Partners often go live in about three weeks"
+    },
+    {
+      "label": "Auth",
+      "value": "OAuth 2.0 Bearer tokens; REST (+ GraphQL in some partners)"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Where Wisetack sits in the stack",
+      "body": "Unlike tier-one solar lenders optimized for $30k–$100k+ EPCs, Wisetack’s hard cap makes it a specialist rail for ancillary and mid-ticket work. That can be a feature: faster embeds, clearer consumer UX, and webhook-driven ops without enterprise API programs."
+    },
+    {
+      "heading": "Widget suite built for conversion",
+      "body": "Rather than forcing every partner to build UI from scratch, Wisetack provides embeddable components: slide-to-estimate calculators for term/payment exploration, monthly payment microcopy (“As low as $/mo”) fed by pricing GET endpoints, and a soft-pull Prequalify Path via redirect or modal CTA.",
+      "table": {
+        "caption": "Wisetack widget types",
+        "headers": [
+          "Widget",
+          "Function",
+          "Implementation"
+        ],
+        "rows": [
+          [
+            "Slide-to-estimate calculators",
+            "Adjust terms (e.g. 12–60 months) and see estimated payments",
+            "iframe or JS snippet synced to project total"
+          ],
+          [
+            "Monthly payment displays",
+            "Dynamic “As low as $/mo” on estimates and invoices",
+            "GET pricing endpoint with invoice total"
+          ],
+          [
+            "Prequalify path",
+            "Soft-pull decision in minutes without score impact",
+            "Redirect or modal from primary CTA"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Webhooks that drive the CRM",
+      "body": "When funding clears, Wisetack can POST state changes that automatically move a job to “Contract Signed,” trigger homeowner welcome sequences, and notify procurement to order modules or inverters. That event-driven design is the operational reason mid-market shops adopt the platform quickly."
+    },
+    {
+      "heading": "Homeowner checklist for Wisetack offers",
+      "body": "Confirm the financed amount is within product limits, understand whether your job is repair vs full system, and still get a cash price. A widget payment estimate is not a substitute for the final TILA disclosures."
+    }
+  ],
+  "questions_to_ask": [
+    "Is my project under the $25k cap after change orders?",
+    "Was this a soft-pull prequal or a final application?",
+    "What APR/term options were returned, and can I see them in writing?"
+  ],
+  "red_flags": [
+    "Using Wisetack-sized financing language on a whole-home solar + battery package that will exceed $25k.",
+    "Only widget marketing copy — no final loan agreement provided before work starts."
+  ],
+  "faqs": [
+    {
+      "question": "Can Wisetack finance my entire new rooftop solar system?",
+      "answer": "Often no — the $25k cap blocks many full installs. It is better matched to repairs, equipment swaps, and mid-size add-ons. Ask about GoodLeap, Sunlight, Hearth, or cash/HELOC alternatives for larger scopes."
+    },
+    {
+      "question": "Does the prequalify path hurt my credit?",
+      "answer": "Wisetack markets a soft-pull pre-qualification that does not impact credit score the way a hard inquiry does. Confirm on the disclosure screen before submitting."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "hearth",
+    "acorn-finance",
+    "solar-loan-apis",
+    "how-solar-loans-work"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "GoodLeap (ecosystem context)",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

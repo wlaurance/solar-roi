@@ -39,6 +39,10 @@ const QUESTIONS = [
     q: "What are equipment brands, warranties, and workmanship terms?",
     a: "Cheapest isn’t always best — but premium needs a reason beyond glossy savings.",
   },
+  {
+    q: "If financing, what is the dealer fee, APR, and payment tier schedule?",
+    a: "Payment-factor marketing hides cost. Get cash price, financed amount, dealer fee, and any re-amortization in writing — see our financing guides.",
+  },
 ];
 
 export default function QuoteCheckPage() {
@@ -89,8 +93,12 @@ export default function QuoteCheckPage() {
           report. Also see{" "}
           <Link href="/solar-for" className="text-canopy hover:underline">
             utility bill guides
-          </Link>{" "}
-          and{" "}
+          </Link>
+          ,{" "}
+          <Link href="/financing" className="text-canopy hover:underline">
+            financing guides
+          </Link>
+          , and{" "}
           <Link href="/solar-permits" className="text-canopy hover:underline">
             permit timelines
           </Link>
