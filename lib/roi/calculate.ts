@@ -5,6 +5,8 @@ export type RoiToggles = {
   water: boolean;
 };
 
+export type PaymentMode = "cash" | "finance";
+
 export type SolarDriveInputs = {
   /** System size in kW from Solar API (panels × capacity) */
   systemKw?: number | null;
@@ -26,18 +28,38 @@ export type RoiInput = RoiToggles & {
   rateUsdPerKwh?: number | null;
   /** Annual utility/energy cost inflation as a percent (e.g. 5 = 5%/yr) */
   energyInflationPct?: number | null;
+  /**
+   * Assumed CAGR (%) for investing the bill difference (old − new) each year.
+   * Defaults to 5.
+   */
+  investmentCagrPct?: number | null;
+  /** Pay equipment net cost in cash, or finance with down payment + APR */
+  paymentMode?: PaymentMode | null;
+  /** Down payment as percent of net cost when financing (e.g. 10 = 10%) */
+  loanDownPaymentPct?: number | null;
+  /** Loan APR as a percent (e.g. 6.99 = 6.99%/yr) */
+  loanAprPct?: number | null;
+  /** Loan term in years (amortization length) */
+  loanTermYears?: number | null;
 };
 
 export type RoiYearPoint = {
   year: number;
   /** Cumulative $ spent staying on utility (no solar path) */
   cumulativeUtilitySpend: number;
-  /** Cumulative $ spent on solar path (net install + bills + replacements) */
+  /** Cumulative $ spent on solar path (net install/loan + bills + replacements) */
   cumulativeSolarPathSpend: number;
   /** Utility spend − solar path spend (positive = ahead) */
   cumulativeSavings: number;
   annualSavings: number;
   batteryReplacement: number;
+  /** Loan principal + interest paid this year (0 when cash / after term) */
+  loanPayment: number;
+  /**
+   * Portfolio value if each year's bill difference (old − new) is invested
+   * at the assumed CAGR. Labeled "invested money" in the UI.
+   */
+  investedMoney: number;
 };
 
 export type RoiResult = {
@@ -51,10 +73,23 @@ export type RoiResult = {
   monthlyUsageKwhBefore: number;
   rateUsdPerKwh: number;
   energyInflationPct: number;
+  investmentCagrPct: number;
+  paymentMode: PaymentMode;
+  loanDownPaymentPct: number;
+  loanAprPct: number;
+  loanTermYears: number;
+  /** Cash due at start: full net cost (cash) or down payment (finance) */
+  upfrontCost: number;
+  /** Financed principal (0 when cash) */
+  loanPrincipal: number;
+  /** Monthly loan payment (0 when cash or zero principal) */
+  monthlyLoanPayment: number;
   offset: number;
   yearlyEnergyDcKwh: number | null;
   breakEvenYear: number | null;
   netSavings25: number;
+  /** Invested money portfolio at year 25 */
+  investedMoney25: number;
   /** True when size/energy came from Roof Designer Solar panel config */
   solarDriven: boolean;
   series: RoiYearPoint[];
@@ -78,6 +113,15 @@ export const FEDERAL_RESIDENTIAL_ITC_PERCENT = 0;
 export const ITC_NET_FACTOR = 1 - FEDERAL_RESIDENTIAL_ITC_PERCENT / 100;
 /** Default annual energy cost inflation: 5%/yr */
 export const DEFAULT_ENERGY_INFLATION_PCT = 5;
+/** Default assumed CAGR for investing bill savings: 5%/yr */
+export const DEFAULT_INVESTMENT_CAGR_PCT = 5;
+export const DEFAULT_PAYMENT_MODE: PaymentMode = "cash";
+/** Default down payment when financing: 10% of net cost */
+export const DEFAULT_LOAN_DOWN_PAYMENT_PCT = 10;
+/** Default equipment loan APR: 6.99%/yr */
+export const DEFAULT_LOAN_APR_PCT = 6.99;
+/** Default loan term used for amortization */
+export const DEFAULT_LOAN_TERM_YEARS = 15;
 export const HORIZON_YEARS = 25;
 export const DEFAULT_SYSTEM_KW_BASE = 8.5;
 export const HVAC_KW = 3.0;
@@ -102,6 +146,62 @@ export function resolveEnergyInflationPct(pct?: number | null): number {
     return pct;
   }
   return DEFAULT_ENERGY_INFLATION_PCT;
+}
+
+export function resolveInvestmentCagrRate(pct?: number | null): number {
+  if (pct != null && Number.isFinite(pct) && pct >= 0) {
+    return pct / 100;
+  }
+  return DEFAULT_INVESTMENT_CAGR_PCT / 100;
+}
+
+export function resolveInvestmentCagrPct(pct?: number | null): number {
+  if (pct != null && Number.isFinite(pct) && pct >= 0) {
+    return pct;
+  }
+  return DEFAULT_INVESTMENT_CAGR_PCT;
+}
+
+export function resolvePaymentMode(mode?: PaymentMode | null): PaymentMode {
+  return mode === "finance" ? "finance" : DEFAULT_PAYMENT_MODE;
+}
+
+export function resolveLoanDownPaymentPct(pct?: number | null): number {
+  if (pct != null && Number.isFinite(pct) && pct >= 0 && pct <= 100) {
+    return pct;
+  }
+  return DEFAULT_LOAN_DOWN_PAYMENT_PCT;
+}
+
+export function resolveLoanAprPct(pct?: number | null): number {
+  if (pct != null && Number.isFinite(pct) && pct >= 0) {
+    return pct;
+  }
+  return DEFAULT_LOAN_APR_PCT;
+}
+
+export function resolveLoanTermYears(years?: number | null): number {
+  if (years != null && Number.isFinite(years) && years >= 1) {
+    return Math.min(HORIZON_YEARS, Math.floor(years));
+  }
+  return DEFAULT_LOAN_TERM_YEARS;
+}
+
+/**
+ * Standard amortizing loan monthly payment.
+ * Returns 0 when principal is 0; equal principal/n months when APR is 0.
+ */
+export function monthlyLoanPayment(
+  principal: number,
+  aprPct: number,
+  termYears: number,
+): number {
+  if (!(principal > 0) || !(termYears > 0)) return 0;
+  const n = termYears * 12;
+  const r = aprPct / 100 / 12;
+  if (r === 0) return principal / n;
+  const factor = Math.pow(1 + r, n);
+  return (principal * r * factor) / (factor - 1);
 }
 
 /** Baseline monthly bill before electrification add-ons */
@@ -194,6 +294,13 @@ export function calculateRoi(input: RoiInput): RoiResult {
   const rate = resolveRate(input.rateUsdPerKwh);
   const inflationPct = resolveEnergyInflationPct(input.energyInflationPct);
   const inflation = resolveEnergyInflationRate(inflationPct);
+  const investmentCagrPct = resolveInvestmentCagrPct(input.investmentCagrPct);
+  const investmentCagr = resolveInvestmentCagrRate(investmentCagrPct);
+  const paymentMode = resolvePaymentMode(input.paymentMode);
+  const loanDownPaymentPct = resolveLoanDownPaymentPct(input.loanDownPaymentPct);
+  const loanAprPct = resolveLoanAprPct(input.loanAprPct);
+  const loanTermYears = resolveLoanTermYears(input.loanTermYears);
+
   const systemKw = resolveSystemKw(input);
   const solarDriven =
     Boolean(input.solar) &&
@@ -208,6 +315,18 @@ export function calculateRoi(input: RoiInput): RoiResult {
   const grossCost = panelCost + batteryCost;
   const netCost = grossCost * ITC_NET_FACTOR;
 
+  const financing = paymentMode === "finance" && netCost > 0;
+  const upfrontCost = financing
+    ? netCost * (loanDownPaymentPct / 100)
+    : netCost;
+  const loanPrincipal = financing ? Math.max(0, netCost - upfrontCost) : 0;
+  const monthlyLoan = monthlyLoanPayment(
+    loanPrincipal,
+    loanAprPct,
+    loanTermYears,
+  );
+  const annualLoanPayment = monthlyLoan * 12;
+
   const monthlyBillBefore =
     resolveBaselineMonthlyBill(input) + electrificationBillAdd(input);
   const monthlyUsageKwhBefore =
@@ -221,14 +340,17 @@ export function calculateRoi(input: RoiInput): RoiResult {
     {
       year: 0,
       cumulativeUtilitySpend: 0,
-      cumulativeSolarPathSpend: Math.round(netCost),
-      cumulativeSavings: Math.round(-netCost),
+      cumulativeSolarPathSpend: Math.round(upfrontCost),
+      cumulativeSavings: Math.round(-upfrontCost),
       annualSavings: 0,
       batteryReplacement: 0,
+      loanPayment: 0,
+      investedMoney: 0,
     },
   ];
   let cumulativeUtility = 0;
-  let cumulativeSolar = netCost;
+  let cumulativeSolar = upfrontCost;
+  let investedMoney = 0;
   let breakEvenYear: number | null = null;
 
   for (let year = 1; year <= HORIZON_YEARS; year++) {
@@ -239,11 +361,17 @@ export function calculateRoi(input: RoiInput): RoiResult {
       input.battery && year === BATTERY_REPLACEMENT_YEAR
         ? BATTERY_REPLACEMENT_COST
         : 0;
+    const loanPayment =
+      financing && year <= loanTermYears ? annualLoanPayment : 0;
+    /** Bill difference (old − new) — also the amount invested that year. */
     const annualSavings = utilityYearCost - solarYearCost;
 
     cumulativeUtility += utilityYearCost;
-    cumulativeSolar += solarYearCost + batteryReplacement;
+    cumulativeSolar += solarYearCost + batteryReplacement + loanPayment;
     const cumulativeSavings = cumulativeUtility - cumulativeSolar;
+
+    // Prior invested money grows at CAGR, then this year's bill difference is added.
+    investedMoney = investedMoney * (1 + investmentCagr) + annualSavings;
 
     if (breakEvenYear == null && cumulativeSavings >= 0 && input.solar) {
       breakEvenYear = year;
@@ -256,6 +384,8 @@ export function calculateRoi(input: RoiInput): RoiResult {
       cumulativeSavings: Math.round(cumulativeSavings),
       annualSavings: Math.round(annualSavings),
       batteryReplacement,
+      loanPayment: Math.round(loanPayment),
+      investedMoney: Math.round(investedMoney),
     });
   }
 
@@ -279,11 +409,20 @@ export function calculateRoi(input: RoiInput): RoiResult {
     monthlyUsageKwhBefore: Math.round(monthlyUsageKwhBefore),
     rateUsdPerKwh: rate,
     energyInflationPct: inflationPct,
+    investmentCagrPct,
+    paymentMode,
+    loanDownPaymentPct,
+    loanAprPct,
+    loanTermYears,
+    upfrontCost: Math.round(upfrontCost),
+    loanPrincipal: Math.round(loanPrincipal),
+    monthlyLoanPayment: Math.round(monthlyLoan * 100) / 100,
     offset: Math.round(offset * 1000) / 1000,
     yearlyEnergyDcKwh:
       yearlyEnergyDcKwh != null ? Math.round(yearlyEnergyDcKwh) : null,
     breakEvenYear,
     netSavings25: series[series.length - 1]?.cumulativeSavings ?? 0,
+    investedMoney25: series[series.length - 1]?.investedMoney ?? 0,
     solarDriven,
     series,
   };
