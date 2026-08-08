@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { listFinancingIndex } from "@/lib/financing/catalog";
 import { listFederalIncentiveIndex, listStateIncentiveIndex } from "@/lib/incentives/catalog";
 import { listLocations } from "@/lib/locations/catalog";
 import { listManufacturerIndex } from "@/lib/manufacturers/catalog";
@@ -25,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${origin}/solar-permits`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${origin}/incentives`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${origin}/equipment`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${origin}/financing`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${origin}/tools/quote-check`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${origin}/upload-bill`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${origin}/signup`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
@@ -80,6 +82,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const financingRoutes = listFinancingIndex().map((f) => ({
+    url: `${origin}/financing/${f.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     ...staticRoutes,
     ...utilityRoutes,
@@ -87,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...federalRoutes,
     ...stateRoutes,
     ...equipmentRoutes,
+    ...financingRoutes,
     ...permitRoutes,
     ...locationRoutes,
   ];

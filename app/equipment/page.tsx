@@ -83,6 +83,9 @@ export default function EquipmentIndexPage() {
           >
             Made-in-USA myths
           </Link>
+          <Link href="/financing" className="text-canopy hover:underline">
+            Financing
+          </Link>
           <Link href="/solar-for" className="text-canopy hover:underline">
             Utility guides
           </Link>

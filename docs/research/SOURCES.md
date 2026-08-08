@@ -6,4 +6,11 @@
 - NJ Clean Energy ADI program pages (research brief)
 - Manufacturer product pages (Tesla Powerwall, Enphase)
 
+## Solar financing / embedded finance ingest
+
+- **GoodLeap:** https://www.goodleap.com/
+- **GoodLeap API provider listing:** https://apis.io/providers/goodleap/
+- **Sunlight Financial historical SEC MD&A:** https://www.sec.gov/Archives/edgar/data/1821850/000182185021000010/a994managementsdiscussiona.htm
+- Industry analysis of POS solar lending APIs, widgets, and affiliate networks (GoodLeap, Sunlight, Wisetack, Hearth, Acorn Finance, EnergySage, Solargraf, Sunvoy, Aurora/OpenSolar) — product limits (e.g. Wisetack $25k cap, SunSaver PPW matrices) can change; pages mark confidence and ask readers to verify on current disclosures.
+
 SolarFlow planning model sets federal residential ITC to **0%** for 2026 homeowner-owned completes per IRS OBBB FAQs. Not tax advice.

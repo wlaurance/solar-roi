@@ -1,0 +1,105 @@
+{
+  "slug": "energysage",
+  "name": "EnergySage",
+  "category": "marketplace",
+  "category_label": "Online solar marketplace",
+  "headline": "EnergySage — widget-driven solar marketplace",
+  "summary": "EnergySage is the largest U.S. online solar marketplace — often nicknamed the “Kayak of solar” and backed by Schneider Electric — pairing certified installers with homeowners and powering partner sites through embeddable calculators and community solar tools.",
+  "key_facts": [
+    {
+      "label": "Model",
+      "value": "Competitive installer marketplace + partner widget program"
+    },
+    {
+      "label": "Backer",
+      "value": "Schneider Electric (financial backing referenced in industry coverage)"
+    },
+    {
+      "label": "Partner embeds",
+      "value": "Savings calculators, community solar search, educational libraries"
+    },
+    {
+      "label": "Monetization",
+      "value": "Negotiated partner commissions / trackable sustainability metrics"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Marketplace vs single-installer pitch",
+      "body": "Instead of one rep’s proposal, EnergySage routes projects to certified installers who bid. That can surface price competition — still normalize each bid to $/W, separate batteries, and verify equipment before signing."
+    },
+    {
+      "heading": "Affiliate and utility partner program",
+      "body": "EnergySage’s partner solutions lean widget-based for nonprofits, corporates, and utilities. Simple HTML/JavaScript embeds render interactive tools on the partner domain. When a visitor later requests quotes and contracts through EnergySage, attribution cookies/parameters drive commission or program reporting — without the partner standing up a lending API."
+    },
+    {
+      "heading": "Widget catalog",
+      "body": "Solar savings calculators collect ZIP and utility bill inputs for viability and lifetime savings estimates (and often rank for “[State] solar cost calculator” SEO). Community solar search maps help renters and shaded-roof households subscribe to off-site projects. Educational libraries syndicate guides and video so utilities can act as trusted energy advisors.",
+      "table": {
+        "caption": "EnergySage partner widgets",
+        "headers": [
+          "Widget",
+          "User experience",
+          "Value proposition"
+        ],
+        "rows": [
+          [
+            "Solar savings calculators",
+            "ZIP + bill → viability and savings estimate",
+            "SEO + high-intent leads"
+          ],
+          [
+            "Community solar search",
+            "Map-based off-site solar subscribe flow",
+            "Expands beyond suitable single-family roofs"
+          ],
+          [
+            "Educational libraries",
+            "Embedded content/video on partner sites",
+            "Trusted-advisor positioning"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Financing inside marketplace quotes",
+      "body": "Installers bidding on EnergySage jobs may still bring GoodLeap, Sunlight, leases, or PPAs. The marketplace does not eliminate dealer fees or re-amortization complexity — it changes how you meet the installer. Use our financing guides and quote check together."
+    }
+  ],
+  "questions_to_ask": [
+    "How many installer bids will I receive, and can I see cash and financed pricing for each?",
+    "If I arrived via a utility widget, what data was shared with EnergySage?",
+    "Are community solar offers subscriptions vs rooftop ownership?"
+  ],
+  "red_flags": [
+    "Pressure to accept the first marketplace bid without $/W normalization.",
+    "Partner calculator that hides affiliate/marketplace relationship."
+  ],
+  "faqs": [
+    {
+      "question": "Is EnergySage a lender?",
+      "answer": "No — it is primarily a marketplace and partner-widget platform. Financing still comes from installers’ lender relationships or third-party ownership products."
+    },
+    {
+      "question": "Should I skip EnergySage and call installers directly?",
+      "answer": "Either path can work. Marketplaces add comparison; direct relationships can add local nuance. In both cases, model your roof and bill yourself before trusting a savings chart."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "solar-affiliate-widgets",
+    "how-solar-loans-work",
+    "goodleap",
+    "acorn-finance"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "GoodLeap (ecosystem context)",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

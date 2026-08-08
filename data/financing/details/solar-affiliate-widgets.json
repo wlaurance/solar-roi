@@ -1,0 +1,106 @@
+{
+  "slug": "solar-affiliate-widgets",
+  "name": "Affiliate widgets & marketplaces",
+  "category": "guide",
+  "category_label": "Guide",
+  "headline": "Widget-driven solar marketing and affiliate networks",
+  "summary": "Not every financing path starts with a lender API. Affinity partners, publishers, and utilities embed calculators and prequal widgets — then earn CPA or revenue share when a homeowner requests quotes or signs a contract.",
+  "key_facts": [
+    {
+      "label": "Embed style",
+      "value": "HTML/JS snippets and iframes — little or no backend work"
+    },
+    {
+      "label": "Tracking",
+      "value": "Cookies, referral parameters, session attribution to commission"
+    },
+    {
+      "label": "Homeowner cue",
+      "value": "You may be on a partner site long before an installer calls"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "EnergySage’s widget model",
+      "body": "EnergySage — often called the “Kayak of solar,” backed by Schneider Electric — runs a large U.S. online marketplace and a structured partner program for nonprofits, corporates, and utilities. Partners embed savings calculators, community solar search maps, and educational libraries. Interaction attaches a tracking parameter; if you later request quotes and contract through the marketplace, the partner earns a negotiated commission or a sustainability KPI."
+    },
+    {
+      "heading": "Why widgets beat raw lead APIs for partners",
+      "body": "Iframe/JS embeds bypass partner-side API auth, PII routing, and much of the compliance overhead of handling credit data. Organizations with limited IT can still publish a “[State] solar cost calculator” that ranks for SEO and captures high-intent leads."
+    },
+    {
+      "heading": "Prequal widgets on installer sites",
+      "body": "Marketplaces like Acorn Finance optimize for top-of-funnel conversion: anonymous visitors run a soft-pull prequalification before talking to sales. Approved loan amounts flow into the contractor CRM so outreach starts with verified buying power. That is different from EnergySage’s multi-installer auction, but the embed pattern is similar."
+    },
+    {
+      "heading": "Traditional CPA and revenue-share networks",
+      "body": "Independent publishers and review sites often monetize with banner creatives and parameterized affiliate URLs rather than interactive calculators. A custom “California Solar Payback Calculator” might be fully hand-coded, then send outbound traffic through tracking links. Disclosures should still be obvious when content is sponsored."
+    },
+    {
+      "heading": "Widget types you will see",
+      "body": "Common embeds include zip + utility-bill savings calculators, community solar map search for renters, slide-to-estimate loan term calculators, “as low as $/mo” microcopy on invoices, and prequalify CTAs that open a modal soft-pull flow.",
+      "table": {
+        "caption": "EnergySage-style partner widgets",
+        "headers": [
+          "Widget",
+          "What the user does",
+          "Partner value"
+        ],
+        "rows": [
+          [
+            "Solar savings calculator",
+            "Enter ZIP and average bill for viability/savings estimate",
+            "SEO + high-intent lead capture"
+          ],
+          [
+            "Community solar search",
+            "Map-based subscribe flow for off-site solar",
+            "Reach renters / unsuitable roofs"
+          ],
+          [
+            "Educational library",
+            "Embedded guides and videos on the partner domain",
+            "Trust / advisor positioning (utilities, nonprofits)"
+          ]
+        ]
+      }
+    }
+  ],
+  "questions_to_ask": [
+    "If I came through a calculator widget, am I locked into one marketplace’s installer network?",
+    "Who receives my contact info, and can I get cash quotes outside the affiliate path?",
+    "Is the publisher paid per lead, per contract, or via revenue share?"
+  ],
+  "red_flags": [
+    "“Independent” review site with no affiliate disclosure.",
+    "Calculator that only outputs a phone form — no assumptions shown.",
+    "Prequal widget that is unclear about soft vs hard credit pull."
+  ],
+  "faqs": [
+    {
+      "question": "Are affiliate marketplace quotes worse than direct installer quotes?",
+      "answer": "Not necessarily — competition can help — but you should still normalize $/W, separate batteries, and compare at least one independent cash quote. See our quote check tool."
+    },
+    {
+      "question": "Why do utilities embed EnergySage-style tools?",
+      "answer": "They get a trusted educational surface and measurable program engagement without building a full lending stack or installer CRM."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "energysage",
+    "acorn-finance",
+    "wisetack",
+    "how-solar-loans-work"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "GoodLeap",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

@@ -1,0 +1,125 @@
+{
+  "slug": "solargraf",
+  "name": "Solargraf",
+  "category": "aggregator",
+  "category_label": "Proposal & API aggregator",
+  "headline": "Solargraf — normalized financing inside solar proposals",
+  "summary": "Solargraf is a PV design and proposal engine that aggregates multiple lenders into a standardized FinancialOptionsResponse — so enterprise apps can read GoodLeap (loanpal), Mosaic, Bank of Montreal, Service Finance, Enfin, and others without integrating each API.",
+  "key_facts": [
+    {
+      "label": "Role",
+      "value": "Design + proposal platform with multi-lender financing schema"
+    },
+    {
+      "label": "Key object",
+      "value": "FinancialOptionsResponse"
+    },
+    {
+      "label": "Instrument types",
+      "value": "buy, loan, lease, ppa"
+    },
+    {
+      "label": "Permissions",
+      "value": "Parent-child company hierarchies on API tokens"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Why installers use aggregators",
+      "body": "Direct integrations with every lender are expensive to build and maintain. Solargraf already completed that engineering, then exposes project design, localized pricing, and standardized financing data through its Developer API."
+    },
+    {
+      "heading": "FinancialOptionsResponse — the useful schema",
+      "body": "The schema encapsulates solar finance math that homeowners feel as “monthly payment” lines. Core properties include type, financingType (lender key such as loanpal or mosaic), amount, rate, rateEscalator (critical for leases/PPAs), dealerFeeAmount, and tiers[] for multi-phase payments after ITC-style checkpoints.",
+      "table": {
+        "caption": "Selected FinancialOptionsResponse fields",
+        "headers": [
+          "Property",
+          "Type",
+          "What it means"
+        ],
+        "rows": [
+          [
+            "type",
+            "string",
+            "buy | loan | lease | ppa"
+          ],
+          [
+            "financingType",
+            "string",
+            "Lender key (loanpal, mosaic, enfin, …)"
+          ],
+          [
+            "amount",
+            "number",
+            "Principal / lending amount"
+          ],
+          [
+            "rate",
+            "number",
+            "Interest rate (e.g. 0.11 = 11%)"
+          ],
+          [
+            "rateEscalator",
+            "number",
+            "Annual payment increase for lease/PPA"
+          ],
+          [
+            "dealerFeeAmount",
+            "number",
+            "Upfront fee charged to the dealer — drives true margin and often your financed total"
+          ],
+          [
+            "tiers",
+            "array",
+            "Multi-phase payments (e.g. step-up after month 16–18 if a tax-credit principal paydown never arrives)"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Webhooks around the proposal lifecycle",
+      "body": "Integrators subscribe to events such as proposal_details_updated, proposal_signed, and signed_pdf_generated so CRMs stay in sync when homeowners e-sign. That is how a PDF in your inbox and a job in the installer’s Ops board stay aligned."
+    },
+    {
+      "heading": "How to use this as a homeowner",
+      "body": "Ask for the financing type, dealer fee amount, and any tiers on the Solargraf (or similar) proposal export. If rateEscalator is non-zero, you are probably looking at a lease/PPA — model ownership vs third-party carefully, especially with 2026 federal 25D changes for cash/loan buys."
+    }
+  ],
+  "questions_to_ask": [
+    "Which financingType/lender sits behind each option on my proposal?",
+    "What is dealerFeeAmount in dollars, and is it in my principal?",
+    "Do tiers[] assume a tax credit I may not receive in 2026?"
+  ],
+  "red_flags": [
+    "Lease/PPA escalator not disclosed next to year-1 payment.",
+    "Dealer fee hidden while cash price is called “same as financed.”"
+  ],
+  "faqs": [
+    {
+      "question": "Is Solargraf a lender?",
+      "answer": "No. It is design/proposal software that aggregates and normalizes financing options from lenders."
+    },
+    {
+      "question": "What does loanpal mean on my PDF?",
+      "answer": "It is a common schema key for GoodLeap’s lineage. Confirm the consumer product name with your installer."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "sunvoy",
+    "goodleap",
+    "solar-loan-apis",
+    "aurora-solar-and-opensolar"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "Goodleap | APIs.io Providers",
+      "url": "https://apis.io/providers/goodleap/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}
