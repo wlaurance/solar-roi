@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${origin}/incentives`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${origin}/equipment`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${origin}/tools/quote-check`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${origin}/upload-bill`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${origin}/signup`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${origin}/login`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
   ];
@@ -42,6 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
+  }));
+
+  const uploadBillRoutes = listUtilityIndex().map((u) => ({
+    url: `${origin}/upload-bill/${u.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
   }));
 
   const permitRoutes = PERMIT_SLUGS.map((slug) => ({
@@ -75,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes,
     ...utilityRoutes,
+    ...uploadBillRoutes,
     ...federalRoutes,
     ...stateRoutes,
     ...equipmentRoutes,

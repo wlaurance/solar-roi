@@ -96,6 +96,9 @@ export default async function SolarForUtilityPage({ params }: Props) {
             <Icons.sun className="h-4 w-4" />
             Model my {utility.name} bill
           </a>
+          <Link href={`/upload-bill/${utility.slug}`} className="btn-secondary">
+            Upload {utility.name} bill PDF
+          </Link>
           <Link href="/tools/quote-check" className="btn-secondary">
             Check a solar quote
           </Link>

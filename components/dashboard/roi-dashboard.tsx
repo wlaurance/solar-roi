@@ -27,6 +27,10 @@ import {
   solarDriveFromInsights,
 } from "@/lib/roi/calculate";
 import { ShareReportButton } from "@/components/dashboard/share-report-button";
+import {
+  ProjectBillPanel,
+  type UtilityOption,
+} from "@/components/power-bills/project-bill-panel";
 import { exportProjectPdf } from "@/lib/report/export-project-pdf";
 import {
   ensureCountyForProject,
@@ -64,7 +68,15 @@ function roundKwh(n: number) {
   return Math.round(n);
 }
 
-export function RoiDashboard({ project }: { project: Project }) {
+export function RoiDashboard({
+  project,
+  utilities,
+  defaultUtilitySlug = null,
+}: {
+  project: Project;
+  utilities: UtilityOption[];
+  defaultUtilitySlug?: string | null;
+}) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [toggles, setToggles] = useState({
@@ -439,6 +451,28 @@ export function RoiDashboard({ project }: { project: Project }) {
           </button>
         ))}
       </div>
+
+      <ProjectBillPanel
+        projectId={project.id}
+        utilities={utilities}
+        defaultUtilitySlug={defaultUtilitySlug}
+        onParsed={(parsed) => {
+          if (parsed.amountDueUsd != null && parsed.amountDueUsd > 0) {
+            const nextBill = roundMoney(parsed.amountDueUsd);
+            setBillUsd(nextBill);
+            setBillInput(String(nextBill));
+          }
+          if (parsed.totalKwh != null && parsed.totalKwh > 0) {
+            const nextKwh = roundKwh(parsed.totalKwh);
+            setUsageKwh(nextKwh);
+            setKwhInput(String(nextKwh));
+          }
+          if (parsed.blendedRateUsdPerKwh != null && parsed.blendedRateUsdPerKwh > 0) {
+            setRate(roundMoney(parsed.blendedRateUsdPerKwh));
+          }
+          router.refresh();
+        }}
+      />
 
       <div className="mb-6 rounded-2xl border border-stone-2/80 bg-surface/90 p-4 shadow-sm sm:p-5">
         <div className="mb-3 flex flex-wrap items-end justify-between gap-2">

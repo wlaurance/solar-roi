@@ -75,10 +75,11 @@ Open [http://localhost:3000](http://localhost:3000), create an account, then **N
 ## App routes
 
 - `/projects` — portfolio CRUD entry
-- `/projects/[id]/dashboard` — ROI toggles + 25-year chart
+- `/projects/[id]/dashboard` — ROI toggles + 25-year chart + power bill upload/parse
 - `/projects/[id]/roof` — Google Solar `buildingInsights` panel configs on satellite map
 - `/projects/[id]/permits` — seeded jurisdiction steps from Supabase
 - `/projects/[id]/installers` — Places nearby “solar installer”
+- `/upload-bill` / `/upload-bill/[utility]` — marketing bill upload (auth-gated submit → Supabase + Gemini parse)
 
 ## ROI notes
 

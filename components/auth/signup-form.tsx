@@ -6,14 +6,17 @@ import { FormEvent, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Icons } from "@/components/icons";
 import { readDraftProject } from "@/lib/draft-project";
+import { readPendingBillMeta } from "@/lib/pending-bill";
 import { identifyUser, track, trackException } from "@/lib/analytics";
 
 export function SignupForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const fromTeaser = searchParams.get("from") === "teaser";
+  const fromBill = searchParams.get("from") === "bill";
   const nextPath = searchParams.get("next") || "/projects";
   const [hasDraft, setHasDraft] = useState(false);
+  const [hasPendingBill, setHasPendingBill] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +25,15 @@ export function SignupForm() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setHasDraft(Boolean(readDraftProject()));
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled) return;
+      setHasDraft(Boolean(readDraftProject()));
+      setHasPendingBill(Boolean(readPendingBillMeta()));
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   async function onSubmit(e: FormEvent) {
@@ -32,7 +43,12 @@ export function SignupForm() {
     setMessage(null);
     const supabase = createClient();
     const draft = readDraftProject();
-    const redirectNext = draft ? "/projects" : nextPath;
+    const pendingBill = readPendingBillMeta();
+    const redirectNext = pendingBill
+      ? `/upload-bill/${pendingBill.utilitySlug}?claim=1`
+      : draft
+        ? "/projects"
+        : nextPath;
 
     try {
       const { data, error: signUpError } = await supabase.auth.signUp({
@@ -53,7 +69,9 @@ export function SignupForm() {
       }
       track("user_signed_up", {
         from_teaser: fromTeaser || Boolean(draft),
+        from_bill: fromBill || Boolean(pendingBill),
         has_draft_project: Boolean(draft),
+        has_pending_bill: Boolean(pendingBill),
         has_session: Boolean(data.session),
       });
 
@@ -62,9 +80,11 @@ export function SignupForm() {
         router.refresh();
       } else {
         setMessage(
-          draft
-            ? "Account created. Confirm your email, then sign in — we’ll attach the address you entered as your first project."
-            : "Account created. Check your email to confirm, or sign in if confirmations are disabled.",
+          pendingBill
+            ? "Account created. Confirm your email, then sign in — we’ll submit the bill you attached."
+            : draft
+              ? "Account created. Confirm your email, then sign in — we’ll attach the address you entered as your first project."
+              : "Account created. Check your email to confirm, or sign in if confirmations are disabled.",
         );
       }
     } catch (err) {
@@ -86,9 +106,11 @@ export function SignupForm() {
         </div>
         <h1 className="font-display text-4xl text-ink">Create account</h1>
         <p className="mt-2 text-sm text-ink-muted">
-          {fromTeaser || hasDraft
-            ? "Finish signup to unlock your full solar report"
-            : "Start your SolarFlow portfolio"}
+          {fromBill || hasPendingBill
+            ? "Create an account to submit the bill you attached"
+            : fromTeaser || hasDraft
+              ? "Finish signup to unlock your full solar report"
+              : "Start your SolarFlow portfolio"}
         </p>
       </div>
 
