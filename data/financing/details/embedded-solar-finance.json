@@ -1,0 +1,87 @@
+{
+  "slug": "embedded-solar-finance",
+  "name": "Embedded solar finance",
+  "category": "guide",
+  "category_label": "Guide",
+  "headline": "The architecture of embedded solar finance",
+  "summary": "Solar lending moved from offline bank applications into APIs, widgets, and affiliate networks inside design software. Understanding that stack helps you evaluate the payment on your proposal — and what the installer can change in real time.",
+  "key_facts": [
+    {
+      "label": "Core pattern",
+      "value": "Point-of-sale financing inside proposals, CRMs, and marketplaces"
+    },
+    {
+      "label": "Data exchanged",
+      "value": "System size, yield, hardware, project cost → payments, fees, rates"
+    },
+    {
+      "label": "Homeowner takeaway",
+      "value": "Instant quotes are conditional underwriting outputs, not final bank commitments"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Why underwriting moved to the API",
+      "body": "High-ticket solar sales need instant, data-driven credit decisions without hard inquiries that scare buyers off. RESTful APIs and GraphQL hooks inside design tools create a bidirectional flow: the proposal software sends PV specs and cost; the lender returns monthly payments, dealer fees, and interest tiers. Time-to-close drops from days to seconds for a conditional pre-approval."
+    },
+    {
+      "heading": "Normalization of complex loan structures",
+      "body": "Embedded finance also normalized instruments like Deferred Payment Portions and tax-credit recapture schedules. Lender APIs must model multi-tier payments and surface them in front-end widgets. That is why solar loan companies increasingly look like developer platforms — documentation, sandboxes, and modular embeds matter as much as capital."
+    },
+    {
+      "heading": "Three integration depths installers choose",
+      "body": "Providers typically offer (1) no-code hosted application links for emails and invoices, (2) low-code iframes/widgets inside CRMs, and (3) full Financing APIs for custom proposal engines. Larger EPCs go full-code so soft pulls and loan decisions feel native; smaller shops use links and widgets."
+    },
+    {
+      "heading": "Aggregators vs direct lender APIs",
+      "body": "Many firms never integrate GoodLeap or Mosaic directly. Proposal platforms like Solargraf and unified APIs like Sunvoy already maintain those connections and return normalized financial options. Your quote might say “GoodLeap” while the software path ran through an aggregator’s FinancialOptionsResponse object."
+    },
+    {
+      "heading": "Where AI agents are headed",
+      "body": "The next layer is autonomous agents that read OpenAPI specs (including via MCP servers) and simulate many loan/dealer-fee combinations against a homeowner’s constraints. Expect conversational tools that query Solargraf or GoodLeap-class APIs and surface a single optimized path — still requiring human consent and compliance checks."
+    }
+  ],
+  "questions_to_ask": [
+    "Which lender product is on this proposal, and was it priced through a proposal tool or a direct lender portal?",
+    "Can you show the same system as cash, loan, lease, and PPA side by side?",
+    "If we change battery size, how fast can you re-run underwriting?"
+  ],
+  "red_flags": [
+    "Installer cannot name the lender or product on the payment shown.",
+    "Only one financing path offered with no cash price alternative.",
+    "Claims that an “instant approval” cannot be declined later for title, ACH, or compliance reasons."
+  ],
+  "faqs": [
+    {
+      "question": "What does “embedded finance” mean for me as a homeowner?",
+      "answer": "It means the loan application and payment estimate live inside the solar sales software instead of a separate bank visit. Convenience is high; disclosure quality varies — still demand cash price, APR/fees, and payment schedule in writing."
+    },
+    {
+      "question": "Why do payments change when the rep adds a battery?",
+      "answer": "The design tool re-sends project cost and scope to the lender API, which recalculates payment tiers and may hit price-per-watt or itemization rules (especially on products like Sunlight SunSaver)."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "how-solar-loans-work",
+    "solar-loan-apis",
+    "solargraf",
+    "goodleap",
+    "sunlight-financial"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "GoodLeap",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    },
+    {
+      "title": "Goodleap | APIs.io Providers",
+      "url": "https://apis.io/providers/goodleap/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

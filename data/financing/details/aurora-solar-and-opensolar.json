@@ -1,0 +1,76 @@
+{
+  "slug": "aurora-solar-and-opensolar",
+  "name": "Aurora Solar & OpenSolar",
+  "category": "aggregator",
+  "category_label": "Enterprise design platforms",
+  "headline": "Aurora Solar and OpenSolar as financing conduits",
+  "summary": "Aurora Solar and OpenSolar dominate enterprise-grade PV design. Both platforms act as major conduits for API-driven financing — the loan payment on your proposal often originates inside their design → proposal → lender embed path.",
+  "key_facts": [
+    {
+      "label": "Category",
+      "value": "Enterprise PV design and proposal software"
+    },
+    {
+      "label": "Finance role",
+      "value": "Conduit for lender APIs and partner embeds"
+    },
+    {
+      "label": "Homeowner surface",
+      "value": "Polished proposal PDFs / web proposals with payment options"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Design software is where financing attaches",
+      "body": "Before GoodLeap or Sunlight ever sees your file, an designer often lays out modules in Aurora or OpenSolar (or Solargraf). Those tools compute production and cost, then call or embed financing partners so the proposal can show loan, lease, and PPA scenarios next to a cash price."
+    },
+    {
+      "heading": "Why two logos appear on so many bids",
+      "body": "Large EPCs standardize on enterprise design platforms for shading accuracy, bankability reports, and sales enablement. Financing integrations ride along: fewer custom CRM builds, more consistent dealer-fee and payment presentation — when the office configures them correctly."
+    },
+    {
+      "heading": "What to extract from an Aurora/OpenSolar proposal",
+      "body": "Ignore glossy cover pages. Pull system kW, estimated annual kWh, equipment list, cash price, each financing option’s lender/product, dealer fees, escalators, and assumptions about incentives. Then run the cash price through a $/W check and model the layout against your own roof in SolarFlow."
+    },
+    {
+      "heading": "Relationship to other aggregators",
+      "body": "Some shops use Aurora/OpenSolar for design and still rely on Solargraf-like financial normalization — or call lenders directly. The brand on the proposal chrome matters less than the lender on the promissory note."
+    }
+  ],
+  "questions_to_ask": [
+    "Was my production estimate generated in Aurora, OpenSolar, or another tool — and can I see shading assumptions?",
+    "Which financing partners are enabled on this proposal template?",
+    "Can I get a cash-only proposal export without payment-factor framing?"
+  ],
+  "red_flags": [
+    "Production and savings charts with no editable assumption list.",
+    "Financing option with no lender/product name in the fine print."
+  ],
+  "faqs": [
+    {
+      "question": "Do Aurora or OpenSolar lend money?",
+      "answer": "No. They are design/proposal platforms that often integrate lenders and ownership products."
+    },
+    {
+      "question": "Should I prefer installers on a specific design tool?",
+      "answer": "Tool choice is a weak quality signal by itself. Judge shading methodology, equipment, price transparency, and local references."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "solargraf",
+    "embedded-solar-finance",
+    "goodleap",
+    "how-solar-loans-work"
+  ],
+  "confidence": "medium",
+  "sources": [
+    {
+      "title": "GoodLeap (ecosystem context)",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

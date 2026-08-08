@@ -1,0 +1,116 @@
+{
+  "slug": "sunlight-financial",
+  "name": "Sunlight Financial",
+  "category": "lender",
+  "category_label": "Tier-one loan provider",
+  "headline": "Sunlight Financial and the Orange® lending platform",
+  "summary": "Sunlight Financial facilitates solar loans through its Orange® technology hub and an asset-light model that connects consumers to institutional capital — with API-enforced price-per-watt guardrails installers must respect.",
+  "key_facts": [
+    {
+      "label": "Platform",
+      "value": "Orange® orchestration hub for direct lending"
+    },
+    {
+      "label": "Business model",
+      "value": "Asset-light facilitator between consumers and capital providers"
+    },
+    {
+      "label": "Historical borrower FICO",
+      "value": "Average around 747 (historical reporting)"
+    },
+    {
+      "label": "Partner ops metric",
+      "value": "ACH enrollment often targeted above 90%"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "How Sunlight differs from a balance-sheet lender",
+      "body": "Sunlight’s model emphasizes facilitation: loans are funded by a network of institutional capital providers, which reduces Sunlight’s own consumer credit risk exposure while enforcing underwriting standards those partners require. Strict credit quality historically showed up in high average FICO scores among facilitated borrowers."
+    },
+    {
+      "heading": "API access through CRMs and FSM tools",
+      "body": "Developers and admins typically obtain API keys via a dedicated developer portal and integrations inside field-service/CRM platforms. In tools like JobNimbus, keys are bound to Access Profiles that bridge job data to Sunlight’s underwriting engine."
+    },
+    {
+      "heading": "SunSaver™ PPW compliance in the payload",
+      "body": "A defining trait of Sunlight’s API ecosystem is programmatic pricing enforcement. SunSaver-style products impose maximum price-per-watt by scope. If the installer’s payload exceeds the cap or fails to itemize eligible roof/battery add-ons, the API returns a validation error before any credit decision — protecting capital partners and forcing cleaner contracts.",
+      "table": {
+        "caption": "Illustrative SunSaver PPW maximums",
+        "headers": [
+          "Project scope",
+          "Max PPW",
+          "Payload requirements"
+        ],
+        "rows": [
+          [
+            "Solar only",
+            "$7.00/W",
+            "Includes energy efficiency and MPU add-ons per rules"
+          ],
+          [
+            "Solar + roof",
+            "$10.00/W",
+            "Strictly itemized roofing costs"
+          ],
+          [
+            "Solar + battery",
+            "$11.00/W",
+            "Strictly itemized battery storage costs"
+          ],
+          [
+            "Solar + roof + battery",
+            "$12.50/W",
+            "Itemize both roofing and battery"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "ACH enrollment pressure",
+      "body": "Partners are often held to high Automated Clearing House enrollment rates (historically cited above 90%) so payments process efficiently. Expect strong nudges to set up ACH when you finalize a Sunlight-facilitated loan."
+    },
+    {
+      "heading": "What homeowners should verify",
+      "body": "Ask for itemized solar, roof, and battery pricing that matches what the API validated. If a rep “works around” a PPW error by renaming line items, you may inherit compliance or change-order risk later. Compare the financed amount to a transparent cash $/W using our quote check tool."
+    }
+  ],
+  "questions_to_ask": [
+    "Which Sunlight product am I on, and what PPW cap applies to my scope?",
+    "Are roof and battery costs itemized exactly as submitted to underwriting?",
+    "Is ACH required, and what are the alternatives?",
+    "Which capital provider funds my loan, and who services it?"
+  ],
+  "red_flags": [
+    "Non-itemized “solar + everything” lump sum on a product known for PPW rules.",
+    "Payment quote that appears after the installer ignored a validation error.",
+    "No clarity on servicing entity after funding."
+  ],
+  "faqs": [
+    {
+      "question": "Why was my Sunlight application blocked for pricing?",
+      "answer": "The project likely exceeded a programmed PPW maximum or lacked required itemization. Ask for a compliant breakdown — not just a lower monthly payment with the same opaque total."
+    },
+    {
+      "question": "Does a high average FICO mean I will be approved?",
+      "answer": "No. Historical averages describe the book of business, not your decision. Income, debt, property, and project compliance all matter."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "goodleap",
+    "solar-loan-apis",
+    "how-solar-loans-work",
+    "solargraf"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "Sunlight Financial — SEC MD&A (historical)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1821850/000182185021000010/a994managementsdiscussiona.htm",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

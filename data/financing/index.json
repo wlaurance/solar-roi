@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "how-solar-loans-work",
+    "name": "How solar loans work",
+    "category": "guide",
+    "priority": 100,
+    "blurb": "Soft pulls, dealer fees, re-amortization, and what to demand in writing."
+  },
+  {
+    "slug": "embedded-solar-finance",
+    "name": "Embedded solar finance",
+    "category": "guide",
+    "priority": 90,
+    "blurb": "Why kitchen-table loans now run through APIs inside proposal software."
+  },
+  {
+    "slug": "solar-loan-apis",
+    "name": "Solar loan APIs",
+    "category": "guide",
+    "priority": 80,
+    "blurb": "Auth, credit payloads, webhooks, and PPW guardrails developers integrate."
+  },
+  {
+    "slug": "solar-affiliate-widgets",
+    "name": "Affiliate widgets & marketplaces",
+    "category": "guide",
+    "priority": 70,
+    "blurb": "EnergySage embeds, CPA networks, and top-of-funnel prequal widgets."
+  },
+  {
+    "slug": "goodleap",
+    "name": "GoodLeap",
+    "category": "lender",
+    "priority": 100,
+    "blurb": "Major POS solar lender with no-code links, iframe share, and full Financing API."
+  },
+  {
+    "slug": "sunlight-financial",
+    "name": "Sunlight Financial",
+    "category": "lender",
+    "priority": 90,
+    "blurb": "Orange® platform with strict PPW API validation and high average FICO."
+  },
+  {
+    "slug": "wisetack",
+    "name": "Wisetack",
+    "category": "marketplace",
+    "priority": 85,
+    "blurb": "Embedded widgets for mid-size jobs — repairs, batteries, HVAC — up to $25k."
+  },
+  {
+    "slug": "hearth",
+    "name": "Hearth",
+    "category": "marketplace",
+    "priority": 80,
+    "blurb": "Multi-lender marketplace from $1k to $250k with estimate + invoice SaaS."
+  },
+  {
+    "slug": "acorn-finance",
+    "name": "Acorn Finance",
+    "category": "marketplace",
+    "priority": 75,
+    "blurb": "Embeddable soft-pull prequal widget for installer websites in all 50 states."
+  },
+  {
+    "slug": "energysage",
+    "name": "EnergySage",
+    "category": "marketplace",
+    "priority": 70,
+    "blurb": "Widget-driven solar marketplace — calculators, community solar, affiliate program."
+  },
+  {
+    "slug": "solargraf",
+    "name": "Solargraf",
+    "category": "aggregator",
+    "priority": 90,
+    "blurb": "Proposal engine that normalizes GoodLeap, Mosaic, and other lenders into one schema."
+  },
+  {
+    "slug": "sunvoy",
+    "name": "Sunvoy",
+    "category": "aggregator",
+    "priority": 80,
+    "blurb": "Unified API across 30+ inverter brands and major solar financing platforms."
+  },
+  {
+    "slug": "aurora-solar-and-opensolar",
+    "name": "Aurora Solar & OpenSolar",
+    "category": "aggregator",
+    "priority": 70,
+    "blurb": "Enterprise design tools that conduit API-driven financing into proposals."
+  }
+]

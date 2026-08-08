@@ -1,0 +1,123 @@
+{
+  "slug": "solar-loan-apis",
+  "name": "Solar loan APIs",
+  "category": "guide",
+  "category_label": "Guide",
+  "headline": "How solar loan APIs actually underwrite a project",
+  "summary": "Behind every kitchen-table payment is an authenticated API payload: borrower data, itemized project costs, and dealer IDs — plus webhooks that move the job from soft pull to funded. This is the technical map homeowners and integrators both benefit from understanding.",
+  "key_facts": [
+    {
+      "label": "Auth patterns",
+      "value": "API keys, OAuth 2.0 Bearer tokens, partner-gated portals"
+    },
+    {
+      "label": "Lifecycle glue",
+      "value": "Webhooks / AsyncAPI events instead of weeks of polling"
+    },
+    {
+      "label": "Payload clusters",
+      "value": "Borrower · Project (itemized) · Dealer merchant ID"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Authentication and sensitive data",
+      "body": "Solar loan APIs handle PII, SSNs, and FICO-related outputs. Production credentials are usually partner-gated after compliance vetting. Common patterns include API keys bound to CRM access profiles (e.g. JobNimbus → Sunlight) and OAuth 2.0 Bearer tokens (common in Wisetack-style integrations). Never paste keys into front-end JavaScript."
+    },
+    {
+      "heading": "The credit application payload",
+      "body": "A typical POST application bundles three clusters: (1) Borrower — legal name, address, income, and cryptographic consent for soft/hard inquiry; (2) Project — gross cost plus itemized solar vs roof vs battery lines so PPW rules can validate; (3) Dealer — merchant identifier that selects fee schedules, promotional buy-downs, and geographic eligibility. Success responses return approved tiers with initial payment, term, down payment, and re-amortization date when applicable."
+    },
+    {
+      "heading": "Price-per-watt guardrails in the schema",
+      "body": "Some lenders encode compliance in validation, not after the fact. Sunlight’s SunSaver product, for example, historically enforced maximum PPW by scope — solar-only, solar+roof, solar+battery, or all three — and rejects non-itemized or over-cap payloads with immediate API errors. That protects capital partners and forces cleaner contracts."
+    },
+    {
+      "heading": "Webhooks and loan lifecycle events",
+      "body": "From soft pull to document signing, Notice to Proceed (NTP), and funding, a loan can span weeks. Polling is wasteful; lenders and proposal tools push HTTP POSTs to partner endpoints. Solargraf-style triggers include proposal_details_updated, proposal_signed, and signed_pdf_generated. Wisetack-style webhooks can flip a CRM job to “Contract Signed,” start a welcome sequence, and notify procurement when funding clears."
+    },
+    {
+      "heading": "Normalized aggregator schemas",
+      "body": "Solargraf’s FinancialOptionsResponse illustrates how platforms hide lender idiosyncrasies. Fields like type (buy/loan/lease/ppa), financingType (e.g. loanpal for GoodLeap, mosaic), amount, rate, rateEscalator, dealerFeeAmount, and tiers[] let one dashboard compare products without learning each lender’s private API."
+    },
+    {
+      "caption": "Example Sunlight-style PPW ceilings referenced in partner integrations",
+      "heading": "Example PPW validation matrix",
+      "body": "Exact product limits change over time — treat this as an illustration of how API validation encodes pricing policy, not as live underwriting guidance.",
+      "table": {
+        "caption": "Illustrative SunSaver PPW caps by project scope",
+        "headers": [
+          "Project scope",
+          "Max PPW (illustrative)",
+          "API payload expectation"
+        ],
+        "rows": [
+          [
+            "Solar only",
+            "$7.00/W",
+            "May include efficiency / MPU add-ons per product rules"
+          ],
+          [
+            "Solar + roof",
+            "$10.00/W",
+            "Itemized roofing costs required"
+          ],
+          [
+            "Solar + battery",
+            "$11.00/W",
+            "Itemized battery storage costs required"
+          ],
+          [
+            "Solar + roof + battery",
+            "$12.50/W",
+            "Itemize both roofing and battery"
+          ]
+        ]
+      }
+    }
+  ],
+  "questions_to_ask": [
+    "Which system originated my credit decision — lender portal, JobNimbus/CRM, or proposal software?",
+    "Were roof and battery costs itemized in the contract the lender validated?",
+    "Who receives webhook updates when my loan funds — and who tells me?"
+  ],
+  "red_flags": [
+    "Contract totals that cannot be itemized when the lender product requires it.",
+    "Installer shrugs when an API validation error blocks the loan instead of fixing pricing.",
+    "No written explanation of what “approved” means before NTP and funding."
+  ],
+  "faqs": [
+    {
+      "question": "Do I interact with the loan API myself?",
+      "answer": "Usually no. The installer or marketplace software calls it. You still authorize credit pulls and sign disclosures — read those carefully."
+    },
+    {
+      "question": "Why was my application rejected for “PPW”?",
+      "answer": "Price per watt exceeded the lender’s programmed maximum for your scope, or required add-ons were not itemized. Ask for a revised cash price breakdown, not just a different monthly payment."
+    }
+  ],
+  "official_url": null,
+  "related_slugs": [
+    "embedded-solar-finance",
+    "sunlight-financial",
+    "goodleap",
+    "wisetack",
+    "solargraf",
+    "sunvoy"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "Goodleap | APIs.io Providers",
+      "url": "https://apis.io/providers/goodleap/",
+      "accessed": "2026-08-08"
+    },
+    {
+      "title": "Sunlight Financial — SEC MD&A (historical)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1821850/000182185021000010/a994managementsdiscussiona.htm",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}

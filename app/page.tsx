@@ -51,6 +51,9 @@ export default function HomePage() {
           <Link href="/incentives" className="hover:underline">
             Incentives
           </Link>
+          <Link href="/financing" className="hover:underline">
+            Financing
+          </Link>
           <Link href="/equipment" className="hover:underline">
             Equipment
           </Link>

@@ -86,6 +86,9 @@ export default function IncentivesIndexPage() {
           <Link href="/solar-for" className="text-canopy hover:underline">
             Utility guides
           </Link>
+          <Link href="/financing" className="text-canopy hover:underline">
+            Financing
+          </Link>
           <Link href="/equipment" className="text-canopy hover:underline">
             Equipment
           </Link>

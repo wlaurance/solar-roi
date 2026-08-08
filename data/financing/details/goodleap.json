@@ -1,0 +1,116 @@
+{
+  "slug": "goodleap",
+  "name": "GoodLeap",
+  "category": "lender",
+  "category_label": "Tier-one loan provider",
+  "headline": "GoodLeap solar financing — what homeowners see on proposals",
+  "summary": "GoodLeap is one of the largest U.S. point-of-sale platforms for sustainable home upgrades, with a partner-gated Developer API that embeds credit apps into CRMs and proposal tools via links, iframes, or full REST control.",
+  "key_facts": [
+    {
+      "label": "Scale (reported)",
+      "value": "$67B+ cumulative financed volume; 1.5M+ homeowners served"
+    },
+    {
+      "label": "HQ",
+      "value": "Roseville, California"
+    },
+    {
+      "label": "Integration depths",
+      "value": "No-code links · Application Share iframe · Financing API"
+    },
+    {
+      "label": "Product types via API",
+      "value": "Amortized loans, residential leases, PPAs"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Why GoodLeap shows up on so many quotes",
+      "body": "GoodLeap operates as a dominant POS financing rail for solar and other home sustainability projects. Backed by significant venture capital (including firms such as NEA), it invested heavily in developer ergonomics so installers can originate credit without sending homeowners to a separate bank."
+    },
+    {
+      "heading": "Three integration pathways",
+      "body": "Installers pick complexity based on their stack. Consumer Credit Application Links are customizable hosted URLs for web pages, email signatures, or static invoices. Application Share embeds a secure iframe/widget in lightweight CRMs. The Financing API is a modular REST suite for enterprise proposal engines — including programmatic soft credit pulls and native loan decisions.",
+      "table": {
+        "caption": "GoodLeap integration tiers",
+        "headers": [
+          "Tier",
+          "Technical description",
+          "Primary use case"
+        ],
+        "rows": [
+          [
+            "Consumer Credit Application Links (no-code)",
+            "Pre-configured URLs to hosted application flows",
+            "Basic web pages, email, static invoices"
+          ],
+          [
+            "Application Share (low-code)",
+            "Secure iframe/widget inside a host app",
+            "Lightweight CRMs and sales portals"
+          ],
+          [
+            "Financing API (full-code)",
+            "Modular REST control of the loan lifecycle",
+            "Custom proposal engines; soft pulls + real-time decisions"
+          ]
+        ]
+      }
+    },
+    {
+      "heading": "Partner-gated developer access",
+      "body": "Production credentials require compliance vetting. Public resources (including Postman collections and test environments) help engineering teams prototype before go-live. Endpoints are structured for granular project data across loans, leases, and PPAs."
+    },
+    {
+      "heading": "Soft pulls as a sales tactic",
+      "body": "Programmatic soft credit pulls let field reps dynamically adjust system sizing, battery add-ons, and total pricing against a pre-approved ceiling — maximizing contract value while reducing surprise denials later. As a homeowner, treat soft-pull “approvals” as conditional and still demand cash price vs financed amount clarity."
+    },
+    {
+      "heading": "Reading GoodLeap (or Loanpal) on aggregator schemas",
+      "body": "Proposal platforms often still reference GoodLeap under legacy identifiers such as loanpal inside normalized financial option objects. If your Solargraf- or Aurora-generated PDF lists a financing type you do not recognize, ask which consumer brand and product series it maps to."
+    }
+  ],
+  "questions_to_ask": [
+    "Is this GoodLeap loan, lease, or PPA — and what is the cash buy alternative?",
+    "What dealer fee is embedded in my financed amount?",
+    "Was my credit check a soft pull, and when would a hard pull occur?",
+    "Can I see the full amortization / re-amortization schedule in writing?"
+  ],
+  "red_flags": [
+    "Only a monthly payment shown — no APR, term, or dealer fee.",
+    "Rep refuses to show the cash price that sits under the GoodLeap option.",
+    "Legacy “tax credit” payment drop assumed for a 2026 homeowner-owned loan without documentation."
+  ],
+  "faqs": [
+    {
+      "question": "Is GoodLeap a bank?",
+      "answer": "It operates as a fintech POS financing platform for home sustainability projects. Capital and product details vary by program — read the specific loan docs on your proposal."
+    },
+    {
+      "question": "Why do some docs say Loanpal?",
+      "answer": "Loanpal is a legacy name still present in some software schemas and older paperwork. Ask your installer to confirm the consumer-facing brand and product on your contract."
+    }
+  ],
+  "official_url": "https://www.goodleap.com/",
+  "related_slugs": [
+    "sunlight-financial",
+    "solargraf",
+    "solar-loan-apis",
+    "how-solar-loans-work"
+  ],
+  "confidence": "high",
+  "sources": [
+    {
+      "title": "GoodLeap: Home",
+      "url": "https://www.goodleap.com/",
+      "accessed": "2026-08-08"
+    },
+    {
+      "title": "Goodleap | APIs.io Providers",
+      "url": "https://apis.io/providers/goodleap/",
+      "accessed": "2026-08-08"
+    }
+  ],
+  "last_verified": "2026-08-08",
+  "researched_detail": true
+}
