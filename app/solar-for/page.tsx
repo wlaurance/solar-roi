@@ -1,14 +1,22 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
+import { pageMetadata } from "@/lib/seo";
 import { listUtilityIndex } from "@/lib/utilities/catalog";
 
-export const metadata: Metadata = {
-  title: "Solar by electric utility | SolarFlow",
+export const metadata = pageMetadata({
+  title: "Solar by electric utility",
   description:
     "Utility-specific solar guidance for top U.S. IOUs — rates, export rules, interconnection steps, and a free address teaser. Updated for 2026 (no federal 25D for new completes).",
-};
+  path: "/solar-for",
+  image: "solar-for",
+  keywords: [
+    "solar by utility",
+    "net metering",
+    "solar interconnection",
+    "utility solar rates",
+  ],
+});
 
 export default function SolarForIndexPage() {
   const utilities = listUtilityIndex()

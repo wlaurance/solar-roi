@@ -1,15 +1,22 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { QuoteCheckForm } from "@/components/tools/quote-check-form";
 import { COST_PER_KW } from "@/lib/roi/calculate";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "How to compare solar quotes | SolarFlow",
+export const metadata = pageMetadata({
+  title: "How to compare solar quotes",
   description:
     "Normalize installer quotes to $/W, spot battery bundling tricks, and check pricing against transparent planning benchmarks — without another sales call.",
-  alternates: { canonical: "/tools/quote-check" },
-};
+  path: "/tools/quote-check",
+  image: "quote-check",
+  keywords: [
+    "compare solar quotes",
+    "solar cost per watt",
+    "solar quote checklist",
+    "solar battery bundling",
+  ],
+});
 
 const QUESTIONS = [
   {

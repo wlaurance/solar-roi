@@ -2,8 +2,8 @@ import {
   Instrument_Sans,
   Instrument_Serif,
 } from "next/font/google";
-import type { Metadata } from "next";
 import { PostHogIdentify } from "@/components/analytics/posthog-identify";
+import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -19,11 +19,7 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "SolarFlow",
-  description:
-    "Multi-project solar ROI, Google Solar roof insights, permits, and installers.",
-};
+export const metadata = rootMetadata();
 
 export default function RootLayout({
   children,

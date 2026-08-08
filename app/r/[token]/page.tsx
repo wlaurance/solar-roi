@@ -13,6 +13,7 @@ import {
   calculateRoi,
   solarDriveFromInsights,
 } from "@/lib/roi/calculate";
+import { pageMetadata } from "@/lib/seo";
 import { assessSolarCandidate } from "@/lib/solar/candidate";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Project } from "@/lib/types";
@@ -31,11 +32,14 @@ function money(n: number) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { token } = await params;
-  return {
-    title: "Shared solar report | SolarFlow",
-    robots: { index: false, follow: false },
-    alternates: { canonical: `/r/${token}` },
-  };
+  return pageMetadata({
+    title: "Shared solar report",
+    description:
+      "A shared SolarFlow rooftop solar ROI report — roof insights, cost assumptions, and savings outlook for this project.",
+    path: `/r/${token}`,
+    image: "home",
+    noIndex: true,
+  });
 }
 
 export default async function SharedReportPage({ params }: Props) {

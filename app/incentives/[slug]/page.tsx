@@ -8,6 +8,7 @@ import {
   getStateIncentive,
   listStateIncentiveIndex,
 } from "@/lib/incentives/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,12 +19,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getStateIncentive(slug);
-  if (!item) return { title: "State incentives | SolarFlow" };
-  return {
-    title: `${item.state_name} solar incentives | SolarFlow`,
-    description: item.summary.slice(0, 155),
-    alternates: { canonical: `/incentives/${item.slug}` },
-  };
+  if (!item) {
+    return pageMetadata({
+      title: "State solar incentives",
+      description:
+        "State-by-state solar incentive overviews for homeowners researching rooftop solar in 2026.",
+      path: "/incentives",
+      image: "incentives",
+    });
+  }
+  return pageMetadata({
+    title: `${item.state_name} solar incentives`,
+    description: item.summary,
+    path: `/incentives/${item.slug}`,
+    image: "incentives",
+    keywords: [
+      `${item.state_name} solar incentives`,
+      "solar rebates",
+      "solar tax credit",
+      item.state,
+    ],
+  });
 }
 
 export default async function StateIncentivePage({ params }: Props) {

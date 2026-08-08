@@ -8,6 +8,7 @@ import {
   getManufacturer,
   listManufacturerIndex,
 } from "@/lib/manufacturers/catalog";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,12 +19,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getManufacturer(slug);
-  if (!item) return { title: "Equipment | SolarFlow" };
-  return {
-    title: `${item.name} solar equipment | SolarFlow`,
-    description: item.summary.slice(0, 155),
-    alternates: { canonical: `/equipment/${item.slug}` },
-  };
+  if (!item) {
+    return pageMetadata({
+      title: "Solar equipment",
+      description:
+        "Residential solar modules, inverters, and batteries homeowners see on quotes.",
+      path: "/equipment",
+      image: "equipment",
+    });
+  }
+  return pageMetadata({
+    title: `${item.name} solar equipment`,
+    description: item.summary,
+    path: `/equipment/${item.slug}`,
+    image: "equipment",
+    keywords: [
+      item.name,
+      "solar equipment",
+      ...item.categories,
+      "solar quote",
+    ],
+  });
 }
 
 export default async function EquipmentDetailPage({ params }: Props) {

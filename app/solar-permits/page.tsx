@@ -1,14 +1,22 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { listPermitGuides } from "@/lib/permits/catalog";
+import { pageMetadata } from "@/lib/seo";
 import { listUtilityIndex } from "@/lib/utilities/catalog";
 
-export const metadata: Metadata = {
-  title: "Solar permit & interconnection guides | SolarFlow",
+export const metadata = pageMetadata({
+  title: "Solar permit & interconnection guides",
   description:
-    "What happens after you say yes to solar — local building permits and utility interconnection / PTO steps before you energize.",
-};
+    "What happens after you say yes to solar — local building permits and utility interconnection / PTO steps before you energize. Know the process before you sign.",
+  path: "/solar-permits",
+  image: "permits",
+  keywords: [
+    "solar permits",
+    "solar interconnection",
+    "permission to operate",
+    "PTO solar",
+  ],
+});
 
 export const dynamic = "force-dynamic";
 

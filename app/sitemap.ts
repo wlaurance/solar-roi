@@ -2,15 +2,8 @@ import type { MetadataRoute } from "next";
 import { listFederalIncentiveIndex, listStateIncentiveIndex } from "@/lib/incentives/catalog";
 import { listLocations } from "@/lib/locations/catalog";
 import { listManufacturerIndex } from "@/lib/manufacturers/catalog";
+import { siteOrigin } from "@/lib/seo";
 import { listUtilityIndex } from "@/lib/utilities/catalog";
-
-function siteOrigin(): string {
-  return (
-    process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-    process.env.URL?.replace(/\/$/, "") ||
-    "https://solarflow.app"
-  );
-}
 
 const PERMIT_SLUGS = [
   "contra-costa",

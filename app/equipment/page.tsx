@@ -1,13 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { listManufacturerIndex } from "@/lib/manufacturers/catalog";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Solar equipment manufacturers | SolarFlow",
+export const metadata = pageMetadata({
+  title: "Solar equipment manufacturers",
   description:
-    "Residential solar modules, inverters, and batteries homeowners see on quotes — plus a local installer search that requires a free SolarFlow project.",
-};
+    "Residential solar modules, inverters, and batteries homeowners see on quotes — decode proposals, then search local installers with a free SolarFlow project.",
+  path: "/equipment",
+  image: "equipment",
+  keywords: [
+    "solar panels",
+    "solar inverters",
+    "home batteries",
+    "solar equipment brands",
+  ],
+});
 
 const CATEGORY_LABEL: Record<string, string> = {
   module: "Modules (panels)",

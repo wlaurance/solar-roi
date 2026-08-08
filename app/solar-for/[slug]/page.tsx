@@ -5,11 +5,12 @@ import { Icons } from "@/components/icons";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { LocationFaqSection } from "@/components/solar-in/location-faq";
 import { LocationProjectCta } from "@/components/solar-in/location-project-cta";
+import { listStateIncentiveIndex } from "@/lib/incentives/catalog";
+import { pageMetadata } from "@/lib/seo";
 import {
   getUtilityBySlug,
   listUtilitySlugs,
 } from "@/lib/utilities/catalog";
-import { listStateIncentiveIndex } from "@/lib/incentives/catalog";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,12 +26,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const utility = getUtilityBySlug(slug);
-  if (!utility) return { title: "Solar by utility | SolarFlow" };
-  return {
-    title: `Solar with ${utility.name} | SolarFlow`,
-    description: utility.summary.slice(0, 155),
-    alternates: { canonical: `/solar-for/${utility.slug}` },
-  };
+  if (!utility) {
+    return pageMetadata({
+      title: "Solar by utility",
+      description:
+        "Utility-specific solar guidance — rates, export rules, interconnection, and a free address project.",
+      path: "/solar-for",
+      image: "solar-for",
+    });
+  }
+  return pageMetadata({
+    title: `Solar with ${utility.name}`,
+    description: utility.summary,
+    path: `/solar-for/${utility.slug}`,
+    image: "solar-for",
+    keywords: [
+      `${utility.name} solar`,
+      "solar interconnection",
+      "utility solar rates",
+      utility.state,
+    ],
+  });
 }
 
 export default async function SolarForUtilityPage({ params }: Props) {

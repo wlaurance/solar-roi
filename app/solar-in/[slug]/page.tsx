@@ -10,6 +10,7 @@ import {
 } from "@/lib/locations/catalog";
 import { ensureGeoPageContent } from "@/lib/locations/ensure-content";
 import { mixLocationFaqs } from "@/lib/locations/faq";
+import { pageMetadata } from "@/lib/seo";
 
 /** Lazy AI content — do not pre-render all ~700 pages at build time. */
 export const dynamic = "force-dynamic";
@@ -19,13 +20,28 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const location = getLocationBySlug(slug);
-  if (!location) return { title: "Solar locations | SolarFlow" };
+  if (!location) {
+    return pageMetadata({
+      title: "Solar locations",
+      description:
+        "Rooftop solar guides by city and county — start a free project for your home address.",
+      path: "/solar-in",
+      image: "solar-in",
+    });
+  }
   const place = locationDisplayName(location);
-  return {
-    title: `Solar in ${place} | SolarFlow`,
-    description: `Rooftop solar guidance for ${place}: permitting overview, FAQs, and a free project teaser for your home address.`,
-    alternates: { canonical: `/solar-in/${location.slug}` },
-  };
+  return pageMetadata({
+    title: `Solar in ${place}`,
+    description: `Rooftop solar guidance for ${place}: permitting overview, FAQs, and a free project teaser for your home address. Model ROI before you sign.`,
+    path: `/solar-in/${location.slug}`,
+    image: "solar-in",
+    keywords: [
+      `solar in ${place}`,
+      "rooftop solar",
+      "solar permits",
+      place,
+    ],
+  });
 }
 
 export default async function SolarInLocationPage({ params }: Props) {

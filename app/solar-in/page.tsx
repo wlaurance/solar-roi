@@ -1,13 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { listLocations, locationDisplayName } from "@/lib/locations/catalog";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Solar by city & county | SolarFlow",
+export const metadata = pageMetadata({
+  title: "Solar by city & county",
   description:
-    "Rooftop solar guides for the largest U.S. cities and counties — start a free project for your home address.",
-};
+    "Rooftop solar guides for the largest U.S. cities and counties — local permitting context, FAQs, and a free project for your home address.",
+  path: "/solar-in",
+  image: "solar-in",
+  keywords: [
+    "solar by city",
+    "solar by county",
+    "rooftop solar guides",
+    "local solar permits",
+  ],
+});
 
 export default function SolarInIndexPage() {
   const locations = listLocations();
