@@ -9,6 +9,7 @@ import {
   BATTERY_REPLACEMENT_YEAR,
   COST_PER_KW,
   DEFAULT_ENERGY_INFLATION_PCT,
+  DEFAULT_INVESTMENT_CAGR_PCT,
   ITC_NET_FACTOR,
   calculateRoi,
   solarDriveFromInsights,
@@ -78,6 +79,11 @@ export default async function SharedReportPage({ params }: Props) {
     monthlyUsageKwh: project.monthly_usage_kwh,
     rateUsdPerKwh: project.rate_usd_per_kwh,
     energyInflationPct: project.energy_inflation_pct,
+    investmentCagrPct: project.investment_cagr_pct,
+    paymentMode: project.payment_mode,
+    loanDownPaymentPct: project.loan_down_payment_pct,
+    loanAprPct: project.loan_apr_pct,
+    loanTermYears: project.loan_term_years,
   });
   const candidate = assessSolarCandidate(
     project.solar_insights?.solarPotential?.maxSunshineHoursPerYear,
@@ -106,7 +112,7 @@ export default async function SharedReportPage({ params }: Props) {
           {options.length ? options.join(" · ") : "No system options enabled"}
         </p>
 
-        <section className="mt-10 grid gap-6 sm:grid-cols-3">
+        <section className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="text-xs uppercase tracking-wide text-ink-muted">
               System size
@@ -131,6 +137,14 @@ export default async function SharedReportPage({ params }: Props) {
             </p>
             <p className="mt-1 font-display text-3xl text-ink">
               {money(result.netSavings25)}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-wide text-ink-muted">
+              Invested money
+            </p>
+            <p className="mt-1 font-display text-3xl text-ink">
+              {money(result.investedMoney25)}
             </p>
           </div>
         </section>
@@ -171,6 +185,21 @@ export default async function SharedReportPage({ params }: Props) {
               Energy inflation:{" "}
               {result.energyInflationPct ?? DEFAULT_ENERGY_INFLATION_PCT}% / year
             </li>
+            <li>
+              Invested money CAGR:{" "}
+              {result.investmentCagrPct ?? DEFAULT_INVESTMENT_CAGR_PCT}% / year
+              (bill difference invested)
+            </li>
+            <li>
+              Equipment payment:{" "}
+              {result.paymentMode === "finance"
+                ? `Finance — ${result.loanDownPaymentPct}% down, ${result.loanAprPct}% APR, ${result.loanTermYears} yr (${money(result.monthlyLoanPayment)}/mo)`
+                : "Cash"}{" "}
+              ·{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                Financing guides
+              </Link>
+            </li>
             {project.battery ? (
               <li>
                 Battery planning cost: ${BATTERY_COST.toLocaleString("en-US")}{" "}
@@ -180,6 +209,7 @@ export default async function SharedReportPage({ params }: Props) {
             ) : null}
             <li>Gross install (modeled): {money(result.grossCost)}</li>
             <li>Net planning cost: {money(result.netCost)}</li>
+            <li>Invested money (25 yr): {money(result.investedMoney25)}</li>
           </ul>
         </section>
 

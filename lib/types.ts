@@ -29,6 +29,16 @@ export type Project = {
   rate_usd_per_kwh: number;
   /** Annual energy cost inflation as a percent (e.g. 5 = 5%/yr) */
   energy_inflation_pct: number;
+  /** Assumed CAGR (%) for investing the annual bill difference */
+  investment_cagr_pct?: number | null;
+  /** Equipment payment: cash or finance */
+  payment_mode?: "cash" | "finance" | null;
+  /** Down payment % of net cost when financing */
+  loan_down_payment_pct?: number | null;
+  /** Equipment loan APR % */
+  loan_apr_pct?: number | null;
+  /** Equipment loan term in years */
+  loan_term_years?: number | null;
   /** Opaque token for public spouse-ready report when share_enabled */
   share_token?: string | null;
   share_enabled?: boolean;

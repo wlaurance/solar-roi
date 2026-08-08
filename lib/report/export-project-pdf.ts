@@ -204,6 +204,20 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
   kv(doc, "25-yr net savings", money(result.netSavings25), 70, y);
   kv(doc, "Bill offset", `${(result.offset * 100).toFixed(0)}%`, 140, y);
   y += 14;
+  kv(doc, "Invested money", money(result.investedMoney25), 14, y);
+  kv(
+    doc,
+    "Payment",
+    result.paymentMode === "finance"
+      ? `Finance ${result.loanAprPct}% APR`
+      : "Cash",
+    70,
+    y,
+  );
+  if (result.paymentMode === "finance") {
+    kv(doc, "Loan payment", `${money(result.monthlyLoanPayment)}/mo`, 140, y);
+  }
+  y += 14;
   if (result.panelsCount != null) {
     kv(
       doc,
@@ -227,6 +241,10 @@ export async function exportProjectPdf(input: ProjectPdfInput): Promise<void> {
     }.`,
     `Federal residential ITC (25D): ${Math.round((1 - ITC_NET_FACTOR) * 100)}% in this 2026 planning model (×${ITC_NET_FACTOR}) — expenditures after Dec 31, 2025 generally do not qualify; not tax advice.`,
     `Energy inflation: ${result.energyInflationPct}% / year · blended rate $${result.rateUsdPerKwh.toFixed(2)}/kWh.`,
+    `Invested money: bill difference invested at ${result.investmentCagrPct}% CAGR → ${money(result.investedMoney25)} at year 25.`,
+    result.paymentMode === "finance"
+      ? `Equipment finance: ${result.loanDownPaymentPct}% down (${money(result.upfrontCost)}), ${result.loanAprPct}% APR, ${result.loanTermYears} years (${money(result.monthlyLoanPayment)}/mo).`
+      : `Equipment payment: cash — ${money(result.upfrontCost)} at start.`,
   ];
   if (toggles.battery) {
     assumptionLines.push(

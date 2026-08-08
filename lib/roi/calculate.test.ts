@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   BATTERY_REPLACEMENT_COST,
+  DEFAULT_INVESTMENT_CAGR_PCT,
   calculateRoi,
+  monthlyLoanPayment,
   solarDriveFromInsights,
 } from "./calculate";
 
@@ -22,6 +24,10 @@ describe("calculateRoi", () => {
     expect(result.series[12].batteryReplacement).toBe(BATTERY_REPLACEMENT_COST);
     expect(result.series[0].cumulativeSolarPathSpend).toBe(result.netCost);
     expect(result.series[0].cumulativeUtilitySpend).toBe(0);
+    expect(result.paymentMode).toBe("cash");
+    expect(result.investmentCagrPct).toBe(DEFAULT_INVESTMENT_CAGR_PCT);
+    expect(result.series[0].investedMoney).toBe(0);
+    expect(result.investedMoney25).toBeGreaterThan(0);
   });
 
   it("adds HVAC and water load to bill and system size", () => {
@@ -123,6 +129,69 @@ describe("calculateRoi", () => {
     expect(high.netSavings25).toBeGreaterThan(low.netSavings25);
   });
 
+  it("grows invested money with adjustable CAGR from bill difference", () => {
+    const low = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      investmentCagrPct: 0,
+    });
+    const high = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      investmentCagrPct: 10,
+    });
+
+    expect(low.investmentCagrPct).toBe(0);
+    expect(high.investmentCagrPct).toBe(10);
+    expect(high.investedMoney25).toBeGreaterThan(low.investedMoney25);
+    // Year 1: portfolio is just that year's bill difference
+    expect(low.series[1].investedMoney).toBe(low.series[1].annualSavings);
+    expect(low.investedMoney25).toBeGreaterThan(low.series[1].investedMoney);
+  });
+
+  it("finances equipment with down payment and APR instead of full cash outlay", () => {
+    const cash = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      paymentMode: "cash",
+    });
+    const financed = calculateRoi({
+      solar: true,
+      battery: false,
+      hvac: false,
+      water: false,
+      paymentMode: "finance",
+      loanDownPaymentPct: 10,
+      loanAprPct: 6.99,
+      loanTermYears: 15,
+    });
+
+    expect(financed.paymentMode).toBe("finance");
+    expect(financed.upfrontCost).toBe(Math.round(financed.netCost * 0.1));
+    expect(financed.loanPrincipal).toBe(
+      Math.round(financed.netCost - financed.upfrontCost),
+    );
+    expect(financed.series[0].cumulativeSolarPathSpend).toBe(financed.upfrontCost);
+    expect(financed.series[0].cumulativeSolarPathSpend).toBeLessThan(
+      cash.series[0].cumulativeSolarPathSpend,
+    );
+    expect(financed.monthlyLoanPayment).toBeGreaterThan(0);
+    expect(financed.series[1].loanPayment).toBe(
+      Math.round(financed.monthlyLoanPayment * 12),
+    );
+    expect(financed.series[16].loanPayment).toBe(0);
+    // Interest makes total solar-path spend higher than cash by year 25
+    expect(financed.series[25].cumulativeSolarPathSpend).toBeGreaterThan(
+      cash.series[25].cumulativeSolarPathSpend,
+    );
+  });
+
   it("sizes system from panels × watts for cost", () => {
     const result = calculateRoi({
       solar: true,
@@ -142,6 +211,18 @@ describe("calculateRoi", () => {
     expect(result.panelCapacityWatts).toBe(400);
     expect(result.solarDriven).toBe(true);
     expect(result.grossCost).toBe(Math.round(10 * 3100));
+  });
+});
+
+describe("monthlyLoanPayment", () => {
+  it("matches standard amortization for a known case", () => {
+    // $20,000 at 6% for 5 years ≈ $386.66/mo
+    const payment = monthlyLoanPayment(20000, 6, 5);
+    expect(payment).toBeCloseTo(386.66, 1);
+  });
+
+  it("splits principal evenly when APR is zero", () => {
+    expect(monthlyLoanPayment(12000, 0, 10)).toBe(100);
   });
 });
 

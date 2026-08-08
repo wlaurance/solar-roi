@@ -13,18 +13,29 @@ import {
 } from "chart.js";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { Line } from "react-chartjs-2";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Icons } from "@/components/icons";
 import {
   BASE_ELEC,
   DEFAULT_ENERGY_INFLATION_PCT,
+  DEFAULT_INVESTMENT_CAGR_PCT,
+  DEFAULT_LOAN_APR_PCT,
+  DEFAULT_LOAN_DOWN_PAYMENT_PCT,
+  DEFAULT_LOAN_TERM_YEARS,
   DEFAULT_RATE_USD_PER_KWH,
   calculateRoi,
   resolveBaselineMonthlyBill,
   resolveBaselineMonthlyUsageKwh,
   resolveEnergyInflationPct,
+  resolveInvestmentCagrPct,
+  resolveLoanAprPct,
+  resolveLoanDownPaymentPct,
+  resolveLoanTermYears,
+  resolvePaymentMode,
   resolveRate,
   solarDriveFromInsights,
+  type PaymentMode,
 } from "@/lib/roi/calculate";
 import { ShareReportButton } from "@/components/dashboard/share-report-button";
 import {
@@ -92,6 +103,23 @@ export function RoiDashboard({
       ? Number(project.energy_inflation_pct)
       : null,
   );
+  const initialInvestmentCagrPct = resolveInvestmentCagrPct(
+    project.investment_cagr_pct != null
+      ? Number(project.investment_cagr_pct)
+      : null,
+  );
+  const initialPaymentMode = resolvePaymentMode(project.payment_mode);
+  const initialDownPaymentPct = resolveLoanDownPaymentPct(
+    project.loan_down_payment_pct != null
+      ? Number(project.loan_down_payment_pct)
+      : null,
+  );
+  const initialLoanAprPct = resolveLoanAprPct(
+    project.loan_apr_pct != null ? Number(project.loan_apr_pct) : null,
+  );
+  const initialLoanTermYears = resolveLoanTermYears(
+    project.loan_term_years != null ? Number(project.loan_term_years) : null,
+  );
   const initialBill = resolveBaselineMonthlyBill({
     monthlyBillUsd: project.monthly_bill_usd,
     monthlyUsageKwh: project.monthly_usage_kwh,
@@ -107,6 +135,23 @@ export function RoiDashboard({
   const [inflationPct, setInflationPct] = useState(initialInflationPct);
   const [inflationInput, setInflationInput] = useState(
     String(initialInflationPct),
+  );
+  const [investmentCagrPct, setInvestmentCagrPct] = useState(
+    initialInvestmentCagrPct,
+  );
+  const [investmentCagrInput, setInvestmentCagrInput] = useState(
+    String(initialInvestmentCagrPct),
+  );
+  const [paymentMode, setPaymentMode] = useState<PaymentMode>(initialPaymentMode);
+  const [downPaymentPct, setDownPaymentPct] = useState(initialDownPaymentPct);
+  const [downPaymentInput, setDownPaymentInput] = useState(
+    String(initialDownPaymentPct),
+  );
+  const [loanAprPct, setLoanAprPct] = useState(initialLoanAprPct);
+  const [loanAprInput, setLoanAprInput] = useState(String(initialLoanAprPct));
+  const [loanTermYears, setLoanTermYears] = useState(initialLoanTermYears);
+  const [loanTermInput, setLoanTermInput] = useState(
+    String(initialLoanTermYears),
   );
   const [billInput, setBillInput] = useState(String(roundMoney(initialBill)));
   const [kwhInput, setKwhInput] = useState(String(roundKwh(initialKwh)));
@@ -137,6 +182,11 @@ export function RoiDashboard({
         monthlyUsageKwh: usageKwh,
         rateUsdPerKwh: rate,
         energyInflationPct: inflationPct,
+        investmentCagrPct,
+        paymentMode,
+        loanDownPaymentPct: downPaymentPct,
+        loanAprPct,
+        loanTermYears,
       }),
     [
       toggles,
@@ -146,6 +196,11 @@ export function RoiDashboard({
       usageKwh,
       rate,
       inflationPct,
+      investmentCagrPct,
+      paymentMode,
+      downPaymentPct,
+      loanAprPct,
+      loanTermYears,
     ],
   );
 
@@ -223,6 +278,11 @@ export function RoiDashboard({
     monthly_usage_kwh?: number;
     rate_usd_per_kwh?: number;
     energy_inflation_pct?: number;
+    investment_cagr_pct?: number;
+    payment_mode?: PaymentMode;
+    loan_down_payment_pct?: number;
+    loan_apr_pct?: number;
+    loan_term_years?: number;
   }) {
     if (persistTimer.current) clearTimeout(persistTimer.current);
     persistTimer.current = setTimeout(() => {
@@ -319,6 +379,47 @@ export function RoiDashboard({
     persistUsage({ energy_inflation_pct: next });
   }
 
+  function onInvestmentCagrChange(raw: string) {
+    setInvestmentCagrInput(raw);
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed) || parsed < 0) return;
+    const next = Math.round(parsed * 100) / 100;
+    setInvestmentCagrPct(next);
+    persistUsage({ investment_cagr_pct: next });
+  }
+
+  function onPaymentModeChange(next: PaymentMode) {
+    setPaymentMode(next);
+    persistUsage({ payment_mode: next });
+  }
+
+  function onDownPaymentChange(raw: string) {
+    setDownPaymentInput(raw);
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed) || parsed < 0 || parsed > 100) return;
+    const next = Math.round(parsed * 100) / 100;
+    setDownPaymentPct(next);
+    persistUsage({ loan_down_payment_pct: next });
+  }
+
+  function onLoanAprChange(raw: string) {
+    setLoanAprInput(raw);
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed) || parsed < 0) return;
+    const next = Math.round(parsed * 100) / 100;
+    setLoanAprPct(next);
+    persistUsage({ loan_apr_pct: next });
+  }
+
+  function onLoanTermChange(raw: string) {
+    setLoanTermInput(raw);
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed) || parsed < 1) return;
+    const next = Math.min(25, Math.floor(parsed));
+    setLoanTermYears(next);
+    persistUsage({ loan_term_years: next });
+  }
+
   const chartData = {
     labels: result.series.map((p) => (p.year === 0 ? "Start" : `Yr ${p.year}`)),
     datasets: [
@@ -335,7 +436,10 @@ export function RoiDashboard({
         borderWidth: 2,
       },
       {
-        label: "Solar path (install + bills)",
+        label:
+          paymentMode === "finance"
+            ? "Solar path (loan + bills)"
+            : "Solar path (install + bills)",
         data: result.series.map((p) => p.cumulativeSolarPathSpend),
         borderColor: "#3F6B4F",
         backgroundColor: "rgba(63, 107, 79, 0.12)",
@@ -344,6 +448,18 @@ export function RoiDashboard({
         pointRadius: 0,
         pointHoverRadius: 4,
         borderWidth: 2.5,
+      },
+      {
+        label: "Invested money (bill difference)",
+        data: result.series.map((p) => p.investedMoney),
+        borderColor: "#C4A035",
+        backgroundColor: "rgba(196, 160, 53, 0.08)",
+        borderDash: [2, 3],
+        fill: false,
+        tension: 0.2,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        borderWidth: 2,
       },
     ],
   };
@@ -488,7 +604,7 @@ export function RoiDashboard({
             </p>
           </div>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <label className="block space-y-1.5">
             <span className="text-xs font-medium text-ink-muted">Monthly bill ($)</span>
             <div className="relative">
@@ -564,6 +680,35 @@ export function RoiDashboard({
               </span>
             </div>
           </label>
+          <label className="block space-y-1.5">
+            <span className="text-xs font-medium text-ink-muted">
+              Invested money CAGR (%/yr)
+            </span>
+            <div className="relative">
+              <input
+                type="number"
+                min={0}
+                max={30}
+                step={0.1}
+                inputMode="decimal"
+                className="w-full rounded-lg border border-stone-line bg-white py-2.5 pl-3 pr-8 text-sm text-ink"
+                value={investmentCagrInput}
+                onChange={(e) => onInvestmentCagrChange(e.target.value)}
+                onBlur={() => {
+                  if (investmentCagrInput.trim() === "") {
+                    setInvestmentCagrInput(String(DEFAULT_INVESTMENT_CAGR_PCT));
+                    setInvestmentCagrPct(DEFAULT_INVESTMENT_CAGR_PCT);
+                    persistUsage({
+                      investment_cagr_pct: DEFAULT_INVESTMENT_CAGR_PCT,
+                    });
+                  }
+                }}
+              />
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ink-muted">
+                %
+              </span>
+            </div>
+          </label>
         </div>
         <p className="mt-3 text-xs text-ink-muted">
           Model baseline: {formatMoney(result.monthlyBillBefore)} / mo ·{" "}
@@ -571,10 +716,153 @@ export function RoiDashboard({
           {toggles.hvac || toggles.water
             ? " (includes HVAC/water heater load adders)"
             : null}
+          . Invested money assumes you invest the old−new bill difference each year
+          at {result.investmentCagrPct}% CAGR.
         </p>
       </div>
 
-      <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-6 rounded-2xl border border-stone-2/80 bg-surface/90 p-4 shadow-sm sm:p-5">
+        <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <h2 className="text-sm font-medium uppercase tracking-[0.08em] text-ink-muted">
+              Equipment payment
+            </h2>
+            <p className="mt-1 text-xs text-ink-muted">
+              Pay cash for the net system cost, or finance with a down payment and
+              APR.{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                Solar financing guides
+              </Link>
+            </p>
+          </div>
+          <div className="flex gap-2">
+            {(
+              [
+                ["cash", "Cash"],
+                ["finance", "Finance"],
+              ] as const
+            ).map(([mode, label]) => (
+              <button
+                key={mode}
+                type="button"
+                onClick={() => onPaymentModeChange(mode)}
+                disabled={pending}
+                className={`rounded-md px-3.5 py-2 text-sm font-medium transition ${
+                  paymentMode === mode
+                    ? "bg-canopy text-white"
+                    : "border border-stone-2 bg-surface text-ink-muted hover:bg-stone"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+        {paymentMode === "finance" ? (
+          <div className="grid gap-3 sm:grid-cols-3">
+            <label className="block space-y-1.5">
+              <span className="text-xs font-medium text-ink-muted">
+                Down payment (%)
+              </span>
+              <div className="relative">
+                <input
+                  type="number"
+                  min={0}
+                  max={100}
+                  step={0.5}
+                  inputMode="decimal"
+                  className="w-full rounded-lg border border-stone-line bg-white py-2.5 pl-3 pr-8 text-sm text-ink"
+                  value={downPaymentInput}
+                  onChange={(e) => onDownPaymentChange(e.target.value)}
+                  onBlur={() => {
+                    if (downPaymentInput.trim() === "") {
+                      setDownPaymentInput(String(DEFAULT_LOAN_DOWN_PAYMENT_PCT));
+                      setDownPaymentPct(DEFAULT_LOAN_DOWN_PAYMENT_PCT);
+                      persistUsage({
+                        loan_down_payment_pct: DEFAULT_LOAN_DOWN_PAYMENT_PCT,
+                      });
+                    }
+                  }}
+                />
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ink-muted">
+                  %
+                </span>
+              </div>
+            </label>
+            <label className="block space-y-1.5">
+              <span className="text-xs font-medium text-ink-muted">APR (%)</span>
+              <div className="relative">
+                <input
+                  type="number"
+                  min={0}
+                  max={40}
+                  step={0.01}
+                  inputMode="decimal"
+                  className="w-full rounded-lg border border-stone-line bg-white py-2.5 pl-3 pr-8 text-sm text-ink"
+                  value={loanAprInput}
+                  onChange={(e) => onLoanAprChange(e.target.value)}
+                  onBlur={() => {
+                    if (loanAprInput.trim() === "") {
+                      setLoanAprInput(String(DEFAULT_LOAN_APR_PCT));
+                      setLoanAprPct(DEFAULT_LOAN_APR_PCT);
+                      persistUsage({ loan_apr_pct: DEFAULT_LOAN_APR_PCT });
+                    }
+                  }}
+                />
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ink-muted">
+                  %
+                </span>
+              </div>
+            </label>
+            <label className="block space-y-1.5">
+              <span className="text-xs font-medium text-ink-muted">Term (years)</span>
+              <input
+                type="number"
+                min={1}
+                max={25}
+                step={1}
+                inputMode="numeric"
+                className="w-full rounded-lg border border-stone-line bg-white px-3 py-2.5 text-sm text-ink"
+                value={loanTermInput}
+                onChange={(e) => onLoanTermChange(e.target.value)}
+                onBlur={() => {
+                  if (loanTermInput.trim() === "") {
+                    setLoanTermInput(String(DEFAULT_LOAN_TERM_YEARS));
+                    setLoanTermYears(DEFAULT_LOAN_TERM_YEARS);
+                    persistUsage({ loan_term_years: DEFAULT_LOAN_TERM_YEARS });
+                  }
+                }}
+              />
+            </label>
+          </div>
+        ) : null}
+        <p className="mt-3 text-xs text-ink-muted">
+          {paymentMode === "finance" ? (
+            <>
+              Upfront {formatMoney(result.upfrontCost)} down · financed{" "}
+              {formatMoney(result.loanPrincipal)} at {result.loanAprPct}% APR for{" "}
+              {result.loanTermYears} years · {formatMoney(result.monthlyLoanPayment)}
+              /mo loan payment (plus the new utility bill). Compare lender and
+              marketplace options in{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                financing
+              </Link>
+              .
+            </>
+          ) : (
+            <>
+              Cash outlay at start: {formatMoney(result.upfrontCost)} (net system
+              cost). Exploring a loan instead? See{" "}
+              <Link href="/financing" className="font-medium text-canopy hover:underline">
+                solar financing guides
+              </Link>
+              .
+            </>
+          )}
+        </p>
+      </div>
+
+      <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <Stat
           label="System size"
           value={
@@ -588,7 +876,15 @@ export function RoiDashboard({
               : "Load Roof Designer panel config"
           }
         />
-        <Stat label="Net system cost" value={formatMoney(result.netCost)} hint="No federal 25D ITC in 2026 model (×1.0)" />
+        <Stat
+          label="Net system cost"
+          value={formatMoney(result.netCost)}
+          hint={
+            paymentMode === "finance"
+              ? `${formatMoney(result.upfrontCost)} down · ${formatMoney(result.monthlyLoanPayment)}/mo loan`
+              : "No federal 25D ITC in 2026 model (×1.0)"
+          }
+        />
         <Stat
           label="New monthly bill"
           value={formatMoney(result.monthlyBillAfter)}
@@ -597,12 +893,21 @@ export function RoiDashboard({
         <Stat
           label="Break-even"
           value={result.breakEvenYear != null ? `Year ${result.breakEvenYear}` : "—"}
-          hint="Includes $8,500 battery at year 12"
+          hint={
+            paymentMode === "finance"
+              ? "Cash-flow break-even vs utility-only path"
+              : "Includes $8,500 battery at year 12"
+          }
         />
         <Stat
           label="25-yr net savings"
           value={formatMoney(result.netSavings25)}
           hint={`${result.systemKw} kW · ${result.energyInflationPct}% inflation`}
+        />
+        <Stat
+          label="Invested money"
+          value={formatMoney(result.investedMoney25)}
+          hint={`Bill difference invested @ ${result.investmentCagrPct}% CAGR`}
         />
       </div>
 
@@ -638,8 +943,25 @@ export function RoiDashboard({
                 <span className="font-medium">Solar path</span>
                 <span className="text-ink-muted">
                   {" "}
-                  — net install + lower bills
+                  —{" "}
+                  {paymentMode === "finance"
+                    ? "down payment + loan + lower bills"
+                    : "net install + lower bills"}
                   {toggles.battery ? " + Yr 12 battery" : ""}
+                </span>
+              </span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span
+                className="inline-block h-0.5 w-6 border-t-2 border-dotted"
+                style={{ borderColor: "#C4A035" }}
+                aria-hidden
+              />
+              <span>
+                <span className="font-medium">Invested money</span>
+                <span className="text-ink-muted">
+                  {" "}
+                  — bill difference @ {result.investmentCagrPct}% CAGR
                 </span>
               </span>
             </li>
@@ -679,11 +1001,17 @@ export function RoiDashboard({
                       if (items.length < 2) return "";
                       const util = Number(items[0]?.raw ?? 0);
                       const solar = Number(items[1]?.raw ?? 0);
+                      const invested = Number(items[2]?.raw ?? 0);
                       const gap = util - solar;
-                      if (gap >= 0) {
-                        return `Solar ahead by ${formatMoney(gap)}`;
+                      const lines = [
+                        gap >= 0
+                          ? `Solar ahead by ${formatMoney(gap)}`
+                          : `Solar behind by ${formatMoney(Math.abs(gap))}`,
+                      ];
+                      if (invested > 0) {
+                        lines.push(`Invested money ${formatMoney(invested)}`);
                       }
-                      return `Solar behind by ${formatMoney(Math.abs(gap))}`;
+                      return lines;
                     },
                   },
                 },
@@ -707,7 +1035,7 @@ export function RoiDashboard({
                   grid: { color: "rgba(28,36,33,0.06)" },
                   title: {
                     display: true,
-                    text: "Cumulative spend ($)",
+                    text: "Cumulative $",
                     color: "#5a665f",
                     font: { size: 11 },
                   },
@@ -718,15 +1046,19 @@ export function RoiDashboard({
         </div>
         <p className="mt-3 text-xs text-ink-muted">
           Dashed line = staying on utility rates ({result.energyInflationPct}%
-          inflation). Solid line =
-          net system cost at start
+          inflation). Solid line ={" "}
+          {paymentMode === "finance"
+            ? `down payment + ${result.loanTermYears}-yr loan payments`
+            : "net system cost at start"}
           {toggles.battery
             ? ", lower bills, and an $8,500 battery replacement at year 12"
             : " plus ongoing solar-path bills"}
-          .
+          . Dotted brass line = invested money from the bill difference at{" "}
+          {result.investmentCagrPct}% CAGR
           {result.breakEvenYear != null
-            ? ` Curves cross around year ${result.breakEvenYear}.`
-            : null}
+            ? ` · spend curves cross around year ${result.breakEvenYear}`
+            : ""}
+          .
         </p>
       </div>
     </div>
