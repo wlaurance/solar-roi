@@ -3,6 +3,7 @@ import { allHoaFaqs, getHoaTopic, listHoaTopics } from "@/lib/hoa/faq";
 import {
   formatHoaPackagePrice,
   HOA_PACKAGE_AMOUNT_CENTS,
+  HOA_PACKAGE_TAX_CODE,
 } from "@/lib/stripe/pricing";
 
 describe("hoa faq catalog", () => {
@@ -22,5 +23,6 @@ describe("hoa package pricing", () => {
   it("is $29.97", () => {
     expect(HOA_PACKAGE_AMOUNT_CENTS).toBe(2997);
     expect(formatHoaPackagePrice()).toBe("$29.97");
+    expect(HOA_PACKAGE_TAX_CODE).toBe("txcd_10103000");
   });
 });

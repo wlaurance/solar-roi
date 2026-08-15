@@ -7,6 +7,7 @@ import {
   HOA_PACKAGE_AMOUNT_CENTS,
   HOA_PACKAGE_PRODUCT_CODE,
   HOA_PACKAGE_PRODUCT_NAME,
+  HOA_PACKAGE_TAX_CODE,
 } from "@/lib/stripe/config";
 import { siteOrigin } from "@/lib/seo";
 import {
@@ -71,6 +72,7 @@ export async function POST(request: Request) {
             name: HOA_PACKAGE_PRODUCT_NAME,
             description:
               "Upload HOA docs and unlock Solar bot tools for one project’s approval packet.",
+            tax_code: HOA_PACKAGE_TAX_CODE,
           },
         },
       },

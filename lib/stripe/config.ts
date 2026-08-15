@@ -3,6 +3,7 @@ import {
   HOA_PACKAGE_AMOUNT_CENTS,
   HOA_PACKAGE_PRODUCT_CODE,
   HOA_PACKAGE_PRODUCT_NAME,
+  HOA_PACKAGE_TAX_CODE,
   formatHoaPackagePrice,
 } from "@/lib/stripe/pricing";
 
@@ -10,6 +11,7 @@ export {
   HOA_PACKAGE_AMOUNT_CENTS,
   HOA_PACKAGE_PRODUCT_CODE,
   HOA_PACKAGE_PRODUCT_NAME,
+  HOA_PACKAGE_TAX_CODE,
   formatHoaPackagePrice,
 };
 
