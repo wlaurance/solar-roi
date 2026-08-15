@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listFinancingIndex } from "@/lib/financing/catalog";
+import { listHoaTopics } from "@/lib/hoa/faq";
 import { listFederalIncentiveIndex, listStateIncentiveIndex } from "@/lib/incentives/catalog";
 import { listLocations } from "@/lib/locations/catalog";
 import { listManufacturerIndex } from "@/lib/manufacturers/catalog";
@@ -28,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${origin}/equipment`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${origin}/financing`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${origin}/tools/quote-check`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${origin}/hoa`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${origin}/upload-bill`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${origin}/signup`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${origin}/login`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
@@ -59,6 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.75,
+  }));
+
+  const hoaRoutes = listHoaTopics().map((t) => ({
+    url: `${origin}/hoa/${t.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
   }));
 
   const federalRoutes = listFederalIncentiveIndex().map((f) => ({
@@ -98,6 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...equipmentRoutes,
     ...financingRoutes,
     ...permitRoutes,
+    ...hoaRoutes,
     ...locationRoutes,
   ];
 }
