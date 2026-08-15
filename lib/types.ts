@@ -43,6 +43,18 @@ export type Project = {
   share_token?: string | null;
   share_enabled?: boolean;
   share_enabled_at?: string | null;
+  /** Set when Stripe HOA package payment succeeds for this project */
+  hoa_package_unlocked_at?: string | null;
+  hoa_package_status?:
+    | "not_started"
+    | "gathering_docs"
+    | "extracting"
+    | "drafting"
+    | "awaiting_user"
+    | "ready"
+    | "submitted";
+  hoa_requirements?: import("@/lib/hoa/types").HoaRequirementsPayload | null;
+  hoa_application?: import("@/lib/hoa/types").HoaApplicationPayload | null;
   created_at: string;
   updated_at: string;
 };

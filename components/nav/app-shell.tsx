@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icons } from "@/components/icons";
+import { PresenceHeartbeat } from "@/components/hoa/presence-heartbeat";
+import { SolarBotWidget } from "@/components/hoa/solar-bot-widget";
 import { createClient } from "@/lib/supabase/client";
 import { resetAnalytics, track } from "@/lib/analytics";
 
@@ -27,6 +29,12 @@ function projectNav(projectId: string): NavItem[] {
       label: "Roof Designer",
       icon: "roof",
       short: "Roof",
+    },
+    {
+      href: `/projects/${projectId}/hoa`,
+      label: "HOA Package",
+      icon: "hoa",
+      short: "HOA",
     },
     {
       href: `/projects/${projectId}/permits`,
@@ -53,26 +61,31 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const projectId = typeof params.id === "string" ? params.id : undefined;
   const [projectName, setProjectName] = useState<string | null>(null);
+  const [hoaUnlocked, setHoaUnlocked] = useState(false);
 
   useEffect(() => {
     if (!projectId) {
       setProjectName(null);
+      setHoaUnlocked(false);
       return;
     }
     let cancelled = false;
     const supabase = createClient();
     supabase
       .from("projects")
-      .select("name")
+      .select("name, hoa_package_unlocked_at")
       .eq("id", projectId)
       .maybeSingle()
       .then(({ data }) => {
-        if (!cancelled) setProjectName(data?.name ?? null);
+        if (!cancelled) {
+          setProjectName(data?.name ?? null);
+          setHoaUnlocked(Boolean(data?.hoa_package_unlocked_at));
+        }
       });
     return () => {
       cancelled = true;
     };
-  }, [projectId]);
+  }, [projectId, pathname]);
 
   const items = projectId ? [...topNav, ...projectNav(projectId)] : topNav;
 
@@ -161,12 +174,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         <main className="flex-1 px-4 py-6 pb-24 md:px-8 md:pb-8">{children}</main>
 
+        <PresenceHeartbeat />
+        {projectId ? (
+          <SolarBotWidget projectId={projectId} unlocked={hoaUnlocked} />
+        ) : null}
+
         <nav className="fixed inset-x-0 bottom-0 z-20 border-t border-stone-2/80 bg-surface/95 backdrop-blur md:hidden">
           <ul
             className="grid gap-0.5 px-1 py-1"
-            style={{ gridTemplateColumns: `repeat(${Math.min(items.length, 5)}, minmax(0, 1fr))` }}
+            style={{
+              gridTemplateColumns: `repeat(${Math.min(items.length, 6)}, minmax(0, 1fr))`,
+            }}
           >
-            {items.slice(0, 5).map((item) => {
+            {items.slice(0, 6).map((item) => {
               const active =
                 item.href === "/projects"
                   ? pathname === "/projects"

@@ -48,6 +48,13 @@ export const Icons = {
       <path d="M14 3v4h4M10 12h6M10 16h6" />
     </svg>
   ),
+  hoa: (props: IconProps) => (
+    <svg {...base(props)}>
+      <path d="M4 20V10l8-6 8 6v10" />
+      <path d="M9 20v-6h6v6" />
+      <path d="M12 4v3" />
+    </svg>
+  ),
   installers: (props: IconProps) => (
     <svg {...base(props)}>
       <circle cx="12" cy="10" r="3" />

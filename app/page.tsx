@@ -42,6 +42,9 @@ export default function HomePage() {
           </Link>
         </div>
         <nav className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-canopy">
+          <Link href="/hoa" className="hover:underline">
+            HOA approval
+          </Link>
           <Link href="/upload-bill" className="hover:underline">
             Upload a bill
           </Link>
