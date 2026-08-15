@@ -96,4 +96,23 @@ export const Icons = {
       <path d="M4 7h16M4 12h16M4 17h16" />
     </svg>
   ),
+  settings: (props: IconProps) => (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  ),
+  user: (props: IconProps) => (
+    <svg {...base(props)}>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M5 19c1.4-3.2 3.8-4.8 7-4.8s5.6 1.6 7 4.8" />
+    </svg>
+  ),
+  card: (props: IconProps) => (
+    <svg {...base(props)}>
+      <rect x="3" y="6" width="18" height="12" rx="2" />
+      <path d="M3 10h18" />
+      <path d="M7 15h4" />
+    </svg>
+  ),
 };

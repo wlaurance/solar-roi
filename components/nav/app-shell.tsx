@@ -143,6 +143,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           })}
         </nav>
         <div className="border-t border-stone-2/80 p-3">
+          <Link
+            href="/settings"
+            className={`mb-1 flex items-center gap-3 rounded-md px-3 py-2.5 text-sm transition ${
+              pathname === "/settings" || pathname.startsWith("/settings/")
+                ? "bg-canopy text-white"
+                : "text-ink-muted hover:bg-stone hover:text-ink"
+            }`}
+          >
+            <Icons.settings className="h-4 w-4" />
+            Settings
+          </Link>
           <button
             type="button"
             onClick={signOut}
@@ -162,14 +173,27 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </span>
             <span className="font-display text-xl text-ink">SolarFlow</span>
           </Link>
-          <button
-            type="button"
-            onClick={signOut}
-            className="rounded-md p-2 text-ink-muted hover:bg-stone"
-            aria-label="Sign out"
-          >
-            <Icons.logout className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-1">
+            <Link
+              href="/settings"
+              className={`rounded-md p-2 hover:bg-stone ${
+                pathname === "/settings" || pathname.startsWith("/settings/")
+                  ? "text-canopy"
+                  : "text-ink-muted"
+              }`}
+              aria-label="Settings"
+            >
+              <Icons.settings className="h-5 w-5" />
+            </Link>
+            <button
+              type="button"
+              onClick={signOut}
+              className="rounded-md p-2 text-ink-muted hover:bg-stone"
+              aria-label="Sign out"
+            >
+              <Icons.logout className="h-5 w-5" />
+            </button>
+          </div>
         </header>
 
         <main className="flex-1 px-4 py-6 pb-24 md:px-8 md:pb-8">{children}</main>
