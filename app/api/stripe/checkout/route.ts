@@ -4,6 +4,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import {
   getStripe,
   isStripeEnabled,
+  findOrCreateStripeCustomer,
   HOA_PACKAGE_AMOUNT_CENTS,
   HOA_PACKAGE_PRODUCT_CODE,
   HOA_PACKAGE_PRODUCT_NAME,
@@ -59,10 +60,18 @@ export async function POST(request: Request) {
 
   const stripe = getStripe();
   const origin = siteOrigin();
+  const customerId = user.email
+    ? await findOrCreateStripeCustomer({
+        email: user.email,
+        userId: user.id,
+      })
+    : undefined;
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
     allow_promotion_codes: true,
-    customer_email: user.email ?? undefined,
+    ...(customerId
+      ? { customer: customerId }
+      : { customer_email: user.email ?? undefined }),
     line_items: [
       {
         quantity: 1,

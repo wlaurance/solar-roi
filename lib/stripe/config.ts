@@ -35,3 +35,22 @@ export function getStripe(): Stripe {
 export function stripeWebhookSecret(): string | null {
   return process.env.STRIPE_WEBHOOK_SECRET?.trim() || null;
 }
+
+/** Reuse the Stripe Customer for this email so customer-locked promo codes apply. */
+export async function findOrCreateStripeCustomer(input: {
+  email: string;
+  userId: string;
+}): Promise<string> {
+  const stripe = getStripe();
+  const existing = await stripe.customers.list({
+    email: input.email,
+    limit: 1,
+  });
+  if (existing.data[0]?.id) return existing.data[0].id;
+
+  const created = await stripe.customers.create({
+    email: input.email,
+    metadata: { user_id: input.userId },
+  });
+  return created.id;
+}
